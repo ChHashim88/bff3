@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #0f0f0f;
-  --brand-red: #B91C1C;
-  --brand-red-hover: #991B1B;
-  --brand-red-light: #FEF2F2;
+  --brand-black: #000000;
   --border-light: #E5E7EB;
   --bg-section-light: #F8F9FA;
 }
@@ -40,6 +37,6 @@ body {
 
 /* Selection Color */
 ::selection {
-  background-color: #B91C1C;
+  background-color: #000000;
   color: #ffffff;
 }

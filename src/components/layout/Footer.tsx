@@ -23,17 +23,13 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-200 text-gray-700 pt-16 sm:pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-gray-100">
-          
+
           {/* Left Column: Brand & Socials */}
           <div className="md:col-span-5 space-y-4">
-            <a href="#" className="flex items-center group shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Big Film Fund Logo"
-                width={340}
-                height={88}
-                className="h-14 sm:h-18 lg:h-[72px] w-auto object-contain"
-              />
+            <a href="#" className="flex items-center group shrink-0 transition-transform duration-300 hover:scale-105">
+              <span className="text-3xl sm:text-4xl font-extrabold text-black tracking-tighter">
+                BFF
+              </span>
             </a>
 
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
@@ -43,19 +39,19 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center space-x-3 pt-2 text-gray-500">
               {/* X / Twitter */}
-              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#B91C1C] hover:text-[#B91C1C] transition-colors text-xs font-bold">
+              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-black hover:text-black transition-colors text-xs font-bold">
                 X
               </a>
               {/* LinkedIn */}
-              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#B91C1C] hover:text-[#B91C1C] transition-colors text-xs font-bold">
+              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-black hover:text-black transition-colors text-xs font-bold">
                 in
               </a>
               {/* Instagram */}
-              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#B91C1C] hover:text-[#B91C1C] transition-colors text-xs font-bold">
+              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-black hover:text-black transition-colors text-xs font-bold">
                 ig
               </a>
               {/* YouTube */}
-              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-[#B91C1C] hover:text-[#B91C1C] transition-colors text-xs font-bold">
+              <a href="#" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:border-black hover:text-black transition-colors text-xs font-bold">
                 yt
               </a>
             </div>
@@ -67,14 +63,14 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-gray-600">
-              <li><a href="#" className="hover:text-[#B91C1C] transition-colors">Home</a></li>
-              <li><a href="#why-bff" className="hover:text-[#B91C1C] transition-colors">Why BFF</a></li>
-              <li><a href="#the-problem" className="hover:text-[#B91C1C] transition-colors">The Problem</a></li>
-              <li><a href="#our-solution" className="hover:text-[#B91C1C] transition-colors">Our Solution</a></li>
-              <li><a href="#how-it-works" className="hover:text-[#B91C1C] transition-colors">How It Works</a></li>
-              <li><a href="#investment" className="hover:text-[#B91C1C] transition-colors">Investment</a></li>
-              <li><a href="#faq" className="hover:text-[#B91C1C] transition-colors">FAQ</a></li>
-              <li><a href="#contact" className="hover:text-[#B91C1C] transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-black transition-colors">Home</a></li>
+              <li><a href="#why-bff" className="hover:text-black transition-colors">Why BFF</a></li>
+              <li><a href="#the-problem" className="hover:text-black transition-colors">The Problem</a></li>
+              <li><a href="#our-solution" className="hover:text-black transition-colors">Our Solution</a></li>
+              <li><a href="#how-it-works" className="hover:text-black transition-colors">How It Works</a></li>
+              <li><a href="#investment" className="hover:text-black transition-colors">Investment</a></li>
+              <li><a href="#faq" className="hover:text-black transition-colors">FAQ</a></li>
+              <li><a href="#contact" className="hover:text-black transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -88,7 +84,7 @@ export default function Footer() {
             </p>
 
             {isSubscribed ? (
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#B91C1C] pt-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-black pt-2">
                 <Check size={16} />
                 <span>Thank you for subscribing!</span>
               </div>
@@ -100,12 +96,12 @@ export default function Footer() {
                   placeholder="Enter your email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="w-full px-4 py-2.5 pr-12 bg-gray-50 border border-gray-200 rounded-sm text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] transition-colors"
+                  className="w-full px-4 py-2.5 pr-12 bg-gray-50 border border-gray-200 rounded-sm text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black transition-colors"
                 />
                 <button
                   type="submit"
                   aria-label="Subscribe to newsletter"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 mt-[2px] bg-[#B91C1C] hover:bg-[#991B1B] text-white p-2 rounded-sm transition-colors cursor-pointer"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 mt-[2px] bg-black hover:bg-neutral-800 text-white p-2 rounded-sm transition-colors cursor-pointer"
                 >
                   <ArrowRight size={14} />
                 </button>

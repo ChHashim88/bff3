@@ -10,88 +10,75 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] bg-white py-12 sm:py-16 lg:py-20 flex flex-col justify-center overflow-hidden border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Text Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
+    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] py-16 sm:py-20 lg:py-28 flex flex-col justify-center overflow-hidden border-b border-gray-200/70">
+      {/* Background Image: heroback.jpeg (Full 100% Opacity, No Fade, No Overlay) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/heroback.jpeg"
+          alt="Big Film Fund Hero Background"
+          fill
+          priority
+          className="object-cover object-right md:object-center opacity-100"
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Hero Content Overlay */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+          className="max-w-2xl space-y-6 sm:space-y-8"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-            className="lg:col-span-7 space-y-6 sm:space-y-8 pr-0 lg:pr-6"
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.08]"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.08]"
-            >
-              Everyday investors.
-              <br />
-              Real ownership.
-              <br />
-              <span className="text-[#B91C1C]">Fair profits.</span>
-            </motion.h1>
+            Everyday investors.
+            <br />
+            Real ownership.
+            <br />
+            <span className="text-black font-bold">Fair profits.</span>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 font-normal max-w-2xl leading-relaxed"
-            >
-              Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+            className="text-base sm:text-lg lg:text-xl text-gray-700 font-normal max-w-xl leading-relaxed"
+          >
+            Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2"
-            >
-              <motion.button
-                onClick={onOpenWaitlist}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991B1B] text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3.5 rounded-sm transition-all duration-200 shadow-md cursor-pointer group"
-              >
-                <span>Join the Waitlist</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
-              <motion.a
-                href="#why-bff"
-                whileHover={{ x: 3 }}
-                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold text-gray-800 hover:text-[#B91C1C] px-4 py-3 transition-colors duration-200 group"
-              >
-                <span>Learn More</span>
-                <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform text-[#B91C1C]" />
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Image Column */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative flex justify-center lg:justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2"
           >
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative w-full max-w-md lg:max-w-none aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] flex items-center justify-center"
+            <motion.button
+              onClick={onOpenWaitlist}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 bg-black hover:bg-neutral-800 text-white text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-sm transition-all duration-200 shadow-lg cursor-pointer group"
             >
-              <Image
-                src="/herooo.png"
-                alt="Big Film Fund Director's Chair, Megaphone, and Film Reels"
-                fill
-                priority
-                className="object-contain object-center scale-105 transition-transform duration-700 hover:scale-110"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
-            </motion.div>
+              <span>Join the Waitlist</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+
+            <motion.a
+              href="#why-bff"
+              whileHover={{ x: 3 }}
+              className="inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold text-gray-900 hover:text-black px-4 py-3 transition-colors duration-200 group"
+            >
+              <span>Learn More</span>
+              <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform text-black" />
+            </motion.a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

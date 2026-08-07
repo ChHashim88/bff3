@@ -58,7 +58,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-8 text-center space-y-4"
               >
-                <CheckCircle2 size={48} className="text-[#B91C1C] mx-auto" />
+                <CheckCircle2 size={48} className="text-black mx-auto" />
                 <h3 className="text-2xl font-semibold text-gray-900">You&apos;re on the list!</h3>
                 <p className="text-sm text-gray-600">
                   Thank you for joining the Big Film Fund waitlist. We will notify you as soon as our next film allocation opens.
@@ -67,7 +67,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             ) : (
               <div className="space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-black">
                     Join Big Film Fund
                   </span>
                   <h3 className="text-2xl font-semibold text-gray-900 tracking-tight mt-1">
@@ -89,7 +89,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                       placeholder="name@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm text-sm text-gray-900 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm text-sm text-gray-900 focus:outline-none focus:border-black focus:bg-white transition-colors"
                     />
                   </div>
 
@@ -100,7 +100,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     <select
                       value={investorType}
                       onChange={(e) => setInvestorType(e.target.value)}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm text-sm text-gray-900 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-sm text-sm text-gray-900 focus:outline-none focus:border-black focus:bg-white transition-colors"
                     >
                       <option value="Individual">Everyday Retail Investor</option>
                       <option value="Accredited">Accredited Investor</option>
@@ -113,7 +113,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#B91C1C] hover:bg-[#991B1B] text-white font-semibold py-3.5 px-6 rounded-sm text-sm transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="w-full bg-black hover:bg-neutral-800 text-white font-semibold py-3.5 px-6 rounded-sm text-sm transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer mt-2"
                   >
                     <span>Confirm & Join Waitlist</span>
                     <ArrowRight size={16} />

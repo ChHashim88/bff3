@@ -75,7 +75,7 @@ export default function FAQContactSection() {
             className="lg:col-span-6 space-y-8"
           >
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
                 FAQ
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -93,14 +93,14 @@ export default function FAQContactSection() {
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
                       className="w-full flex items-center justify-between text-left group focus:outline-none cursor-pointer"
                     >
-                      <span className={`text-base sm:text-lg font-semibold transition-colors duration-200 ${isOpen ? 'text-[#B91C1C]' : 'text-gray-900 group-hover:text-[#B91C1C]'
+                      <span className={`text-base sm:text-lg font-semibold transition-colors duration-200 ${isOpen ? 'text-black' : 'text-gray-900 group-hover:text-black'
                         }`}>
                         {item.question}
                       </span>
                       <motion.span
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className={`ml-4 shrink-0 text-gray-400 group-hover:text-[#B91C1C] transition-colors ${isOpen ? 'text-[#B91C1C]' : ''
+                        className={`ml-4 shrink-0 text-gray-400 group-hover:text-black transition-colors ${isOpen ? 'text-black' : ''
                           }`}
                       >
                         {isOpen ? <Minus size={20} /> : <Plus size={20} />}
@@ -138,7 +138,7 @@ export default function FAQContactSection() {
             className="lg:col-span-6 space-y-8 lg:pl-4"
           >
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
                 Contact
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -150,9 +150,9 @@ export default function FAQContactSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-8 bg-red-50/70 border border-red-200 rounded-sm text-center space-y-3"
+                className="p-8 bg-gray-50 border border-gray-200 rounded-sm text-center space-y-3"
               >
-                <CheckCircle2 size={40} className="text-[#B91C1C] mx-auto" />
+                <CheckCircle2 size={40} className="text-black mx-auto" />
                 <h3 className="text-xl font-semibold text-gray-900">Thank you for your message!</h3>
                 <p className="text-sm text-gray-600">
                   Our team has received your inquiry and will reach out to you within 24 hours.
@@ -171,7 +171,7 @@ export default function FAQContactSection() {
                       placeholder="Full Name"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-colors"
                     />
                   </div>
                   <div>
@@ -184,7 +184,7 @@ export default function FAQContactSection() {
                       placeholder="Email Address"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-colors"
                     />
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function FAQContactSection() {
                     placeholder="Company (Optional)"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors"
+                    className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-colors"
                   />
                 </div>
 
@@ -212,7 +212,7 @@ export default function FAQContactSection() {
                     placeholder="Message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#B91C1C] focus:bg-white transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-sm text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-colors resize-none"
                   />
                 </div>
 
@@ -220,7 +220,7 @@ export default function FAQContactSection() {
                   type="submit"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#B91C1C] hover:bg-[#991B1B] text-white text-sm font-semibold px-8 py-3.5 rounded-sm transition-all duration-200 shadow-sm cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black hover:bg-neutral-800 text-white text-sm font-semibold px-8 py-3.5 rounded-sm transition-all duration-200 shadow-sm cursor-pointer"
                 >
                   <span>Send Inquiry</span>
                   <Send size={16} />

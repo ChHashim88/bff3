@@ -19,7 +19,7 @@ export default function Home() {
   const handleCloseWaitlist = () => setIsWaitlistOpen(false);
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans selection:bg-[#B91C1C] selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans selection:bg-black selection:text-white">
       {/* Sticky Header Navigation */}
       <Navigation onOpenWaitlist={handleOpenWaitlist} />
 

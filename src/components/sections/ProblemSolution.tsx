@@ -35,13 +35,18 @@ export default function ProblemSolution() {
       {/* Container grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 relative">
 
-        {/* Central VS Badge for Desktop */}
+        {/* Central VS Badge with Smooth Floating Up and Down Motion */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.3 }}
-          className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-md items-center justify-center font-bold text-xs text-[#B91C1C] tracking-wider"
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" },
+            scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.3 },
+          }}
+          whileHover={{ scale: 1.2, rotate: 180 }}
+          className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-md items-center justify-center font-bold text-xs text-black tracking-wider cursor-pointer"
         >
           VS
         </motion.div>
@@ -56,7 +61,7 @@ export default function ProblemSolution() {
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
                 The Problem
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -72,16 +77,17 @@ export default function ProblemSolution() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                  className="flex items-start gap-4 group"
+                  className="flex items-start gap-4 group cursor-pointer"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.2, rotate: -10 }}
-                    className="mt-0.5 text-[#B91C1C] shrink-0"
+                    whileHover={{ scale: 1.25, rotate: -10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="mt-0.5 text-black shrink-0"
                   >
                     <XCircle size={22} strokeWidth={2} />
                   </motion.div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-black">
                       {item.title}
                     </h3>
                     <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
@@ -105,7 +111,7 @@ export default function ProblemSolution() {
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
                 Our Solution
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -121,15 +127,16 @@ export default function ProblemSolution() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                  className="flex items-start gap-4 group"
+                  className="flex items-start gap-4 group cursor-pointer"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    className="mt-0.5 text-[#B91C1C] shrink-0"
+                    whileHover={{ scale: 1.25, rotate: 10 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="mt-0.5 text-black shrink-0"
                   >
                     <CheckCircle2 size={22} strokeWidth={2} />
                   </motion.div>
-                  <p className="text-sm sm:text-base font-medium text-gray-800 leading-relaxed pt-0.5">
+                  <p className="text-sm sm:text-base font-medium text-gray-800 leading-relaxed pt-0.5 group-hover:text-black">
                     {item}
                   </p>
                 </motion.div>
