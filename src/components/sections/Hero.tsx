@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full pt-6 sm:pt-16 lg:pt-24 pb-12 sm:pb-20 lg:pb-28 flex flex-col justify-start sm:justify-center overflow-hidden border-b border-gray-200/70">
+    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] py-16 sm:py-20 lg:py-28 flex flex-col justify-center overflow-hidden border-b border-gray-200/70">
       {/* Background Image: heroback.jpeg with Mobile Editorial Framing */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
@@ -33,16 +33,29 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           className="max-w-2xl space-y-6 sm:space-y-8"
         >
-          {/* Creative Pill Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/5 text-black text-xs sm:text-sm font-medium tracking-wide border border-black/10 backdrop-blur-md shadow-2xs"
-          >
-            <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-            <span>Next-Gen Film Investment Platform</span>
-          </motion.div>
+          {/* Creative Top Tagline & Pill Badge */}
+          <div className="space-y-2.5">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex items-center gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-500"
+            >
+              <span>BIG FILM FUND</span>
+              <span className="text-gray-300">•</span>
+              <span>INDEPENDENT CINEMA PROTOCOL</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/5 text-black text-xs sm:text-sm font-medium tracking-wide border border-black/10 backdrop-blur-md shadow-2xs"
+            >
+              <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
+              <span>Next-Gen Film Investment Platform</span>
+            </motion.div>
+          </div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -68,6 +81,27 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           >
             Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.
           </motion.p>
+
+          {/* Subtle Key Highlights Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm font-semibold text-gray-700 pt-1"
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+              <span>100% Gross Revenue Transparency</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+              <span>Real Ownership</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+              <span>Fair Returns</span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
