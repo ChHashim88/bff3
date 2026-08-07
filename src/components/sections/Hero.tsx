@@ -11,14 +11,14 @@ interface HeroProps {
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] py-16 sm:py-20 lg:py-28 flex flex-col justify-center overflow-hidden border-b border-gray-200/70">
-      {/* Background Image: heroback.jpeg (Full 100% Opacity, No Fade, No Overlay) */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image: heroback.jpeg (Mobile: lower z-index & moderate opacity, Desktop: full opacity) */}
+      <div className="absolute inset-0 -z-10 md:z-0 pointer-events-none">
         <Image
           src="/heroback.jpeg"
           alt="Big Film Fund Hero Background"
           fill
           priority
-          className="object-cover object-right md:object-center opacity-100"
+          className="object-cover object-right md:object-center opacity-60 md:opacity-100 transition-opacity duration-300"
           sizes="100vw"
         />
       </div>
