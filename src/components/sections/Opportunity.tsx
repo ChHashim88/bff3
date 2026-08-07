@@ -12,7 +12,7 @@ export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
   return (
     <section id="investment" className="relative w-full bg-white border-b border-gray-100 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-        
+
         {/* Left Text Column */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

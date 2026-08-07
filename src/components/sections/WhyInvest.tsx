@@ -57,9 +57,8 @@ export default function WhyInvest() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
-                className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 lg:pt-0 pb-6 lg:pb-0 group ${
-                  index !== 0 ? 'lg:pl-8' : ''
-                }`}
+                className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 lg:pt-0 pb-6 lg:pb-0 group ${index !== 0 ? 'lg:pl-8' : ''
+                  }`}
               >
                 <motion.div
                   whileHover={{ scale: 1.15, rotate: 5 }}

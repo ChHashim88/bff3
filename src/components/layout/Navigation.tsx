@@ -29,9 +29,9 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
           <Image
             src="/logo.png"
             alt="Big Film Fund Logo"
-            width={240}
-            height={64}
-            className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+            width={340}
+            height={88}
+            className="h-14 sm:h-18 lg:h-[72px] w-auto object-contain"
             priority
           />
         </a>
