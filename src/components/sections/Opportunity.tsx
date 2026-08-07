@@ -63,16 +63,15 @@ export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 min-h-[350px] sm:min-h-[450px] lg:min-h-[600px] relative bg-gray-900 overflow-hidden group"
+          className="lg:col-span-6 min-h-[350px] sm:min-h-[450px] lg:min-h-[600px] relative bg-white overflow-hidden group flex items-center justify-center p-6 lg:p-12"
         >
           <Image
-            src="/images/pexels-felicity-tai-7964388.jpg"
-            alt="Cinematic Film Production Set with Director and Lighting"
+            src="/2nd.png"
+            alt="Big Film Fund Opportunity"
             fill
-            className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+            className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent pointer-events-none" />
         </motion.div>
 
       </div>
