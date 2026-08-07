@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] pt-14 pb-16 sm:py-20 lg:py-28 flex flex-col justify-start sm:justify-center overflow-hidden border-b border-gray-200/70">
+    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] pt-20 pb-16 sm:py-20 lg:py-28 flex flex-col justify-start sm:justify-center overflow-hidden border-b border-gray-200/70">
       {/* Background Image: heroback.jpeg (Mobile: subtle opacity & -z-10 | Desktop: 100% original) */}
       <div className="absolute inset-0 -z-10 md:z-0 pointer-events-none">
         <Image
