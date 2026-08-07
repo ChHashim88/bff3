@@ -40,7 +40,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/5 text-black text-xs sm:text-sm font-medium tracking-wide border border-black/10 backdrop-blur-md shadow-2xs"
           >
-            <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
             <span>Next-Gen Film Investment Platform</span>
           </motion.div>
 
@@ -56,7 +56,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             <br />
             <span className="relative inline-block text-black font-bold pb-1">
               Fair profits.
-              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-black via-red-600 to-transparent rounded-full" />
+              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-black via-neutral-800 to-transparent rounded-full" />
             </span>
           </motion.h1>
 
