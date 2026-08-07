@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full bg-white pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-20 lg:pb-32 overflow-hidden border-b border-gray-100">
+    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] bg-white py-12 sm:py-16 lg:py-20 flex flex-col justify-center overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Text Column */}
