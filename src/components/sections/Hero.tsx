@@ -33,16 +33,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           className="max-w-2xl space-y-6 sm:space-y-8"
         >
-          {/* Creative Pill Badge (Mobile Only) */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex md:hidden items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/5 text-black text-xs font-medium tracking-wide border border-black/10 backdrop-blur-md shadow-2xs"
-          >
-            <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-            <span>Next-Gen Film Investment Platform</span>
-          </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
