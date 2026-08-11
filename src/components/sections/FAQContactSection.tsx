@@ -91,7 +91,7 @@ export default function FAQContactSection() {
             {/* Left Content Column */}
             <div className="lg:col-span-4 flex flex-col justify-between py-2">
               <div className="space-y-3">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-[#cd0007] block">
+                <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block">
                   LEADERSHIP | TEAM
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight leading-snug">
@@ -158,7 +158,7 @@ export default function FAQContactSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#cd0007] block">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block">
               FREQUENTLY ASKED QUESTIONS
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
@@ -216,7 +216,7 @@ export default function FAQContactSection() {
             {/* Dark Glass Community Banner */}
             <div className="lg:col-span-7 bg-slate-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden">
               <div className="relative z-10 space-y-4 max-w-md">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#cd0007] block">
+                <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block">
                   JOIN THE BFF COMMUNITY
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
@@ -262,7 +262,7 @@ export default function FAQContactSection() {
             <div className="lg:col-span-5 glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between border border-white/90 shadow-sm">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#cd0007]">
+                  <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007]">
                     PARTNER WITH BFF
                   </span>
                   <div className="relative h-16 sm:h-20 w-48 sm:w-64 flex items-center justify-end">
@@ -285,16 +285,7 @@ export default function FAQContactSection() {
                 </p>
               </div>
 
-              {/* Top Right Large Blue WeFunder Logo (wf.png) */}
-              <div className="absolute top-6 sm:top-8 right-6 sm:right-8 z-10 flex items-center justify-end">
-                <Image
-                  src="/wf.png"
-                  alt="WeFunder logo"
-                  width={260}
-                  height={65}
-                  className="h-10 sm:h-12 w-auto object-contain"
-                />
-              </div>
+
 
               {/* Bottom Left Button */}
               <div className="pt-6 relative z-10 flex items-center">

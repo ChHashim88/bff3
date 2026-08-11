@@ -26,14 +26,14 @@ export default function FairnessBanner() {
             </p>
           </div>
 
-          {/* Right Image Feature (bfc.PNG) - Full height, right-aligned with gradient fade into middle background */}
-          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] lg:w-[62%] h-full z-0 overflow-hidden flex items-center justify-end">
-            {/* Horizontal gradient blend mask */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 sm:w-48 lg:w-64 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          {/* Full Width bfc.PNG Background */}
+          <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            {/* Subtle soft gradient fade over text for legibility */}
+            <div className="absolute inset-y-0 left-0 w-full sm:w-2/3 bg-gradient-to-r from-[#eef2f6]/95 via-[#eef2f6]/70 to-transparent z-10 pointer-events-none" />
 
             <Image
               src="/bfc.PNG"
-              alt="Built for fairness projector and reels"
+              alt="Built for fairness cinema projector"
               fill
               className="object-cover object-right pointer-events-none"
               priority
