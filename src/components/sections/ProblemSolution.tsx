@@ -31,120 +31,113 @@ export default function ProblemSolution() {
   ];
 
   return (
-    <section id="the-problem" className="relative w-full border-b border-gray-100 overflow-hidden">
-      {/* Container grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 relative">
+    <section id="the-problem" className="py-5 sm:py-7 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Main Side-by-Side Glass Cards Container */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 relative items-stretch">
 
-        {/* Central VS Badge with Smooth Floating Up and Down Motion */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          animate={{ y: [0, -10, 0] }}
-          transition={{
-            y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" },
-            scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.3 },
-          }}
-          whileHover={{ scale: 1.2, rotate: 180 }}
-          className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-md items-center justify-center font-bold text-xs text-black tracking-wider cursor-pointer"
-        >
-          VS
-        </motion.div>
+          {/* Central VS Badge */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            animate={{ y: [0, -4, 0] }}
+            transition={{
+              y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" },
+              scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.3 },
+            }}
+            className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white border border-gray-100 shadow-xl items-center justify-center font-extrabold text-xs text-[#cd0007] tracking-wider cursor-pointer"
+          >
+            VS
+          </motion.div>
 
-        {/* LEFT: THE PROBLEM (Light Gray Background) */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-[#F8F9FA] py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 flex justify-end"
-        >
-          <div className="w-full max-w-xl space-y-8">
-            <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
-                The Problem
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
-                Traditional film financing is broken.
-              </h2>
-            </div>
+          {/* LEFT CARD: THE PROBLEM */}
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="glass-card glass-card-hover rounded-3xl p-8 sm:p-10 flex flex-col justify-between"
+          >
+            <div className="space-y-6">
+              <div>
+                <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block mb-2">
+                  THE PROBLEM
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                  Traditional film financing is broken.
+                </h2>
+              </div>
 
-            <div className="space-y-6 pt-2">
-              {problems.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                  className="flex items-start gap-4 group cursor-pointer"
-                >
+              <div className="space-y-4 pt-1">
+                {problems.map((item, idx) => (
                   <motion.div
-                    whileHover={{ scale: 1.25, rotate: -10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="mt-0.5 text-black shrink-0"
+                    key={idx}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08, ease: "easeOut" }}
+                    className="flex items-start gap-3.5 group cursor-pointer"
                   >
-                    <XCircle size={22} strokeWidth={2} />
+                    <div className="mt-1 text-[#cd0007] shrink-0">
+                      <XCircle size={20} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-[#cd0007] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-500 mt-0.5 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
                   </motion.div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-black">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
-                      {item.desc}
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT CARD: OUR SOLUTION */}
+          <motion.div
+            id="our-solution"
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="glass-card glass-card-hover rounded-3xl p-8 sm:p-10 flex flex-col justify-between"
+          >
+            <div className="space-y-6">
+              <div>
+                <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#10b981] block mb-2">
+                  THE BEST PROTECTED
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                  A smarter, more transparent way forward.
+                </h2>
+              </div>
+
+              <div className="space-y-4 pt-1">
+                {solutions.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08, ease: "easeOut" }}
+                    className="flex items-start gap-3.5 group cursor-pointer"
+                  >
+                    <div className="mt-1 text-[#10b981] shrink-0">
+                      <CheckCircle2 size={20} strokeWidth={2.2} />
+                    </div>
+                    <p className="text-xs sm:text-sm font-medium text-gray-600 leading-relaxed group-hover:text-gray-900 transition-colors">
+                      {item}
                     </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* RIGHT: OUR SOLUTION (White Background) */}
-        <motion.div
-          id="our-solution"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-white py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 border-t lg:border-t-0 lg:border-l border-gray-200 flex justify-start"
-        >
-          <div className="w-full max-w-xl space-y-8">
-            <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-black mb-3">
-                Our Solution
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
-                A smarter, more transparent way forward.
-              </h2>
-            </div>
-
-            <div className="space-y-6 pt-2">
-              {solutions.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-                  className="flex items-start gap-4 group cursor-pointer"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.25, rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="mt-0.5 text-black shrink-0"
-                  >
-                    <CheckCircle2 size={22} strokeWidth={2} />
                   </motion.div>
-                  <p className="text-sm sm:text-base font-medium text-gray-800 leading-relaxed pt-0.5 group-hover:text-black">
-                    {item}
-                  </p>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
+        </div>
       </div>
     </section>
   );

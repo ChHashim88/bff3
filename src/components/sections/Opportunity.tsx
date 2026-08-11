@@ -1,85 +1,93 @@
 "use client";
 
-import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { Handshake, Lock, Brain, Users, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface OpportunityProps {
-  onOpenWaitlist: () => void;
+  onOpenWaitlist?: () => void;
 }
 
-export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
+export default function Opportunity({ onOpenWaitlist }: OpportunityProps = {}) {
+  const differentiators = [
+    {
+      icon: Handshake,
+      title: "Aligned Investors",
+      desc: "We align incentives with creators and investors from day one.",
+    },
+    {
+      icon: Lock,
+      title: "No Hidden Fees",
+      desc: "No hidden waterfalls or surprise middleman deductions.",
+    },
+    {
+      icon: Brain,
+      title: "Data-Driven Algorithm",
+      desc: "AI finds high-potential projects and validates market demand.",
+    },
+    {
+      icon: Users,
+      title: "Community Focused",
+      desc: "We build an active community involved in every project.",
+    },
+    {
+      icon: Globe,
+      title: "Global Opportunity",
+      desc: "Access high-potential curated film projects worldwide.",
+    },
+  ];
+
   return (
-    <section id="investment" className="relative w-full bg-white border-b border-gray-100 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-
-        {/* Left Text Column matching exact reference image */}
+    <section id="investment" className="py-5 sm:py-7 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-6 py-16 sm:py-24 lg:py-32 px-6 sm:px-12 lg:px-16 flex flex-col justify-center"
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-1.5"
         >
-          <div className="max-w-xl space-y-6">
-            {/* Title matching reference screenshot */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-900 tracking-tight">
-              The Opportunity
-            </h2>
-
-            {/* Paragraph 1 matching reference screenshot */}
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-              We&apos;re raising to launch the platform and scale a growing pipeline of projects.
-            </p>
-
-            {/* Paragraph 2 matching reference screenshot */}
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-              Join a community of investors who want real ownership and a fairer way to participate in great films.
-            </p>
-
-            {/* Action Buttons matching reference screenshot */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <motion.button
-                onClick={onOpenWaitlist}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2.5 bg-black hover:bg-neutral-800 text-white text-xs sm:text-sm font-semibold px-6 sm:px-7 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer group"
-              >
-                <span>Join the Investment Waitlist</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
-              <motion.a
-                href="https://wefunder.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-full transition-colors duration-200"
-              >
-                <span>View WeFunder Campaign</span>
-                <ExternalLink size={15} className="text-gray-500" />
-              </motion.a>
-            </div>
-          </div>
+          <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block">
+            WHY BFF IS DIFFERENT
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+            We do things differently, so investors win.
+          </h2>
         </motion.div>
 
-        {/* Right Image Column (Full Height Edge-to-Edge Touching Right Side Border) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 min-h-[350px] sm:min-h-[450px] lg:min-h-[600px] relative bg-white overflow-hidden group flex items-center justify-end"
-        >
-          <Image
-            src="/2nd.jpeg"
-            alt="Big Film Fund Opportunity Graphic"
-            fill
-            priority
-            className="object-contain object-right lg:object-right transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </motion.div>
+        {/* 5 Glass Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+          {differentiators.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="glass-card glass-card-hover rounded-3xl p-6 text-center flex flex-col items-center justify-center min-h-[210px] group cursor-pointer"
+              >
+                {/* Clean Red Line Icon (matching reference screenshot) */}
+                <div className="mb-4 text-[#cd0007] group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <Icon size={40} strokeWidth={1.5} />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-base font-bold text-gray-900 mb-2 tracking-tight">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs text-gray-500 leading-relaxed max-w-[160px]">
+                  {item.desc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
 
       </div>
     </section>
