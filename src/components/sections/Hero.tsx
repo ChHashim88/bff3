@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] py-10 sm:py-14 lg:py-16 flex flex-col justify-center overflow-hidden border-b border-white/60">
+    <section className="relative w-full h-[calc(100vh-64px)] sm:h-auto sm:min-h-[calc(100vh-80px)] py-4 sm:py-14 lg:py-16 flex flex-col justify-center overflow-hidden border-b border-white/60">
 
       {/* 2-Column Hero Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -21,8 +21,31 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-            className="lg:col-span-6 space-y-6 sm:space-y-8"
+            className="lg:col-span-6 space-y-6 sm:space-y-8 relative z-10"
           >
+            {/* Mobile View Only: Creative Floating Director Chair Watermark Centered in Middle Background */}
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 5.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 -top-4 z-0 lg:hidden flex items-center justify-center pointer-events-none opacity-[0.22] overflow-hidden"
+            >
+              <div className="relative w-[340px] sm:w-[400px] flex items-center justify-center">
+                <Image
+                  src="/heroo.png"
+                  alt="Director chair background watermark"
+                  width={640}
+                  height={500}
+                  priority
+                  className="w-full h-auto object-contain drop-shadow-2xl scale-110"
+                />
+              </div>
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +77,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                   onClick={onOpenWaitlist}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center gap-2.5 btn-red text-white text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full cursor-pointer group shadow-lg shadow-[#cd0007]/20"
+                  className="inline-flex items-center justify-center gap-2.5 btn-red text-white text-sm sm:text-base font-semibold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full cursor-pointer group shadow-lg shadow-gray-900/10"
                 >
                   <span>Join the Waitlist</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -93,8 +116,8 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT COLUMN: Floating Director Chair Visual (heroo.png) */}
-          <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[380px] sm:min-h-[440px]">
+          {/* RIGHT COLUMN: Floating Director Chair Visual (heroo.png - Desktop Only) */}
+          <div className="hidden lg:flex lg:col-span-6 relative items-center justify-end min-h-[440px]">
             
             {/* Main Floating 3D Director Chair Image (heroo.png) */}
             <motion.div

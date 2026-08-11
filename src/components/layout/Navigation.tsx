@@ -23,18 +23,18 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full glass-header transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full glass-header transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
-        {/* Brand Logo - Enlarged visually without expanding header height */}
-        <a href="#" className="flex items-center group shrink-0 transition-transform duration-300 hover:scale-105 py-1">
-          <div className="relative flex items-center justify-center">
+        {/* Brand Logo - Enlarged visually in mobile view without expanding header height */}
+        <a href="#" className="flex items-center group shrink-0 transition-transform duration-300 hover:scale-105 h-12 sm:h-14 relative z-10">
+          <div className="relative flex items-center justify-start h-full">
             <Image
               src="/logo.png"
               alt="Big Film Fund Logo"
-              width={380}
+              width={400}
               height={120}
               priority
-              className="h-18 sm:h-22 lg:h-24 w-auto object-contain scale-110 sm:scale-125 origin-left"
+              className="h-22 sm:h-22 lg:h-24 w-auto max-w-none object-contain scale-140 sm:scale-125 origin-left"
             />
           </div>
         </a>
@@ -48,11 +48,10 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
                 key={link.name}
                 href={link.href}
                 onClick={() => setActiveTab(link.name)}
-                className={`relative py-1 transition-colors duration-200 whitespace-nowrap ${
-                  isActive
+                className={`relative py-1 transition-colors duration-200 whitespace-nowrap ${isActive
                     ? "text-[#cd0007] font-semibold"
                     : "text-gray-700 hover:text-[#cd0007]"
-                }`}
+                  }`}
               >
                 {link.name}
                 {isActive && (
@@ -77,7 +76,7 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
           {/* Hamburger Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-[#cd0007] hover:bg-red-50/50 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-[#cd0007] hover:bg-gray-100/60 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,11 +96,10 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
                   setActiveTab(link.name);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
-                  activeTab === link.name
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${activeTab === link.name
                     ? "bg-red-50 text-[#cd0007] font-semibold"
                     : "text-gray-700 hover:text-[#cd0007] hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 {link.name}
               </a>

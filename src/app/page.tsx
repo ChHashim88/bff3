@@ -21,19 +21,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative text-gray-900 flex flex-col font-sans selection:bg-[#cd0007] selection:text-white overflow-x-hidden">
-      {/* Background Ambient Mesh Light Orbs for Refraction */}
+      {/* Background Pure Silver Grey Mirror Ambient Reflections */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[8%] left-[-5%] w-[45vw] h-[45vw] rounded-full bg-[#cd0007]/12 blur-[130px]" />
-        <div className="absolute top-[32%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-blue-600/10 blur-[140px]" />
-        <div className="absolute top-[62%] left-[10%] w-[40vw] h-[40vw] rounded-full bg-emerald-500/8 blur-[130px]" />
-        <div className="absolute top-[82%] right-[5%] w-[45vw] h-[45vw] rounded-full bg-[#cd0007]/10 blur-[130px]" />
+        <div className="absolute top-[5%] left-[10%] w-[50vw] h-[50vw] rounded-full bg-white/70 blur-[130px]" />
+        <div className="absolute top-[35%] right-[5%] w-[45vw] h-[45vw] rounded-full bg-slate-200/60 blur-[140px]" />
+        <div className="absolute top-[65%] left-[5%] w-[50vw] h-[50vw] rounded-full bg-white/60 blur-[130px]" />
+        <div className="absolute top-[85%] right-[10%] w-[45vw] h-[45vw] rounded-full bg-slate-300/40 blur-[130px]" />
       </div>
 
       {/* Sticky Header Navigation */}
       <Navigation onOpenWaitlist={handleOpenWaitlist} />
 
       {/* Main Sections Stack */}
-      <main className="flex-grow space-y-0 pb-4 relative z-10">
+      <main className="flex-grow space-y-0 pb-4 relative z-10 pt-16 sm:pt-18">
         {/* Hero Section */}
         <Hero onOpenWaitlist={handleOpenWaitlist} />
 
