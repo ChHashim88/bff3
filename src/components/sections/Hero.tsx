@@ -208,6 +208,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                     duration: 1.6,
                     ease: "easeInOut",
                   }}
+                  style={{ willChange: "transform" }}
                   className="inline-flex text-[#B91C1C]"
                 >
                   <ArrowDown size={16} />

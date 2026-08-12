@@ -80,6 +80,7 @@ export default function WhyInvest() {
                       delay: index * 0.4, // Staggered continuous wave loop
                       ease: "easeInOut",
                     }}
+                    style={{ willChange: "transform" }}
                     whileHover={{ scale: 1.18, rotate: 6 }}
                     className="w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-xs group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.35)] transition-colors duration-300"
                   >

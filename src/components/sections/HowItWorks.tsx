@@ -335,6 +335,7 @@ export default function HowItWorks() {
                       delay: idx * 0.6, // Staggered continuous wave float across 6 steps
                       ease: "easeInOut",
                     }}
+                    style={{ willChange: "transform" }}
                     whileHover={{ scale: 1.18, rotate: 6 }}
                     className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-red-50/50 transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white cursor-pointer"
                   >
