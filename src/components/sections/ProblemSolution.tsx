@@ -1,7 +1,76 @@
 "use client";
 
+import { useRef } from "react";
 import { XCircle, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
+function TiltCard({
+  children,
+  className = "",
+  initialX = 0,
+  id,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  initialX?: number;
+  id?: string;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth springs for 3D mouse dip response
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), {
+    stiffness: 220,
+    damping: 20,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), {
+    stiffness: 220,
+    damping: 20,
+  });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    // Normalize coordinates between -0.5 and 0.5 relative to card center
+    const normalizedX = (e.clientX - rect.left) / width - 0.5;
+    const normalizedY = (e.clientY - rect.top) / height - 0.5;
+
+    mouseX.set(normalizedX);
+    mouseY.set(normalizedY);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
+  return (
+    <motion.div
+      id={id}
+      ref={cardRef}
+      initial={{ opacity: 0, x: initialX }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        perspective: 1000,
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function ProblemSolution() {
   const problems = [
@@ -57,13 +126,10 @@ export default function ProblemSolution() {
           </motion.div>
         </motion.div>
 
-        {/* LEFT: THE PROBLEM (Light Gray Background) */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-[#F8F9FA] py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 flex justify-end"
+        {/* LEFT: THE PROBLEM (3D Mouse Tilt Dip Card) */}
+        <TiltCard
+          initialX={-30}
+          className="bg-[#F8F9FA] py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 flex justify-end transition-shadow duration-300 hover:shadow-xl relative z-10"
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
@@ -103,16 +169,13 @@ export default function ProblemSolution() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </TiltCard>
 
-        {/* RIGHT: OUR SOLUTION (White Background) */}
-        <motion.div
+        {/* RIGHT: OUR SOLUTION (3D Mouse Tilt Dip Card) */}
+        <TiltCard
           id="our-solution"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-white py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 border-t lg:border-t-0 lg:border-l border-gray-200 flex justify-start"
+          initialX={30}
+          className="bg-white py-16 sm:py-20 lg:py-28 px-6 sm:px-12 lg:px-16 border-t lg:border-t-0 lg:border-l border-gray-200 flex justify-start transition-shadow duration-300 hover:shadow-xl relative z-10"
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
@@ -147,7 +210,7 @@ export default function ProblemSolution() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </TiltCard>
 
       </div>
     </section>

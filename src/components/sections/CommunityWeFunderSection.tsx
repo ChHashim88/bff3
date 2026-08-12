@@ -1,74 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-
-function TiltCard({
-  children,
-  className = "",
-  initialDelay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  initialDelay?: number;
-}) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth springs for 3D mouse dip response
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), {
-    stiffness: 250,
-    damping: 20,
-  });
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), {
-    stiffness: 250,
-    damping: 20,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-
-    // Normalize coordinates between -0.5 and 0.5 relative to card center
-    const normalizedX = (e.clientX - rect.left) / width - 0.5;
-    const normalizedY = (e.clientY - rect.top) / height - 0.5;
-
-    mouseX.set(normalizedX);
-    mouseY.set(normalizedY);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.7, delay: initialDelay, ease: [0.16, 1, 0.3, 1] }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        perspective: 1000,
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+import { motion } from "framer-motion";
 
 export default function CommunityWeFunderSection() {
   const [email, setEmail] = useState("");
@@ -90,10 +25,13 @@ export default function CommunityWeFunderSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
-          {/* LEFT CARD: Join the BFF Community (Dark Theme with 3D Mouse Tilt Dip) */}
-          <TiltCard
-            initialDelay={0}
-            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-sm border border-gray-900 p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-lg min-h-[320px] transition-shadow duration-300 hover:shadow-2xl"
+          {/* LEFT CARD: Join the BFF Community (Dark Theme) */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-sm border border-gray-900 p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-lg min-h-[320px]"
           >
             {/* Dark Card Subtle Background Visual */}
             <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-25 pointer-events-none">
@@ -154,12 +92,15 @@ export default function CommunityWeFunderSection() {
                 We respect your privacy & confidentiality, guaranteed.
               </p>
             </div>
-          </TiltCard>
+          </motion.div>
 
-          {/* RIGHT CARD: Continue to WeFunder (Light Theme with 3D Mouse Tilt Dip) */}
-          <TiltCard
-            initialDelay={0.15}
-            className="lg:col-span-4 bg-white border border-gray-200 rounded-sm p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[320px] transition-shadow duration-300 hover:shadow-xl"
+          {/* RIGHT CARD: Continue to WeFunder (Light Theme) */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-4 bg-white border border-gray-200 rounded-sm p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[320px]"
           >
             {/* Card Header with Label & WeFunder Logo */}
             <div className="relative z-10 space-y-1">
@@ -204,7 +145,7 @@ export default function CommunityWeFunderSection() {
                 className="object-contain object-bottom object-right"
               />
             </div>
-          </TiltCard>
+          </motion.div>
 
         </div>
       </div>
