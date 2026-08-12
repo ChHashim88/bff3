@@ -300,13 +300,13 @@ export default function HowItWorks() {
         {/* 2. DESKTOP & TABLET LAYOUT (Strictly UNCHANGED >=md) */}
         {/* ---------------------------------------------------- */}
         <div className="hidden md:block relative">
-          {/* Desktop Connecting Line centered precisely behind icon circles */}
+          {/* Desktop Connecting Line */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block absolute top-[58px] left-[calc(100%/12)] right-[calc(100%/12)] h-[2px] bg-gray-200 z-0 origin-left"
+            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[1.5px] bg-gray-200 z-0 origin-left"
           />
 
           <div className="grid grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
@@ -322,37 +322,16 @@ export default function HowItWorks() {
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
                   {/* Step Number Label */}
-                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block leading-none">
+                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block">
                     {step.num}
                   </span>
 
-                  {/* Icon Circle with Continuous Sequential Wave Highlight & Pulse Loop */}
+                  {/* Clean Icon Circle with Solid White Background & Masking */}
                   <motion.div
-                    initial={{ scale: 0.7, opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    animate={{
-                      y: [0, -7, 0],
-                      scale: [1, 1.12, 1],
-                      backgroundColor: ["#FFFFFF", "#FEF2F2", "#FFFFFF"],
-                      borderColor: ["#E5E7EB", "#B91C1C", "#E5E7EB"],
-                      color: ["#374151", "#B91C1C", "#374151"],
-                      boxShadow: [
-                        "0 1px 2px rgba(0,0,0,0.05)",
-                        "0 8px 25px rgba(185,28,28,0.3)",
-                        "0 1px 2px rgba(0,0,0,0.05)",
-                      ],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 4.2,
-                      delay: idx * 0.7, // Sequential 0.7s wave progression across all 6 steps
-                      ease: "easeInOut",
-                    }}
-                    whileHover={{ scale: 1.2, rotate: 6 }}
-                    className="w-14 h-14 rounded-full border border-gray-200 bg-white flex items-center justify-center transition-colors duration-300 mb-4 relative z-10 ring-4 ring-white shadow-sm cursor-pointer"
+                    whileHover={{ scale: 1.15 }}
+                    className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-red-50/50 transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white cursor-pointer"
                   >
-                    <Icon size={22} strokeWidth={1.85} />
+                    <Icon size={22} strokeWidth={1.75} />
                   </motion.div>
 
                   {/* Title & Desc */}
