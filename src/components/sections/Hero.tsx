@@ -12,16 +12,24 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100">
       {/* Hero Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/herob.png"
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-[50%_55%] sm:object-center transition-all duration-500"
+          className="object-cover object-[82%_50%] sm:object-center transition-all duration-500 scale-110 sm:scale-100"
         />
-        {/* Creative Mobile Subtle Gradient Overlay to maximize text legibility while centering chair image */}
-        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 pointer-events-none" />
+
+        {/* Adorable & Creative Mobile-only Centered Glow Aura Ring */}
+        <motion.div
+          animate={{ scale: [1, 1.12, 1], opacity: [0.35, 0.6, 0.35] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          className="block sm:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[#B91C1C]/20 blur-3xl pointer-events-none"
+        />
+
+        {/* Creative Mobile Subtle Gradient Overlay for High Text Legibility */}
+        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-white/75 via-white/45 to-white/85 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24">
