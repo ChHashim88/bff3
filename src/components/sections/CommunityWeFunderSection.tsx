@@ -129,10 +129,10 @@ export default function CommunityWeFunderSection() {
                 href="https://wefunder.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 font-semibold px-5 py-2.5 rounded-sm text-xs sm:text-sm shadow-xs transition-all hover:border-gray-400 group cursor-pointer"
+                className="inline-flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 font-semibold px-3.5 py-2 rounded-sm text-xs shadow-xs transition-all hover:border-gray-400 group cursor-pointer w-fit"
               >
                 <span>View Campaign</span>
-                <ArrowRight size={14} className="text-gray-600 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={13} className="text-gray-600 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
 
