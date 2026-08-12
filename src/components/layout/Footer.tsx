@@ -21,7 +21,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#EFEFF1] py-12 sm:py-16 border-t border-gray-200/80">
+    <footer className="w-full bg-white py-12 sm:py-16 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
         {/* Top Cards Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
