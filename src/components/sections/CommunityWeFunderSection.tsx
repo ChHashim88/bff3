@@ -40,6 +40,7 @@ export default function CommunityWeFunderSection() {
                 alt="Camera Visual"
                 fill
                 className="object-cover object-right"
+                sizes="(max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E] via-[#0B0C0E]/75 to-transparent" />
             </div>
@@ -143,6 +144,7 @@ export default function CommunityWeFunderSection() {
                 alt="WeFunder Campaign Platform Preview & Film Reel"
                 fill
                 className="object-contain object-bottom object-right"
+                sizes="(max-width: 640px) 176px, (max-width: 1024px) 224px, 256px"
               />
             </div>
           </motion.div>
