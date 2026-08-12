@@ -83,13 +83,13 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-[2.75rem] xs:text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.08] sm:leading-[1.08]"
+              className="text-[2.15rem] xs:text-4.5xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.1] sm:leading-[1.08]"
             >
-              Everyday investors.
+              <span className="whitespace-nowrap">Everyday investors.</span>
               <br />
-              Real ownership.
+              <span className="whitespace-nowrap">Real ownership.</span>
               <br />
-              <span className="text-[#B91C1C]">Fair profits.</span>
+              <span className="text-[#B91C1C] whitespace-nowrap">Fair profits.</span>
             </motion.h1>
 
             {/* Single Single Alphabet (Character-by-Character) Typewriter Animation */}
