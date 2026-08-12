@@ -18,8 +18,10 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[50%_55%] sm:object-center transition-all duration-500"
         />
+        {/* Creative Mobile Subtle Gradient Overlay to maximize text legibility while centering chair image */}
+        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24">
