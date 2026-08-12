@@ -12,6 +12,7 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "#" },
     { name: "Why BFF", href: "#why-bff" },
     { name: "The Problem", href: "#the-problem" },
     { name: "Our Solution", href: "#our-solution" },
