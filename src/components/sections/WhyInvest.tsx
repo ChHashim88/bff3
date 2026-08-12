@@ -57,20 +57,34 @@ export default function WhyInvest() {
                   index !== 0 ? "lg:pl-8" : ""
                 }`}
               >
-                {/* 1. Icon Zoom Animation */}
+                {/* 1. Icon Container with Entrance + Continuous Wave Pulse Loop */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.5, y: 30 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{
                     duration: 0.7,
                     delay: index * 0.08, // 0ms, 80ms, 160ms, 240ms
-                    ease: [0.16, 1, 0.3, 1], // Smooth liquid curve
+                    ease: [0.16, 1, 0.3, 1],
                   }}
-                  whileHover={{ scale: 1.15 }}
-                  className="w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-xs group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.3)] transition-all duration-300 mb-6"
+                  className="relative mb-6"
                 >
-                  <Icon size={28} strokeWidth={1.75} />
+                  <motion.div
+                    animate={{
+                      y: [0, -6, 0],
+                      scale: [1, 1.08, 1],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3,
+                      delay: index * 0.4, // Staggered continuous wave loop
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{ scale: 1.18, rotate: 6 }}
+                    className="w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-xs group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.35)] transition-colors duration-300"
+                  >
+                    <Icon size={28} strokeWidth={1.75} />
+                  </motion.div>
                 </motion.div>
 
                 {/* 2. Content Reveal Animation (Title + Description) */}

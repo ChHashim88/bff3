@@ -155,7 +155,7 @@ export default function HowItWorks() {
         >
           {/* Main Circular Track Container */}
           <div className="relative w-full aspect-square flex items-center justify-center">
-            
+
             {/* SVG Segmented Arc Tracks & Active Progress Ring */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
@@ -253,27 +253,24 @@ export default function HowItWorks() {
                     left: `${leftPercent}%`,
                     top: `${topPercent}%`,
                   }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-300 focus:outline-none cursor-pointer group ${
-                    isActive ? "scale-115" : "hover:scale-105"
-                  }`}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-300 focus:outline-none cursor-pointer group ${isActive ? "scale-115" : "hover:scale-105"
+                    }`}
                 >
                   {/* Circular Icon Node */}
                   <div
-                    className={`w-11 h-11 xs:w-12 xs:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-md relative ${
-                      isActive
+                    className={`w-11 h-11 xs:w-12 xs:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-md relative ${isActive
                         ? "bg-[#B91C1C] text-white ring-4 ring-red-100 shadow-red-500/20"
                         : "bg-white text-gray-600 border border-gray-200 hover:border-[#B91C1C] hover:text-[#B91C1C]"
-                    }`}
+                      }`}
                   >
                     <StepIcon size={18} strokeWidth={isActive ? 2.2 : 1.8} />
 
                     {/* Outer Step Number Label Badge */}
                     <span
-                      className={`absolute -bottom-1 -right-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full border shadow-xs transition-colors ${
-                        isActive
+                      className={`absolute -bottom-1 -right-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full border shadow-xs transition-colors ${isActive
                           ? "bg-gray-900 text-white border-gray-900"
                           : "bg-gray-100 text-gray-700 border-gray-200"
-                      }`}
+                        }`}
                     >
                       {step.num}
                     </span>
@@ -290,11 +287,10 @@ export default function HowItWorks() {
                 key={i}
                 onClick={() => handleSelectStep(i)}
                 aria-label={`Go to step ${i + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  i === activeIndex
+                className={`transition-all duration-300 rounded-full cursor-pointer ${i === activeIndex
                     ? "w-6 h-2 bg-[#B91C1C]"
                     : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -322,7 +318,7 @@ export default function HowItWorks() {
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
                   {/* Step Number Label */}
@@ -337,7 +333,7 @@ export default function HowItWorks() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{
                       duration: 0.85,
-                      delay: idx * 0.08 + 0.04,
+                      delay: idx * 0.12 + 0.05,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     whileHover={{ scale: 1.15 }}
