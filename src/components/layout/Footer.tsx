@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -25,14 +26,15 @@ export default function Footer() {
           
           {/* Left Column: Brand & Socials */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <span className="font-bold text-xl tracking-tight text-[#B91C1C]">
-                BFF
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-gray-900 border-l border-gray-300 pl-2.5">
-                Big Film Fund
-              </span>
-            </div>
+            <a href="#" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="Big Film Fund Logo"
+                width={200}
+                height={55}
+                className="h-11 sm:h-14 w-auto object-contain"
+              />
+            </a>
 
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
               Everyday investors. Real ownership. Fair profits.

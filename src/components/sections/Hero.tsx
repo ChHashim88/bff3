@@ -11,7 +11,7 @@ interface HeroProps {
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] bg-white py-12 sm:py-16 lg:py-20 flex flex-col justify-center overflow-hidden border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Text Column */}
           <motion.div
@@ -77,16 +77,16 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
             <motion.div
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -12, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               className="relative w-full max-w-md lg:max-w-none aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] flex items-center justify-center"
             >
               <Image
-                src="/herooo.jpeg"
+                src="/herooo.png"
                 alt="Big Film Fund Director's Chair, Megaphone, and Film Reels"
                 fill
                 priority
-                className="object-contain object-center scale-105 transition-transform duration-700 hover:scale-108"
+                className="object-contain object-center scale-105 transition-transform duration-700 hover:scale-110"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
             </motion.div>
