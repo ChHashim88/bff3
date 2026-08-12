@@ -38,7 +38,7 @@ export default function WhyInvest() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
         >
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+          <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-3">
             Why Invest With BFF
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight">

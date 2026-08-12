@@ -46,7 +46,7 @@ export default function CommunityWeFunderSection() {
 
             {/* Content */}
             <div className="relative z-10 space-y-4 max-w-xl">
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
+              <p className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#B91C1C]">
                 JOIN THE BFF COMMUNITY
               </p>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
@@ -104,7 +104,7 @@ export default function CommunityWeFunderSection() {
           >
             {/* Card Header with Label & WeFunder Logo */}
             <div className="relative z-10 space-y-1">
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
+              <p className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#B91C1C]">
                 PARTNER WITH BFF
               </p>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight flex items-center flex-wrap gap-3 pt-1">

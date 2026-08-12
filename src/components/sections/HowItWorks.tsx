@@ -137,7 +137,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-10 sm:mb-20"
         >
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-2 sm:mb-3">
+          <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-2 sm:mb-3">
             How It Works
           </p>
           <h2 className="text-2.5xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight">

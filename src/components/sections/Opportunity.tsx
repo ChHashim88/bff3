@@ -22,7 +22,7 @@ export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
           className="lg:col-span-6 py-16 sm:py-24 lg:py-32 px-6 sm:px-12 lg:px-16 flex flex-col justify-center"
         >
           <div className="max-w-xl space-y-6">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C]">
+            <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C]">
               The Opportunity
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">

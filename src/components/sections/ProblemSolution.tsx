@@ -67,7 +67,7 @@ export default function ProblemSolution() {
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-3">
                 The Problem
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -116,7 +116,7 @@ export default function ProblemSolution() {
         >
           <div className="w-full max-w-xl space-y-8">
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-3">
                 Our Solution
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">

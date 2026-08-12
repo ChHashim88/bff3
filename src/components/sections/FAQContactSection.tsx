@@ -75,7 +75,7 @@ export default function FAQContactSection() {
             className="lg:col-span-6 space-y-8"
           >
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-3">
                 FAQ
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
@@ -138,7 +138,7 @@ export default function FAQContactSection() {
             className="lg:col-span-6 space-y-8 lg:pl-4"
           >
             <div>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+              <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-3">
                 Contact
               </p>
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
