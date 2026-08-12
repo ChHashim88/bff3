@@ -103,26 +103,20 @@ export default function CommunityWeFunderSection() {
             className="lg:col-span-4 bg-white border border-gray-200 rounded-sm p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[320px]"
           >
             {/* Card Header with Label & WeFunder Logo */}
-            <div className="relative z-10 flex items-start justify-between gap-4">
-              <div className="space-y-1">
-                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
-                  PARTNER WITH BFF
-                </p>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
-                  Continue to WeFunder
-                </h3>
-              </div>
-
-              {/* Right Top Image: wf.png */}
-              <div className="shrink-0 pt-0.5">
+            <div className="relative z-10 space-y-1">
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
+                PARTNER WITH BFF
+              </p>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight flex items-center flex-wrap gap-2 pt-0.5">
+                <span>Continue to</span>
                 <Image
                   src="/wf.png"
-                  alt="WeFunder Logo"
-                  width={150}
-                  height={40}
-                  className="h-7 sm:h-9 w-auto object-contain"
+                  alt="WeFunder"
+                  width={140}
+                  height={36}
+                  className="h-6 sm:h-8 w-auto object-contain inline-block"
                 />
-              </div>
+              </h3>
             </div>
 
             {/* Subtext & Action Button */}
