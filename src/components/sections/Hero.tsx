@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
@@ -8,7 +9,53 @@ interface HeroProps {
   onOpenWaitlist: () => void;
 }
 
+const FULL_HEADLINE = "Everyday investors. Real ownership. Fair profits.";
+
 export default function Hero({ onOpenWaitlist }: HeroProps) {
+  const [typedCount, setTypedCount] = useState(0);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    if (typedCount < FULL_HEADLINE.length) {
+      // Base typing speed: 58ms per character (50-70ms target)
+      let delay = 58;
+
+      const currentChar = FULL_HEADLINE[typedCount - 1];
+
+      // Add a natural pause after periods '.' (investors., ownership., profits.)
+      if (currentChar === ".") {
+        delay = 550; // 550ms natural pause after period
+      }
+
+      timeoutId = setTimeout(() => {
+        setTypedCount((prev) => prev + 1);
+      }, delay);
+    } else {
+      // Completion state: Hold complete sentence for 2.8 seconds, then restart smoothly
+      timeoutId = setTimeout(() => {
+        setTypedCount(0);
+      }, 2800);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [typedCount]);
+
+  // Character Slicing Helpers for the 3 Line Structure
+  const line1Text = FULL_HEADLINE.slice(0, Math.min(typedCount, 19));
+  const line2Text =
+    typedCount > 19
+      ? FULL_HEADLINE.slice(20, Math.min(typedCount, 35))
+      : "";
+  const line3Text =
+    typedCount > 35
+      ? FULL_HEADLINE.slice(36, Math.min(typedCount, 49))
+      : "";
+
+  const isLine1Active = typedCount <= 19;
+  const isLine2Active = typedCount > 19 && typedCount <= 35;
+  const isLine3Active = typedCount > 35;
+
   const paragraphText =
     "Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.";
   const letters = Array.from(paragraphText);
@@ -18,7 +65,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.025, // 25ms per single alphabet (character-by-character typewriter effect)
+        staggerChildren: 0.025,
         delayChildren: 0.4,
       },
     },
@@ -78,19 +125,41 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
             className="space-y-5 sm:space-y-8"
           >
-            {/* Cinematic Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-[2.15rem] xs:text-4.5xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.1] sm:leading-[1.08]"
-            >
-              <span className="whitespace-nowrap">Everyday investors.</span>
+            {/* Cinematic Headline with True Character-by-Character Typing & Thin Blinking Cursor */}
+            <h1 className="text-[2.15rem] xs:text-4.5xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.1] sm:leading-[1.08] min-h-[3.6em] sm:min-h-[3.5em]">
+              <span className="whitespace-nowrap inline-block">
+                {line1Text}
+                {isLine1Active && (
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ repeat: Infinity, duration: 0.75, ease: "linear" }}
+                    className="inline-block w-[2.5px] h-[0.76em] bg-[#B91C1C] ml-1.5 align-middle rounded-full"
+                  />
+                )}
+              </span>
               <br />
-              <span className="whitespace-nowrap">Real ownership.</span>
+              <span className="whitespace-nowrap inline-block">
+                {line2Text}
+                {isLine2Active && (
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ repeat: Infinity, duration: 0.75, ease: "linear" }}
+                    className="inline-block w-[2.5px] h-[0.76em] bg-[#B91C1C] ml-1.5 align-middle rounded-full"
+                  />
+                )}
+              </span>
               <br />
-              <span className="text-[#B91C1C] whitespace-nowrap">Fair profits.</span>
-            </motion.h1>
+              <span className="text-[#B91C1C] whitespace-nowrap inline-block">
+                {line3Text}
+                {isLine3Active && (
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ repeat: Infinity, duration: 0.75, ease: "linear" }}
+                    className="inline-block w-[2.5px] h-[0.76em] bg-[#B91C1C] ml-1.5 align-middle rounded-full"
+                  />
+                )}
+              </span>
+            </h1>
 
             {/* Single Single Alphabet (Character-by-Character) Typewriter Animation */}
             <motion.p
