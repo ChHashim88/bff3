@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function BuiltForFairness() {
   return (
-    <section className="relative w-full bg-white border-b border-gray-100 overflow-hidden py-10 sm:py-16 lg:py-22">
+    <section className="relative w-full bg-white border-b border-gray-100 overflow-hidden py-8 sm:py-14 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* -------------------------------------------------------- */}
@@ -16,7 +16,7 @@ export default function BuiltForFairness() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="block lg:hidden relative rounded-sm border border-gray-200 bg-white p-6 xs:p-8 sm:p-10 overflow-hidden shadow-xs flex flex-col justify-center min-h-[260px]"
+          className="block lg:hidden relative rounded-sm border border-gray-200 bg-white p-6 sm:p-8 overflow-hidden shadow-xs flex flex-col justify-center min-h-[220px] sm:min-h-[260px]"
         >
           {/* Background Image /bfc.PNG behind text with low opacity */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -25,21 +25,21 @@ export default function BuiltForFairness() {
               alt="Built for fairness - Film Camera & Reels"
               fill
               priority
-              className="object-cover object-right opacity-25 scale-105"
+              className="object-cover object-right opacity-30 scale-105"
               sizes="100vw"
             />
             {/* Smooth Gradient Overlay over image for max text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30 pointer-events-none" />
           </div>
 
-          {/* Foreground Text Content */}
-          <div className="relative z-10 space-y-3.5 max-w-lg">
-            <h2 className="text-3.5xl xs:text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-[1.08]">
+          {/* Foreground Text Content (Strictly contained within card bounds) */}
+          <div className="relative z-10 space-y-3 max-w-[95%] sm:max-w-lg">
+            <h2 className="text-2.75xl xs:text-3.25xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-[1.12]">
               Built for fairness.
               <br />
               Designed for investors.
             </h2>
-            <p className="text-lg sm:text-xl text-gray-800 font-semibold leading-relaxed">
+            <p className="text-sm xs:text-base sm:text-lg text-gray-700 font-medium leading-relaxed">
               We combine data, technology, and people to find the best stories — together.
             </p>
           </div>
@@ -55,14 +55,14 @@ export default function BuiltForFairness() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-6 max-w-2xl z-20"
+            className="lg:col-span-7 space-y-5 max-w-2xl z-20"
           >
-            <h2 className="text-6.5xl lg:text-7.5xl xl:text-8xl font-extrabold text-gray-900 tracking-tight leading-[1.05]">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 tracking-tight leading-[1.08]">
               Built for fairness.
               <br />
               Designed for investors.
             </h2>
-            <p className="text-xl lg:text-2.5xl text-gray-700 font-semibold leading-relaxed max-w-xl">
+            <p className="text-lg lg:text-xl text-gray-600 font-medium leading-relaxed max-w-xl">
               We combine data, technology, and people to find the best stories — together.
             </p>
           </motion.div>
@@ -73,7 +73,7 @@ export default function BuiltForFairness() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative h-[380px] lg:h-[460px] w-full flex items-center justify-end overflow-hidden"
+            className="lg:col-span-5 relative h-[340px] lg:h-[400px] w-full flex items-center justify-end overflow-hidden"
           >
             <div className="relative w-full h-full">
               <Image
