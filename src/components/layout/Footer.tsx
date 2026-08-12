@@ -30,9 +30,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Big Film Fund Logo"
-                width={200}
-                height={55}
-                className="h-11 sm:h-14 w-auto object-contain"
+                width={320}
+                height={80}
+                className="h-16 sm:h-20 w-auto object-contain"
               />
             </a>
 

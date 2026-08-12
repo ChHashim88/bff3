@@ -25,14 +25,14 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200/70 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2.5 group shrink-0">
+        <a href="#" className="flex items-center group shrink-0">
           <Image
             src="/logo.png"
             alt="Big Film Fund Logo"
-            width={220}
-            height={60}
+            width={320}
+            height={80}
             priority
-            className="h-12 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105 py-1"
+            className="h-14 sm:h-19 lg:h-20 w-auto max-h-full object-contain transition-transform group-hover:scale-105"
           />
         </a>
 
