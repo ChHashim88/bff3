@@ -51,70 +51,48 @@ export default function WhyInvest() {
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.65, y: 40 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.85,
-                  delay: index * 0.18,
-                  ease: [0.16, 1, 0.3, 1], // Ultra-smooth liquid spring wave curve
-                }}
-                className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 lg:pt-0 pb-6 lg:pb-0 group cursor-pointer ${index !== 0 ? 'lg:pl-8' : ''
-                  }`}
+                className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 lg:pt-0 pb-6 lg:pb-0 group cursor-pointer ${
+                  index !== 0 ? "lg:pl-8" : ""
+                }`}
               >
-                {/* Sequentially Glowing & Zooming Icon Container */}
-                <div className="relative mb-6">
-                  {/* Outer glowing halo ring animation */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    whileInView={{
-                      opacity: [0, 0.7, 0.2, 0.5, 0],
-                      scale: [0.6, 1.35, 1.1, 1.2, 1.0],
-                    }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 2.2,
-                      delay: index * 0.18 + 0.2,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="absolute inset-0 rounded-full bg-gray-200/50 pointer-events-none"
-                  />
+                {/* 1. Icon Zoom Animation */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.15,
+                    ease: [0.16, 1, 0.3, 1], // Smooth liquid curve
+                  }}
+                  whileHover={{ scale: 1.15 }}
+                  className="w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-xs group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.3)] transition-all duration-300 mb-6"
+                >
+                  <Icon size={28} strokeWidth={1.75} />
+                </motion.div>
 
-                  <motion.div
-                    initial={{ scale: 0.6, opacity: 0 }}
-                    whileInView={{
-                      scale: 1,
-                      opacity: 1,
-                      borderColor: [
-                        "rgba(229, 231, 235, 1)",
-                        "rgba(185, 28, 28, 0.7)",
-                        "rgba(229, 231, 235, 1)",
-                        "rgba(185, 28, 28, 0.4)",
-                        "rgba(229, 231, 235, 1)",
-                      ],
-                    }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 1.8,
-                      delay: index * 0.18 + 0.05,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    whileHover={{ scale: 1.18, rotate: 6 }}
-                    className="relative z-10 w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-sm group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.35)] transition-all duration-300"
-                  >
-                    <Icon size={28} strokeWidth={1.75} />
-                  </motion.div>
-                </div>
-
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight group-hover:text-[#B91C1C] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xs">
-                  {item.description}
-                </p>
-              </motion.div>
+                {/* 2. Content Reveal Animation (Title + Description) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.15 + 0.1,
+                    ease: "easeOut",
+                  }}
+                  className="space-y-2.5"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 tracking-tight group-hover:text-[#B91C1C] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xs">
+                    {item.description}
+                  </p>
+                </motion.div>
+              </div>
             );
           })}
         </div>
