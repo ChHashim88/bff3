@@ -70,9 +70,9 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile/Tablet Drawer Navigation (<1024px) */}
+      {/* Mobile/Tablet Drawer Navigation Overlay (<1024px) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-lg animate-fadeIn">
+        <div className="absolute top-full left-0 right-0 lg:hidden bg-white/98 backdrop-blur-xl border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl z-50">
           <div className="flex flex-col space-y-3 pt-2">
             {navLinks.map((link) => (
               <a
