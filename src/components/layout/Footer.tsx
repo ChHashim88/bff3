@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 
 export default function Footer() {
@@ -26,15 +25,14 @@ export default function Footer() {
           
           {/* Left Column: Brand & Socials */}
           <div className="md:col-span-5 space-y-4">
-            <a href="#" className="flex items-center group shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Big Film Fund Logo"
-                width={340}
-                height={88}
-                className="h-14 sm:h-18 lg:h-[72px] w-auto object-contain"
-              />
-            </a>
+            <div className="flex items-center gap-2.5">
+              <span className="font-bold text-xl tracking-tight text-[#B91C1C]">
+                BFF
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-gray-900 border-l border-gray-300 pl-2.5">
+                Big Film Fund
+              </span>
+            </div>
 
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
               Everyday investors. Real ownership. Fair profits.

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
@@ -25,15 +24,13 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200/70 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center group shrink-0">
-          <Image
-            src="/logo.png"
-            alt="Big Film Fund Logo"
-            width={340}
-            height={88}
-            className="h-14 sm:h-18 lg:h-[72px] w-auto object-contain"
-            priority
-          />
+        <a href="#" className="flex items-center gap-2.5 group shrink-0">
+          <span className="font-bold text-lg sm:text-xl tracking-tight text-[#B91C1C] flex items-center">
+            BFF
+          </span>
+          <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-gray-900 border-l border-gray-300 pl-2.5">
+            Big Film Fund
+          </span>
         </a>
 
         {/* Desktop Navigation Links (Visible on lg screens 1024px+) */}

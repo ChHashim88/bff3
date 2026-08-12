@@ -34,7 +34,7 @@ export default function ProblemSolution() {
     <section id="the-problem" className="relative w-full border-b border-gray-100 overflow-hidden">
       {/* Container grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 relative">
-
+        
         {/* Central VS Badge for Desktop */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
