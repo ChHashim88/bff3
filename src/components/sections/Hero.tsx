@@ -10,16 +10,19 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/herooo.jpeg"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100 bg-white">
+      {/* Hero Right Side Background Image */}
+      <div className="absolute inset-0 z-0 flex justify-end pointer-events-none">
+        <div className="relative w-full lg:w-1/2 h-full">
+          <Image
+            src="/herooo.jpeg"
+            alt="Hero background visual"
+            fill
+            priority
+            className="object-cover lg:object-contain object-center lg:object-right"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24">
