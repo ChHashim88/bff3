@@ -300,13 +300,13 @@ export default function HowItWorks() {
         {/* 2. DESKTOP & TABLET LAYOUT (Strictly UNCHANGED >=md) */}
         {/* ---------------------------------------------------- */}
         <div className="hidden md:block relative">
-          {/* Desktop Connecting Line */}
+          {/* Desktop Connecting Line centered precisely behind icon circles */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[1.5px] bg-gray-200 z-0 origin-left"
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:block absolute top-[58px] left-[calc(100%/12)] right-[calc(100%/12)] h-[2px] bg-gray-200 z-0 origin-left"
           />
 
           <div className="grid grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
@@ -322,7 +322,7 @@ export default function HowItWorks() {
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
                   {/* Step Number Label */}
-                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block leading-none">
                     {step.num}
                   </span>
 
@@ -350,7 +350,7 @@ export default function HowItWorks() {
                       ease: "easeInOut",
                     }}
                     whileHover={{ scale: 1.2, rotate: 6 }}
-                    className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center transition-colors duration-300 mb-4 relative z-10 ring-4 ring-white cursor-pointer"
+                    className="w-14 h-14 rounded-full border border-gray-200 bg-white flex items-center justify-center transition-colors duration-300 mb-4 relative z-10 ring-4 ring-white shadow-sm cursor-pointer"
                   >
                     <Icon size={22} strokeWidth={1.85} />
                   </motion.div>
