@@ -65,7 +65,7 @@ export default function FAQContactSection() {
     <section id="faq" className="py-20 sm:py-24 lg:py-32 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* LEFT COLUMN: FAQ */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -93,17 +93,15 @@ export default function FAQContactSection() {
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
                       className="w-full flex items-center justify-between text-left group focus:outline-none cursor-pointer"
                     >
-                      <span className={`text-base sm:text-lg font-semibold transition-colors duration-200 ${
-                        isOpen ? 'text-[#B91C1C]' : 'text-gray-900 group-hover:text-[#B91C1C]'
-                      }`}>
+                      <span className={`text-base sm:text-lg font-semibold transition-colors duration-200 ${isOpen ? 'text-[#B91C1C]' : 'text-gray-900 group-hover:text-[#B91C1C]'
+                        }`}>
                         {item.question}
                       </span>
                       <motion.span
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className={`ml-4 shrink-0 text-gray-400 group-hover:text-[#B91C1C] transition-colors ${
-                          isOpen ? 'text-[#B91C1C]' : ''
-                        }`}
+                        className={`ml-4 shrink-0 text-gray-400 group-hover:text-[#B91C1C] transition-colors ${isOpen ? 'text-[#B91C1C]' : ''
+                          }`}
                       >
                         {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                       </motion.span>

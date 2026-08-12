@@ -21,9 +21,8 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-              className={`flex flex-col items-center justify-center text-center px-4 group ${
-                idx !== 0 ? 'pt-6 md:pt-0' : ''
-              }`}
+              className={`flex flex-col items-center justify-center text-center px-4 group ${idx !== 0 ? 'pt-6 md:pt-0' : ''
+                }`}
             >
               <motion.div
                 whileHover={{ scale: 1.08 }}
