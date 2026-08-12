@@ -1,14 +1,48 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 interface OpportunityProps {
   onOpenWaitlist: () => void;
 }
 
+const FULL_HEADLINE = "Be part of a fairer future for film.";
+
 export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(headlineRef, { once: true, margin: "-40px" });
+  const [typedCount, setTypedCount] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+
+  // Character-by-Character Typewriter Effect (Triggers when in viewport)
+  useEffect(() => {
+    if (!isInView || isFinished) return;
+
+    let timeoutId: NodeJS.Timeout;
+
+    if (typedCount < FULL_HEADLINE.length) {
+      let delay = 58; // 58ms per character (within 50-70ms target)
+      const currentChar = FULL_HEADLINE[typedCount - 1];
+
+      if (currentChar === ".") {
+        delay = 450; // Natural pause at final period
+      }
+
+      timeoutId = setTimeout(() => {
+        setTypedCount((prev) => prev + 1);
+      }, delay);
+    } else {
+      setIsFinished(true);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [isInView, typedCount, isFinished]);
+
+  const displayedHeadline = FULL_HEADLINE.slice(0, typedCount);
+
   return (
     <section id="investment" className="relative w-full bg-white border-b border-gray-100 overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
@@ -25,9 +59,22 @@ export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
             <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C]">
               The Opportunity
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
-              Be part of a fairer future for film.
+
+            {/* Single Headline with Viewport-Triggered Character Typewriter Animation */}
+            <h2
+              ref={headlineRef}
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight min-h-[2.4em] sm:min-h-[2.2em]"
+            >
+              <span>{displayedHeadline}</span>
+              {isInView && !isFinished && (
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ repeat: Infinity, duration: 0.75, ease: "linear" }}
+                  className="inline-block w-[2.5px] h-[0.78em] bg-[#B91C1C] ml-1.5 align-middle rounded-full"
+                />
+              )}
             </h2>
+
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-1">
               We&apos;re raising to launch the platform and scale a growing pipeline of projects. Join a community of investors who want real ownership and a fairer way to participate in great films.
             </p>
