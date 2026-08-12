@@ -41,9 +41,20 @@ export default function ProblemSolution() {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.3 }}
-          className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-md items-center justify-center font-bold text-xs text-[#B91C1C] tracking-wider"
+          className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
         >
-          VS
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            className="w-12 h-12 rounded-full bg-white border-2 border-gray-200 shadow-lg flex items-center justify-center font-bold text-xs text-[#B91C1C] tracking-wider cursor-pointer group hover:border-[#B91C1C] transition-colors"
+          >
+            VS
+          </motion.div>
         </motion.div>
 
         {/* LEFT: THE PROBLEM (Light Gray Background) */}
