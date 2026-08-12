@@ -11,28 +11,27 @@ interface HeroProps {
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   const paragraphText =
     "Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.";
-  const words = paragraphText.split(" ");
+  const letters = Array.from(paragraphText);
 
   const paragraphContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.11, // Smooth, realistic human typing pace (110ms per word)
-        delayChildren: 0.45,
+        staggerChildren: 0.025, // 25ms per single alphabet (character-by-character typewriter effect)
+        delayChildren: 0.4,
       },
     },
   };
 
-  const wordVariants: Variants = {
-    hidden: { opacity: 0, y: 6, filter: "blur(2px)" },
+  const letterVariants: Variants = {
+    hidden: { opacity: 0, y: 4 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.45,
-        ease: [0.16, 1, 0.3, 1] as const,
+        duration: 0.1,
+        ease: "easeOut",
       },
     },
   };
@@ -93,20 +92,20 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               <span className="text-[#B91C1C]">Fair profits.</span>
             </motion.h1>
 
-            {/* Word-by-Word Writing Animation Editorial Body Text */}
+            {/* Single Single Alphabet (Character-by-Character) Typewriter Animation */}
             <motion.p
               variants={paragraphContainerVariants}
               initial="hidden"
               animate="visible"
-              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2 flex flex-wrap gap-x-[0.28em] gap-y-1"
+              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2 whitespace-pre-wrap"
             >
-              {words.map((word, idx) => (
+              {letters.map((char, idx) => (
                 <motion.span
                   key={idx}
-                  variants={wordVariants}
-                  className="inline-block"
+                  variants={letterVariants}
+                  className="inline"
                 >
-                  {word}
+                  {char}
                 </motion.span>
               ))}
             </motion.p>
@@ -115,7 +114,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 3.8, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-6 pt-3 sm:pt-4"
             >
               <motion.button
