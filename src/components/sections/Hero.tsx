@@ -3,85 +3,90 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
 }
 
 const FULL_HEADLINE = "Everyday investors. Real ownership. Fair profits.";
+const FULL_PARAGRAPH =
+  "Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.";
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
-  const [typedCount, setTypedCount] = useState(0);
+  const [headlineTypedCount, setHeadlineTypedCount] = useState(0);
+  const [paragraphTypedCount, setParagraphTypedCount] = useState(0);
 
+  // 1. Headline Character Typing Controller
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
 
-    if (typedCount < FULL_HEADLINE.length) {
-      // Base typing speed: 58ms per character (50-70ms target)
-      let delay = 58;
+    if (headlineTypedCount < FULL_HEADLINE.length) {
+      let delay = 58; // 58ms per headline character
+      const currentChar = FULL_HEADLINE[headlineTypedCount - 1];
 
-      const currentChar = FULL_HEADLINE[typedCount - 1];
-
-      // Add a natural pause after periods '.' (investors., ownership., profits.)
       if (currentChar === ".") {
         delay = 550; // 550ms natural pause after period
       }
 
       timeoutId = setTimeout(() => {
-        setTypedCount((prev) => prev + 1);
+        setHeadlineTypedCount((prev) => prev + 1);
       }, delay);
-    } else {
-      // Completion state: Hold complete sentence for 2.8 seconds, then restart smoothly
-      timeoutId = setTimeout(() => {
-        setTypedCount(0);
-      }, 2800);
     }
 
     return () => clearTimeout(timeoutId);
-  }, [typedCount]);
+  }, [headlineTypedCount]);
 
-  // Character Slicing Helpers for the 3 Line Structure
-  const line1Text = FULL_HEADLINE.slice(0, Math.min(typedCount, 19));
+  // 2. Paragraph Character Typing Controller (Triggers once Headline is typed)
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    if (headlineTypedCount === FULL_HEADLINE.length) {
+      if (paragraphTypedCount < FULL_PARAGRAPH.length) {
+        let delay = 32; // 32ms per paragraph character for smooth typing
+        const currentChar = FULL_PARAGRAPH[paragraphTypedCount - 1];
+
+        if (currentChar === "." || currentChar === "—") {
+          delay = 450; // Pause at punctuation marks
+        } else if (currentChar === ",") {
+          delay = 250;
+        }
+
+        timeoutId = setTimeout(() => {
+          setParagraphTypedCount((prev) => prev + 1);
+        }, delay);
+      } else {
+        // Hold complete content for 2.8 seconds, then restart smoothly
+        timeoutId = setTimeout(() => {
+          setHeadlineTypedCount(0);
+          setParagraphTypedCount(0);
+        }, 2800);
+      }
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [headlineTypedCount, paragraphTypedCount]);
+
+  // Headline Line Slicing Helpers
+  const line1Text = FULL_HEADLINE.slice(0, Math.min(headlineTypedCount, 19));
   const line2Text =
-    typedCount > 19
-      ? FULL_HEADLINE.slice(20, Math.min(typedCount, 35))
+    headlineTypedCount > 19
+      ? FULL_HEADLINE.slice(20, Math.min(headlineTypedCount, 35))
       : "";
   const line3Text =
-    typedCount > 35
-      ? FULL_HEADLINE.slice(36, Math.min(typedCount, 49))
+    headlineTypedCount > 35
+      ? FULL_HEADLINE.slice(36, Math.min(headlineTypedCount, 49))
       : "";
 
-  const isLine1Active = typedCount <= 19;
-  const isLine2Active = typedCount > 19 && typedCount <= 35;
-  const isLine3Active = typedCount > 35;
+  const isLine1Active = headlineTypedCount <= 19;
+  const isLine2Active = headlineTypedCount > 19 && headlineTypedCount <= 35;
+  const isLine3Active = headlineTypedCount > 35 && headlineTypedCount < FULL_HEADLINE.length;
 
-  const paragraphText =
-    "Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.";
-  const letters = Array.from(paragraphText);
-
-  const paragraphContainerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.025,
-        delayChildren: 0.4,
-      },
-    },
-  };
-
-  const letterVariants: Variants = {
-    hidden: { opacity: 0, y: 4 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.1,
-        ease: "easeOut",
-      },
-    },
-  };
+  // Paragraph Character Slicing
+  const displayedParagraph = FULL_PARAGRAPH.slice(0, paragraphTypedCount);
+  const isParagraphActive =
+    headlineTypedCount === FULL_HEADLINE.length &&
+    paragraphTypedCount < FULL_PARAGRAPH.length;
 
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center py-10 xs:py-14 sm:py-20 lg:py-24 overflow-hidden border-b border-gray-100 bg-white">
@@ -161,29 +166,23 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               </span>
             </h1>
 
-            {/* Single Single Alphabet (Character-by-Character) Typewriter Animation */}
-            <motion.p
-              variants={paragraphContainerVariants}
-              initial="hidden"
-              animate="visible"
-              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2 whitespace-pre-wrap"
-            >
-              {letters.map((char, idx) => (
+            {/* Editorial Paragraph Text with True Character-by-Character Typing & Blinking Cursor */}
+            <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2 min-h-[3.2em] sm:min-h-[3.8em]">
+              {displayedParagraph}
+              {isParagraphActive && (
                 <motion.span
-                  key={idx}
-                  variants={letterVariants}
-                  className="inline"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </motion.p>
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ repeat: Infinity, duration: 0.75, ease: "linear" }}
+                  className="inline-block w-[2px] h-[0.78em] bg-gray-700 ml-1 align-middle rounded-full"
+                />
+              )}
+            </p>
 
             {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 3.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-6 pt-3 sm:pt-4"
             >
               <motion.button
