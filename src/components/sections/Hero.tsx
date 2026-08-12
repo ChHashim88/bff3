@@ -13,13 +13,23 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/herob.png"
-          alt="Hero Background"
-          fill
-          priority
-          className="object-cover object-[82%_50%] sm:object-center transition-all duration-500 scale-110 sm:scale-100"
-        />
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full h-full"
+        >
+          <Image
+            src="/herob.png"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover object-[82%_50%] sm:object-center transition-all duration-500 scale-110 sm:scale-100"
+          />
+
+          {/* Left Side Smooth Fade Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent pointer-events-none w-full sm:w-2/3" />
+        </motion.div>
 
         {/* Adorable & Creative Mobile-only Centered Glow Aura Ring */}
         <motion.div
