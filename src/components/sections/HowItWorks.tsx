@@ -322,7 +322,7 @@ export default function HowItWorks() {
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
                   {/* Step Number Label */}
@@ -337,7 +337,7 @@ export default function HowItWorks() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{
                       duration: 0.85,
-                      delay: idx * 0.12 + 0.05,
+                      delay: idx * 0.08 + 0.04,
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     whileHover={{ scale: 1.15 }}

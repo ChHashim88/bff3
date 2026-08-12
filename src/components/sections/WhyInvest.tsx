@@ -64,7 +64,7 @@ export default function WhyInvest() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{
                     duration: 0.7,
-                    delay: index * 0.15,
+                    delay: index * 0.08, // 0ms, 80ms, 160ms, 240ms
                     ease: [0.16, 1, 0.3, 1], // Smooth liquid curve
                   }}
                   whileHover={{ scale: 1.15 }}
@@ -80,7 +80,7 @@ export default function WhyInvest() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.15 + 0.1,
+                    delay: index * 0.08 + 0.05,
                     ease: "easeOut",
                   }}
                   className="space-y-2.5"
