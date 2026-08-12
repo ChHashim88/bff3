@@ -70,7 +70,7 @@ export default function HowItWorks() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[2px] bg-gradient-to-r from-red-200 via-[#B91C1C] to-red-200 z-0 origin-left"
+            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[1.5px] bg-gray-200 z-0 origin-left"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
