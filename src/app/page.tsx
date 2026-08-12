@@ -10,6 +10,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import Stats from "@/components/sections/Stats";
 import Opportunity from "@/components/sections/Opportunity";
 import FAQContactSection from "@/components/sections/FAQContactSection";
+import CommunityWeFunderSection from "@/components/sections/CommunityWeFunderSection";
 import Footer from "@/components/layout/Footer";
 import WaitlistModal from "@/components/ui/WaitlistModal";
 
@@ -49,6 +50,9 @@ export default function Home() {
 
         {/* FAQ & Contact Section */}
         <FAQContactSection />
+
+        {/* Community & WeFunder Callout Cards */}
+        <CommunityWeFunderSection />
       </main>
 
       {/* Footer */}
