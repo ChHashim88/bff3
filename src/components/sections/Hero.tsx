@@ -2,13 +2,41 @@
 
 import Image from "next/image";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
 }
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
+  const paragraphText =
+    "Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.";
+  const words = paragraphText.split(" ");
+
+  const paragraphContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.04,
+        delayChildren: 0.35,
+      },
+    },
+  };
+
+  const wordVariants: Variants = {
+    hidden: { opacity: 0, y: 8, filter: "blur(2px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
   return (
     <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center py-10 xs:py-14 sm:py-20 lg:py-24 overflow-hidden border-b border-gray-100 bg-white">
       {/* Hero Background Image & Cinematic Atmosphere */}
@@ -16,7 +44,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as const }}
           className="relative w-full h-full"
         >
           <Image
@@ -48,7 +76,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
             className="space-y-5 sm:space-y-8"
           >
             {/* Cinematic Headline */}
@@ -65,21 +93,29 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               <span className="text-[#B91C1C]">Fair profits.</span>
             </motion.h1>
 
-            {/* Editorial Body Text */}
+            {/* Word-by-Word Writing Animation Editorial Body Text */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2"
+              variants={paragraphContainerVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed pt-1 sm:pt-2 flex flex-wrap gap-x-[0.28em] gap-y-1"
             >
-              Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.
+              {words.map((word, idx) => (
+                <motion.span
+                  key={idx}
+                  variants={wordVariants}
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
             </motion.p>
 
             {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-6 pt-3 sm:pt-4"
             >
               <motion.button
