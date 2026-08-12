@@ -129,11 +129,21 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
 
               <motion.a
                 href="#why-bff"
-                whileHover={{ x: 3 }}
+                whileHover={{ scale: 1.02 }}
                 className="inline-flex items-center justify-center gap-2 text-base font-semibold text-gray-900 hover:text-[#B91C1C] px-6 sm:px-5 py-3.5 sm:py-3 transition-colors duration-200 group text-center bg-white/80 backdrop-blur-md sm:bg-transparent rounded-sm border border-gray-200/90 sm:border-0 shadow-xs sm:shadow-none"
               >
                 <span>Learn More</span>
-                <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform text-[#B91C1C]" />
+                <motion.span
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.6,
+                    ease: "easeInOut",
+                  }}
+                  className="inline-flex text-[#B91C1C]"
+                >
+                  <ArrowDown size={16} />
+                </motion.span>
               </motion.a>
             </motion.div>
           </motion.div>
