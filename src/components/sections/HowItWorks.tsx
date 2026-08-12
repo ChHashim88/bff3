@@ -318,7 +318,7 @@ export default function HowItWorks() {
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
                   {/* Step Number Label */}
@@ -326,20 +326,33 @@ export default function HowItWorks() {
                     {step.num}
                   </span>
 
-                  {/* Icon Circle with Ultra-Smooth Liquid Zoom In */}
+                  {/* Icon Circle with Continuous Sequential Wave Highlight & Pulse Loop */}
                   <motion.div
                     initial={{ scale: 0.7, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 0.85,
-                      delay: idx * 0.12 + 0.05,
-                      ease: [0.16, 1, 0.3, 1],
+                    animate={{
+                      y: [0, -7, 0],
+                      scale: [1, 1.12, 1],
+                      backgroundColor: ["#FFFFFF", "#FEF2F2", "#FFFFFF"],
+                      borderColor: ["#E5E7EB", "#B91C1C", "#E5E7EB"],
+                      color: ["#374151", "#B91C1C", "#374151"],
+                      boxShadow: [
+                        "0 1px 2px rgba(0,0,0,0.05)",
+                        "0 8px 25px rgba(185,28,28,0.3)",
+                        "0 1px 2px rgba(0,0,0,0.05)",
+                      ],
                     }}
-                    whileHover={{ scale: 1.15 }}
-                    className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-red-50/50 transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white"
+                    transition={{
+                      repeat: Infinity,
+                      duration: 4.2,
+                      delay: idx * 0.7, // Sequential 0.7s wave progression across all 6 steps
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{ scale: 1.2, rotate: 6 }}
+                    className="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center transition-colors duration-300 mb-4 relative z-10 ring-4 ring-white cursor-pointer"
                   >
-                    <Icon size={22} strokeWidth={1.75} />
+                    <Icon size={22} strokeWidth={1.85} />
                   </motion.div>
 
                   {/* Title & Desc */}
