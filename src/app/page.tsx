@@ -5,6 +5,7 @@ import Navigation from "@/components/layout/Navigation";
 import Hero from "@/components/sections/Hero";
 import WhyInvest from "@/components/sections/WhyInvest";
 import ProblemSolution from "@/components/sections/ProblemSolution";
+import BuiltForFairness from "@/components/sections/BuiltForFairness";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Stats from "@/components/sections/Stats";
 import Opportunity from "@/components/sections/Opportunity";
@@ -33,6 +34,9 @@ export default function Home() {
 
         {/* Problem vs Solution Section */}
         <ProblemSolution />
+
+        {/* Built For Fairness Section */}
+        <BuiltForFairness />
 
         {/* How It Works Section */}
         <HowItWorks />
