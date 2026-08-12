@@ -141,7 +141,7 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-2.5xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight">
-            From project to profit.
+            From Project to Profit.
           </h2>
         </motion.div>
 
@@ -259,8 +259,8 @@ export default function HowItWorks() {
                   {/* Circular Icon Node */}
                   <div
                     className={`w-11 h-11 xs:w-12 xs:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-md relative ${isActive
-                        ? "bg-[#B91C1C] text-white ring-4 ring-red-100 shadow-red-500/20"
-                        : "bg-white text-gray-600 border border-gray-200 hover:border-[#B91C1C] hover:text-[#B91C1C]"
+                      ? "bg-[#B91C1C] text-white ring-4 ring-red-100 shadow-red-500/20"
+                      : "bg-white text-gray-600 border border-gray-200 hover:border-[#B91C1C] hover:text-[#B91C1C]"
                       }`}
                   >
                     <StepIcon size={18} strokeWidth={isActive ? 2.2 : 1.8} />
@@ -268,8 +268,8 @@ export default function HowItWorks() {
                     {/* Outer Step Number Label Badge */}
                     <span
                       className={`absolute -bottom-1 -right-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full border shadow-xs transition-colors ${isActive
-                          ? "bg-gray-900 text-white border-gray-900"
-                          : "bg-gray-100 text-gray-700 border-gray-200"
+                        ? "bg-gray-900 text-white border-gray-900"
+                        : "bg-gray-100 text-gray-700 border-gray-200"
                         }`}
                     >
                       {step.num}
@@ -288,8 +288,8 @@ export default function HowItWorks() {
                 onClick={() => handleSelectStep(i)}
                 aria-label={`Go to step ${i + 1}`}
                 className={`transition-all duration-300 rounded-full cursor-pointer ${i === activeIndex
-                    ? "w-6 h-2 bg-[#B91C1C]"
-                    : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                  ? "w-6 h-2 bg-[#B91C1C]"
+                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                   }`}
               />
             ))}
