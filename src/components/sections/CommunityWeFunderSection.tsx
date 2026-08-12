@@ -31,7 +31,7 @@ export default function CommunityWeFunderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 bg-[#0B0C0E] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[320px]"
+            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[320px]"
           >
             {/* Dark Card Subtle Background Visual */}
             <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-25 pointer-events-none">
@@ -100,7 +100,7 @@ export default function CommunityWeFunderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 bg-white border border-gray-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-sm min-h-[320px]"
+            className="lg:col-span-4 bg-white border border-gray-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-sm min-h-[320px]"
           >
             {/* Card Header with Label & WeFunder Logo */}
             <div className="relative z-10 flex items-start justify-between gap-4">
