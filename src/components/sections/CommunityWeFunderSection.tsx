@@ -24,7 +24,7 @@ export default function CommunityWeFunderSection() {
     <section className="w-full bg-white py-12 sm:py-16 lg:py-20 border-b border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* LEFT CARD: Join the BFF Community (Dark Theme) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -107,14 +107,14 @@ export default function CommunityWeFunderSection() {
               <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#B91C1C]">
                 PARTNER WITH BFF
               </p>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight flex items-center flex-wrap gap-2 pt-0.5">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight flex items-center flex-wrap gap-3 pt-1">
                 <span>Continue to</span>
                 <Image
                   src="/wf.png"
                   alt="WeFunder"
-                  width={140}
-                  height={36}
-                  className="h-6 sm:h-8 w-auto object-contain inline-block"
+                  width={420}
+                  height={120}
+                  className="h-16 sm:h-24 w-auto object-contain inline-block"
                 />
               </h3>
             </div>
