@@ -1,74 +1,79 @@
 "use client";
 
-import { UploadCloud, Gem, Users, CircleDollarSign, Clapperboard, PieChart } from "lucide-react";
+import { UploadCloud, Cpu, Users, DollarSign, Clapperboard, PieChart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HowItWorks() {
   const steps = [
     {
-      num: "1",
+      num: "01",
       icon: UploadCloud,
-      title: "Sektoral Project",
+      title: "Submit Project",
       desc: "Filmmakers submit their projects.",
     },
     {
-      num: "2",
-      icon: Gem,
+      num: "02",
+      icon: Cpu,
       title: "AI Evaluation",
-      desc: "Our AI evaluates market potential & risks.",
+      desc: "Our AI analyzes market potential and ROI.",
     },
     {
-      num: "3",
+      num: "03",
       icon: Users,
       title: "Investor Review",
-      desc: "Investors review and select allocations.",
+      desc: "Investors review and choose to invest.",
     },
     {
-      num: "4",
-      icon: CircleDollarSign,
+      num: "04",
+      icon: DollarSign,
       title: "Funding",
-      desc: "Escrow funding is raised & secured.",
+      desc: "Capital is raised and secured.",
     },
     {
-      num: "5",
+      num: "05",
       icon: Clapperboard,
       title: "Production",
-      desc: "The film moves into production with transparent tracking.",
+      desc: "The film is produced with full transparency.",
     },
     {
-      num: "6",
+      num: "06",
       icon: PieChart,
-      title: "Revenue Realization",
-      desc: "Gross profits are shared directly with investors.",
+      title: "Revenue Sharing",
+      desc: "Profits are shared fairly with investors.",
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-5 sm:py-7 relative overflow-hidden">
+    <section id="how-it-works" className="py-20 sm:py-24 lg:py-32 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-1.5"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
         >
-          <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#cd0007] block">
-            HOW BFF WORKS
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B91C1C] mb-3">
+            How It Works
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight">
             From project to profit.
           </h2>
         </motion.div>
 
-        {/* 6 Process Cards Grid with Dotted Connecting Line */}
-        <div className="relative pt-2">
-          {/* Connecting Dotted Line running behind badges */}
-          <div className="hidden lg:block absolute top-[70px] left-[5%] right-[5%] h-[2px] border-t-2 border-dashed border-gray-300 z-0 pointer-events-none" />
+        {/* 6-Step Horizontal Process Timeline */}
+        <div className="relative">
+          {/* Desktop Connecting Line */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[1.5px] bg-gray-200 z-0 origin-left"
+          />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
@@ -77,37 +82,35 @@ export default function HowItWorks() {
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  whileHover={{ y: -4 }}
-                  className="glass-card glass-card-hover rounded-3xl p-6 text-center flex flex-col items-center justify-center min-h-[220px] relative group cursor-pointer"
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                  className="flex flex-col items-center text-center group cursor-pointer"
                 >
-                  {/* Step Number Badge Pill (Positioned half on right card corner edge, lower down) */}
-                  <div className="absolute top-2.5 -right-3.5 w-8 h-8 rounded-full bg-white shadow-md border border-gray-200/90 text-gray-800 font-extrabold text-xs flex items-center justify-center z-20">
+                  {/* Step Number Label */}
+                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block">
                     {step.num}
-                  </div>
+                  </span>
 
-                  <div className="flex flex-col items-center justify-center w-full">
-                    {/* Clean Blue Line Icon (matching reference screenshot) */}
-                    <div className="mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                      <Icon size={42} strokeWidth={1.5} />
-                    </div>
+                  {/* Icon Circle */}
+                  <motion.div
+                    whileHover={{ scale: 1.15, rotate: 6 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] transition-all duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white"
+                  >
+                    <Icon size={22} strokeWidth={1.75} />
+                  </motion.div>
 
-                    {/* Title */}
-                    <h3 className="text-sm font-bold text-gray-900 mb-1.5 tracking-tight">
-                      {step.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-[11px] text-gray-500 leading-relaxed max-w-[130px]">
-                      {step.desc}
-                    </p>
-                  </div>
+                  {/* Title & Desc */}
+                  <h3 className="text-base font-semibold text-gray-900 mb-1.5 tracking-tight group-hover:text-[#B91C1C] transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 leading-relaxed max-w-[170px]">
+                    {step.desc}
+                  </p>
                 </motion.div>
               );
             })}
           </div>
         </div>
-
       </div>
     </section>
   );

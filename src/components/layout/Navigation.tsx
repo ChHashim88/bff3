@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   onOpenWaitlist: () => void;
@@ -10,73 +10,59 @@ interface NavigationProps {
 
 export default function Navigation({ onOpenWaitlist }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("Home");
 
   const navLinks = [
-    { name: "Home", href: "#" },
+    { name: "Why BFF", href: "#why-bff" },
     { name: "The Problem", href: "#the-problem" },
     { name: "Our Solution", href: "#our-solution" },
     { name: "How It Works", href: "#how-it-works" },
+    { name: "Investment", href: "#investment" },
     { name: "FAQ", href: "#faq" },
-    { name: "Leadership", href: "#leadership" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full glass-header transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
-        {/* Brand Logo - Enlarged visually in mobile view without expanding header height */}
-        <a href="#" className="flex items-center group shrink-0 transition-transform duration-300 hover:scale-105 h-12 sm:h-14 relative z-10">
-          <div className="relative flex items-center justify-start h-full">
-            <Image
-              src="/logo.png"
-              alt="Big Film Fund Logo"
-              width={400}
-              height={120}
-              priority
-              className="h-22 sm:h-22 lg:h-24 w-auto max-w-none object-contain scale-140 sm:scale-125 origin-left"
-            />
-          </div>
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200/70 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+        {/* Brand Logo */}
+        <a href="#" className="flex items-center group shrink-0">
+          <Image
+            src="/logo.png"
+            alt="Big Film Fund Logo"
+            width={340}
+            height={88}
+            className="h-14 sm:h-18 lg:h-[72px] w-auto object-contain"
+            priority
+          />
         </a>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links (Visible on lg screens 1024px+) */}
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs xl:text-sm font-medium text-gray-700">
-          {navLinks.map((link) => {
-            const isActive = activeTab === link.name;
-            return (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveTab(link.name)}
-                className={`relative py-1 transition-colors duration-200 whitespace-nowrap ${isActive
-                    ? "text-[#cd0007] font-semibold"
-                    : "text-gray-700 hover:text-[#cd0007]"
-                  }`}
-              >
-                {link.name}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#cd0007] rounded-full animate-fadeIn" />
-                )}
-              </a>
-            );
-          })}
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-[#B91C1C] transition-colors duration-200 whitespace-nowrap"
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
         {/* Right CTA & Menu Actions */}
         <div className="flex items-center gap-3">
-          {/* Join Waitlist Button */}
+          {/* Join Waitlist Button (Visible on sm+ screens) */}
           <button
             onClick={onOpenWaitlist}
-            className="hidden sm:inline-flex btn-red text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full items-center gap-1.5 active:scale-95 cursor-pointer shrink-0"
+            className="hidden sm:inline-flex bg-[#B91C1C] hover:bg-[#991B1B] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-sm transition-all duration-200 shadow-sm active:scale-95 cursor-pointer shrink-0"
           >
-            <span>Join the Waitlist</span>
-            <ArrowRight size={15} />
+            Join the Waitlist
           </button>
 
-          {/* Hamburger Menu Button */}
+          {/* Hamburger Menu Button (Visible below lg screens <1024px) */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-[#cd0007] hover:bg-gray-100/60 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,22 +70,16 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
         </div>
       </div>
 
-      {/* Mobile/Tablet Drawer Navigation */}
+      {/* Mobile/Tablet Drawer Navigation (<1024px) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200/80 px-6 pt-3 pb-6 space-y-3 shadow-xl animate-fadeIn">
+        <div className="lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-lg animate-fadeIn">
           <div className="flex flex-col space-y-3 pt-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => {
-                  setActiveTab(link.name);
-                  setIsMobileMenuOpen(false);
-                }}
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${activeTab === link.name
-                    ? "bg-red-50 text-[#cd0007] font-semibold"
-                    : "text-gray-700 hover:text-[#cd0007] hover:bg-gray-50"
-                  }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-sm font-medium text-gray-700 hover:text-[#B91C1C] px-2 py-2 rounded-md hover:bg-gray-50 transition-colors"
               >
                 {link.name}
               </a>
@@ -110,10 +90,9 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
                   setIsMobileMenuOpen(false);
                   onOpenWaitlist();
                 }}
-                className="w-full btn-red text-white text-sm font-semibold py-3 rounded-full flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full bg-[#B91C1C] hover:bg-[#991B1B] text-white text-sm font-semibold py-3 rounded-sm transition-colors text-center cursor-pointer"
               >
-                <span>Join the Waitlist</span>
-                <ArrowRight size={16} />
+                Join the Waitlist
               </button>
             </div>
           </div>
