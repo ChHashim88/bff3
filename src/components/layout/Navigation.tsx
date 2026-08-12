@@ -32,7 +32,7 @@ export default function Navigation({ onOpenWaitlist }: NavigationProps) {
             width={480}
             height={120}
             priority
-            className="h-full w-auto object-contain scale-150 sm:scale-175 origin-left transition-transform group-hover:scale-180"
+            className="h-full w-auto object-contain scale-225 sm:scale-175 origin-left transition-transform group-hover:scale-235"
           />
         </a>
 
