@@ -326,9 +326,16 @@ export default function HowItWorks() {
                     {step.num}
                   </span>
 
-                  {/* Clean Icon Circle with Solid White Background & Masking */}
+                  {/* Clean Icon Circle with Solid White Background & Masking + Continuous Wave Float */}
                   <motion.div
-                    whileHover={{ scale: 1.15 }}
+                    animate={{ y: [0, -6, 0], scale: [1, 1.08, 1] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 3.6,
+                      delay: idx * 0.6, // Staggered continuous wave float across 6 steps
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{ scale: 1.18, rotate: 6 }}
                     className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-red-50/50 transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white cursor-pointer"
                   >
                     <Icon size={22} strokeWidth={1.75} />
