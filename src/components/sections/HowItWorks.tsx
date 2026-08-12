@@ -64,12 +64,12 @@ export default function HowItWorks() {
 
         {/* 6-Step Horizontal Process Timeline */}
         <div className="relative">
-          {/* Desktop Connecting Line that grows from left to right */}
+          {/* Desktop Connecting Line */}
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
+            transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[2px] bg-gradient-to-r from-red-200 via-[#B91C1C] to-red-200 z-0 origin-left"
           />
 
@@ -79,9 +79,9 @@ export default function HowItWorks() {
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
                   className="flex flex-col items-center text-center group cursor-pointer"
                 >
@@ -90,62 +90,21 @@ export default function HowItWorks() {
                     {step.num}
                   </span>
 
-                  {/* Icon Circle with Sequential Glow */}
-                  <div className="relative mb-4">
-                    {/* Outer glowing halo ring animation triggered sequentially */}
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{
-                        opacity: [0, 0.9, 0.3, 0.75, 0.2],
-                        scale: [0.8, 1.4, 1.1, 1.25, 1.05],
-                        boxShadow: [
-                          "0 0 0px rgba(185, 28, 28, 0)",
-                          "0 0 30px rgba(185, 28, 28, 0.65)",
-                          "0 0 15px rgba(185, 28, 28, 0.3)",
-                          "0 0 25px rgba(185, 28, 28, 0.5)",
-                          "0 0 10px rgba(185, 28, 28, 0.2)",
-                        ],
-                      }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{
-                        duration: 2.0,
-                        delay: idx * 0.28 + 0.15, // Syncs smoothly with timeline reveal
-                        ease: "easeInOut",
-                      }}
-                      className="absolute inset-0 rounded-full bg-red-100/60 pointer-events-none"
-                    />
-
-                    <motion.div
-                      initial={{ scale: 1 }}
-                      whileInView={{
-                        scale: [1, 1.15, 1, 1.08, 1],
-                        borderColor: [
-                          "rgba(229, 231, 235, 1)",
-                          "rgba(185, 28, 28, 0.85)",
-                          "rgba(254, 202, 202, 1)",
-                          "rgba(185, 28, 28, 0.6)",
-                          "rgba(229, 231, 235, 1)",
-                        ],
-                        color: [
-                          "rgb(55, 65, 81)",
-                          "rgb(185, 28, 28)",
-                          "rgb(185, 28, 28)",
-                          "rgb(55, 65, 81)",
-                          "rgb(55, 65, 81)",
-                        ],
-                      }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{
-                        duration: 2.0,
-                        delay: idx * 0.28 + 0.15,
-                        ease: "easeInOut",
-                      }}
-                      whileHover={{ scale: 1.18, rotate: 6 }}
-                      className="relative z-10 w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-[#B91C1C] group-hover:!text-white transition-all duration-300 shadow-sm ring-4 ring-white"
-                    >
-                      <Icon size={22} strokeWidth={1.75} />
-                    </motion.div>
-                  </div>
+                  {/* Icon Circle with Smooth Sequential Zoom In */}
+                  <motion.div
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    whileInView={{ scale: [0.5, 1.18, 1], opacity: 1 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.7,
+                      delay: idx * 0.18 + 0.1, // Smooth step-by-step zoom-in sequence
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    whileHover={{ scale: 1.18, rotate: 6 }}
+                    className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-[#B91C1C] group-hover:!text-white transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white"
+                  >
+                    <Icon size={22} strokeWidth={1.75} />
+                  </motion.div>
 
                   {/* Title & Desc */}
                   <h3 className="text-base font-semibold text-gray-900 mb-1.5 tracking-tight group-hover:text-[#B91C1C] transition-colors">
