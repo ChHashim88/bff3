@@ -53,29 +53,30 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-white border-b border-gray-100 overflow-hidden">
+    <section className="py-10 sm:py-16 bg-white border-b border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+        
+        {/* Responsive Grid: 2x2 Card Grid on Mobile, 4-Column Strip on Desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:gap-0 md:divide-x divide-gray-200">
           {stats.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.75, y: 20 }}
+              initial={{ opacity: 0, scale: 0.85, y: 15 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{
-                duration: 0.8,
-                delay: idx * 0.12,
+                duration: 0.7,
+                delay: idx * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              whileHover={{ y: -4 }}
-              className={`flex flex-col items-center justify-center text-center px-4 group cursor-pointer ${
-                idx !== 0 ? 'pt-6 md:pt-0' : ''
-              }`}
+              whileHover={{ y: -3 }}
+              className="bg-gray-50/70 md:bg-transparent border border-gray-200/80 md:border-0 rounded-sm p-4 sm:p-6 md:p-4 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-[#B91C1C]/40 hover:bg-red-50/30 md:hover:bg-transparent transition-all duration-300 shadow-2xs md:shadow-none"
             >
+              {/* Stat Number */}
               <motion.div
-                whileHover={{ scale: 1.12 }}
+                whileHover={{ scale: 1.08 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#B91C1C] tracking-tight mb-2 group-hover:text-red-700 transition-colors drop-shadow-xs"
+                className="text-2.5xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-[#B91C1C] tracking-tight mb-1 sm:mb-2 group-hover:text-red-700 transition-colors drop-shadow-2xs whitespace-nowrap"
               >
                 <AnimatedCounter
                   target={item.target}
@@ -84,12 +85,15 @@ export default function Stats() {
                   isLocale={item.isLocale}
                 />
               </motion.div>
-              <div className="text-xs sm:text-sm font-semibold text-gray-700 tracking-wide uppercase group-hover:text-[#B91C1C] transition-colors">
+
+              {/* Stat Label */}
+              <div className="text-[10px] xs:text-xs sm:text-sm font-bold text-gray-700 tracking-wider uppercase group-hover:text-[#B91C1C] transition-colors leading-tight max-w-[140px] sm:max-w-none">
                 {item.label}
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
