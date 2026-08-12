@@ -31,7 +31,7 @@ export default function CommunityWeFunderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[320px]"
+            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-sm border border-gray-900 p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-lg min-h-[320px]"
           >
             {/* Dark Card Subtle Background Visual */}
             <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-25 pointer-events-none">
@@ -62,13 +62,13 @@ export default function CommunityWeFunderSection() {
             {/* Form & Subtext */}
             <div className="relative z-10 pt-6 space-y-3">
               {isSubscribed ? (
-                <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-4 py-2.5 rounded-full">
+                <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-4 py-2.5 rounded-sm">
                   <Check size={16} />
                   <span>Thank you for joining our community!</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="relative max-w-md">
-                  <div className="bg-white rounded-full p-1.5 flex items-center shadow-lg border border-gray-100">
+                  <div className="bg-white rounded-sm p-1.5 flex items-center shadow-md border border-gray-200">
                     <input
                       type="email"
                       required
@@ -79,7 +79,7 @@ export default function CommunityWeFunderSection() {
                     />
                     <button
                       type="submit"
-                      className="bg-[#B91C1C] hover:bg-[#991B1B] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-full transition-all flex items-center gap-1.5 shrink-0 shadow-md cursor-pointer group"
+                      className="bg-[#B91C1C] hover:bg-[#991B1B] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-sm transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group"
                     >
                       <span>Sign Up</span>
                       <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -100,7 +100,7 @@ export default function CommunityWeFunderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-white border border-gray-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-sm min-h-[320px]"
+            className="lg:col-span-4 bg-white border border-gray-200 rounded-sm p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[320px]"
           >
             {/* Card Header with Label & WeFunder Logo */}
             <div className="relative z-10 flex items-start justify-between gap-4">
@@ -135,7 +135,7 @@ export default function CommunityWeFunderSection() {
                 href="https://wefunder.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 font-semibold px-5 py-2.5 rounded-full text-xs sm:text-sm shadow-sm transition-all hover:border-gray-400 group cursor-pointer"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 font-semibold px-5 py-2.5 rounded-sm text-xs sm:text-sm shadow-xs transition-all hover:border-gray-400 group cursor-pointer"
               >
                 <span>View Campaign</span>
                 <ArrowRight size={14} className="text-gray-600 group-hover:translate-x-1 transition-transform" />
