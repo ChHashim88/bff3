@@ -66,7 +66,7 @@ export default function Opportunity({ onOpenWaitlist }: OpportunityProps) {
           className="lg:col-span-6 min-h-[350px] sm:min-h-[450px] lg:min-h-[600px] relative bg-gray-900 overflow-hidden group"
         >
           <Image
-            src="/images/pexels-felicity-tai-7964388.jpg"
+            src="/ggh.jpeg"
             alt="Cinematic Film Production Set with Director and Lighting"
             fill
             className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
