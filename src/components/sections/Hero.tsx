@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100">
+    <section className="relative w-full py-12 sm:py-20 lg:py-24 sm:min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden border-b border-gray-100 bg-white">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
@@ -24,11 +24,11 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             alt="Hero Background"
             fill
             priority
-            className="object-cover object-[82%_50%] sm:object-center transition-all duration-500 scale-110 sm:scale-100"
+            className="object-cover object-[82%_50%] sm:object-center transition-all duration-500 scale-105 sm:scale-100"
           />
 
           {/* Left Side Smooth Fade Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent pointer-events-none w-full sm:w-2/3" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent pointer-events-none w-full sm:w-2/3" />
         </motion.div>
 
         {/* Adorable & Creative Mobile-only Centered Glow Aura Ring */}
@@ -39,27 +39,29 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
         />
 
         {/* Creative Mobile Subtle Gradient Overlay for High Text Legibility */}
-        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-white/75 via-white/45 to-white/85 pointer-events-none" />
+        <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24">
-        <div className="max-w-3xl space-y-6 sm:space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl space-y-5 sm:space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-            className="space-y-6 sm:space-y-8"
+            className="space-y-4 sm:space-y-8"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.08]"
+              className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-gray-900 tracking-tight leading-[1.12] sm:leading-[1.08]"
             >
               Everyday investors.
-              <br />
+              <br className="hidden sm:inline" />{" "}
+              <span className="sm:hidden"> </span>
               Real ownership.
-              <br />
+              <br className="hidden sm:inline" />{" "}
+              <span className="sm:hidden"> </span>
               <span className="text-[#B91C1C]">Fair profits.</span>
             </motion.h1>
 
@@ -67,7 +69,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-              className="text-base sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed"
+              className="text-sm sm:text-lg lg:text-xl text-gray-700 font-medium max-w-2xl leading-relaxed"
             >
               Big Film Fund opens the black box of film economics with fair transparency into gross revenue — so everyone sees exactly how the money flows.
             </motion.p>
@@ -76,13 +78,13 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2"
+              className="flex flex-wrap items-center gap-3 sm:gap-6 pt-1 sm:pt-2"
             >
               <motion.button
                 onClick={onOpenWaitlist}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991B1B] text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3.5 rounded-sm transition-all duration-200 shadow-md cursor-pointer group"
+                className="inline-flex items-center gap-2 bg-[#B91C1C] hover:bg-[#991B1B] text-white text-xs sm:text-base font-semibold px-5 sm:px-8 py-3 sm:py-3.5 rounded-sm transition-all duration-200 shadow-md cursor-pointer group"
               >
                 <span>Join the Waitlist</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -91,7 +93,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               <motion.a
                 href="#why-bff"
                 whileHover={{ x: 3 }}
-                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold text-gray-800 hover:text-[#B91C1C] px-4 py-3 transition-colors duration-200 group"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-base font-semibold text-gray-800 hover:text-[#B91C1C] px-3 sm:px-4 py-2.5 sm:py-3 transition-colors duration-200 group"
               >
                 <span>Learn More</span>
                 <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform text-[#B91C1C]" />
