@@ -66,35 +66,28 @@ export default function WhyInvest() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{
-                      opacity: [0, 0.95, 0.4, 0.8, 0.25],
-                      scale: [0.8, 1.4, 1.1, 1.25, 1.05],
-                      boxShadow: [
-                        "0 0 0px rgba(185, 28, 28, 0)",
-                        "0 0 35px rgba(185, 28, 28, 0.65)",
-                        "0 0 15px rgba(185, 28, 28, 0.3)",
-                        "0 0 25px rgba(185, 28, 28, 0.5)",
-                        "0 0 10px rgba(185, 28, 28, 0.2)",
-                      ],
+                      opacity: [0, 0.7, 0.2, 0.5, 0],
+                      scale: [0.8, 1.35, 1.1, 1.2, 1.0],
                     }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{
                       duration: 2.2,
-                      delay: index * 0.38 + 0.2, // Smooth step-by-step glow sequence one by one
+                      delay: index * 0.38 + 0.2,
                       ease: "easeInOut",
                     }}
-                    className="absolute inset-0 rounded-full bg-red-100/60 pointer-events-none"
+                    className="absolute inset-0 rounded-full bg-gray-200/50 pointer-events-none"
                   />
 
                   <motion.div
                     initial={{ scale: 1 }}
                     whileInView={{
-                      scale: [1, 1.16, 1, 1.08, 1],
+                      scale: [1, 1.14, 1, 1.08, 1],
                       borderColor: [
-                        "rgba(254, 226, 226, 1)",
-                        "rgba(185, 28, 28, 0.85)",
-                        "rgba(254, 202, 202, 1)",
-                        "rgba(185, 28, 28, 0.6)",
-                        "rgba(254, 226, 226, 1)",
+                        "rgba(229, 231, 235, 1)",
+                        "rgba(185, 28, 28, 0.7)",
+                        "rgba(229, 231, 235, 1)",
+                        "rgba(185, 28, 28, 0.4)",
+                        "rgba(229, 231, 235, 1)",
                       ],
                     }}
                     viewport={{ once: true, margin: "-50px" }}
@@ -104,7 +97,7 @@ export default function WhyInvest() {
                       ease: "easeInOut",
                     }}
                     whileHover={{ scale: 1.18, rotate: 6 }}
-                    className="relative z-10 w-16 h-16 rounded-full bg-red-50/80 border border-red-100 flex items-center justify-center text-[#B91C1C] shadow-xs group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.4)] transition-colors duration-300"
+                    className="relative z-10 w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#B91C1C] shadow-sm group-hover:bg-[#B91C1C] group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(185,28,28,0.35)] transition-all duration-300"
                   >
                     <Icon size={28} strokeWidth={1.75} />
                   </motion.div>

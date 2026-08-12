@@ -150,7 +150,7 @@ export default function FAQContactSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-8 bg-red-50/70 border border-red-200 rounded-sm text-center space-y-3"
+                className="p-8 bg-gray-50 border border-gray-200 rounded-sm text-center space-y-3"
               >
                 <CheckCircle2 size={40} className="text-[#B91C1C] mx-auto" />
                 <h3 className="text-xl font-semibold text-gray-900">Thank you for your message!</h3>
