@@ -166,7 +166,7 @@ export default function HowItWorks() {
                 const centerAngle = i * 60;
                 const startAngle = centerAngle - 24;
                 const endAngle = centerAngle + 24;
-                const pathD = describeArc(150, 150, 115, startAngle, endAngle);
+                const pathD = describeArc(150, 150, 125, startAngle, endAngle);
                 const isActive = i === activeIndex;
 
                 return (
@@ -200,34 +200,34 @@ export default function HowItWorks() {
               })}
             </svg>
 
-            {/* CENTER CONTENT DISPLAY */}
-            <div className="relative z-20 w-[190px] h-[190px] xs:w-[210px] xs:h-[210px] rounded-full bg-white border border-gray-100 shadow-xl shadow-gray-200/50 flex flex-col items-center justify-center p-4 text-center ring-4 ring-gray-50/80">
+            {/* CENTER CONTENT DISPLAY (Optimized size for generous radial gap) */}
+            <div className="relative z-20 w-[155px] h-[155px] xs:w-[170px] xs:h-[170px] rounded-full bg-white border border-gray-100 shadow-xl shadow-gray-200/40 flex flex-col items-center justify-center p-3 text-center ring-4 ring-gray-50/80">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.95 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex flex-col items-center justify-center text-center space-y-1.5"
+                  className="flex flex-col items-center justify-center text-center space-y-1"
                 >
                   {/* Step Number Tag */}
-                  <span className="text-[10px] font-bold text-[#B91C1C] uppercase tracking-widest bg-red-50 px-2 py-0.5 rounded-full">
+                  <span className="text-[9px] font-bold text-[#B91C1C] uppercase tracking-widest bg-red-50/80 px-2 py-0.5 rounded-full">
                     STEP {steps[activeIndex].num}
                   </span>
 
                   {/* Icon */}
                   <div className="text-[#B91C1C] py-0.5">
-                    <ActiveIcon size={26} strokeWidth={2} />
+                    <ActiveIcon size={22} strokeWidth={2} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-sm xs:text-base font-bold text-gray-900 leading-tight tracking-tight max-w-[150px]">
+                  <h3 className="text-xs xs:text-sm font-bold text-gray-900 leading-tight tracking-tight max-w-[130px]">
                     {steps[activeIndex].title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[11px] xs:text-xs text-gray-500 leading-snug max-w-[160px] line-clamp-2">
+                  <p className="text-[10px] xs:text-[11px] text-gray-500 leading-snug max-w-[140px] line-clamp-2">
                     {steps[activeIndex].desc}
                   </p>
                 </motion.div>
@@ -238,7 +238,7 @@ export default function HowItWorks() {
             {steps.map((step, i) => {
               const StepIcon = step.icon;
               const angleRad = ((i * 60 - 90) * Math.PI) / 180;
-              const radiusPercent = 38.33; // 115px out of 300px
+              const radiusPercent = 41.67; // 125px out of 300px radius
               const leftPercent = 50 + radiusPercent * Math.cos(angleRad);
               const topPercent = 50 + radiusPercent * Math.sin(angleRad);
               const isActive = i === activeIndex;
