@@ -18,20 +18,20 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0.35,
+        staggerChildren: 0.11, // Smooth, realistic human typing pace (110ms per word)
+        delayChildren: 0.45,
       },
     },
   };
 
   const wordVariants: Variants = {
-    hidden: { opacity: 0, y: 8, filter: "blur(2px)" },
+    hidden: { opacity: 0, y: 6, filter: "blur(2px)" },
     visible: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 0.3,
+        duration: 0.45,
         ease: [0.16, 1, 0.3, 1] as const,
       },
     },
