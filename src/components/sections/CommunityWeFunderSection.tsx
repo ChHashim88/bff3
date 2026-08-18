@@ -21,8 +21,8 @@ export default function CommunityWeFunderSection() {
   };
 
   return (
-    <section className="w-full bg-white py-12 sm:py-16 lg:py-20 border-b border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#FAF7F1] py-12 sm:py-16 lg:py-20 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 
           {/* -------------------------------------------------------- */}
@@ -34,9 +34,9 @@ export default function CommunityWeFunderSection() {
             viewport={{ once: true }}
             whileHover={{ y: -6, scale: 1.008 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-[#0B0C0E] text-white rounded-sm border border-gray-900 p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[340px] group transition-shadow duration-300 hover:shadow-2xl hover:shadow-red-950/20"
+            className="lg:col-span-8 bg-[#111111] text-white rounded-2xl border border-[#EAE5DC] p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[340px] group transition-shadow duration-300 hover:shadow-2xl hover:shadow-red-950/20"
           >
-            {/* Ambient Crimson Breathing Glow Aura Ring (Continuously Active) */}
+            {/* Ambient Logo Red Breathing Glow Aura Ring */}
             <motion.div
               animate={{
                 scale: [1, 1.25, 1],
@@ -48,7 +48,7 @@ export default function CommunityWeFunderSection() {
                 ease: "easeInOut",
               }}
               style={{ willChange: "transform" }}
-              className="absolute -top-12 -right-12 w-80 h-80 rounded-full bg-[#B91C1C]/35 blur-3xl pointer-events-none z-0"
+              className="absolute -top-12 -right-12 w-80 h-80 rounded-full bg-[#CD0007]/35 blur-3xl pointer-events-none z-0"
             />
 
             {/* Dark Card Background Visual */}
@@ -60,20 +60,20 @@ export default function CommunityWeFunderSection() {
                 className="object-cover object-right"
                 sizes="(max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E] via-[#0B0C0E]/75 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/75 to-transparent" />
             </div>
 
             {/* Foreground Content */}
             <div className="relative z-10 space-y-4 max-w-xl">
-              <p className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#B91C1C]">
+              <p className="type-label font-medium uppercase text-[#CD0007]">
                 JOIN THE BFF COMMUNITY
               </p>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+              <h3 className="type-h2 text-white">
                 Join our community.
                 <br />
                 Be part of the future of film.
               </h3>
-              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed font-normal">
+              <p className="type-body text-gray-400">
                 Stay up to date with updates, insights, tools, and access stories.
               </p>
             </div>
@@ -84,27 +84,27 @@ export default function CommunityWeFunderSection() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-4 py-2.5 rounded-sm shadow-sm"
+                  className="inline-flex items-center gap-2 type-cta text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-4 py-2.5 rounded-full shadow-sm"
                 >
                   <Check size={16} />
                   <span>Thank you for joining our community!</span>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="relative max-w-md">
-                  <div className="bg-white rounded-sm p-1.5 flex items-center shadow-md border border-gray-200 focus-within:ring-2 focus-within:ring-[#B91C1C] transition-all">
+                  <div className="bg-white/95 rounded-full p-1.5 flex items-center shadow-md border border-[#EAE5DC] focus-within:ring-2 focus-within:ring-[#CD0007] transition-all">
                     <input
                       type="email"
                       required
                       placeholder="Enter your email address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 text-xs sm:text-sm text-gray-900 placeholder-gray-400 bg-transparent focus:outline-none"
+                      className="w-full px-4 type-body text-[#111111] placeholder-gray-400 bg-transparent focus:outline-none"
                     />
                     <motion.button
                       type="submit"
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.96 }}
-                      className="bg-[#B91C1C] hover:bg-[#991B1B] text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 rounded-sm transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
+                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-full transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
                     >
                       <span>Sign Up</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
@@ -113,7 +113,7 @@ export default function CommunityWeFunderSection() {
                 </form>
               )}
 
-              <p className="text-[10px] sm:text-xs text-gray-400 pl-2">
+              <p className="type-small text-gray-400 pl-2">
                 We respect your privacy & confidentiality, guaranteed.
               </p>
             </div>
@@ -128,17 +128,17 @@ export default function CommunityWeFunderSection() {
             viewport={{ once: true }}
             whileHover={{ y: -6, scale: 1.008 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-white border border-gray-200 rounded-sm p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[340px] group transition-all duration-300 hover:border-[#B91C1C]/40 hover:shadow-lg"
+            className="lg:col-span-4 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[340px] group transition-all duration-300 hover:border-[#CD0007]/40 hover:shadow-lg"
           >
             {/* Ambient Soft Red Hover Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-red-50/0 via-red-50/0 to-red-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#FDF2F2]/0 via-[#FDF2F2]/0 to-[#FDF2F2]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             {/* Card Header with Label & WeFunder Logo */}
             <div className="relative z-10 space-y-1">
-              <p className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#B91C1C]">
+              <p className="type-label font-medium uppercase text-[#CD0007]">
                 PARTNER WITH BFF
               </p>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight flex items-center flex-wrap gap-3 pt-1">
+              <h3 className="type-h3 text-[#111111] flex items-center flex-wrap gap-3 pt-1">
                 <span>Continue to</span>
                 <motion.div
                   animate={{ scale: [1, 1.06, 1] }}
@@ -163,7 +163,7 @@ export default function CommunityWeFunderSection() {
 
             {/* Subtext & Action Button */}
             <div className="relative z-10 pt-4 pb-16 sm:pb-20 space-y-4 max-w-[280px]">
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium">
+              <p className="type-body text-gray-700">
                 See how we enable everyday investors to participate in film financing.
               </p>
 
@@ -173,10 +173,10 @@ export default function CommunityWeFunderSection() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, x: 3 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-1.5 bg-white hover:bg-[#B91C1C] text-gray-900 hover:text-white border border-gray-300 hover:border-[#B91C1C] font-semibold px-4 py-2.5 rounded-sm text-xs shadow-xs transition-all group/btn cursor-pointer w-fit"
+                className="inline-flex items-center gap-1.5 bg-[#FAF7F1] hover:bg-[#CD0007] text-[#111111] hover:text-white border border-[#EAE5DC] hover:border-[#CD0007] type-cta px-5 py-2.5 rounded-full shadow-xs transition-all group/btn cursor-pointer w-fit"
               >
                 <span>View Campaign</span>
-                <ArrowRight size={13} className="text-gray-600 group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
+                <ArrowRight size={13} className="text-[#111111] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
               </motion.a>
             </div>
 

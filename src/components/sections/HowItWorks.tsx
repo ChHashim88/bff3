@@ -1,357 +1,386 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import { UploadCloud, Cpu, Users, DollarSign, Clapperboard, PieChart } from "lucide-react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-
-const AUTO_PLAY_INTERVAL = 4000; // 4 seconds per step
-
-// Helper for polar to cartesian coordinate conversion
-function polarToCartesian(centerX: number, centerY: number, radius: number, angleInDegrees: number) {
-  const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
-  return {
-    x: centerX + radius * Math.cos(angleInRadians),
-    y: centerY + radius * Math.sin(angleInRadians),
-  };
-}
-
-// Helper to construct SVG Arc path string
-function describeArc(x: number, y: number, radius: number, startAngle: number, endAngle: number) {
-  const start = polarToCartesian(x, y, radius, endAngle);
-  const end = polarToCartesian(x, y, radius, startAngle);
-  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-  return [
-    "M", start.x, start.y,
-    "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
-  ].join(" ");
-}
+import { useState } from "react";
+import Image from "next/image";
+import { ClipboardCheck, Search, Share2, Landmark, TrendingUp, Users, Camera, Target, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HowItWorks() {
+  const [activeStep, setActiveStep] = useState(2); // Center card active (index 2: Distribution & Audience)
+
   const steps = [
     {
-      num: "01",
-      icon: UploadCloud,
-      title: "Submit Project",
-      desc: "Filmmakers submit their projects.",
+      num: 1,
+      icon: ClipboardCheck,
+      title: "Quality Projects",
+      description: "A consistent pipeline sourced through industry relationships.",
+      image: "/images/film1.jpg",
+      alt: "Quality Projects",
     },
     {
-      num: "02",
-      icon: Cpu,
-      title: "AI Evaluation",
-      desc: "Our AI analyzes market potential and ROI.",
+      num: 2,
+      icon: Search,
+      title: "Disciplined Selection",
+      description: "Projects evaluated against clear financial and commercial standards.",
+      image: "/images/film2.jpg",
+      alt: "Disciplined Selection",
     },
     {
-      num: "03",
-      icon: Users,
-      title: "Investor Review",
-      desc: "Investors review and choose to invest.",
+      num: 3,
+      icon: Share2,
+      title: "Distribution & Audience",
+      description: "Strong distribution capability and audience reach.",
+      image: "/wfb.png",
+      alt: "Distribution and Audience Reach World Map",
     },
     {
-      num: "04",
-      icon: DollarSign,
-      title: "Funding",
-      desc: "Capital is raised and secured.",
+      num: 4,
+      icon: Landmark,
+      title: "Financial Discipline",
+      description: "Responsible capital and platform management.",
+      image: "/bfc.PNG",
+      alt: "Financial Discipline Pillars",
     },
     {
-      num: "05",
-      icon: Clapperboard,
-      title: "Production",
-      desc: "The film is produced with full transparency.",
-    },
-    {
-      num: "06",
-      icon: PieChart,
-      title: "Revenue Sharing",
-      desc: "Profits are shared fairly with investors.",
+      num: 5,
+      icon: TrendingUp,
+      title: "Growing Investor Community",
+      description: "A network that grows with every project.",
+      image: "/2ndd.png",
+      alt: "Growing Investor Community",
     },
   ];
 
-  // Mobile Radial Carousel State
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [progressKey, setProgressKey] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isSectionInView = useInView(sectionRef, { amount: 0.3 });
+  const summaryItems = [
+    { icon: Users,      title: "Sourcing",            description: "A consistent pipeline sourced through industry relationships.", floatDuration: 4.2, floatDelay: 0 },
+    { icon: Search,     title: "Selection",           description: "Projects evaluated against clear financial and commercial standards.", floatDuration: 4.8, floatDelay: 0.5 },
+    { icon: Camera,     title: "Distribution",        description: "Strong distribution capability and audience reach.", floatDuration: 4.4, floatDelay: 1.0 },
+    { icon: Landmark,   title: "Financial Discipline", description: "Responsible capital and platform management.", floatDuration: 5.0, floatDelay: 1.5 },
+    { icon: TrendingUp, title: "Community",           description: "A network that grows with every project.", floatDuration: 4.6, floatDelay: 2.0 },
+  ];
 
-  // Swipe gesture state
-  const touchStartX = useRef<number | null>(null);
-
-  const nextStep = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % steps.length);
-    setProgressKey((prev) => prev + 1);
-  }, [steps.length]);
-
-  const prevStep = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + steps.length) % steps.length);
-    setProgressKey((prev) => prev + 1);
-  }, [steps.length]);
-
-  const handleSelectStep = (index: number) => {
-    setActiveIndex(index);
-    setProgressKey((prev) => prev + 1);
-  };
-
-  // Autoplay Timer with IntersectionObserver & Reduced Motion Check
-  useEffect(() => {
-    if (!isSectionInView) return;
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) return;
-
-    const timer = setInterval(() => {
-      nextStep();
-    }, AUTO_PLAY_INTERVAL);
-
-    return () => clearInterval(timer);
-  }, [isSectionInView, nextStep, progressKey]);
-
-  // Touch Swipe Handlers for Mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
-
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) {
-        nextStep();
-      } else {
-        prevStep();
-      }
-    }
-    touchStartX.current = null;
-  };
-
-  const ActiveIcon = steps[activeIndex].icon;
+  // Positions relative to center: [-2, -1, 0, 1, 2]
+  const positions = [-2, -1, 0, 1, 2];
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-16 sm:py-24 lg:py-32 bg-white border-b border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="how-it-works" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-14">
+
+        {/* ── 1. SECTION HEADER: BUILT TO SUCCEED ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto space-y-3"
+        >
+          <div className="space-y-1.5">
+            <p className="type-label font-medium uppercase text-[#CD0007]">
+              BUILT TO SUCCEED
+            </p>
+            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+          </div>
+
+          <h2 className="type-h2 text-[#111111]">
+            Five Foundations <span className="text-[#CD0007]">of the Platform</span>
+          </h2>
+
+          <p className="type-subtitle font-normal text-gray-700 max-w-xl mx-auto pt-1">
+            Success in film investing requires more than finding good projects.
+          </p>
+        </motion.div>
+
+        {/* ── 2. CENTERED STATEMENT CALLOUT BANNER ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto mb-10 sm:mb-20"
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-8 sm:p-12 lg:p-14 flex flex-col sm:flex-row items-center gap-8 shadow-xs min-h-[160px] sm:min-h-[190px]"
         >
-          <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C] mb-2 sm:mb-3">
-            How It Works
-          </p>
-          <h2 className="text-2.5xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight">
-            From Project to Profit.
-          </h2>
+          {/* Target Icon Badge */}
+          <div className="w-20 h-20 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
+            <Target size={38} strokeWidth={1.4} />
+          </div>
+          
+          {/* Text Content */}
+          <div className="space-y-2.5 text-center sm:text-left flex-1">
+            <p className="type-body text-gray-800">
+              It requires deal flow, disciplined selection, distribution, financial discipline, and community.
+            </p>
+            <p className="type-subtitle font-medium text-[#111111]">
+              Together, these capabilities create a foundation built to scale.
+            </p>
+          </div>
         </motion.div>
 
-        {/* ---------------------------------------------------- */}
-        {/* 1. MOBILE RADIAL CAROUSEL (Visible strictly on <md)  */}
-        {/* ---------------------------------------------------- */}
-        <div
-          className="block md:hidden relative max-w-[340px] xs:max-w-[370px] mx-auto px-2 select-none"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+        {/* ── 3. CINEMATIC 5-CARD 3D BODYGUARD GALLERY STRIP ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl py-12 sm:py-16 px-4 sm:px-8 shadow-sm relative overflow-hidden text-[#111111]"
         >
-          {/* Main Circular Track Container */}
-          <div className="relative w-full aspect-square flex items-center justify-center">
+          {/* Minimalist Corner Framing Brackets in Logo Red (#CD0007) */}
+          <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[#CD0007] pointer-events-none z-20 opacity-80" />
+          <div className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[#CD0007] pointer-events-none z-20 opacity-80" />
+          <div className="absolute bottom-4 left-4 w-7 h-7 border-b-2 border-l-2 border-[#CD0007] pointer-events-none z-20 opacity-80" />
+          <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-[#CD0007] pointer-events-none z-20 opacity-80" />
 
-            {/* SVG Segmented Arc Tracks & Active Progress Ring */}
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 300 300"
+          {/* Section Header Inside Card */}
+          <div className="text-center max-w-2xl mx-auto space-y-3 mb-10 relative z-10">
+            <p className="type-label font-medium uppercase text-[#CD0007]">
+              BUILT TO SUCCEED
+            </p>
+            <h3 className="type-h3 text-[#111111] uppercase">
+              Five Foundations of the Platform
+            </h3>
+            <div className="w-[40px] h-[2px] bg-[#CD0007] mx-auto mt-2" />
+          </div>
+
+          {/* 3D Perspective Bodyguard Stage */}
+          <div className="relative w-full max-w-[1340px] mx-auto min-h-[340px] sm:min-h-[400px] lg:min-h-[440px] flex items-center justify-center perspective-[1200px] z-10 py-4 overflow-hidden">
+            
+            {/* Left Edge Creative Vignette Fade-out Mask Overlay */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 lg:w-44 bg-gradient-to-r from-[#FAF8F3] via-[#FAF8F3]/80 to-transparent pointer-events-none z-30" />
+            
+            {/* Right Edge Creative Vignette Fade-out Mask Overlay */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 lg:w-44 bg-gradient-to-l from-[#FAF8F3] via-[#FAF8F3]/80 to-transparent pointer-events-none z-30" />
+
+            {/* Left Arrow Navigation Button */}
+            <button
+              onClick={() => setActiveStep((prev) => (prev > 0 ? prev - 1 : steps.length - 1))}
+              className="absolute left-2 sm:left-4 z-40 w-12 h-12 rounded-full bg-white/95 border border-[#EAE5DC] text-[#111111] flex items-center justify-center hover:bg-[#CD0007] hover:text-white hover:border-[#CD0007] transition-all cursor-pointer shadow-lg active:scale-95"
+              aria-label="Previous step"
             >
-              {/* 6 Connected Arc Segments */}
-              {steps.map((_, i) => {
-                const centerAngle = i * 60;
-                const startAngle = centerAngle - 24;
-                const endAngle = centerAngle + 24;
-                const pathD = describeArc(150, 150, 125, startAngle, endAngle);
-                const isActive = i === activeIndex;
+              <ChevronLeft size={22} />
+            </button>
+
+            {/* Right Arrow Navigation Button */}
+            <button
+              onClick={() => setActiveStep((prev) => (prev < steps.length - 1 ? prev + 1 : 0))}
+              className="absolute right-2 sm:right-4 z-40 w-12 h-12 rounded-full bg-white/95 border border-[#EAE5DC] text-[#111111] flex items-center justify-center hover:bg-[#CD0007] hover:text-white hover:border-[#CD0007] transition-all cursor-pointer shadow-lg active:scale-95"
+              aria-label="Next step"
+            >
+              <ChevronRight size={22} />
+            </button>
+
+            {/* 5 Cards Positioned in 3D Bodyguard Arc */}
+            <div className="flex items-center justify-center gap-1.5 xs:gap-3 sm:gap-4 lg:gap-6 w-full px-8 sm:px-12">
+              {positions.map((pos) => {
+                const cardIndex = ((activeStep + pos) % 5 + 5) % 5;
+                const step = steps[cardIndex];
+                const isCenter = pos === 0;
+
+                let rotateY = 0;
+                let scale = 1.12;
+                let zIndex = 30;
+                let opacity = 1;
+                let filter = "blur(0px)";
+
+                if (pos === -1) {
+                  rotateY = 18;
+                  scale = 0.95;
+                  zIndex = 20;
+                  opacity = 0.92;
+                } else if (pos === 1) {
+                  rotateY = -18;
+                  scale = 0.95;
+                  zIndex = 20;
+                  opacity = 0.92;
+                } else if (pos === -2) {
+                  rotateY = 32;
+                  scale = 0.82;
+                  zIndex = 10;
+                  opacity = 0.45;
+                  filter = "blur(1.5px)";
+                } else if (pos === 2) {
+                  rotateY = -32;
+                  scale = 0.82;
+                  zIndex = 10;
+                  opacity = 0.45;
+                  filter = "blur(1.5px)";
+                }
 
                 return (
-                  <g key={i}>
-                    {/* Inactive Subtle Arc Track */}
-                    <path
-                      d={pathD}
-                      fill="none"
-                      stroke={isActive ? "#B91C1C" : "#E5E7EB"}
-                      strokeWidth={isActive ? "3.5" : "2"}
-                      strokeLinecap="round"
-                      className="transition-colors duration-300"
+                  <motion.div
+                    key={`${cardIndex}-${pos}`}
+                    onClick={() => setActiveStep(cardIndex)}
+                    animate={{
+                      rotateY,
+                      scale,
+                      opacity,
+                      filter,
+                      z: isCenter ? 60 : -Math.abs(pos) * 50,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 280,
+                      damping: 25,
+                    }}
+                    style={{ zIndex, transformStyle: "preserve-3d" }}
+                    whileHover={{
+                      scale: isCenter ? 1.15 : scale * 1.05,
+                      opacity: isCenter ? 1 : 0.95,
+                      filter: "blur(0px)",
+                    }}
+                    className={`relative shrink-0 w-[170px] xs:w-[200px] sm:w-[240px] md:w-[270px] lg:w-[290px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border-2 transition-all duration-300 shadow-xl ${
+                      isCenter
+                        ? "border-[#CD0007] shadow-[0_15px_35px_rgba(205,0,7,0.32)] ring-4 ring-[#CD0007]/20"
+                        : "border-[#EAE5DC] hover:border-[#CD0007]/80 hover:shadow-2xl"
+                    }`}
+                  >
+                    {/* Card Background Image */}
+                    <Image
+                      src={step.image}
+                      alt={step.alt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 240px, 300px"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/15" />
 
-                    {/* Active Arc Animated Fill Progress Bar */}
-                    {isActive && (
-                      <motion.path
-                        key={`progress-${progressKey}`}
-                        d={pathD}
-                        fill="none"
-                        stroke="#B91C1C"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: AUTO_PLAY_INTERVAL / 1000, ease: "linear" }}
-                      />
-                    )}
-                  </g>
+                    {/* Step Badge & Title Content Overlay */}
+                    <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between z-10">
+                      {/* Top Step Number & Status Badge */}
+                      <div className="flex justify-between items-center">
+                        <span className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shadow-md ${
+                          isCenter ? "bg-[#CD0007] text-white" : "bg-white/90 text-[#111111]"
+                        }`}>
+                          0{step.num}
+                        </span>
+                        {isCenter && (
+                          <span className="type-label text-white bg-[#CD0007] px-3 py-1 rounded-full shadow-md uppercase font-semibold tracking-wider text-[10px]">
+                            ACTIVE
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Bottom Card Title */}
+                      <div className="space-y-1">
+                        <h4 className="type-body font-semibold text-white leading-tight drop-shadow-md">
+                          0{step.num} — {step.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </motion.div>
                 );
               })}
-            </svg>
-
-            {/* CENTER CONTENT DISPLAY (Optimized size for generous radial gap) */}
-            <div className="relative z-20 w-[155px] h-[155px] xs:w-[170px] xs:h-[170px] rounded-full bg-white border border-gray-100 shadow-xl shadow-gray-200/40 flex flex-col items-center justify-center p-3 text-center ring-4 ring-gray-50/80">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -8, scale: 0.95 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex flex-col items-center justify-center text-center space-y-1"
-                >
-                  {/* Step Number Tag */}
-                  <span className="text-[9px] font-bold text-[#B91C1C] uppercase tracking-widest bg-red-50/80 px-2 py-0.5 rounded-full">
-                    STEP {steps[activeIndex].num}
-                  </span>
-
-                  {/* Icon */}
-                  <div className="text-[#B91C1C] py-0.5">
-                    <ActiveIcon size={22} strokeWidth={2} />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xs xs:text-sm font-bold text-gray-900 leading-tight tracking-tight max-w-[130px]">
-                    {steps[activeIndex].title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[10px] xs:text-[11px] text-gray-500 leading-snug max-w-[140px] line-clamp-2">
-                    {steps[activeIndex].desc}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
             </div>
 
-            {/* 6 RADIAL NODES POSITIONED AROUND THE CIRCLE */}
-            {steps.map((step, i) => {
-              const StepIcon = step.icon;
-              const angleRad = ((i * 60 - 90) * Math.PI) / 180;
-              const radiusPercent = 41.67; // 125px out of 300px radius
-              const leftPercent = 50 + radiusPercent * Math.cos(angleRad);
-              const topPercent = 50 + radiusPercent * Math.sin(angleRad);
-              const isActive = i === activeIndex;
+          </div>
 
+          {/* Active Step Content Block */}
+          <div className="max-w-2xl mx-auto text-center mt-10 space-y-2 relative z-10 px-4 min-h-[90px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeStep}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-2"
+              >
+                <h4 className="type-h3 text-[#CD0007]">
+                  0{steps[activeStep].num} — {steps[activeStep].title}
+                </h4>
+                <p className="type-body text-gray-700 max-w-xl mx-auto">
+                  {steps[activeStep].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Center Dots Indicator */}
+          <div className="flex items-center justify-center gap-3 mt-8 relative z-10">
+            {steps.map((step, idx) => {
+              const isActive = idx === activeStep;
               return (
                 <button
                   key={step.num}
-                  type="button"
-                  onClick={() => handleSelectStep(i)}
-                  aria-label={`View step ${step.num}: ${step.title}`}
-                  style={{
-                    left: `${leftPercent}%`,
-                    top: `${topPercent}%`,
-                  }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-300 focus:outline-none cursor-pointer group ${isActive ? "scale-115" : "hover:scale-105"
-                    }`}
+                  onClick={() => setActiveStep(idx)}
+                  className={`flex flex-col items-center gap-1 transition-all duration-300 cursor-pointer ${
+                    isActive ? "text-[#CD0007] scale-110" : "text-gray-400 hover:text-gray-600"
+                  }`}
                 >
-                  {/* Circular Icon Node */}
-                  <div
-                    className={`w-11 h-11 xs:w-12 xs:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-md relative ${isActive
-                      ? "bg-[#B91C1C] text-white ring-4 ring-red-100 shadow-red-500/20"
-                      : "bg-white text-gray-600 border border-gray-200 hover:border-[#B91C1C] hover:text-[#B91C1C]"
-                      }`}
-                  >
-                    <StepIcon size={18} strokeWidth={isActive ? 2.2 : 1.8} />
-
-                    {/* Outer Step Number Label Badge */}
-                    <span
-                      className={`absolute -bottom-1 -right-1 text-[9px] font-bold px-1.5 py-0.2 rounded-full border shadow-xs transition-colors ${isActive
-                        ? "bg-gray-900 text-white border-gray-900"
-                        : "bg-gray-100 text-gray-700 border-gray-200"
-                        }`}
-                    >
-                      {step.num}
-                    </span>
-                  </div>
+                  <span className="type-label font-bold">0{step.num}</span>
+                  <div className={`h-1.5 rounded-full transition-all duration-300 ${
+                    isActive ? "w-6 bg-[#CD0007]" : "w-1.5 bg-[#EAE5DC]"
+                  }`} />
                 </button>
               );
             })}
           </div>
 
-          {/* Step Pagination Indicator Dots Below the Radial Carousel */}
-          <div className="flex items-center justify-center space-x-2 pt-6 pb-2">
-            {steps.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => handleSelectStep(i)}
-                aria-label={`Go to step ${i + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${i === activeIndex
-                  ? "w-6 h-2 bg-[#B91C1C]"
-                  : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
-                  }`}
-              />
-            ))}
-          </div>
-        </div>
+        </motion.div>
 
-        {/* ---------------------------------------------------- */}
-        {/* 2. DESKTOP & TABLET LAYOUT (Strictly UNCHANGED >=md) */}
-        {/* ---------------------------------------------------- */}
-        <div className="hidden md:block relative">
-          {/* Desktop Connecting Line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block absolute top-[56px] left-[calc(100%/12)] right-[calc(100%/12)] h-[1.5px] bg-gray-200 z-0 origin-left"
-          />
+        {/* ── 4. BOTTOM STATEMENT + 5-COLUMN SUMMARY ── */}
+        <div className="space-y-6">
+          <p className="type-subtitle text-center text-[#111111]">
+            Together, these capabilities create a foundation built to scale.
+          </p>
 
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
-            {steps.map((step, idx) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.8, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex flex-col items-center text-center group cursor-pointer"
-                >
-                  {/* Step Number Label */}
-                  <span className="text-xs font-bold text-[#B91C1C] mb-3 uppercase tracking-wider block">
-                    {step.num}
-                  </span>
-
-                  {/* Clean Icon Circle with Solid White Background & Masking + Continuous Wave Float */}
+          <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl shadow-xs overflow-hidden p-6 sm:p-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 lg:divide-x divide-[#EAE5DC] gap-6 lg:gap-0">
+              {summaryItems.map((item, idx) => {
+                const Icon = item.icon;
+                return (
                   <motion.div
-                    animate={{ y: [0, -6, 0], scale: [1, 1.08, 1] }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 3.6,
-                      delay: idx * 0.6, // Staggered continuous wave float across 6 steps
-                      ease: "easeInOut",
-                    }}
-                    style={{ willChange: "transform" }}
-                    whileHover={{ scale: 1.18, rotate: 6 }}
-                    className="w-14 h-14 rounded-full bg-white border border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center text-gray-700 group-hover:text-[#B91C1C] group-hover:bg-red-50/50 transition-colors duration-300 shadow-sm mb-4 relative z-10 ring-4 ring-white cursor-pointer"
+                    key={idx}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.07 }}
+                    className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${
+                      idx !== 0 ? "lg:pl-6" : ""
+                    }`}
                   >
-                    <Icon size={22} strokeWidth={1.75} />
-                  </motion.div>
+                    {/* Floating Container (Infinite Ambient Motion) */}
+                    <motion.div
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{
+                        duration: item.floatDuration,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                        delay: item.floatDelay,
+                      }}
+                      whileHover={{ y: -8, scale: 1.03 }}
+                      className="flex flex-col items-center text-center w-full group/card"
+                    >
+                      {/* Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
+                      <motion.div 
+                        animate={{
+                          boxShadow: [
+                            "0 0 0 0px rgba(205,0,7,0.12)",
+                            "0 0 0 10px rgba(205,0,7,0)",
+                            "0 0 0 0px rgba(205,0,7,0.12)",
+                          ],
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 3,
+                          delay: idx * 0.5,
+                          ease: "easeInOut",
+                        }}
+                        whileHover={{ scale: 1.18, rotate: 12 }}
+                        className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
+                      >
+                        <Icon size={24} strokeWidth={1.4} />
+                      </motion.div>
 
-                  {/* Title & Desc */}
-                  <h3 className="text-base font-semibold text-gray-900 mb-1.5 tracking-tight group-hover:text-[#B91C1C] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 leading-relaxed max-w-[170px]">
-                    {step.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+                      <h4 className="type-h3 text-[#CD0007] mb-1.5 group-hover/card:translate-y-[-2px] transition-transform">
+                        {item.title}
+                      </h4>
+                      <p className="type-small text-gray-700 max-w-[190px]">
+                        {item.description}
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function BuiltForFairness() {
   return (
-    <section className="relative w-full bg-white border-b border-gray-100 overflow-hidden py-4 sm:py-6 lg:py-8">
+    <section className="relative w-full bg-[#f2f1ed] border-b border-[#e2e0d8] overflow-hidden py-4 sm:py-6 lg:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* -------------------------------------------------------- */}
@@ -16,7 +16,7 @@ export default function BuiltForFairness() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="block lg:hidden relative rounded-sm border border-gray-200 bg-white p-5 sm:p-7 overflow-hidden shadow-xs flex flex-col justify-center"
+          className="block lg:hidden relative rounded-sm border border-[#e2e0d8] bg-[#f9f8f5] p-5 sm:p-7 overflow-hidden shadow-xs flex flex-col justify-center"
         >
           {/* Background Image /bfc.PNG behind text with low opacity */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -29,18 +29,18 @@ export default function BuiltForFairness() {
               sizes="100vw"
             />
             {/* Smooth Gradient Overlay over image for max text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f9f8f5] via-[#f9f8f5]/85 to-[#f9f8f5]/30 pointer-events-none" />
           </div>
 
           {/* Foreground Text Content */}
           <div className="relative z-10 space-y-2.5 sm:space-y-3 max-w-lg">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#B91C1C]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#710014]">
               Built For Fairness
             </p>
-            <h2 className="text-2.5xl sm:text-4xl font-semibold text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-2.5xl sm:text-4xl font-semibold text-[#161616] tracking-tight leading-tight">
               Designed for investors.
             </h2>
-            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
+            <p className="text-sm sm:text-base text-[#161616]/80 font-medium leading-relaxed">
               We combine data, technology, and people to find the best stories — together.
             </p>
           </div>
@@ -58,13 +58,13 @@ export default function BuiltForFairness() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-4 max-w-xl z-20"
           >
-            <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#B91C1C]">
+            <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#710014]">
               Built For Fairness
             </p>
-            <h2 className="text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-[1.12]">
+            <h2 className="text-4xl lg:text-5xl font-semibold text-[#161616] tracking-tight leading-[1.12]">
               Designed for investors.
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 font-medium leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg text-[#161616]/80 font-medium leading-relaxed max-w-lg">
               We combine data, technology, and people to find the best stories — together.
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ export default function BuiltForFairness() {
                 sizes="50vw"
               />
               {/* Fade out to left side gradient mask overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none w-2/5" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#f2f1ed] via-[#f2f1ed]/40 to-transparent pointer-events-none w-2/5" />
             </div>
           </motion.div>
         </div>
@@ -95,7 +95,7 @@ export default function BuiltForFairness() {
       </div>
 
       {/* Ambient background right glow */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-gray-50/80 to-transparent pointer-events-none z-0" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-[#e8e6df]/80 to-transparent pointer-events-none z-0" />
     </section>
   );
 }
