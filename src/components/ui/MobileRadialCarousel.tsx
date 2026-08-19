@@ -15,12 +15,14 @@ interface MobileRadialCarouselProps {
   items: RadialItem[];
   badgePrefix?: string;
   autoPlayInterval?: number;
+  scale?: number; // Scaling factor for outer circle radius & spacing
 }
 
 export default function MobileRadialCarousel({
   items,
   badgePrefix = "FEATURE",
   autoPlayInterval = 4000,
+  scale = 1,
 }: MobileRadialCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -30,6 +32,11 @@ export default function MobileRadialCarousel({
 
   const totalItems = items.length;
   const touchStartX = useRef<number | null>(null);
+
+  // Dynamic radius calculations based on scale
+  const baseRadius = Math.round(145 * scale);
+  const viewBoxSize = Math.round(360 * scale);
+  const centerCoord = viewBoxSize / 2;
 
   // Auto-play timer with arc fill progress tracking
   useEffect(() => {
@@ -90,19 +97,19 @@ export default function MobileRadialCarousel({
       onTouchEnd={handleTouchEnd}
       className="w-full py-2 flex flex-col items-center select-none"
     >
-      {/* Main Radial Container (Perfect Proportion & Space Match) */}
-      <div className="relative w-full max-w-[320px] xs:max-w-[350px] sm:max-w-[380px] aspect-square flex items-center justify-center my-2 p-2">
+      {/* Main Radial Container */}
+      <div className="relative w-full max-w-[340px] xs:max-w-[370px] sm:max-w-[400px] aspect-square flex items-center justify-center my-2 p-1">
         
         {/* SVG Segmented Circular Track & Active Arc Fill */}
         <svg
           className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
-          viewBox="0 0 360 360"
+          viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}
         >
           {/* Base Background Track Circle */}
           <circle
-            cx="180"
-            cy="180"
-            r="145"
+            cx={centerCoord}
+            cy={centerCoord}
+            r={baseRadius}
             fill="none"
             stroke="#EAE5DC"
             strokeWidth="3"
@@ -112,11 +119,10 @@ export default function MobileRadialCarousel({
 
           {/* Segmented Arcs for each item */}
           {items.map((_, i) => {
-            const radius = 145;
-            const circumference = 2 * Math.PI * radius;
+            const circumference = 2 * Math.PI * baseRadius;
             const segmentAngle = 360 / totalItems;
             const segmentLength = (segmentAngle / 360) * circumference;
-            const gap = 14;
+            const gap = 14 * scale;
             const dashArray = `${segmentLength - gap} ${circumference - (segmentLength - gap)}`;
             const strokeDashoffset = -i * segmentLength;
             const isActive = i === activeIndex;
@@ -124,9 +130,9 @@ export default function MobileRadialCarousel({
             return (
               <circle
                 key={i}
-                cx="180"
-                cy="180"
-                r={radius}
+                cx={centerCoord}
+                cy={centerCoord}
+                r={baseRadius}
                 fill="none"
                 stroke={isActive ? "#CD0007" : "#EAE5DC"}
                 strokeWidth={isActive ? "5.5" : "3"}
@@ -140,18 +146,17 @@ export default function MobileRadialCarousel({
 
           {/* Active Arc Dynamic Filling Progress Indicator */}
           {(() => {
-            const radius = 145;
-            const circumference = 2 * Math.PI * radius;
+            const circumference = 2 * Math.PI * baseRadius;
             const segmentAngle = 360 / totalItems;
-            const segmentLength = (segmentAngle / 360) * circumference - 14;
+            const segmentLength = (segmentAngle / 360) * circumference - (14 * scale);
             const filledLength = (progress / 100) * segmentLength;
             const offset = -activeIndex * ((segmentAngle / 360) * circumference);
 
             return (
               <circle
-                cx="180"
-                cy="180"
-                r={radius}
+                cx={centerCoord}
+                cy={centerCoord}
+                r={baseRadius}
                 fill="none"
                 stroke="#CD0007"
                 strokeWidth="6.5"
@@ -169,9 +174,8 @@ export default function MobileRadialCarousel({
         {items.map((item, i) => {
           const angleDeg = (i / totalItems) * 360 - 90;
           const angleRad = (angleDeg * Math.PI) / 180;
-          const radius = 145;
-          const x = 180 + radius * Math.cos(angleRad);
-          const y = 180 + radius * Math.sin(angleRad);
+          const x = centerCoord + baseRadius * Math.cos(angleRad);
+          const y = centerCoord + baseRadius * Math.sin(angleRad);
           const isActive = i === activeIndex;
           const NodeIcon = item.icon;
 
@@ -181,8 +185,8 @@ export default function MobileRadialCarousel({
               onClick={() => handleItemClick(i)}
               aria-label={`View ${item.title}`}
               style={{
-                left: `${(x / 360) * 100}%`,
-                top: `${(y / 360) * 100}%`,
+                left: `${(x / viewBoxSize) * 100}%`,
+                top: `${(y / viewBoxSize) * 100}%`,
               }}
               className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-500 z-20 cursor-pointer ${
                 isActive
@@ -195,7 +199,7 @@ export default function MobileRadialCarousel({
           );
         })}
 
-        {/* Center Active Content Display Card (Balanced Size & Padding) */}
+        {/* Center Active Content Display Card */}
         <div className="w-[185px] xs:w-[205px] sm:w-[225px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-lg flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
