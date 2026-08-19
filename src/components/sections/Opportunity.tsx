@@ -93,9 +93,9 @@ export default function Opportunity() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
 
             {/* LEFT SIDE: Headline & Description (~50% width / lg:col-span-6) */}
-            <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-6 h-full py-1">
 
-              <div className="space-y-3">
+              <div className="space-y-4 my-auto">
                 <p className="type-label font-medium uppercase text-[#CD0007]">
                   THE OPPORTUNITY
                 </p>
@@ -107,7 +107,7 @@ export default function Opportunity() {
                 </h2>
 
                 {/* Paragraphs */}
-                <p className="type-body text-gray-700 max-w-xl">
+                <p className="type-body text-gray-700 max-w-xl leading-relaxed">
                   Film is one of the world’s most consumed forms of entertainment—yet remains one of the least accessible asset classes for investors.
                 </p>
 
@@ -127,8 +127,8 @@ export default function Opportunity() {
             </div>
 
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
-            <div className="lg:col-span-6 flex items-center">
-              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group w-full min-h-[300px] sm:min-h-[360px]">
+            <div className="lg:col-span-6 flex items-stretch h-full">
+              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-auto bg-[#111111] group w-full h-full min-h-[320px] sm:min-h-[360px]">
                 
                 {/* HTML5 Video Player */}
                 <video
