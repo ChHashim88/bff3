@@ -63,13 +63,19 @@
     }
   }
 
-  /* H2: Major section heading (Desktop 32px, Mobile 28px, Weight 600, Line height 1.15, Letter spacing -0.015em) */
+  /* H2: Major section heading (Desktop 32px, Tablet 28px, Mobile 19px matching h3, Weight 600, Line height 1.15, Letter spacing -0.015em) */
   .type-h2 {
     font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-    font-size: 28px !important;
+    font-size: 19px !important;
     font-weight: 600 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.015em !important;
+  }
+
+  @media (min-width: 768px) {
+    .type-h2 {
+      font-size: 28px !important;
+    }
   }
 
   @media (min-width: 1024px) {

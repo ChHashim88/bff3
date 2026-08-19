@@ -37,7 +37,7 @@ export default function BuiltForFairness() {
             <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#710014]">
               Built For Fairness
             </p>
-            <h2 className="text-2.5xl sm:text-4xl font-semibold text-[#161616] tracking-tight leading-tight">
+            <h2 className="text-[19px] sm:text-4xl font-semibold text-[#161616] tracking-tight leading-tight">
               Designed for investors.
             </h2>
             <p className="text-sm sm:text-base text-[#161616]/80 font-medium leading-relaxed">
