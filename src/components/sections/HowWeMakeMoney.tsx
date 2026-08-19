@@ -47,7 +47,7 @@ export default function HowWeMakeMoney() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs relative"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-4 sm:p-10 shadow-xs relative"
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
@@ -114,9 +114,9 @@ export default function HowWeMakeMoney() {
 
             </div>
 
-            {/* RIGHT SIDE: Mobile Radial Carousel (< 768px) */}
+            {/* RIGHT SIDE: Mobile Radial Carousel (< 768px) with Increased Outer Space */}
             <div className="block md:hidden pt-4 border-t border-[#EAE5DC] lg:border-t-0">
-              <MobileRadialCarousel items={revenueCards} badgePrefix="STREAM" />
+              <MobileRadialCarousel items={revenueCards} badgePrefix="STREAM" scale={1.12} />
             </div>
 
             {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid (Desktop / Tablet >= 768px) */}
