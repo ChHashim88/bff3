@@ -87,7 +87,7 @@ export default function Opportunity() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs space-y-8 sm:space-y-10"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-4 sm:p-10 shadow-xs space-y-8 sm:space-y-10"
         >
           {/* Top Row: 2-Column Composition (Structured Exactly Like The Platform) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
@@ -192,9 +192,9 @@ export default function Opportunity() {
 
           </div>
 
-          {/* Mobile Radial Carousel (< 768px) */}
+          {/* Mobile Radial Carousel (< 768px) with Increased Outer Space */}
           <div className="block md:hidden pt-4 border-t border-[#EAE5DC]">
-            <MobileRadialCarousel items={cards} badgePrefix="FEATURE" />
+            <MobileRadialCarousel items={cards} badgePrefix="FEATURE" scale={1.12} />
           </div>
 
           {/* 5 Feature Cards Grid (Desktop / Tablet >= 768px) */}
