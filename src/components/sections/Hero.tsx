@@ -81,18 +81,27 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           />
         </div>
 
-        {/* ── MOBILE SCREENS ONLY (<640px): SCOPED EXCLUSIVELY TO MOBILE ── */}
-        <div className="block sm:hidden absolute inset-0 w-full h-full">
+        {/* ── MOBILE SCREENS ONLY (<640px): SCOPED EXCLUSIVELY TO MOBILE (Top + Left Fade) ── */}
+        <div
+          className="block sm:hidden absolute inset-0 w-full h-full"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+          }}
+        >
           <Image
             src="/herob.png"
             alt="Big Film Fund Hero Background Mobile"
             fill
             priority
-            className="object-cover object-right opacity-70"
+            className="object-cover object-right opacity-85"
             sizes="100vw"
           />
-          {/* Subtle mobile-only left text cushion gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/70 via-transparent to-transparent pointer-events-none" />
+          {/* Mobile soft top fade overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent pointer-events-none" />
+
+          {/* Mobile soft left fade overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/85 via-[#FAF7F1]/35 to-transparent pointer-events-none" />
         </div>
 
       </div>
