@@ -168,11 +168,13 @@ export default function HowItWorks() {
               <ChevronRight size={22} />
             </button>
 
-            {/* 5 Cards Positioned in 3D Bodyguard Arc */}
+            {/* 5 Cards Positioned in 3D Arc */}
             <div className="flex items-center justify-center gap-1.5 xs:gap-3 sm:gap-4 lg:gap-6 w-full px-8 sm:px-12">
-              {positions.map((pos) => {
-                const cardIndex = ((activeStep + pos) % 5 + 5) % 5;
-                const step = steps[cardIndex];
+              {steps.map((step, idx) => {
+                let pos = idx - activeStep;
+                if (pos > 2) pos -= 5;
+                if (pos < -2) pos += 5;
+
                 const isCenter = pos === 0;
 
                 let rotateY = 0;
@@ -205,10 +207,12 @@ export default function HowItWorks() {
                   filter = "blur(1.5px)";
                 }
 
+                const order = pos + 2;
+
                 return (
                   <motion.div
-                    key={`${cardIndex}-${pos}`}
-                    onClick={() => setActiveStep(cardIndex)}
+                    key={step.num}
+                    onClick={() => setActiveStep(idx)}
                     animate={{
                       rotateY,
                       scale,
@@ -217,20 +221,20 @@ export default function HowItWorks() {
                       z: isCenter ? 60 : -Math.abs(pos) * 50,
                     }}
                     transition={{
-                      type: "spring",
-                      stiffness: 280,
-                      damping: 25,
+                      duration: 0.7,
+                      ease: [0.16, 1, 0.3, 1],
                     }}
-                    style={{ zIndex, transformStyle: "preserve-3d" }}
+                    style={{ order, zIndex, transformStyle: "preserve-3d" }}
                     whileHover={{
                       scale: isCenter ? 1.15 : scale * 1.05,
                       opacity: isCenter ? 1 : 0.95,
                       filter: "blur(0px)",
                     }}
-                    className={`relative shrink-0 w-[170px] xs:w-[200px] sm:w-[240px] md:w-[270px] lg:w-[290px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border-2 transition-all duration-300 shadow-xl ${isCenter
+                    className={`relative shrink-0 w-[170px] xs:w-[200px] sm:w-[240px] md:w-[270px] lg:w-[290px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border-2 shadow-xl ${
+                      isCenter
                         ? "border-[#CD0007] shadow-[0_15px_35px_rgba(205,0,7,0.32)] ring-4 ring-[#CD0007]/20"
                         : "border-[#EAE5DC] hover:border-[#CD0007]/80 hover:shadow-2xl"
-                      }`}
+                    }`}
                   >
                     {/* Card Background Image */}
                     <Image
