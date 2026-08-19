@@ -7,7 +7,7 @@ interface VideoPlayerWithLoaderProps {
   primarySrc: string;
   fallbackSrc?: string;
   poster?: string;
-  badgeText: string;
+  badgeText?: string;
   aspectRatioClass?: string;
 }
 
@@ -131,14 +131,6 @@ export default function VideoPlayerWithLoader({
         >
           <Maximize2 size={18} />
         </button>
-      </div>
-
-      {/* Bottom Left Video Badge */}
-      <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-[#CD0007] animate-pulse" />
-        <span className="text-[11px] font-semibold text-white uppercase tracking-wider">
-          {badgeText}
-        </span>
       </div>
 
     </div>

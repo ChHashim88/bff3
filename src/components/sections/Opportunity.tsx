@@ -99,7 +99,6 @@ export default function Opportunity() {
                 primarySrc="/bff_opportunity.mp4"
                 fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_3_the_opportunity_260611_v2.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
                 poster="/ggh.jpeg"
-                badgeText="THE OPPORTUNITY DEMO"
                 aspectRatioClass="aspect-[16/9] lg:aspect-auto"
               />
             </div>
