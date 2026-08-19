@@ -67,7 +67,7 @@ export default function WhyInvest() {
               </p>
 
             </div>
-            <h2 className="text-[19px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-tight">
+            <h2 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
               A Smarter Way to Invest in Film
             </h2>
           </div>
