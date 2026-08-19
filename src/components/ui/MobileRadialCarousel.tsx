@@ -90,19 +90,19 @@ export default function MobileRadialCarousel({
       onTouchEnd={handleTouchEnd}
       className="w-full py-4 flex flex-col items-center select-none"
     >
-      {/* Main Radial Container (Larger Responsive Aspect Square) */}
-      <div className="relative w-[340px] xs:w-[370px] sm:w-[410px] max-w-full aspect-square flex items-center justify-center my-3">
+      {/* Main Radial Container with Expanded Outer Circle Radius */}
+      <div className="relative w-[340px] xs:w-[380px] sm:w-[420px] max-w-full aspect-square flex items-center justify-center my-4">
         
         {/* SVG Segmented Circular Track & Active Arc Fill */}
         <svg
           className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
-          viewBox="0 0 340 340"
+          viewBox="0 0 380 380"
         >
           {/* Base Background Track Circle */}
           <circle
-            cx="170"
-            cy="170"
-            r="135"
+            cx="190"
+            cy="190"
+            r="160"
             fill="none"
             stroke="#EAE5DC"
             strokeWidth="3"
@@ -112,11 +112,11 @@ export default function MobileRadialCarousel({
 
           {/* Segmented Arcs for each item */}
           {items.map((_, i) => {
-            const radius = 135;
+            const radius = 160;
             const circumference = 2 * Math.PI * radius;
             const segmentAngle = 360 / totalItems;
             const segmentLength = (segmentAngle / 360) * circumference;
-            const gap = 14;
+            const gap = 16;
             const dashArray = `${segmentLength - gap} ${circumference - (segmentLength - gap)}`;
             const strokeDashoffset = -i * segmentLength;
             const isActive = i === activeIndex;
@@ -124,8 +124,8 @@ export default function MobileRadialCarousel({
             return (
               <circle
                 key={i}
-                cx="170"
-                cy="170"
+                cx="190"
+                cy="190"
                 r={radius}
                 fill="none"
                 stroke={isActive ? "#CD0007" : "#EAE5DC"}
@@ -140,17 +140,17 @@ export default function MobileRadialCarousel({
 
           {/* Active Arc Dynamic Filling Progress Indicator */}
           {(() => {
-            const radius = 135;
+            const radius = 160;
             const circumference = 2 * Math.PI * radius;
             const segmentAngle = 360 / totalItems;
-            const segmentLength = (segmentAngle / 360) * circumference - 14;
+            const segmentLength = (segmentAngle / 360) * circumference - 16;
             const filledLength = (progress / 100) * segmentLength;
             const offset = -activeIndex * ((segmentAngle / 360) * circumference);
 
             return (
               <circle
-                cx="170"
-                cy="170"
+                cx="190"
+                cy="190"
                 r={radius}
                 fill="none"
                 stroke="#CD0007"
@@ -165,13 +165,13 @@ export default function MobileRadialCarousel({
           })()}
         </svg>
 
-        {/* Nodes positioned dynamically around the circle without numbers */}
+        {/* Nodes positioned dynamically on expanded outer radius */}
         {items.map((item, i) => {
           const angleDeg = (i / totalItems) * 360 - 90;
           const angleRad = (angleDeg * Math.PI) / 180;
-          const radius = 135;
-          const x = 170 + radius * Math.cos(angleRad);
-          const y = 170 + radius * Math.sin(angleRad);
+          const radius = 160;
+          const x = 190 + radius * Math.cos(angleRad);
+          const y = 190 + radius * Math.sin(angleRad);
           const isActive = i === activeIndex;
           const NodeIcon = item.icon;
 
@@ -181,8 +181,8 @@ export default function MobileRadialCarousel({
               onClick={() => handleItemClick(i)}
               aria-label={`View ${item.title}`}
               style={{
-                left: `${(x / 340) * 100}%`,
-                top: `${(y / 340) * 100}%`,
+                left: `${(x / 380) * 100}%`,
+                top: `${(y / 380) * 100}%`,
               }}
               className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-500 z-20 cursor-pointer ${
                 isActive
@@ -195,8 +195,8 @@ export default function MobileRadialCarousel({
           );
         })}
 
-        {/* Center Active Content Display Card (Larger & Clearer) */}
-        <div className="w-[200px] xs:w-[225px] sm:w-[250px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-xl flex flex-col items-center justify-center p-5 text-center z-10 overflow-hidden relative">
+        {/* Center Active Content Display Card with Increased Outer Space */}
+        <div className="w-[190px] xs:w-[210px] sm:w-[230px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-xl flex flex-col items-center justify-center p-5 text-center z-10 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
