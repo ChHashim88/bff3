@@ -19,7 +19,7 @@ interface MobileRadialCarouselProps {
 
 export default function MobileRadialCarousel({
   items,
-  badgePrefix = "STEP",
+  badgePrefix = "FEATURE",
   autoPlayInterval = 4000,
 }: MobileRadialCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,7 +82,6 @@ export default function MobileRadialCarousel({
 
   const activeItem = items[activeIndex];
   const Icon = activeItem.icon;
-  const itemNum = activeItem.num ?? activeIndex + 1;
 
   return (
     <div
@@ -91,19 +90,19 @@ export default function MobileRadialCarousel({
       onTouchEnd={handleTouchEnd}
       className="w-full py-4 flex flex-col items-center select-none"
     >
-      {/* Main Radial Container (Responsive Aspect Square) */}
-      <div className="relative w-[300px] xs:w-[330px] sm:w-[360px] aspect-square flex items-center justify-center my-2">
+      {/* Main Radial Container (Larger Responsive Aspect Square) */}
+      <div className="relative w-[340px] xs:w-[370px] sm:w-[410px] max-w-full aspect-square flex items-center justify-center my-3">
         
         {/* SVG Segmented Circular Track & Active Arc Fill */}
         <svg
           className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
-          viewBox="0 0 320 320"
+          viewBox="0 0 340 340"
         >
           {/* Base Background Track Circle */}
           <circle
-            cx="160"
-            cy="160"
-            r="125"
+            cx="170"
+            cy="170"
+            r="135"
             fill="none"
             stroke="#EAE5DC"
             strokeWidth="3"
@@ -113,11 +112,11 @@ export default function MobileRadialCarousel({
 
           {/* Segmented Arcs for each item */}
           {items.map((_, i) => {
-            const radius = 125;
+            const radius = 135;
             const circumference = 2 * Math.PI * radius;
             const segmentAngle = 360 / totalItems;
             const segmentLength = (segmentAngle / 360) * circumference;
-            const gap = 12;
+            const gap = 14;
             const dashArray = `${segmentLength - gap} ${circumference - (segmentLength - gap)}`;
             const strokeDashoffset = -i * segmentLength;
             const isActive = i === activeIndex;
@@ -125,12 +124,12 @@ export default function MobileRadialCarousel({
             return (
               <circle
                 key={i}
-                cx="160"
-                cy="160"
+                cx="170"
+                cy="170"
                 r={radius}
                 fill="none"
                 stroke={isActive ? "#CD0007" : "#EAE5DC"}
-                strokeWidth={isActive ? "5" : "3"}
+                strokeWidth={isActive ? "6" : "3"}
                 strokeDasharray={dashArray}
                 strokeDashoffset={strokeDashoffset}
                 strokeLinecap="round"
@@ -141,75 +140,63 @@ export default function MobileRadialCarousel({
 
           {/* Active Arc Dynamic Filling Progress Indicator */}
           {(() => {
-            const radius = 125;
+            const radius = 135;
             const circumference = 2 * Math.PI * radius;
             const segmentAngle = 360 / totalItems;
-            const segmentLength = (segmentAngle / 360) * circumference - 12;
+            const segmentLength = (segmentAngle / 360) * circumference - 14;
             const filledLength = (progress / 100) * segmentLength;
             const offset = -activeIndex * ((segmentAngle / 360) * circumference);
 
             return (
               <circle
-                cx="160"
-                cy="160"
+                cx="170"
+                cy="170"
                 r={radius}
                 fill="none"
                 stroke="#CD0007"
-                strokeWidth="6"
+                strokeWidth="7"
                 strokeDasharray={`${filledLength} ${circumference - filledLength}`}
                 strokeDashoffset={offset}
                 strokeLinecap="round"
-                filter="drop-shadow(0px 0px 5px rgba(205,0,7,0.6))"
+                filter="drop-shadow(0px 0px 6px rgba(205,0,7,0.65))"
                 className="transition-all duration-75"
               />
             );
           })()}
         </svg>
 
-        {/* Nodes positioned dynamically around the circle */}
+        {/* Nodes positioned dynamically around the circle without numbers */}
         {items.map((item, i) => {
           const angleDeg = (i / totalItems) * 360 - 90;
           const angleRad = (angleDeg * Math.PI) / 180;
-          const radius = 125;
-          const x = 160 + radius * Math.cos(angleRad);
-          const y = 160 + radius * Math.sin(angleRad);
+          const radius = 135;
+          const x = 170 + radius * Math.cos(angleRad);
+          const y = 170 + radius * Math.sin(angleRad);
           const isActive = i === activeIndex;
           const NodeIcon = item.icon;
-          const numBadge = item.num ?? i + 1;
 
           return (
             <button
               key={i}
               onClick={() => handleItemClick(i)}
-              aria-label={`View ${badgePrefix.toLowerCase()} ${numBadge}: ${item.title}`}
+              aria-label={`View ${item.title}`}
               style={{
-                left: `${(x / 320) * 100}%`,
-                top: `${(y / 320) * 100}%`,
+                left: `${(x / 340) * 100}%`,
+                top: `${(y / 340) * 100}%`,
               }}
               className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-500 z-20 cursor-pointer ${
                 isActive
-                  ? "w-12 h-12 xs:w-13 xs:h-13 bg-[#CD0007] text-white shadow-[0_0_18px_rgba(205,0,7,0.45)] scale-110 border-2 border-white"
-                  : "w-9 h-9 xs:w-10 xs:h-10 bg-[#FAF7F1] text-gray-600 border border-[#EAE5DC] hover:border-[#CD0007]/50 hover:text-[#CD0007]"
+                  ? "w-13 h-13 xs:w-15 xs:h-15 bg-[#CD0007] text-white shadow-[0_0_22px_rgba(205,0,7,0.5)] scale-115 border-2 border-white"
+                  : "w-10 h-10 xs:w-11 xs:h-11 bg-[#FAF7F1] text-gray-600 border border-[#EAE5DC] hover:border-[#CD0007]/50 hover:text-[#CD0007]"
               }`}
             >
-              <div className="relative flex items-center justify-center">
-                <NodeIcon size={isActive ? 18 : 15} strokeWidth={isActive ? 2 : 1.5} />
-                <span
-                  className={`absolute -top-2 -right-2 px-1 py-0.2 rounded-full text-[9px] font-bold ${
-                    isActive
-                      ? "bg-white text-[#CD0007] shadow-xs"
-                      : "bg-[#EAE5DC] text-gray-700"
-                  }`}
-                >
-                  0{numBadge}
-                </span>
-              </div>
+              <NodeIcon size={isActive ? 22 : 18} strokeWidth={isActive ? 2.2 : 1.6} />
             </button>
           );
         })}
 
-        {/* Center Active Content Display Card */}
-        <div className="w-[180px] xs:w-[200px] sm:w-[220px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-lg flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
+        {/* Center Active Content Display Card (Larger & Clearer) */}
+        <div className="w-[200px] xs:w-[225px] sm:w-[250px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-xl flex flex-col items-center justify-center p-5 text-center z-10 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -217,21 +204,20 @@ export default function MobileRadialCarousel({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.95 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="flex flex-col items-center justify-center space-y-1.5 w-full"
+              className="flex flex-col items-center justify-center space-y-2 w-full"
             >
-              <span className="text-[10px] font-bold tracking-widest uppercase text-[#CD0007] bg-[#CD0007]/10 px-2 py-0.5 rounded-full">
-                {badgePrefix} 0{itemNum}
-              </span>
-
-              <div className="w-8 h-8 rounded-full bg-[#CD0007]/10 text-[#CD0007] flex items-center justify-center my-0.5">
-                <Icon size={16} strokeWidth={1.8} />
+              {/* Icon Badge */}
+              <div className="w-10 h-10 rounded-full bg-[#CD0007]/10 text-[#CD0007] flex items-center justify-center my-0.5 shadow-2xs">
+                <Icon size={20} strokeWidth={1.8} />
               </div>
 
-              <h3 className="type-h3 text-xs xs:text-sm font-semibold text-[#111111] leading-tight line-clamp-2 px-1">
+              {/* Title */}
+              <h3 className="type-h3 text-sm xs:text-base font-bold text-[#111111] leading-tight line-clamp-2 px-1">
                 {activeItem.title}
               </h3>
 
-              <p className="text-[10px] xs:text-[11px] text-gray-600 leading-snug line-clamp-3 px-1">
+              {/* Description */}
+              <p className="text-xs xs:text-[12.5px] text-gray-700 leading-snug line-clamp-3 px-1">
                 {activeItem.description}
               </p>
             </motion.div>
@@ -239,8 +225,8 @@ export default function MobileRadialCarousel({
         </div>
       </div>
 
-      {/* Step Indicator Dots */}
-      <div className="flex items-center justify-center gap-1.5 mt-3">
+      {/* Indicator Dots */}
+      <div className="flex items-center justify-center gap-2 mt-4">
         {items.map((_, idx) => (
           <button
             key={idx}
@@ -248,8 +234,8 @@ export default function MobileRadialCarousel({
             aria-label={`Go to item ${idx + 1}`}
             className={`transition-all duration-300 rounded-full cursor-pointer ${
               idx === activeIndex
-                ? "w-5 h-1.5 bg-[#CD0007]"
-                : "w-1.5 h-1.5 bg-[#EAE5DC] hover:bg-gray-400"
+                ? "w-6 h-2 bg-[#CD0007]"
+                : "w-2 h-2 bg-[#EAE5DC] hover:bg-gray-400"
             }`}
           />
         ))}
