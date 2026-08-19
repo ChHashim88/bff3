@@ -21,20 +21,20 @@ export default function CommunityWeFunderSection() {
   };
 
   return (
-    <section className="w-full bg-[#FAF7F1] py-12 sm:py-16 lg:py-20 overflow-hidden">
+    <section className="w-full bg-[#FAF7F1] py-8 sm:py-10 lg:py-12 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 
           {/* -------------------------------------------------------- */}
-          {/* LEFT CARD: Join the BFF Community (Dark Theme)           */}
+          {/* Join the BFF Community Card (Full Width)                  */}
           {/* -------------------------------------------------------- */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -6, scale: 1.008 }}
+            whileHover={{ y: -4 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-[#111111] text-white rounded-2xl border border-[#EAE5DC] p-6 sm:p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[340px] group transition-shadow duration-300 hover:shadow-2xl hover:shadow-red-950/20"
+            className="lg:col-span-12 bg-[#111111] text-white rounded-2xl border border-[#EAE5DC] p-6 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col justify-between shadow-xl min-h-[340px] group transition-shadow duration-300 hover:shadow-2xl hover:shadow-red-950/20"
           >
             {/* Ambient Logo Red Breathing Glow Aura Ring */}
             <motion.div
@@ -65,18 +65,15 @@ export default function CommunityWeFunderSection() {
 
             {/* Foreground Content */}
             <div className="relative z-10 space-y-3 max-w-xl">
-              <div className="space-y-2">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
-                  JOIN THE BFF COMMUNITY
-                </p>
-                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-              </div>
-              <h3 className="type-h2 text-white">
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                JOIN THE BFF COMMUNITY
+              </p>
+              <h3 className="text-[28px] sm:text-[32px] font-semibold text-white leading-tight">
                 Join our community.
                 <br />
                 Be part of the future of film.
               </h3>
-              <p className="type-small text-gray-400">
+              <p className="type-body text-gray-300">
                 Stay up to date with updates, insights, tools, and access stories.
               </p>
             </div>
@@ -120,91 +117,6 @@ export default function CommunityWeFunderSection() {
                 We respect your privacy & confidentiality, guaranteed.
               </p>
             </div>
-          </motion.div>
-
-          {/* -------------------------------------------------------- */}
-          {/* RIGHT CARD: Partner with BFF / WeFunder (Light Theme)     */}
-          {/* -------------------------------------------------------- */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -6, scale: 1.008 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-xs min-h-[340px] group transition-all duration-300 hover:border-[#CD0007]/40 hover:shadow-lg"
-          >
-            {/* Ambient Soft Red Hover Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#FDF2F2]/0 via-[#FDF2F2]/0 to-[#FDF2F2]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-            {/* Card Header with Label & WeFunder Logo */}
-            <div className="relative z-10 space-y-3">
-              <div className="space-y-2">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
-                  PARTNER WITH BFF
-                </p>
-                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-              </div>
-              <h3 className="type-h3 text-[#111111] flex items-center flex-wrap gap-3">
-                <span>Continue to</span>
-                <motion.div
-                  animate={{ scale: [1, 1.06, 1] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 3.5,
-                    ease: "easeInOut",
-                  }}
-                  style={{ willChange: "transform" }}
-                  className="inline-block"
-                >
-                  <Image
-                    src="/wf.png"
-                    alt="WeFunder"
-                    width={420}
-                    height={120}
-                    className="h-16 sm:h-24 w-auto object-contain inline-block"
-                  />
-                </motion.div>
-              </h3>
-            </div>
-
-            {/* Subtext & Action Button */}
-            <div className="relative z-10 pt-4 pb-16 sm:pb-20 space-y-4 max-w-[280px]">
-              <p className="type-small text-gray-700">
-                See how we enable everyday investors to participate in film financing.
-              </p>
-
-              <motion.a
-                href="https://wefunder.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, x: 3 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-1.5 bg-[#FAF7F1] hover:bg-[#CD0007] text-[#111111] hover:text-white border border-[#EAE5DC] hover:border-[#CD0007] type-cta px-5 py-2.5 rounded-full shadow-xs transition-all group/btn cursor-pointer w-fit"
-              >
-                <span>View Campaign</span>
-                <ArrowRight size={13} className="text-[#111111] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
-              </motion.a>
-            </div>
-
-            {/* Continuous Floating Film Reel Illustration (wfb.png) */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 3.2,
-                ease: "easeInOut",
-              }}
-              style={{ willChange: "transform" }}
-              className="absolute -bottom-1 -right-1 sm:right-1 w-44 sm:w-56 lg:w-64 h-32 sm:h-40 pointer-events-none z-0"
-            >
-              <Image
-                src="/wfb.png"
-                alt="WeFunder Campaign Platform Preview & Film Reel"
-                fill
-                className="object-contain object-bottom object-right drop-shadow-md"
-                sizes="(max-width: 640px) 176px, (max-width: 1024px) 224px, 256px"
-              />
-            </motion.div>
           </motion.div>
 
         </div>

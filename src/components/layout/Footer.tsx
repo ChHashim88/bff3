@@ -76,15 +76,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Legal Disclaimer Box */}
-        <div className="bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl p-6 space-y-3 text-gray-600">
-          <p className="type-label uppercase text-[#CD0007]">
-            CONFIDENTIALITY & INVESTOR DISCLAIMER
-          </p>
-          <p className="type-small leading-relaxed">
-            Big Film Fund, Inc. operates as a technology platform designed to facilitate structured film investment offerings. This website contains summary information regarding potential investment opportunities and platform features. Offers to sell, or solicitations of offers to buy, securities are made solely through official offering documents containing complete disclosure of risks, terms, and conditions. Film investments carry inherent market risks, including loss of capital. Past box office or streaming performance is no guarantee of future returns.
-          </p>
-        </div>
 
         {/* Bottom Bar: Copyright & Scroll to Top */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#EAE5DC]">

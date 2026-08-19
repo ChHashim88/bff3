@@ -37,7 +37,7 @@ export default function HowWeMakeMoney() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
+    <section className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
         {/* Single Large Rounded Card Container */}
@@ -55,13 +55,9 @@ export default function HowWeMakeMoney() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
 
               <div className="space-y-3">
-                {/* Top Label & Short Logo Red Line */}
-                <div className="space-y-2">
-                  <p className="type-label font-medium uppercase text-[#CD0007]">
-                    THE BUSINESS MODEL
-                  </p>
-                  <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-                </div>
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  THE BUSINESS MODEL
+                </p>
 
                 {/* H2 Headline */}
                 <h2 className="type-h2 text-[#111111]">

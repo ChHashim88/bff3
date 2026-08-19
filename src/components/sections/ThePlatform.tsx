@@ -1,236 +1,161 @@
 "use client";
 
-import Image from "next/image";
-import { Play, Film, Layers, Video, TrendingUp } from "lucide-react";
+import { useRef, useState } from "react";
+import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ThePlatform() {
-  const cards = [
-    {
-      icon: Film,
-      num: "01",
-      title: "Curated Projects",
-      description: "Identify and evaluate promising film opportunities.",
-      floatDuration: 4.2,
-      floatDelay: 0,
-    },
-    {
-      icon: Layers,
-      num: "02",
-      title: "Structured Offerings",
-      description: "Create clear, professionally structured investment opportunities.",
-      floatDuration: 4.8,
-      floatDelay: 0.6,
-    },
-    {
-      icon: Video,
-      num: "03",
-      title: "Production & Distribution",
-      description: "Support projects from development through release.",
-      floatDuration: 4.5,
-      floatDelay: 1.2,
-    },
-    {
-      icon: TrendingUp,
-      num: "04",
-      title: "Growing Portfolio",
-      description: "Build opportunities across multiple projects over time.",
-      floatDuration: 5.1,
-      floatDelay: 1.8,
-    },
-  ];
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if ((videoRef.current as any).webkitRequestFullscreen) {
+        (videoRef.current as any).webkitRequestFullscreen();
+      }
+    }
+  };
 
   return (
-    <section id="our-solution" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
+    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
 
-        {/* 1. TOP HEADER COMPOSITION */}
+        {/* 1. MAIN HEADLINE & MEDIA COMPOSITION */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-3"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs relative"
         >
-          {/* Subtitle Label */}
-          <div className="space-y-2">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
-              THE PLATFORM
-            </p>
-            <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-          </div>
+          {/* Two-Column Composition */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
 
-          {/* Headline */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
-            <h2 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
-              A New Model for <span className="text-[#CD0007]">Film Investing</span>
-            </h2>
+            {/* LEFT SIDE: Heading, Description & Callout (~50% width / lg:col-span-6) */}
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
-            {/* Top-Right CTA Pill Button */}
-            <motion.a
-              href="#the-opportunity"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-md shrink-0 self-start lg:self-auto cursor-pointer"
-            >
-              <span>Explore Platform</span>
-            </motion.a>
-          </div>
+              <div className="space-y-3">
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  THE PLATFORM
+                </p>
 
-          {/* Paragraph Content */}
-          <div className="space-y-2 text-gray-700 max-w-2xl">
-            <p className="type-body">
-              Big Film Fund is designed to make film investing more accessible, structured, and repeatable.
-            </p>
-            <p className="type-body font-medium text-gray-700">
-              Instead of depending on one-off deals, the platform is built around a growing pipeline of projects and a repeatable investment model.
-            </p>
-          </div>
-        </motion.div>
+                {/* Main Headline */}
+                <h3 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
+                  A New Model for<br />
+                  <span className="text-[#CD0007]">Film Investing.</span>
+                </h3>
 
-        {/* 2. FULL-WIDTH MEDIA PANEL WITH CORNER FRAMING BRACKETS [ ┌ ┐ └ ┘ ] */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ scale: 1.005 }}
-          className="relative rounded-3xl overflow-hidden shadow-2xl bg-[#111111] border border-[#EAE5DC] group cursor-pointer aspect-[16/9] lg:aspect-[21/9] flex items-center justify-center min-h-[340px] sm:min-h-[420px] w-full"
-        >
-          {/* Minimalist Corner Framing Brackets in Logo Red (#CD0007) */}
-          <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-[#CD0007] pointer-events-none z-20 opacity-90" />
-          <div className="absolute top-4 right-4 w-7 h-7 border-t-2 border-r-2 border-[#CD0007] pointer-events-none z-20 opacity-90" />
-          <div className="absolute bottom-4 left-4 w-7 h-7 border-b-2 border-l-2 border-[#CD0007] pointer-events-none z-20 opacity-90" />
-          <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-[#CD0007] pointer-events-none z-20 opacity-90" />
+                {/* Paragraph Content Stack */}
+                <div className="space-y-4 text-gray-700">
+                  <p className="type-body leading-relaxed">
+                    Big Film Fund is designed to make film investing more accessible, structured, and repeatable.
+                  </p>
+                  <p className="type-body font-medium text-[#111111] border-l-2 border-[#CD0007] pl-3">
+                    Instead of depending on one-off deals, the platform is built around a growing pipeline of projects.
+                  </p>
+                  <p className="type-body leading-relaxed">
+                    A repeatable investment model engineered for transparency, deal clarity, and portfolio scalability over time.
+                  </p>
+                </div>
+              </div>
 
-          {/* Background Image */}
-          <Image
-            src="/ggh.jpeg"
-            alt="The Platform - A New Model for Film Investing Preview"
-            fill
-            className="object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
+              {/* Bottom Accent Callout */}
+              <div className="pt-4 border-t border-[#EAE5DC]">
+                <p className="type-subtitle font-medium text-[#CD0007]">
+                  Film finance reimagined as a structured, scalable asset class.
+                </p>
+              </div>
 
-          {/* Play Button & Overlay Copy */}
-          <div className="relative z-10 flex flex-col items-center justify-center text-center p-6 space-y-3">
-            <motion.div
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-md border-2 border-white flex items-center justify-center text-white shadow-xl group-hover:bg-[#CD0007] group-hover:border-[#CD0007] transition-all duration-300"
-            >
-              <Play size={30} className="fill-white translate-x-0.5" />
-            </motion.div>
-            <p className="type-label font-medium text-white/90 uppercase">
-              THE PLATFORM
-            </p>
-            <h3 className="type-h3 text-white max-w-md">
-              A NEW MODEL FOR FILM INVESTING
-            </h3>
-          </div>
-        </motion.div>
+            </div>
 
-        {/* 3. CENTERED STATEMENT / HOW IT WORKS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto space-y-3 pt-2"
-        >
-          <div className="space-y-2">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
-              HOW IT WORKS
-            </p>
-            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
-          </div>
-
-          <h3 className="type-h2 text-[#111111]">
-            4-Step Repeatable Investment Model
-          </h3>
-        </motion.div>
-
-        {/* 4. FOUR FEATURE CARDS WITH CONTINUOUS INFINITE AMBIENT FLOATING & PULSING GLOW MOTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0">
-            {cards.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${index !== 0 ? "md:pl-6" : ""
-                    }`}
+            {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
+            <div className="lg:col-span-6 flex items-center">
+              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group w-full min-h-[300px] sm:min-h-[360px]">
+                
+                {/* HTML5 Video Player */}
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/ggh.jpeg"
+                  className="w-full h-full object-cover object-center"
                 >
-                  {/* Floating Container (Infinite Ambient Motion) */}
-                  <motion.div
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{
-                      duration: item.floatDuration,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                      delay: item.floatDelay,
-                    }}
-                    whileHover={{ y: -10, scale: 1.03 }}
-                    className="flex flex-col items-center text-center w-full group/card"
+                  <source src="/bff_platform.mp4" type="video/mp4" />
+                  <source src="https://www.dropbox.com/scl/fi/bff_promo_2_the_platform_260711_v2.mp4?rlkey=d1069gkyon7op9goc3htz7340&raw=1" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Ambient Soft Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+
+                {/* Floating Interactive Controls */}
+                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+                  <button
+                    onClick={toggleMute}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label={isMuted ? "Unmute video" : "Mute video"}
+                    title={isMuted ? "Unmute" : "Mute"}
                   >
-                    {/* Logo Red Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
-                    <motion.div
-                      animate={{
-                        boxShadow: [
-                          "0 0 0 0px rgba(205,0,7,0.12)",
-                          "0 0 0 10px rgba(205,0,7,0)",
-                          "0 0 0 0px rgba(205,0,7,0.12)",
-                        ],
-                      }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 3,
-                        delay: index * 0.5,
-                        ease: "easeInOut",
-                      }}
-                      whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300 relative"
-                    >
-                      <Icon size={24} strokeWidth={1.5} />
-                      <span className="absolute -top-1 -right-1 text-[10px] font-bold bg-[#CD0007] text-white w-5 h-5 rounded-full flex items-center justify-center border border-white">
-                        {item.num}
-                      </span>
-                    </motion.div>
+                    {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                  </button>
 
-                    {/* Logo Red Heading */}
-                    <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform">
-                      {item.title}
-                    </h3>
+                  <button
+                    onClick={togglePlay}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label={isPlaying ? "Pause video" : "Play video"}
+                    title={isPlaying ? "Pause" : "Play"}
+                  >
+                    {isPlaying ? <Pause size={18} /> : <Play size={18} className="translate-x-0.5" />}
+                  </button>
 
-                    {/* Dark Body Text */}
-                    <p className="type-small text-gray-700 max-w-[220px]">
-                      {item.description}
-                    </p>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
+                  <button
+                    onClick={toggleFullscreen}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label="Full screen"
+                    title="Full Screen"
+                  >
+                    <Maximize2 size={18} />
+                  </button>
+                </div>
+
+                {/* Bottom Left Video Badge */}
+                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 pointer-events-none">
+                  <span className="w-2 h-2 rounded-full bg-[#CD0007] animate-pulse" />
+                  <span className="text-[11px] font-semibold text-white uppercase tracking-wider">
+                    THE PLATFORM DEMO
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </motion.div>
-
-        {/* Bottom Statement */}
-        <p className="type-subtitle text-center font-medium text-[#111111] max-w-2xl mx-auto pt-2">
-          Every project adds to a growing network of investors, filmmakers, and opportunities.
-        </p>
 
       </div>
     </section>

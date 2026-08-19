@@ -40,7 +40,7 @@ export default function ProjectSelection() {
   ];
 
   return (
-    <section id="selection-execution" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
+    <section id="selection-execution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-14">
 
         {/* Section Header */}
@@ -51,12 +51,9 @@ export default function ProjectSelection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <div className="space-y-2">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
-              PROJECT SELECTION
-            </p>
-            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
-          </div>
+          <p className="type-label font-medium uppercase text-[#CD0007]">
+            PROJECT SELECTION
+          </p>
 
           <h2 className="type-h2 text-[#111111]">
             We Don’t Chase Volume. <span className="text-[#CD0007]">We Chase Quality.</span>
@@ -75,11 +72,10 @@ export default function ProjectSelection() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
         >
-          <div className="text-center max-w-xl mx-auto mb-8 space-y-2">
+          <div className="text-center max-w-xl mx-auto mb-8">
             <p className="type-label font-medium uppercase text-[#CD0007]">
               THE SELECTION FRAMEWORK
             </p>
-            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#EAE5DC] gap-6 lg:gap-0">
@@ -125,9 +121,6 @@ export default function ProjectSelection() {
                       className="w-16 h-16 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-5 shadow-2xs shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300 relative"
                     >
                       <Icon size={28} strokeWidth={1.4} />
-                      <span className="absolute -top-1 -right-1 text-[10px] font-bold bg-[#CD0007] text-white w-5 h-5 rounded-full flex items-center justify-center border border-white">
-                        {item.num}
-                      </span>
                     </motion.div>
 
                     <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform uppercase">

@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import AetherFlowHero from "@/components/ui/aether-flow-hero";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
@@ -58,83 +58,42 @@ const wordVariants = {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
+    <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center items-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Full Hero Section Background Image Container */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-
-        {/* ── DESKTOP & TABLET SCREENS (≥640px): 100% UNTOUCHED ORIGINAL ── */}
-        <div
-          className="hidden sm:block absolute inset-0 w-full h-full"
-          style={{
-            maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%)",
-          }}
-        >
-          <Image
-            src="/herob.png"
-            alt="Big Film Fund Hero Background"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-        </div>
-
-        {/* ── MOBILE SCREENS ONLY (<640px): SCOPED EXCLUSIVELY TO MOBILE (Top + Left Fade) ── */}
-        <div
-          className="block sm:hidden absolute inset-0 w-full h-full"
-          style={{
-            maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
-          }}
-        >
-          <Image
-            src="/herob.png"
-            alt="Big Film Fund Hero Background Mobile"
-            fill
-            priority
-            className="object-cover object-right opacity-85"
-            sizes="100vw"
-          />
-          {/* Mobile soft top fade overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent pointer-events-none" />
-
-          {/* Mobile soft left fade overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/85 via-[#FAF7F1]/35 to-transparent pointer-events-none" />
-        </div>
-
+      {/* Interactive Aether Flow Red Wave Background */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        <AetherFlowHero className="w-full h-full" />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative">
-        <div className="max-w-3xl lg:max-w-4xl space-y-6 text-center sm:text-left flex flex-col items-center sm:items-start">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative flex flex-col items-center justify-center">
+        <div className="max-w-3xl lg:max-w-4xl space-y-6 text-center flex flex-col items-center justify-center mx-auto">
 
           {/* Top Kicker Label */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[12px] sm:text-[21px] font-semibold uppercase text-[#CD0007] tracking-wider"
+            className="text-[12px] sm:text-[21px] font-semibold uppercase text-[#CD0007] tracking-wider text-center"
           >
             A New Way to Invest in the Future of Film
           </motion.p>
 
-          {/* 3-Line SF Pro Display H1 Editorial Headline (Desktop 64px, Mobile 40px, Weight 600, Line height 1.05, Letter spacing -0.02em) */}
+          {/* 3-Line SF Pro Display H1 Editorial Headline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-3 flex flex-col items-center sm:items-start"
+            className="space-y-3 flex flex-col items-center justify-center text-center w-full"
           >
-            <h1 className="type-h1 text-[#111111]">
+            <h1 className="type-h1 text-[#111111] text-center">
               <motion.span
                 variants={headlineContainerVariants}
                 initial="hidden"
                 animate="visible"
-                className="inline-block"
+                className="inline-block text-center"
               >
                 {/* Line 1 */}
-                <span className="inline-block">
+                <span className="inline-block text-center">
                   {LINE_1_WORDS.map((word, i) => (
                     <motion.span
                       key={`l1-${i}`}
@@ -148,7 +107,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                 <br />
 
                 {/* Line 2 (Logo Red "REIMAGINED") */}
-                <span className="text-[#CD0007] inline-block">
+                <span className="text-[#CD0007] inline-block text-center">
                   {LINE_2_WORDS.map((word, i) => (
                     <motion.span
                       key={`l2-${i}`}
@@ -162,7 +121,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                 <br />
 
                 {/* Line 3 */}
-                <span className="inline-block">
+                <span className="inline-block text-center">
                   {LINE_3_WORDS.map((word, i) => (
                     <motion.span
                       key={`l3-${i}`}
@@ -175,22 +134,14 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                 </span>
               </motion.span>
             </h1>
-
-            {/* Logo Red Accent Line */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="w-[45px] h-[2px] bg-[#CD0007] my-4 mx-auto sm:mx-0 origin-center sm:origin-left"
-            />
           </motion.div>
 
-          {/* Subtitle Description Paragraph (SF Pro Text, 17px Body specification) */}
+          {/* Subtitle Description Paragraph */}
           <motion.p
             variants={descContainerVariants}
             initial="hidden"
             animate="visible"
-            className="hidden sm:block type-body text-gray-700 max-w-2xl text-[17px] leading-relaxed"
+            className="hidden sm:block type-body text-gray-700 max-w-2xl text-[17px] leading-relaxed text-center mx-auto"
           >
             {DESC_WORDS.map((word, index) => (
               <motion.span
@@ -207,17 +158,17 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="type-body font-medium text-[#111111] text-[17px] leading-relaxed max-w-xl"
+            className="type-body font-medium text-[#111111] text-[17px] leading-relaxed max-w-xl text-center mx-auto"
           >
             Invest in the platform shaping the next generation of entertainment finance.
           </motion.p>
 
-          {/* Dual CTA Buttons */}
+          {/* Dual CTA Buttons - Centered */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pt-3 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 w-full sm:w-auto mx-auto"
           >
             <motion.a
               href="#the-opportunity"

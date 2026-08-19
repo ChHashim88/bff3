@@ -65,7 +65,7 @@ export default function WhyInvest() {
               <p className="type-label font-medium uppercase text-[#CD0007]">
                 WHY BIG FILM FUND
               </p>
-              <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+
             </div>
             <h2 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
               A Smarter Way to Invest in Film

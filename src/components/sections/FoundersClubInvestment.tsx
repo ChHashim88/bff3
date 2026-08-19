@@ -27,7 +27,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden space-y-12 sm:space-y-16">
+    <section className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden space-y-12 sm:space-y-16">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-12 sm:space-y-16">
 
         {/* ── 1. FOUNDERS CLUB & PROGRESS TO DATE (2-Column Grid) ── */}
@@ -43,12 +43,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="space-y-2">
-                  <p className="type-label font-medium uppercase text-[#CD0007]">
-                    FOUNDERS CLUB
-                  </p>
-                  <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-                </div>
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  FOUNDERS CLUB
+                </p>
                 <div className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007]">
                   <Crown size={24} />
                 </div>
@@ -90,12 +87,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             className="lg:col-span-6 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col justify-between space-y-6 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
           >
             <div className="space-y-3">
-              <div className="space-y-2">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
-                  PROGRESS TO DATE
-                </p>
-                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-              </div>
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                PROGRESS TO DATE
+              </p>
 
               <h2 className="type-h2 text-[#111111]">
                 The Foundation Is Being Built
@@ -136,12 +130,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Left Stack: THE INVESTMENT */}
             <div className="lg:col-span-6 space-y-3">
-              <div className="space-y-2">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
-                  THE INVESTMENT
-                </p>
-                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-              </div>
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                THE INVESTMENT
+              </p>
 
               <h2 className="type-h2 text-[#111111]">
                 Invest in the Platform. <span className="text-[#CD0007]">Not Just One Film.</span>
@@ -162,12 +153,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Right Stack: WHAT THIS ROUND ENABLES */}
             <div className="lg:col-span-6 space-y-3 lg:pl-4">
-              <div className="space-y-2">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
-                  WHAT THIS ROUND ENABLES
-                </p>
-                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-              </div>
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                WHAT THIS ROUND ENABLES
+              </p>
 
               <h3 className="type-h3 text-[#111111]">
                 From Development to Market
@@ -202,12 +190,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#CD0007]/25 blur-3xl pointer-events-none z-0" />
 
           <div className="relative z-10 space-y-3 max-w-3xl">
-            <div className="space-y-2">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
-                WHY NOW?
-              </p>
-              <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-            </div>
+            <p className="type-label font-medium uppercase text-[#CD0007]">
+              WHY NOW?
+            </p>
 
             <h2 className="type-h2 text-white">
               The Foundation Is Ready. <span className="text-[#CD0007]">The Next Step Is Launch.</span>

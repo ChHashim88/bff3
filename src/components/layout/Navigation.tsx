@@ -87,11 +87,10 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
   };
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      isScrolled
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
         ? "bg-[#FAF7F1]/85 backdrop-blur-xl border-b border-[#EAE5DC]/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
         : "bg-[#FAF7F1]/95 backdrop-blur-md border-b border-[#EAE5DC]/50"
-    }`}>
+      }`}>
       {/* Apple-style Full Width Container */}
       <div className="max-w-[1440px] mx-auto h-12 sm:h-14 px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
 
@@ -124,11 +123,10 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link)}
-                className={`transition-colors duration-200 whitespace-nowrap py-1 relative ${
-                  isActive
+                className={`transition-colors duration-200 whitespace-nowrap py-1 relative ${isActive
                     ? "text-[#CD0007] font-semibold"
                     : "hover:text-[#111111] text-[#111111]/70"
-                }`}
+                  }`}
               >
                 <span>{link.name}</span>
                 {isActive && (
@@ -175,11 +173,10 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                     setIsMobileMenuOpen(false);
                     handleNavClick(e, link);
                   }}
-                  className={`text-[15px] font-medium py-2 border-b border-[#EAE5DC]/40 transition-colors flex items-center justify-between ${
-                    isActive
+                  className={`text-[15px] font-medium py-2 border-b border-[#EAE5DC]/40 transition-colors flex items-center justify-between ${isActive
                       ? "text-[#CD0007] font-semibold"
                       : "text-[#111111]/85 hover:text-[#CD0007]"
-                  }`}
+                    }`}
                 >
                   <span>{link.name}</span>
                   {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#CD0007]" />}

@@ -1,15 +1,48 @@
 "use client";
 
-import Image from "next/image";
-import { Play } from "lucide-react";
+import { useRef, useState } from "react";
+import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ProblemSolution() {
-  return (
-    <section id="the-problem" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
-        {/* Single Large Rounded Card Container */}
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if ((videoRef.current as any).webkitRequestFullscreen) {
+        (videoRef.current as any).webkitRequestFullscreen();
+      }
+    }
+  };
+
+  return (
+    <section id="the-problem" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
+
+        {/* 1. MAIN HEADLINE & MEDIA COMPOSITION */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,13 +57,9 @@ export default function ProblemSolution() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
               <div className="space-y-3">
-                {/* Top Subtitle Label & Short Logo Red Accent Line */}
-                <div className="space-y-2">
-                  <p className="type-label font-medium uppercase text-[#CD0007]">
-                    THE PROBLEM
-                  </p>
-                  <div className="w-[30px] h-[2px] bg-[#CD0007]" />
-                </div>
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  THE PROBLEM
+                </p>
 
                 {/* Main Headline */}
                 <h3 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
@@ -62,40 +91,68 @@ export default function ProblemSolution() {
 
             </div>
 
-            {/* RIGHT SIDE: Cinematic Video Preview Card (~50% width / lg:col-span-6) */}
+            {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center">
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group cursor-pointer w-full min-h-[300px] sm:min-h-[360px]"
-              >
-                <Image
-                  src="/ggh.jpeg"
-                  alt="The Problem - Film Investing Preview"
-                  fill
-                  className="object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
+              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group w-full min-h-[300px] sm:min-h-[360px]">
+                
+                {/* HTML5 Video Player */}
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/ggh.jpeg"
+                  className="w-full h-full object-cover object-center"
+                >
+                  <source src="/bff_problem.mp4" type="video/mp4" />
+                  <source src="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AKfQfxRvbuMv3M5ojtwG-XU/bff_promo_1_introduction_alt_disco_song_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-                {/* Play Button & Overlay Copy */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6 space-y-3">
-                  <motion.div
-                    whileHover={{ scale: 1.15 }}
-                    whileTap={{ scale: 0.95 }}
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-md border-2 border-white flex items-center justify-center text-white shadow-xl group-hover:bg-[#CD0007] group-hover:border-[#CD0007] transition-all duration-300"
+                {/* Ambient Soft Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+
+                {/* Floating Interactive Controls */}
+                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+                  <button
+                    onClick={toggleMute}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label={isMuted ? "Unmute video" : "Mute video"}
+                    title={isMuted ? "Unmute" : "Mute"}
                   >
-                    <Play size={28} className="fill-white translate-x-0.5" />
-                  </motion.div>
-                  <p className="type-label font-medium text-white/90 uppercase">
-                    THE PROBLEM
-                  </p>
-                  <h3 className="type-h3 text-white max-w-md">
-                    MILLIONS WATCH MOVIES.<br />ALMOST NONE CAN INVEST IN THEM.
-                  </h3>
+                    {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                  </button>
+
+                  <button
+                    onClick={togglePlay}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label={isPlaying ? "Pause video" : "Play video"}
+                    title={isPlaying ? "Pause" : "Play"}
+                  >
+                    {isPlaying ? <Pause size={18} /> : <Play size={18} className="translate-x-0.5" />}
+                  </button>
+
+                  <button
+                    onClick={toggleFullscreen}
+                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
+                    aria-label="Full screen"
+                    title="Full Screen"
+                  >
+                    <Maximize2 size={18} />
+                  </button>
                 </div>
-              </motion.div>
+
+                {/* Bottom Left Video Badge */}
+                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 pointer-events-none">
+                  <span className="w-2 h-2 rounded-full bg-[#CD0007] animate-pulse" />
+                  <span className="text-[11px] font-semibold text-white uppercase tracking-wider">
+                    THE PROBLEM DEMO
+                  </span>
+                </div>
+
+              </div>
             </div>
 
           </div>
