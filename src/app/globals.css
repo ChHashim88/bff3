@@ -108,13 +108,19 @@
     }
   }
 
-  /* Body: Normal paragraph (Desktop 17px, Mobile 17px, Weight 400, Line height 1.45, Letter spacing 0) */
+  /* Body: Normal paragraph (Mobile 13px, Desktop 17px, Weight 400, Line height 1.45, Letter spacing 0) */
   .type-body {
     font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-    font-size: 17px !important;
+    font-size: 13px !important;
     font-weight: 400 !important;
     line-height: 1.45 !important;
     letter-spacing: 0em !important;
+  }
+
+  @media (min-width: 768px) {
+    .type-body {
+      font-size: 17px !important;
+    }
   }
 
   /* CTA: Buttons (Desktop 17px, Mobile 17px, Weight 400, Line height 1.20, Letter spacing 0) */

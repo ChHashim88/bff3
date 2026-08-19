@@ -106,7 +106,7 @@ export default function FAQContactSection() {
               <span className="absolute bottom-0.5 left-0 right-0 h-[3px] bg-[#CD0007]/15 rounded-full" />
             </span>
           </h3>
-          <p className="text-[16px] text-gray-600 max-w-xl leading-relaxed">
+          <p className="text-[13px] sm:text-[16px] text-gray-600 max-w-xl leading-relaxed">
             Transparency is our foundation. Read through common investor questions or reach our team directly.
           </p>
         </motion.div>
