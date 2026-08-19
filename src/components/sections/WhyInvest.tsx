@@ -2,7 +2,6 @@
 
 import { Film, Building2, Video, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
-import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 
 export default function WhyInvest() {
   const features = [
@@ -46,7 +45,7 @@ export default function WhyInvest() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-4 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden group"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden group"
         >
           {/* Subtle Continuous Shimmer Light Sweep Effect */}
           <motion.div
@@ -73,13 +72,8 @@ export default function WhyInvest() {
             </h2>
           </div>
 
-          {/* Mobile Radial Carousel (< 768px) with Increased Outer Space */}
-          <div className="block md:hidden pt-2 relative z-10">
-            <MobileRadialCarousel items={features} badgePrefix="WHY" scale={1.12} />
-          </div>
-
-          {/* 4 Feature Columns (Desktop / Tablet >= 768px) */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0 pt-2 relative z-10">
+          {/* 4 Feature Columns with Continuous Infinite Asynchronous Floating Motion */}
+          <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0 pt-2 relative z-10">
             {features.map((item, index) => {
               const Icon = item.icon;
               return (
