@@ -107,7 +107,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative">
-        <div className="max-w-3xl lg:max-w-4xl space-y-6">
+        <div className="max-w-3xl lg:max-w-4xl space-y-6 text-center sm:text-left flex flex-col items-center sm:items-start">
 
           {/* Top Kicker Label */}
           <motion.p
@@ -124,7 +124,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-3"
+            className="space-y-3 flex flex-col items-center sm:items-start"
           >
             <h1 className="type-h1 text-[#111111]">
               <motion.span
@@ -181,7 +181,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="w-[45px] h-[2px] bg-[#CD0007] my-4 origin-left"
+              className="w-[45px] h-[2px] bg-[#CD0007] my-4 mx-auto sm:mx-0 origin-center sm:origin-left"
             />
           </motion.div>
 
@@ -207,7 +207,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="type-body font-medium text-[#111111] text-[17px] leading-relaxed"
+            className="type-body font-medium text-[#111111] text-[17px] leading-relaxed max-w-xl"
           >
             Invest in the platform shaping the next generation of entertainment finance.
           </motion.p>
@@ -217,7 +217,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3"
+            className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pt-3 w-full sm:w-auto"
           >
             <motion.a
               href="#the-opportunity"
