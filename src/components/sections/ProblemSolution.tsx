@@ -82,8 +82,8 @@ export default function ProblemSolution() {
                 </div>
               </div>
 
-              {/* Bottom Accent Callout */}
-              <div className="pt-4 border-t border-[#EAE5DC]">
+              {/* Bottom Accent Callout (Hidden on mobile < 768px) */}
+              <div className="hidden md:block pt-4 border-t border-[#EAE5DC]">
                 <p className="type-subtitle font-medium text-[#CD0007]">
                   Film is one of the last major categories ready for this transition.
                 </p>

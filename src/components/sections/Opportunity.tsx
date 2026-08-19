@@ -111,7 +111,7 @@ export default function Opportunity() {
                   Film is one of the world’s most consumed forms of entertainment—yet remains one of the least accessible asset classes for investors.
                 </p>
 
-                <div className="pt-2 space-y-2">
+                <div className="hidden md:block pt-2 space-y-2">
                   <p className="type-subtitle font-medium text-[#111111]">
                     Big Film Fund brings together three powerful forces:
                   </p>

@@ -81,8 +81,8 @@ export default function ThePlatform() {
                 </div>
               </div>
 
-              {/* Bottom Accent Callout */}
-              <div className="pt-4 border-t border-[#EAE5DC]">
+              {/* Bottom Accent Callout (Hidden on mobile < 768px) */}
+              <div className="hidden md:block pt-4 border-t border-[#EAE5DC]">
                 <p className="type-subtitle font-medium text-[#CD0007]">
                   Film finance reimagined as a structured, scalable asset class.
                 </p>
