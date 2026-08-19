@@ -189,9 +189,9 @@ export default function Stats() {
           <p className="type-label font-medium uppercase text-[#CD0007]">
             THE MARKET
           </p>
-          <h2 className="type-h2 font-semibold text-[#111111]">
+          <h3 className="type-h3 md:type-h2 font-semibold text-[#111111]">
             At the Intersection of a Massive Opportunity
-          </h2>
+          </h3>
         </motion.div>
 
         {/* 4 Feature Columns in Rounded Container Card */}

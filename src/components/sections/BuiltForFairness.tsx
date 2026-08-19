@@ -37,9 +37,9 @@ export default function BuiltForFairness() {
             <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#710014]">
               Built For Fairness
             </p>
-            <h2 className="type-h2 text-[#161616] tracking-tight leading-tight">
+            <h3 className="type-h3 md:type-h2 text-[#161616] tracking-tight leading-tight">
               Designed for investors.
-            </h2>
+            </h3>
             <p className="text-sm sm:text-base text-[#161616]/80 font-medium leading-relaxed">
               We combine data, technology, and people to find the best stories — together.
             </p>
@@ -61,9 +61,9 @@ export default function BuiltForFairness() {
             <p className="text-sm sm:text-base font-bold uppercase tracking-widest text-[#710014]">
               Built For Fairness
             </p>
-            <h2 className="text-4xl lg:text-5xl font-semibold text-[#161616] tracking-tight leading-[1.12]">
+            <h3 className="type-h3 md:type-h2 text-4xl lg:text-5xl font-semibold text-[#161616] tracking-tight leading-[1.12]">
               Designed for investors.
-            </h2>
+            </h3>
             <p className="text-base sm:text-lg text-[#161616]/80 font-medium leading-relaxed max-w-lg">
               We combine data, technology, and people to find the best stories — together.
             </p>

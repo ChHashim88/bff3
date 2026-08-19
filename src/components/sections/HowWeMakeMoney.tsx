@@ -60,10 +60,10 @@ export default function HowWeMakeMoney() {
                   THE BUSINESS MODEL
                 </p>
 
-                {/* H2 Headline */}
-                <h2 className="type-h2 text-[#111111]">
+                {/* H3 Headline */}
+                <h3 className="type-h3 md:type-h2 text-[#111111]">
                   Built Beyond a Single Movie
-                </h2>
+                </h3>
 
                 {/* Description */}
                 <div className="space-y-2 text-gray-700">

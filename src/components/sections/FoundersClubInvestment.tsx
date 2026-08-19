@@ -51,9 +51,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 </div>
               </div>
 
-              <h2 className="type-h2 text-[#111111]">
+              <h3 className="type-h3 md:type-h2 text-[#111111]">
                 Don’t Just Invest in Film. <span className="text-[#CD0007]">Be Part of It.</span>
-              </h2>
+              </h3>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund brings investors closer to the journey—from development to release.
@@ -91,9 +91,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 PROGRESS TO DATE
               </p>
 
-              <h2 className="type-h2 text-[#111111]">
+              <h3 className="type-h3 md:type-h2 text-[#111111]">
                 The Foundation Is Being Built
-              </h2>
+              </h3>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund is already in active development. The focus has been on building a repeatable and scalable system for sourcing, evaluating, and delivering film investment opportunities.
@@ -134,9 +134,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 THE INVESTMENT
               </p>
 
-              <h2 className="type-h2 text-[#111111]">
+              <h3 className="type-h3 md:type-h2 text-[#111111]">
                 Invest in the Platform. <span className="text-[#CD0007]">Not Just One Film.</span>
-              </h2>
+              </h3>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 This offering provides investors with the opportunity to purchase shares in Big Film Fund, Inc.—the company building the platform.
@@ -194,9 +194,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               WHY NOW?
             </p>
 
-            <h2 className="type-h2 text-white">
+            <h3 className="type-h3 md:type-h2 text-white">
               The Foundation Is Ready. <span className="text-[#CD0007]">The Next Step Is Launch.</span>
-            </h2>
+            </h3>
 
             <p className="type-body text-gray-300 font-normal leading-relaxed">
               The core model, relationships, and platform design are in place. Now, Big Film Fund is moving from development to live operation—launching the platform, activating its initial pipeline, and introducing its first investment opportunities.

@@ -67,9 +67,9 @@ export default function WhyInvest() {
               </p>
 
             </div>
-            <h2 className="type-h2 text-[#111111] leading-tight">
+            <h3 className="type-h3 md:type-h2 text-[#111111] leading-tight">
               A Smarter Way to Invest in Film
-            </h2>
+            </h3>
           </div>
 
           {/* 4 Feature Columns with Continuous Infinite Asynchronous Floating Motion */}

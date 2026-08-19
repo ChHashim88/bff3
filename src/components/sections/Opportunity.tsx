@@ -101,10 +101,10 @@ export default function Opportunity() {
                 </p>
 
                 {/* Headline */}
-                <h2 className="type-h2">
+                <h3 className="type-h3 md:type-h2">
                   <span className="text-[#111111] block">Where Entertainment</span>
                   <span className="text-[#CD0007] block">Meets Investing.</span>
-                </h2>
+                </h3>
 
                 {/* Paragraphs */}
                 <p className="type-body text-gray-700 max-w-xl leading-relaxed">

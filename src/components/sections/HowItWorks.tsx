@@ -76,9 +76,9 @@ export default function HowItWorks() {
             BUILT TO SUCCEED
           </p>
 
-          <h2 className="type-h2 text-[#111111]">
+          <h3 className="type-h3 md:type-h2 text-[#111111]">
             Five Foundations <span className="text-[#CD0007]">of the Platform</span>
-          </h2>
+          </h3>
 
           <p className="type-subtitle font-normal text-gray-700 max-w-xl mx-auto pt-1">
             Success in film investing requires more than finding good projects.

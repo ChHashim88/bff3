@@ -55,9 +55,9 @@ export default function ProjectSelection() {
             PROJECT SELECTION
           </p>
 
-          <h2 className="type-h2 text-[#111111]">
+          <h3 className="type-h3 md:type-h2 text-[#111111]">
             We Don’t Chase Volume. <span className="text-[#CD0007]">We Chase Quality.</span>
-          </h2>
+          </h3>
 
           <p className="type-subtitle font-normal text-gray-700 max-w-xl mx-auto pt-1">
             Every project goes through a structured evaluation process before being presented to investors.
