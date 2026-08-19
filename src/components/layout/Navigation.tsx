@@ -64,11 +64,11 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           })}
         </nav>
 
-        {/* Right CTA Button (Always visible on mobile & desktop) */}
+        {/* Right CTA Button (Hidden on mobile header, visible on desktop >=1024px) */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onOpenWaitlist}
-            className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-nav font-medium px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-xs active:scale-95 cursor-pointer shrink-0"
+            className="hidden lg:inline-flex items-center gap-1.5 sm:gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-nav font-medium px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-200 shadow-xs active:scale-95 cursor-pointer shrink-0"
           >
             <User size={13} className="shrink-0" />
             <span className="whitespace-nowrap text-[11px] sm:text-xs">Join Waitlist</span>
@@ -86,7 +86,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
 
       </div>
 
-      {/* Mobile/Tablet Drawer Navigation Overlay */}
+      {/* Mobile/Tablet Drawer Navigation Overlay (Keeps Join Waitlist button inside the list) */}
       {isMobileMenuOpen && (
         <div className="mt-2 max-w-[1536px] mx-auto lg:hidden bg-white/98 backdrop-blur-xl border border-[#EAE5DC] rounded-3xl p-5 shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
           <div className="flex flex-col space-y-2">
@@ -106,7 +106,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                   setIsMobileMenuOpen(false);
                   onOpenWaitlist();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-5 py-3 rounded-full transition-all shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-5 py-3 rounded-full transition-all shadow-sm cursor-pointer"
               >
                 <User size={16} />
                 <span>Join Waitlist</span>
