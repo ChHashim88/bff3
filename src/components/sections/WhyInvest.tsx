@@ -2,6 +2,7 @@
 
 import { Film, Building2, Video, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 
 export default function WhyInvest() {
   const features = [
@@ -72,8 +73,13 @@ export default function WhyInvest() {
             </h2>
           </div>
 
-          {/* 4 Feature Columns with Continuous Infinite Asynchronous Floating Motion */}
-          <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0 pt-2 relative z-10">
+          {/* Mobile Radial Carousel (< 768px) */}
+          <div className="block md:hidden pt-2 relative z-10">
+            <MobileRadialCarousel items={features} badgePrefix="WHY" />
+          </div>
+
+          {/* 4 Feature Columns (Desktop / Tablet >= 768px) */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0 pt-2 relative z-10">
             {features.map((item, index) => {
               const Icon = item.icon;
               return (

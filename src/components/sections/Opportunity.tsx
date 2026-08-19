@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Film, Cpu, TrendingUp, Sparkles, Layers, Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import { motion } from "framer-motion";
+import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 
 export default function Opportunity() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -191,8 +192,13 @@ export default function Opportunity() {
 
           </div>
 
-          {/* 5 Feature Cards Grid (1 Row on Desktop) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 pt-4 border-t border-[#EAE5DC]">
+          {/* Mobile Radial Carousel (< 768px) */}
+          <div className="block md:hidden pt-4 border-t border-[#EAE5DC]">
+            <MobileRadialCarousel items={cards} badgePrefix="FEATURE" />
+          </div>
+
+          {/* 5 Feature Cards Grid (Desktop / Tablet >= 768px) */}
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 pt-4 border-t border-[#EAE5DC]">
             {cards.map((item, idx) => {
               const Icon = item.icon;
               return (

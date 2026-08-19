@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Play, Coins, Handshake, TrendingUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
+import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 
 export default function HowWeMakeMoney() {
   const revenueCards = [
@@ -113,8 +114,13 @@ export default function HowWeMakeMoney() {
 
             </div>
 
-            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid (~50% width / lg:col-span-6) */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-full pt-2 lg:pt-0">
+            {/* RIGHT SIDE: Mobile Radial Carousel (< 768px) */}
+            <div className="block md:hidden pt-4 border-t border-[#EAE5DC] lg:border-t-0">
+              <MobileRadialCarousel items={revenueCards} badgePrefix="STREAM" />
+            </div>
+
+            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid (Desktop / Tablet >= 768px) */}
+            <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-full pt-2 lg:pt-0 lg:col-span-6">
               {revenueCards.map((card, idx) => {
                 const Icon = card.icon;
                 return (
