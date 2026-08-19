@@ -62,7 +62,7 @@ export default function ThePlatform() {
                 </p>
 
                 {/* Main Headline */}
-                <h3 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
+                <h3 className="type-h2 font-semibold text-[#111111] leading-tight">
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
                 </h3>

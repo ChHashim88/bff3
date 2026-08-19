@@ -62,7 +62,7 @@ export default function ProblemSolution() {
                 </p>
 
                 {/* Main Headline */}
-                <h3 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
+                <h3 className="type-h2 font-semibold text-[#111111] leading-tight">
                   Millions Watch Movies.<br />
                   <span className="text-[#CD0007]">Almost None Can Invest in Them.</span>
                 </h3>
