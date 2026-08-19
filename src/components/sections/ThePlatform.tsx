@@ -62,7 +62,7 @@ export default function ThePlatform() {
                 </p>
 
                 {/* Main Headline */}
-                <h3 className="type-h2 font-semibold text-[#111111] leading-tight">
+                <h3 className="type-h3 md:type-h2 font-semibold text-[#111111] leading-tight">
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
                 </h3>
@@ -93,7 +93,7 @@ export default function ThePlatform() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center">
               <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group w-full min-h-[300px] sm:min-h-[360px]">
-                
+
                 {/* HTML5 Video Player */}
                 <video
                   ref={videoRef}

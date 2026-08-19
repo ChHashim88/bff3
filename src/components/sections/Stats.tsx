@@ -250,7 +250,7 @@ export default function Stats() {
                     {/* Logo Red Animated Metric Counter Value */}
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="type-h2 font-semibold text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform"
+                      className="type-h3 md:type-h2 font-semibold text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform"
                     >
                       <AnimatedMetricValue targetValue={item.value} isInView={isInView} />
                     </motion.div>
