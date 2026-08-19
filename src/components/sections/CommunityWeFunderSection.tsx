@@ -84,14 +84,14 @@ export default function CommunityWeFunderSection() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="inline-flex items-center gap-2 type-cta text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-4 py-2.5 rounded-full shadow-sm"
+                  className="inline-flex items-center gap-2 type-cta text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-4 py-2.5 rounded-2xl shadow-sm"
                 >
                   <Check size={16} />
                   <span>Thank you for joining our community!</span>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="relative max-w-md">
-                  <div className="bg-white/95 rounded-full p-1.5 flex items-center shadow-md border border-[#EAE5DC] focus-within:ring-2 focus-within:ring-[#CD0007] transition-all">
+                  <div className="bg-white/95 rounded-2xl p-1.5 flex items-center shadow-md border border-[#EAE5DC] focus-within:ring-2 focus-within:ring-[#CD0007] transition-all">
                     <input
                       type="email"
                       required
@@ -104,7 +104,7 @@ export default function CommunityWeFunderSection() {
                       type="submit"
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.96 }}
-                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-full transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
+                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
                     >
                       <span>Sign Up</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />

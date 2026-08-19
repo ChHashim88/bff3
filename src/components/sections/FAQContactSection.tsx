@@ -363,14 +363,14 @@ export default function FAQContactSection() {
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full font-bold text-[15px] text-white cursor-pointer relative overflow-hidden group"
+                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-2xl font-bold text-[15px] text-white cursor-pointer relative overflow-hidden group"
                       style={{
                         background: "linear-gradient(135deg, #CD0007 0%, #A60005 100%)",
                         boxShadow: "0 8px 28px rgba(205,0,7,0.28), 0 2px 6px rgba(0,0,0,0.08)",
                       }}
                     >
                       {/* Shimmer on hover */}
-                      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.06] transition-opacity duration-200 rounded-full" />
+                      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.06] transition-opacity duration-200 rounded-2xl" />
                       <Send size={15} className={`${isSubmitting ? "opacity-60" : ""} group-hover:translate-x-0.5 transition-transform`} />
                       <span>{isSubmitting ? "Sending..." : "Send Inquiry"}</span>
                     </motion.button>

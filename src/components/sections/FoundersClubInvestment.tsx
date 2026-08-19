@@ -70,7 +70,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               </p>
               <button
                 onClick={onOpenWaitlist}
-                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-full transition-all shadow-sm cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-2xl transition-all shadow-sm cursor-pointer shrink-0"
               >
                 <span>Join Founders Club</span>
                 <ArrowRight size={16} />
@@ -217,7 +217,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               href="#contact"
               whileHover={{ scale: 1.04, x: 3 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-xl cursor-pointer shrink-0"
+              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-xl cursor-pointer shrink-0"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} />
