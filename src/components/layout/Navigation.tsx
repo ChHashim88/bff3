@@ -27,41 +27,48 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     { name: "Contact", href: "#contact" },
   ];
 
-  // Dynamic Scroll & Section Detection
+  // Dynamic Scroll & Section Detection with requestAnimationFrame Throttle
   useEffect(() => {
-    const sectionMap: { [key: string]: string } = {
-      "why-bff": "Why BFF",
-      "the-problem": "The Problem",
-      "our-solution": "Our Solution",
-      "how-it-works": "How It Works",
-      "the-opportunity": "The Opportunity",
-      "selection-execution": "Selection & Execution",
-      "the-investment": "The Investment",
-      "founders-club": "Founders Club",
-      "faq": "FAQ",
-      "contact": "Contact",
-    };
+    const sectionIds = [
+      { id: "why-bff", name: "Why BFF" },
+      { id: "the-problem", name: "The Problem" },
+      { id: "our-solution", name: "Our Solution" },
+      { id: "how-it-works", name: "How It Works" },
+      { id: "the-opportunity", name: "The Opportunity" },
+      { id: "selection-execution", name: "Selection & Execution" },
+      { id: "the-investment", name: "The Investment" },
+      { id: "founders-club", name: "Founders Club" },
+      { id: "faq", name: "FAQ" },
+      { id: "contact", name: "Contact" },
+    ];
+
+    let ticking = false;
 
     const handleScroll = () => {
-      // Top of page check
-      if (window.scrollY < 120) {
-        setActiveNav("Home");
-        return;
-      }
-
-      // Check section scroll position
-      const scrollPosition = window.scrollY + 220;
-
-      for (const [id, sectionName] of Object.entries(sectionMap)) {
-        const el = document.getElementById(id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveNav(sectionName);
-            break;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY < 120) {
+            setActiveNav((prev) => (prev !== "Home" ? "Home" : prev));
+            ticking = false;
+            return;
           }
-        }
+
+          const scrollPosition = window.scrollY + 220;
+
+          for (const item of sectionIds) {
+            const el = document.getElementById(item.id);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + height) {
+                setActiveNav((prev) => (prev !== item.name ? item.name : prev));
+                break;
+              }
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
