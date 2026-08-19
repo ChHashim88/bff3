@@ -27,18 +27,18 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-3 pb-2 px-3 sm:px-8 lg:px-12 xl:px-16">
-      {/* Floating Translucent Pill Container (Navbar height remains strictly h-[76px]) */}
-      <div className="max-w-[1536px] mx-auto bg-white/80 backdrop-blur-xl border border-[#EAE5DC] shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-full h-[76px] px-3.5 sm:px-6 lg:px-7 flex items-center justify-between gap-2 sm:gap-6">
+    <header className="sticky top-0 z-50 w-full pt-2 sm:pt-3 pb-1.5 sm:pb-2 px-3 sm:px-8 lg:px-12 xl:px-16">
+      {/* Floating Translucent Pill Container (Mobile height h-[54px], Desktop height h-[76px]) */}
+      <div className="max-w-[1536px] mx-auto bg-white/80 backdrop-blur-xl border border-[#EAE5DC] shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-full h-[54px] sm:h-[76px] px-3.5 sm:px-6 lg:px-7 flex items-center justify-between gap-2 sm:gap-6">
 
         {/* Left Logo: Tightly Cropped ~3x Larger Visual Display */}
-        <a href="#" className="flex items-center group shrink-0 py-1">
+        <a href="#" className="flex items-center group shrink-0 py-0.5 sm:py-1">
           <Image
             src="/logo.png"
             alt="Big Film Fund Logo"
             width={240}
             height={100}
-            className="h-9 sm:h-12 lg:h-[52px] w-auto object-contain group-hover:scale-[1.03] transition-transform duration-300"
+            className="h-7 sm:h-12 lg:h-[52px] w-auto object-contain group-hover:scale-[1.03] transition-transform duration-300"
             priority
           />
         </a>
