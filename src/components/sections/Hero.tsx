@@ -60,22 +60,22 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Full Hero Section Background Image Container */}
+      {/* Full Hero Section Background Image Container (Richly visible on mobile & desktop) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <Image
           src="/herob.png"
           alt="Big Film Fund Hero Background"
           fill
           priority
-          className="object-cover object-right sm:object-center opacity-20 sm:opacity-85 transition-opacity duration-300"
+          className="object-cover object-right sm:object-center opacity-65 sm:opacity-85 transition-opacity duration-300"
           sizes="100vw"
         />
 
-        {/* Left-to-Right Soft Fade Gradient Overlay (Fades out image from left side on mobile & desktop) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1] via-[#FAF7F1]/90 sm:via-[#FAF7F1]/50 to-transparent pointer-events-none" />
+        {/* Gentle Left-to-Right Fade Gradient Overlay (Softly cushions text on the left while preserving full image visibility) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/80 via-[#FAF7F1]/40 sm:via-[#FAF7F1]/30 to-transparent pointer-events-none" />
 
         {/* Top-to-Bottom Soft Fade Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F1] via-transparent to-[#FAF7F1]/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F1] via-transparent to-[#FAF7F1]/60 pointer-events-none" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative">
