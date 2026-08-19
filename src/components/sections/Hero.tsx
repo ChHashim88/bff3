@@ -185,12 +185,12 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             />
           </motion.div>
 
-          {/* Subtitle Description Paragraph */}
+          {/* Subtitle Description Paragraph (SF Pro Text, 17px Body specification) */}
           <motion.p
             variants={descContainerVariants}
             initial="hidden"
             animate="visible"
-            className="type-subtitle text-gray-700 max-w-2xl"
+            className="type-body text-gray-700 max-w-2xl text-[17px] leading-relaxed"
           >
             {DESC_WORDS.map((word, index) => (
               <motion.span
@@ -207,7 +207,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="type-body font-medium text-[#111111]"
+            className="type-body font-medium text-[#111111] text-[17px] leading-relaxed"
           >
             Invest in the platform shaping the next generation of entertainment finance.
           </motion.p>
