@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import AetherFlowHero from "@/components/ui/aether-flow-hero";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
@@ -60,9 +60,18 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center items-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Interactive Aether Flow Red Wave Background */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-        <AetherFlowHero className="w-full h-full" />
+      {/* Hero Background Image backy.png */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <Image
+          src="/backy.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center opacity-90"
+          sizes="100vw"
+        />
+        {/* Smooth Bottom Gradient Fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/50 to-transparent" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative flex flex-col items-center justify-center">
