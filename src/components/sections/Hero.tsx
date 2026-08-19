@@ -60,22 +60,22 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Full Hero Section Background Image with Top Fade-Out Mask */}
-      <div
-        className="absolute inset-0 w-full h-full pointer-events-none z-0"
-        style={{
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 25%, black 100%)",
-        }}
-      >
+      {/* Full Hero Section Background Image Container */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <Image
           src="/herob.png"
           alt="Big Film Fund Hero Background"
           fill
           priority
-          className="object-cover object-right sm:object-center"
+          className="object-cover object-right sm:object-center opacity-20 sm:opacity-85 transition-opacity duration-300"
           sizes="100vw"
         />
+
+        {/* Left-to-Right Soft Fade Gradient Overlay (Fades out image from left side on mobile & desktop) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1] via-[#FAF7F1]/90 sm:via-[#FAF7F1]/50 to-transparent pointer-events-none" />
+
+        {/* Top-to-Bottom Soft Fade Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F1] via-transparent to-[#FAF7F1]/80 pointer-events-none" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative">
