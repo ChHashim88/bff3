@@ -64,16 +64,19 @@ export default function CommunityWeFunderSection() {
             </div>
 
             {/* Foreground Content */}
-            <div className="relative z-10 space-y-4 max-w-xl">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
-                JOIN THE BFF COMMUNITY
-              </p>
+            <div className="relative z-10 space-y-3 max-w-xl">
+              <div className="space-y-2">
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  JOIN THE BFF COMMUNITY
+                </p>
+                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
+              </div>
               <h3 className="type-h2 text-white">
                 Join our community.
                 <br />
                 Be part of the future of film.
               </h3>
-              <p className="type-body text-gray-400">
+              <p className="type-small text-gray-400">
                 Stay up to date with updates, insights, tools, and access stories.
               </p>
             </div>
@@ -134,11 +137,14 @@ export default function CommunityWeFunderSection() {
             <div className="absolute inset-0 bg-gradient-to-b from-[#FDF2F2]/0 via-[#FDF2F2]/0 to-[#FDF2F2]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             {/* Card Header with Label & WeFunder Logo */}
-            <div className="relative z-10 space-y-1">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
-                PARTNER WITH BFF
-              </p>
-              <h3 className="type-h3 text-[#111111] flex items-center flex-wrap gap-3 pt-1">
+            <div className="relative z-10 space-y-3">
+              <div className="space-y-2">
+                <p className="type-label font-medium uppercase text-[#CD0007]">
+                  PARTNER WITH BFF
+                </p>
+                <div className="w-[30px] h-[2px] bg-[#CD0007]" />
+              </div>
+              <h3 className="type-h3 text-[#111111] flex items-center flex-wrap gap-3">
                 <span>Continue to</span>
                 <motion.div
                   animate={{ scale: [1, 1.06, 1] }}
@@ -163,7 +169,7 @@ export default function CommunityWeFunderSection() {
 
             {/* Subtext & Action Button */}
             <div className="relative z-10 pt-4 pb-16 sm:pb-20 space-y-4 max-w-[280px]">
-              <p className="type-body text-gray-700">
+              <p className="type-small text-gray-700">
                 See how we enable everyday investors to participate in film financing.
               </p>
 

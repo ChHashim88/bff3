@@ -56,11 +56,11 @@ export default function Opportunity() {
         >
           {/* Top Header Row: Left Text Content & Right Dot Matrix Wave Grid */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-            
+
             {/* Left Content Block */}
-            <div className="space-y-4 max-w-2xl">
+            <div className="space-y-3 max-w-2xl">
               {/* Top Label & Short Logo Red Line */}
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <p className="type-label font-medium uppercase text-[#CD0007]">
                   THE OPPORTUNITY
                 </p>
@@ -149,7 +149,7 @@ export default function Opportunity() {
                     className="flex flex-col items-center text-center w-full group/card h-full justify-between"
                   >
                     {/* Circular Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
-                    <motion.div 
+                    <motion.div
                       animate={{
                         boxShadow: [
                           "0 0 0 0px rgba(205,0,7,0.12)",

@@ -39,7 +39,7 @@ export default function HowWeMakeMoney() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-        
+
         {/* Single Large Rounded Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -50,13 +50,13 @@ export default function HowWeMakeMoney() {
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
-            
+
             {/* LEFT SIDE: Heading, Description & Cinematic Image (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
-              
-              <div className="space-y-5">
+
+              <div className="space-y-3">
                 {/* Top Label & Short Logo Red Line */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="type-label font-medium uppercase text-[#CD0007]">
                     THE BUSINESS MODEL
                   </p>
@@ -81,7 +81,7 @@ export default function HowWeMakeMoney() {
 
               {/* Left Cinematic Image Card */}
               <div className="pt-2 flex-grow flex items-end">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.01 }}
                   className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] bg-[#111111] group cursor-pointer w-full min-h-[280px] sm:min-h-[320px]"
                 >
@@ -144,7 +144,7 @@ export default function HowWeMakeMoney() {
                       className="flex items-center gap-4 w-full h-full group/card"
                     >
                       {/* Left Icon Badge (~56px) with Continuous Ambient Pulse Ring & Hover Motion */}
-                      <motion.div 
+                      <motion.div
                         animate={{
                           boxShadow: [
                             "0 0 0 0px rgba(205,0,7,0.12)",
@@ -166,7 +166,7 @@ export default function HowWeMakeMoney() {
 
                       {/* Right Text Content */}
                       <div className="space-y-1 overflow-hidden">
-                        <h3 className="text-base sm:text-lg font-bold font-display text-[#CD0007] leading-tight group-hover/card:translate-y-[-1px] transition-transform">
+                        <h3 className="type-h3 text-[#CD0007] group-hover/card:translate-y-[-1px] transition-transform">
                           {card.title}
                         </h3>
                         <p className="type-small text-gray-700 leading-normal">

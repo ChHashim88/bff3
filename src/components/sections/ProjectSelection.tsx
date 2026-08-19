@@ -42,7 +42,7 @@ export default function ProjectSelection() {
   return (
     <section id="selection-execution" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-14">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -51,7 +51,7 @@ export default function ProjectSelection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <div className="space-y-1.5">
+          <div className="space-y-2">
             <p className="type-label font-medium uppercase text-[#CD0007]">
               PROJECT SELECTION
             </p>
@@ -75,7 +75,7 @@ export default function ProjectSelection() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
         >
-          <div className="text-center max-w-xl mx-auto mb-8 space-y-1">
+          <div className="text-center max-w-xl mx-auto mb-8 space-y-2">
             <p className="type-label font-medium uppercase text-[#CD0007]">
               THE SELECTION FRAMEWORK
             </p>
@@ -92,9 +92,8 @@ export default function ProjectSelection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${
-                    idx !== 0 ? "lg:pl-6" : ""
-                  }`}
+                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${idx !== 0 ? "lg:pl-6" : ""
+                    }`}
                 >
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
@@ -108,7 +107,7 @@ export default function ProjectSelection() {
                     whileHover={{ y: -8, scale: 1.03 }}
                     className="flex flex-col items-center text-center w-full group/card"
                   >
-                    <motion.div 
+                    <motion.div
                       animate={{
                         boxShadow: [
                           "0 0 0 0px rgba(205,0,7,0.12)",
@@ -132,10 +131,10 @@ export default function ProjectSelection() {
                     </motion.div>
 
                     <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform uppercase">
-                      {item.num} — {item.title}
+                      {item.title}
                     </h3>
 
-                    <p className="type-body text-gray-700 max-w-[200px]">
+                    <p className="type-small text-gray-700 max-w-[200px]">
                       {item.description}
                     </p>
                   </motion.div>

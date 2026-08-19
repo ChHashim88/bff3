@@ -190,7 +190,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             variants={descContainerVariants}
             initial="hidden"
             animate="visible"
-            className="type-body text-gray-700 max-w-2xl text-[17px] leading-relaxed"
+            className="hidden sm:block type-body text-gray-700 max-w-2xl text-[17px] leading-relaxed"
           >
             {DESC_WORDS.map((word, index) => (
               <motion.span
@@ -223,7 +223,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               href="#the-opportunity"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-full transition-all duration-200 shadow-sm cursor-pointer group text-center"
+              className="hidden sm:inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-full transition-all duration-200 shadow-sm cursor-pointer group text-center"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

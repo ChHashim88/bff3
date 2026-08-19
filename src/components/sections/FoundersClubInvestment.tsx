@@ -32,7 +32,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
         {/* ── 1. FOUNDERS CLUB & PROGRESS TO DATE (2-Column Grid) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="founders-club">
-          
+
           {/* LEFT: FOUNDERS CLUB Card */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -41,9 +41,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col justify-between space-y-6 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
           >
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="type-label font-medium uppercase text-[#CD0007]">
                     FOUNDERS CLUB
                   </p>
@@ -58,11 +58,11 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 Don’t Just Invest in Film. <span className="text-[#CD0007]">Be Part of It.</span>
               </h2>
 
-              <p className="type-body text-gray-700">
+              <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund brings investors closer to the journey—from development to release.
               </p>
 
-              <p className="type-body font-medium text-[#111111]">
+              <p className="type-small font-medium text-[#111111]">
                 Early supporters can join the Big Film Fund Founders Club and receive special privileges and offers.
               </p>
             </div>
@@ -89,8 +89,8 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col justify-between space-y-6 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
           >
-            <div className="space-y-4">
-              <div className="space-y-1.5">
+            <div className="space-y-3">
+              <div className="space-y-2">
                 <p className="type-label font-medium uppercase text-[#CD0007]">
                   PROGRESS TO DATE
                 </p>
@@ -101,7 +101,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 The Foundation Is Being Built
               </h2>
 
-              <p className="type-body text-gray-700">
+              <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund is already in active development. The focus has been on building a repeatable and scalable system for sourcing, evaluating, and delivering film investment opportunities.
               </p>
 
@@ -113,7 +113,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                   {whatBeenBuilt.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 text-gray-800">
                       <CheckCircle2 size={16} className="text-[#CD0007] shrink-0" />
-                      <span className="type-body font-medium">{item}</span>
+                      <span className="type-small font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -133,10 +133,10 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs space-y-8"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left Stack: THE INVESTMENT */}
-            <div className="lg:col-span-6 space-y-4">
-              <div className="space-y-1.5">
+            <div className="lg:col-span-6 space-y-3">
+              <div className="space-y-2">
                 <p className="type-label font-medium uppercase text-[#CD0007]">
                   THE INVESTMENT
                 </p>
@@ -147,22 +147,22 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 Invest in the Platform. <span className="text-[#CD0007]">Not Just One Film.</span>
               </h2>
 
-              <p className="type-body text-gray-700">
+              <p className="type-body text-gray-700 font-normal leading-relaxed">
                 This offering provides investors with the opportunity to purchase shares in Big Film Fund, Inc.—the company building the platform.
               </p>
 
-              <p className="type-body text-gray-700">
+              <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Your investment supports the development of a scalable business designed to finance and support multiple film projects over time.
               </p>
 
-              <p className="type-body font-medium text-[#111111] border-l-2 border-[#CD0007] pl-3">
+              <p className="type-small font-medium text-[#111111] border-l-2 border-[#CD0007] pl-3">
                 Instead of depending on one movie, the platform is designed around a growing pipeline of projects and investors.
               </p>
             </div>
 
             {/* Right Stack: WHAT THIS ROUND ENABLES */}
-            <div className="lg:col-span-6 space-y-4 lg:pl-4">
-              <div className="space-y-1.5">
+            <div className="lg:col-span-6 space-y-3 lg:pl-4">
+              <div className="space-y-2">
                 <p className="type-label font-medium uppercase text-[#CD0007]">
                   WHAT THIS ROUND ENABLES
                 </p>
@@ -173,7 +173,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 From Development to Market
               </h3>
 
-              <p className="type-body text-gray-700">
+              <p className="type-small text-gray-700">
                 Capital raised will help Big Film Fund:
               </p>
 
@@ -181,7 +181,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 {roundEnables.map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <CheckCircle2 size={16} className="text-[#CD0007] shrink-0 mt-1" />
-                    <span className="type-body text-gray-800">{item}</span>
+                    <span className="type-small text-gray-800">{item}</span>
                   </div>
                 ))}
               </div>
@@ -201,8 +201,8 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           {/* Ambient Logo Red Glow Ring */}
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#CD0007]/25 blur-3xl pointer-events-none z-0" />
 
-          <div className="relative z-10 space-y-4 max-w-3xl">
-            <div className="space-y-1.5">
+          <div className="relative z-10 space-y-3 max-w-3xl">
+            <div className="space-y-2">
               <p className="type-label font-medium uppercase text-[#CD0007]">
                 WHY NOW?
               </p>
@@ -213,7 +213,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               The Foundation Is Ready. <span className="text-[#CD0007]">The Next Step Is Launch.</span>
             </h2>
 
-            <p className="type-body text-gray-300">
+            <p className="type-body text-gray-300 font-normal leading-relaxed">
               The core model, relationships, and platform design are in place. Now, Big Film Fund is moving from development to live operation—launching the platform, activating its initial pipeline, and introducing its first investment opportunities.
             </p>
           </div>

@@ -8,7 +8,7 @@ export default function ProblemSolution() {
   return (
     <section id="the-problem" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-        
+
         {/* Single Large Rounded Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -19,13 +19,13 @@ export default function ProblemSolution() {
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
-            
+
             {/* LEFT SIDE: Heading, Description & Callout (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
-              
-              <div className="space-y-5">
+
+              <div className="space-y-3">
                 {/* Top Subtitle Label & Short Logo Red Accent Line */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="type-label font-medium uppercase text-[#CD0007]">
                     THE PROBLEM
                   </p>
@@ -33,14 +33,16 @@ export default function ProblemSolution() {
                 </div>
 
                 {/* Main Headline */}
-                <h2 className="type-h2 text-[#111111]">
-                  Millions Watch Movies. <span className="text-[#CD0007]">Almost None Can Invest in Them.</span>
-                </h2>
+                <h3 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
+                  Millions Watch Movies.<br />
+                  <span className="text-[#CD0007]">Almost None Can Invest in Them.</span>
+                </h3>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
                   <p className="type-body leading-relaxed">
-                    Film has always been a powerful global industry—but film investing has largely remained accessible only to studios, private investors, and industry insiders.
+                    Film has always been a powerful global industry—but film investing has largely
+                    remained accessible only to studios, private investors, and industry insiders.
                   </p>
                   <p className="type-body font-medium text-[#111111] border-l-2 border-[#CD0007] pl-3">
                     Audiences create value. Investors rarely share in it.
@@ -62,7 +64,7 @@ export default function ProblemSolution() {
 
             {/* RIGHT SIDE: Cinematic Video Preview Card (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center">
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.01 }}
                 className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[4/3] bg-[#111111] group cursor-pointer w-full min-h-[300px] sm:min-h-[360px]"
               >
@@ -90,7 +92,7 @@ export default function ProblemSolution() {
                     THE PROBLEM
                   </p>
                   <h3 className="type-h3 text-white max-w-md">
-                    MILLIONS WATCH MOVIES. ALMOST NONE CAN INVEST IN THEM.
+                    MILLIONS WATCH MOVIES.<br />ALMOST NONE CAN INVEST IN THEM.
                   </h3>
                 </div>
               </motion.div>

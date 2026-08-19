@@ -64,7 +64,7 @@ export default function FAQContactSection() {
   return (
     <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-        
+
         {/* Container Card Matching Website Theme */}
         <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -77,14 +77,14 @@ export default function FAQContactSection() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="lg:col-span-6 space-y-6"
             >
-              <div className="space-y-2">
-                <div className="space-y-1.5">
+              <div className="space-y-3">
+                <div className="space-y-2">
                   <p className="type-label font-medium uppercase text-[#CD0007]">
                     FAQ
                   </p>
                   <div className="w-[30px] h-[2px] bg-[#CD0007]" />
                 </div>
-                <h2 className="type-h2 text-[#111111]">
+                <h2 className="type-h2 font-semibold text-[#111111]">
                   Frequently asked questions.
                 </h2>
               </div>
@@ -99,17 +99,15 @@ export default function FAQContactSection() {
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
                         className="w-full flex items-center justify-between text-left group focus:outline-none cursor-pointer"
                       >
-                        <span className={`type-h3 transition-colors duration-200 ${
-                          isOpen ? 'text-[#CD0007]' : 'text-[#111111] group-hover:text-[#CD0007]'
-                        }`}>
+                        <span className={`type-h3 font-semibold transition-colors duration-200 ${isOpen ? 'text-[#CD0007]' : 'text-[#111111] group-hover:text-[#CD0007]'
+                          }`}>
                           {item.question}
                         </span>
                         <motion.span
                           animate={{ rotate: isOpen ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
-                          className={`ml-4 shrink-0 transition-colors ${
-                            isOpen ? 'text-[#CD0007]' : 'text-[#111111]/40 group-hover:text-[#CD0007]'
-                          }`}
+                          className={`ml-4 shrink-0 transition-colors ${isOpen ? 'text-[#CD0007]' : 'text-[#111111]/40 group-hover:text-[#CD0007]'
+                            }`}
                         >
                           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                         </motion.span>
@@ -124,7 +122,7 @@ export default function FAQContactSection() {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="overflow-hidden"
                           >
-                            <p className="mt-3 pr-6 type-body text-gray-700">
+                            <p className="mt-3 pr-6 type-body font-normal text-gray-700 leading-relaxed">
                               {item.answer}
                             </p>
                           </motion.div>
@@ -145,14 +143,14 @@ export default function FAQContactSection() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="lg:col-span-6 space-y-6 lg:pl-4"
             >
-              <div className="space-y-2">
-                <div className="space-y-1.5">
+              <div className="space-y-3">
+                <div className="space-y-2">
                   <p className="type-label font-medium uppercase text-[#CD0007]">
                     Contact
                   </p>
                   <div className="w-[30px] h-[2px] bg-[#CD0007]" />
                 </div>
-                <h2 className="type-h2 text-[#111111]">
+                <h2 className="type-h2 font-semibold text-[#111111]">
                   Let&apos;s build the future of film, together.
                 </h2>
               </div>
@@ -173,7 +171,7 @@ export default function FAQContactSection() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block type-label text-[#111111] uppercase mb-1.5">
+                      <label className="block type-label font-medium text-[#111111] uppercase mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -182,11 +180,11 @@ export default function FAQContactSection() {
                         placeholder="Full Name"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
+                        className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body font-normal text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block type-label text-[#111111] uppercase mb-1.5">
+                      <label className="block type-label font-medium text-[#111111] uppercase mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -195,13 +193,13 @@ export default function FAQContactSection() {
                         placeholder="Email Address"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
+                        className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body font-normal text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block type-label text-[#111111] uppercase mb-1.5">
+                    <label className="block type-label font-medium text-[#111111] uppercase mb-1.5">
                       Company (Optional)
                     </label>
                     <input
@@ -209,12 +207,12 @@ export default function FAQContactSection() {
                       placeholder="Company (Optional)"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
+                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body font-normal text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block type-label text-[#111111] uppercase mb-1.5">
+                    <label className="block type-label font-medium text-[#111111] uppercase mb-1.5">
                       Message *
                     </label>
                     <textarea
@@ -223,7 +221,7 @@ export default function FAQContactSection() {
                       placeholder="Message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all resize-none"
+                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body font-normal text-[#111111] placeholder-gray-500 focus:outline-none focus:border-[#CD0007] focus:ring-1 focus:ring-[#CD0007] transition-all resize-none"
                     />
                   </div>
 
@@ -231,7 +229,7 @@ export default function FAQContactSection() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-8 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer"
                   >
                     <span>Send Inquiry</span>
                     <Send size={16} />

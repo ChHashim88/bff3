@@ -112,16 +112,22 @@ export default function Stats() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-12">
-        
+
         {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-4xl mx-auto"
+          className="text-center max-w-4xl mx-auto space-y-3"
         >
-          <h2 className="type-h2 text-[#111111]">
+          <div className="space-y-2">
+            <p className="type-label font-medium uppercase text-[#CD0007]">
+              THE MARKET
+            </p>
+            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+          </div>
+          <h2 className="type-h2 font-semibold text-[#111111]">
             At the Intersection of a Massive Opportunity
           </h2>
         </motion.div>
@@ -143,9 +149,8 @@ export default function Stats() {
                   initial={{ opacity: 0, y: 20, scale: 0.92 }}
                   animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                   transition={{ duration: 0.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${
-                    idx !== 0 ? "lg:pl-6" : ""
-                  }`}
+                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${idx !== 0 ? "lg:pl-6" : ""
+                    }`}
                 >
                   {/* Floating Container (Infinite Ambient Motion) */}
                   <motion.div
@@ -161,7 +166,7 @@ export default function Stats() {
                     className="flex flex-col items-center text-center w-full group/card"
                   >
                     {/* Soft Circular Cream Icon Badge (~64px) with Continuous Ambient Pulse Ring & Hover Motion */}
-                    <motion.div 
+                    <motion.div
                       animate={{
                         boxShadow: [
                           "0 0 0 0px rgba(205,0,7,0.12)",
@@ -182,19 +187,19 @@ export default function Stats() {
                     </motion.div>
 
                     {/* Logo Red Animated Metric Counter Value */}
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="type-h2 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform"
+                      className="type-h2 font-semibold text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform"
                     >
                       <AnimatedMetricValue targetValue={item.value} isInView={isInView} />
                     </motion.div>
 
                     {/* Stat Description Label */}
-                    <div className="type-body text-gray-700 max-w-[200px]">
+                    <div className="type-small text-gray-700 max-w-[200px] font-normal leading-relaxed">
                       <p>{item.labelLine1}</p>
                       {item.labelLine2 && <p>{item.labelLine2}</p>}
                       {item.subLabel && (
-                        <span className="block type-small italic text-gray-500 mt-0.5">
+                        <span className="block type-small italic text-gray-500 mt-0.5 font-normal">
                           {item.subLabel}
                         </span>
                       )}

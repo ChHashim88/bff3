@@ -52,11 +52,11 @@ export default function HowItWorks() {
   ];
 
   const summaryItems = [
-    { icon: Users,      title: "Sourcing",            description: "A consistent pipeline sourced through industry relationships.", floatDuration: 4.2, floatDelay: 0 },
-    { icon: Search,     title: "Selection",           description: "Projects evaluated against clear financial and commercial standards.", floatDuration: 4.8, floatDelay: 0.5 },
-    { icon: Camera,     title: "Distribution",        description: "Strong distribution capability and audience reach.", floatDuration: 4.4, floatDelay: 1.0 },
-    { icon: Landmark,   title: "Financial Discipline", description: "Responsible capital and platform management.", floatDuration: 5.0, floatDelay: 1.5 },
-    { icon: TrendingUp, title: "Community",           description: "A network that grows with every project.", floatDuration: 4.6, floatDelay: 2.0 },
+    { icon: Users, title: "Sourcing", description: "A consistent pipeline sourced through industry relationships.", floatDuration: 4.2, floatDelay: 0 },
+    { icon: Search, title: "Selection", description: "Projects evaluated against clear financial and commercial standards.", floatDuration: 4.8, floatDelay: 0.5 },
+    { icon: Camera, title: "Distribution", description: "Strong distribution capability and audience reach.", floatDuration: 4.4, floatDelay: 1.0 },
+    { icon: Landmark, title: "Financial Discipline", description: "Responsible capital and platform management.", floatDuration: 5.0, floatDelay: 1.5 },
+    { icon: TrendingUp, title: "Community", description: "A network that grows with every project.", floatDuration: 4.6, floatDelay: 2.0 },
   ];
 
   // Positions relative to center: [-2, -1, 0, 1, 2]
@@ -74,7 +74,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <div className="space-y-1.5">
+          <div className="space-y-2">
             <p className="type-label font-medium uppercase text-[#CD0007]">
               BUILT TO SUCCEED
             </p>
@@ -102,7 +102,7 @@ export default function HowItWorks() {
           <div className="w-20 h-20 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
             <Target size={38} strokeWidth={1.4} />
           </div>
-          
+
           {/* Text Content */}
           <div className="space-y-2.5 text-center sm:text-left flex-1">
             <p className="type-body text-gray-800">
@@ -130,21 +130,23 @@ export default function HowItWorks() {
 
           {/* Section Header Inside Card */}
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-10 relative z-10">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
-              BUILT TO SUCCEED
-            </p>
+            <div className="space-y-2">
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                BUILT TO SUCCEED
+              </p>
+              <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+            </div>
             <h3 className="type-h3 text-[#111111] uppercase">
               Five Foundations of the Platform
             </h3>
-            <div className="w-[40px] h-[2px] bg-[#CD0007] mx-auto mt-2" />
           </div>
 
           {/* 3D Perspective Bodyguard Stage */}
           <div className="relative w-full max-w-[1340px] mx-auto min-h-[340px] sm:min-h-[400px] lg:min-h-[440px] flex items-center justify-center perspective-[1200px] z-10 py-4 overflow-hidden">
-            
+
             {/* Left Edge Creative Vignette Fade-out Mask Overlay */}
             <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 lg:w-44 bg-gradient-to-r from-[#FAF8F3] via-[#FAF8F3]/80 to-transparent pointer-events-none z-30" />
-            
+
             {/* Right Edge Creative Vignette Fade-out Mask Overlay */}
             <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 lg:w-44 bg-gradient-to-l from-[#FAF8F3] via-[#FAF8F3]/80 to-transparent pointer-events-none z-30" />
 
@@ -225,11 +227,10 @@ export default function HowItWorks() {
                       opacity: isCenter ? 1 : 0.95,
                       filter: "blur(0px)",
                     }}
-                    className={`relative shrink-0 w-[170px] xs:w-[200px] sm:w-[240px] md:w-[270px] lg:w-[290px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border-2 transition-all duration-300 shadow-xl ${
-                      isCenter
+                    className={`relative shrink-0 w-[170px] xs:w-[200px] sm:w-[240px] md:w-[270px] lg:w-[290px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer border-2 transition-all duration-300 shadow-xl ${isCenter
                         ? "border-[#CD0007] shadow-[0_15px_35px_rgba(205,0,7,0.32)] ring-4 ring-[#CD0007]/20"
                         : "border-[#EAE5DC] hover:border-[#CD0007]/80 hover:shadow-2xl"
-                    }`}
+                      }`}
                   >
                     {/* Card Background Image */}
                     <Image
@@ -245,9 +246,8 @@ export default function HowItWorks() {
                     <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between z-10">
                       {/* Top Step Number & Status Badge */}
                       <div className="flex justify-between items-center">
-                        <span className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shadow-md ${
-                          isCenter ? "bg-[#CD0007] text-white" : "bg-white/90 text-[#111111]"
-                        }`}>
+                        <span className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shadow-md ${isCenter ? "bg-[#CD0007] text-white" : "bg-white/90 text-[#111111]"
+                          }`}>
                           0{step.num}
                         </span>
                         {isCenter && (
@@ -260,7 +260,7 @@ export default function HowItWorks() {
                       {/* Bottom Card Title */}
                       <div className="space-y-1">
                         <h4 className="type-body font-semibold text-white leading-tight drop-shadow-md">
-                          0{step.num} — {step.title}
+                          {step.title}
                         </h4>
                       </div>
                     </div>
@@ -283,9 +283,9 @@ export default function HowItWorks() {
                 className="space-y-2"
               >
                 <h4 className="type-h3 text-[#CD0007]">
-                  0{steps[activeStep].num} — {steps[activeStep].title}
+                  {steps[activeStep].title}
                 </h4>
-                <p className="type-body text-gray-700 max-w-xl mx-auto">
+                <p className="type-small text-gray-700 max-w-xl mx-auto">
                   {steps[activeStep].description}
                 </p>
               </motion.div>
@@ -293,21 +293,18 @@ export default function HowItWorks() {
           </div>
 
           {/* Center Dots Indicator */}
-          <div className="flex items-center justify-center gap-3 mt-8 relative z-10">
+          <div className="flex items-center justify-center gap-2 mt-6 relative z-10">
             {steps.map((step, idx) => {
               const isActive = idx === activeStep;
               return (
                 <button
                   key={step.num}
                   onClick={() => setActiveStep(idx)}
-                  className={`flex flex-col items-center gap-1 transition-all duration-300 cursor-pointer ${
-                    isActive ? "text-[#CD0007] scale-110" : "text-gray-400 hover:text-gray-600"
-                  }`}
+                  className="transition-all duration-300 cursor-pointer p-1"
+                  aria-label={`Go to step ${step.num}`}
                 >
-                  <span className="type-label font-bold">0{step.num}</span>
-                  <div className={`h-1.5 rounded-full transition-all duration-300 ${
-                    isActive ? "w-6 bg-[#CD0007]" : "w-1.5 bg-[#EAE5DC]"
-                  }`} />
+                  <div className={`h-2 rounded-full transition-all duration-300 ${isActive ? "w-7 bg-[#CD0007]" : "w-2 bg-[#EAE5DC] hover:bg-gray-400"
+                    }`} />
                 </button>
               );
             })}
@@ -332,9 +329,8 @@ export default function HowItWorks() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.07 }}
-                    className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${
-                      idx !== 0 ? "lg:pl-6" : ""
-                    }`}
+                    className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 sm:pt-0 pb-6 sm:pb-0 cursor-pointer ${idx !== 0 ? "lg:pl-6" : ""
+                      }`}
                   >
                     {/* Floating Container (Infinite Ambient Motion) */}
                     <motion.div
@@ -350,7 +346,7 @@ export default function HowItWorks() {
                       className="flex flex-col items-center text-center w-full group/card"
                     >
                       {/* Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
-                      <motion.div 
+                      <motion.div
                         animate={{
                           boxShadow: [
                             "0 0 0 0px rgba(205,0,7,0.12)",

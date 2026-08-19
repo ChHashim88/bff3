@@ -42,18 +42,18 @@ export default function ThePlatform() {
 
   return (
     <section id="our-solution" className="py-12 sm:py-16 lg:py-20 bg-[#FAF7F1] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-14">
-        
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
+
         {/* 1. TOP HEADER COMPOSITION */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-6"
+          className="space-y-3"
         >
           {/* Subtitle Label */}
-          <div className="space-y-1.5">
+          <div className="space-y-2">
             <p className="type-label font-medium uppercase text-[#CD0007]">
               THE PLATFORM
             </p>
@@ -61,8 +61,8 @@ export default function ThePlatform() {
           </div>
 
           {/* Headline */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <h2 className="type-h2 text-[#111111]">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+            <h2 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
               A New Model for <span className="text-[#CD0007]">Film Investing</span>
             </h2>
 
@@ -82,7 +82,7 @@ export default function ThePlatform() {
             <p className="type-body">
               Big Film Fund is designed to make film investing more accessible, structured, and repeatable.
             </p>
-            <p className="type-body font-medium text-[#111111]">
+            <p className="type-body font-medium text-gray-700">
               Instead of depending on one-off deals, the platform is built around a growing pipeline of projects and a repeatable investment model.
             </p>
           </div>
@@ -141,15 +141,16 @@ export default function ThePlatform() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto space-y-3 pt-2"
         >
-          <p className="type-label font-medium uppercase text-[#CD0007]">
-            HOW IT WORKS
-          </p>
+          <div className="space-y-2">
+            <p className="type-label font-medium uppercase text-[#CD0007]">
+              HOW IT WORKS
+            </p>
+            <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+          </div>
+
           <h3 className="type-h2 text-[#111111]">
             4-Step Repeatable Investment Model
           </h3>
-
-          {/* Centered Logo Red Divider */}
-          <div className="w-[40px] h-[2px] bg-[#CD0007] mx-auto mt-3" />
         </motion.div>
 
         {/* 4. FOUR FEATURE CARDS WITH CONTINUOUS INFINITE AMBIENT FLOATING & PULSING GLOW MOTION */}
@@ -170,9 +171,8 @@ export default function ThePlatform() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${
-                    index !== 0 ? "md:pl-6" : ""
-                  }`}
+                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${index !== 0 ? "md:pl-6" : ""
+                    }`}
                 >
                   {/* Floating Container (Infinite Ambient Motion) */}
                   <motion.div
@@ -188,7 +188,7 @@ export default function ThePlatform() {
                     className="flex flex-col items-center text-center w-full group/card"
                   >
                     {/* Logo Red Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
-                    <motion.div 
+                    <motion.div
                       animate={{
                         boxShadow: [
                           "0 0 0 0px rgba(205,0,7,0.12)",
@@ -213,11 +213,11 @@ export default function ThePlatform() {
 
                     {/* Logo Red Heading */}
                     <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform">
-                      {item.num} — {item.title}
+                      {item.title}
                     </h3>
 
                     {/* Dark Body Text */}
-                    <p className="type-body text-gray-700 max-w-[220px]">
+                    <p className="type-small text-gray-700 max-w-[220px]">
                       {item.description}
                     </p>
                   </motion.div>

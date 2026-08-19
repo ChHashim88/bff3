@@ -38,7 +38,7 @@ export default function WhyInvest() {
   return (
     <section id="why-bff" className="py-10 sm:py-14 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
-        
+
         {/* Single Large Rounded Feature Container with Ambient Light Sweep */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,20 +60,16 @@ export default function WhyInvest() {
           />
 
           {/* Card Header */}
-          <div className="text-center max-w-xl mx-auto mb-10 space-y-2 relative z-10">
-            <h2 className="type-h2 text-[#111111]">
-              Why Big Film Fund
-            </h2>
-            <p className="type-subtitle font-normal text-gray-600">
+          <div className="text-center max-w-xl mx-auto mb-10 space-y-3 relative z-10">
+            <div className="space-y-2">
+              <p className="type-label font-medium uppercase text-[#CD0007]">
+                WHY BIG FILM FUND
+              </p>
+              <div className="w-[30px] h-[2px] bg-[#CD0007] mx-auto" />
+            </div>
+            <h2 className="text-[28px] sm:text-[32px] font-semibold text-[#111111] leading-tight">
               A Smarter Way to Invest in Film
-            </p>
-            
-            {/* Logo Red Accent Line with Subtle Pulse */}
-            <motion.div 
-              animate={{ width: ["35px", "45px", "35px"] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-              className="h-[2px] bg-[#CD0007] mx-auto mt-3" 
-            />
+            </h2>
           </div>
 
           {/* 4 Feature Columns with Continuous Infinite Asynchronous Floating Motion */}
@@ -87,9 +83,8 @@ export default function WhyInvest() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${
-                    index !== 0 ? "md:pl-6" : ""
-                  }`}
+                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${index !== 0 ? "md:pl-6" : ""
+                    }`}
                 >
                   {/* Floating Container (Infinite Ambient Motion) */}
                   <motion.div
@@ -105,7 +100,7 @@ export default function WhyInvest() {
                     className="flex flex-col items-center text-center w-full group/card"
                   >
                     {/* Logo Red Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
-                    <motion.div 
+                    <motion.div
                       animate={{
                         boxShadow: [
                           "0 0 0 0px rgba(205,0,7,0.12)",
@@ -131,7 +126,7 @@ export default function WhyInvest() {
                     </h3>
 
                     {/* Dark Body Text */}
-                    <p className="type-body text-gray-700 max-w-[220px]">
+                    <p className="type-small text-gray-700 max-w-[220px]">
                       {item.description}
                     </p>
                   </motion.div>
