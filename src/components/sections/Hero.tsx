@@ -114,7 +114,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="type-label font-medium uppercase text-[#CD0007]"
+            className="text-[12px] sm:text-[21px] font-semibold uppercase text-[#CD0007] tracking-wider"
           >
             A New Way to Invest in the Future of Film
           </motion.p>
