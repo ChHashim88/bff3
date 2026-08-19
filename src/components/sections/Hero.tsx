@@ -60,16 +60,18 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center items-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Hero Background Image backy.png */}
+      {/* Hero Background Image backy.jpeg */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <Image
-          src="/backy.png"
+          src="/backy.jpeg"
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-center opacity-90"
+          className="object-cover object-left-top sm:object-top transition-all duration-300 scale-105 sm:scale-100"
           sizes="100vw"
         />
+        {/* Creative Mobile Left-Focus Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/20 via-transparent to-[#FAF7F1]/35 sm:hidden pointer-events-none" />
         {/* Smooth Bottom Gradient Fade */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/50 to-transparent" />
       </div>

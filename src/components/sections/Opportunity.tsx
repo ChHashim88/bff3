@@ -1,44 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Film, Cpu, TrendingUp, Sparkles, Layers, Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
+import { Film, Cpu, TrendingUp, Sparkles, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
+import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
 
 export default function Opportunity() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        videoRef.current.play();
-        setIsPlaying(true);
-      }
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  const toggleFullscreen = () => {
-    if (videoRef.current) {
-      if (videoRef.current.requestFullscreen) {
-        videoRef.current.requestFullscreen();
-      } else if ((videoRef.current as any).webkitRequestFullscreen) {
-        (videoRef.current as any).webkitRequestFullscreen();
-      }
-    }
-  };
-
   const cards = [
     {
       icon: Film,
@@ -128,66 +95,13 @@ export default function Opportunity() {
 
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-stretch h-full">
-              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-auto bg-[#111111] group w-full h-full min-h-[320px] sm:min-h-[360px]">
-                
-                {/* HTML5 Video Player */}
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster="/ggh.jpeg"
-                  className="w-full h-full object-cover object-center"
-                >
-                  <source src="/bff_opportunity.mp4" type="video/mp4" />
-                  <source src="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_3_the_opportunity_260611_v2.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-
-                {/* Ambient Soft Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
-
-                {/* Floating Interactive Controls */}
-                <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2">
-                  <button
-                    onClick={toggleMute}
-                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
-                    aria-label={isMuted ? "Unmute video" : "Mute video"}
-                    title={isMuted ? "Unmute" : "Mute"}
-                  >
-                    {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                  </button>
-
-                  <button
-                    onClick={togglePlay}
-                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
-                    aria-label={isPlaying ? "Pause video" : "Play video"}
-                    title={isPlaying ? "Pause" : "Play"}
-                  >
-                    {isPlaying ? <Pause size={18} /> : <Play size={18} className="translate-x-0.5" />}
-                  </button>
-
-                  <button
-                    onClick={toggleFullscreen}
-                    className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-[#CD0007] hover:border-[#CD0007] transition-all cursor-pointer shadow-lg"
-                    aria-label="Full screen"
-                    title="Full Screen"
-                  >
-                    <Maximize2 size={18} />
-                  </button>
-                </div>
-
-                {/* Bottom Left Video Badge */}
-                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 pointer-events-none">
-                  <span className="w-2 h-2 rounded-full bg-[#CD0007] animate-pulse" />
-                  <span className="text-[11px] font-semibold text-white uppercase tracking-wider">
-                    THE OPPORTUNITY DEMO
-                  </span>
-                </div>
-
-              </div>
+              <VideoPlayerWithLoader
+                primarySrc="/bff_opportunity.mp4"
+                fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_3_the_opportunity_260611_v2.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+                poster="/ggh.jpeg"
+                badgeText="THE OPPORTUNITY DEMO"
+                aspectRatioClass="aspect-[16/9] lg:aspect-auto"
+              />
             </div>
 
           </div>
