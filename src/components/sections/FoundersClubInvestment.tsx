@@ -43,9 +43,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
+                <h1 className="type-label font-medium uppercase text-[#CD0007]">
                   FOUNDERS CLUB
-                </p>
+                </h1>
                 <div className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007]">
                   <Crown size={24} />
                 </div>
@@ -87,9 +87,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             className="lg:col-span-6 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col justify-between space-y-6 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
           >
             <div className="space-y-3">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 PROGRESS TO DATE
-              </p>
+              </h1>
 
               <h3 className="type-h3 md:type-h2 text-[#111111]">
                 The Foundation Is Being Built
@@ -100,9 +100,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               </p>
 
               <div className="pt-2 space-y-2.5">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
+                <h1 className="type-label font-medium uppercase text-[#CD0007]">
                   WHAT’S BEEN BUILT
-                </p>
+                </h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {whatBeenBuilt.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 text-gray-800">
@@ -130,9 +130,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Left Stack: THE INVESTMENT */}
             <div className="lg:col-span-6 space-y-3">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 THE INVESTMENT
-              </p>
+              </h1>
 
               <h3 className="type-h3 md:type-h2 text-[#111111]">
                 Invest in the Platform. <span className="text-[#CD0007]">Not Just One Film.</span>
@@ -153,9 +153,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Right Stack: WHAT THIS ROUND ENABLES */}
             <div className="lg:col-span-6 space-y-3 lg:pl-4">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 WHAT THIS ROUND ENABLES
-              </p>
+              </h1>
 
               <h3 className="type-h3 text-[#111111]">
                 From Development to Market
@@ -190,9 +190,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#CD0007]/25 blur-3xl pointer-events-none z-0" />
 
           <div className="relative z-10 space-y-3 max-w-3xl">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
+            <h1 className="type-label font-medium uppercase text-[#CD0007]">
               WHY NOW?
-            </p>
+            </h1>
 
             <h3 className="type-h3 md:type-h2 text-white">
               The Foundation Is Ready. <span className="text-[#CD0007]">The Next Step Is Launch.</span>
@@ -205,9 +205,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
           <div className="relative z-10 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="space-y-1">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 JOIN US AT THE BEGINNING
-              </p>
+              </h1>
               <h3 className="type-h3 text-white">
                 The Next Generation of Film Investing Starts Here.
               </h3>

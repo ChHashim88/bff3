@@ -72,9 +72,9 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <p className="type-label font-medium uppercase text-[#CD0007]">
+          <h1 className="type-label font-medium uppercase text-[#CD0007]">
             BUILT TO SUCCEED
-          </p>
+          </h1>
 
           <h3 className="type-h3 md:type-h2 text-[#111111]">
             Five Foundations <span className="text-[#CD0007]">of the Platform</span>

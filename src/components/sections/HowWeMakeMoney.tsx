@@ -56,9 +56,9 @@ export default function HowWeMakeMoney() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
 
               <div className="space-y-3">
-                <p className="type-label font-medium uppercase text-[#CD0007]">
+                <h1 className="type-label font-medium uppercase text-[#CD0007]">
                   THE BUSINESS MODEL
-                </p>
+                </h1>
 
                 {/* H3 Headline */}
                 <h3 className="type-h3 md:type-h2 text-[#111111]">

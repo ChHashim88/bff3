@@ -51,9 +51,9 @@ export default function ProjectSelection() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <p className="type-label font-medium uppercase text-[#CD0007]">
+          <h1 className="type-label font-medium uppercase text-[#CD0007]">
             PROJECT SELECTION
-          </p>
+          </h1>
 
           <h3 className="type-h3 md:type-h2 text-[#111111]">
             We Don’t Chase Volume. <span className="text-[#CD0007]">We Chase Quality.</span>
@@ -73,9 +73,9 @@ export default function ProjectSelection() {
           className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
         >
           <div className="text-center max-w-xl mx-auto mb-8">
-            <p className="type-label font-medium uppercase text-[#CD0007]">
+            <h1 className="type-label font-medium uppercase text-[#CD0007]">
               THE SELECTION FRAMEWORK
-            </p>
+            </h1>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#EAE5DC] gap-6 lg:gap-0">

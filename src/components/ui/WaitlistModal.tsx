@@ -69,9 +69,9 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             ) : (
               <div className="space-y-6">
                 <div>
-                  <span className="type-label font-bold uppercase text-[#CD0007] tracking-wider block mb-1">
+                  <h1 className="type-label font-bold uppercase text-[#CD0007] tracking-wider block mb-1">
                     Join Big Film Fund
-                  </span>
+                  </h1>
                   <h3 className="text-2xl font-bold text-[#111111] tracking-tight">
                     Get priority allocation
                   </h3>

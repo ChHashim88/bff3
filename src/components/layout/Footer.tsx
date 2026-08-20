@@ -37,9 +37,9 @@ export default function Footer() {
           {/* Quick Links Grid (2 Columns) */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="space-y-3">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 NAVIGATION
-              </p>
+              </h1>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#" className="hover:text-[#CD0007] transition-colors">Home</a></li>
                 <li><a href="#why-bff" className="hover:text-[#CD0007] transition-colors">Why BFF</a></li>
@@ -50,9 +50,9 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 PLATFORM
-              </p>
+              </h1>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#the-opportunity" className="hover:text-[#CD0007] transition-colors">The Opportunity</a></li>
                 <li><a href="#how-it-works" className="hover:text-[#CD0007] transition-colors">How It Works</a></li>
@@ -63,9 +63,9 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3 col-span-2 sm:col-span-1">
-              <p className="type-label font-medium uppercase text-[#CD0007]">
+              <h1 className="type-label font-medium uppercase text-[#CD0007]">
                 CONNECT
-              </p>
+              </h1>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#faq" className="hover:text-[#CD0007] transition-colors">FAQ</a></li>
                 <li><a href="#contact" className="hover:text-[#CD0007] transition-colors">Contact Us</a></li>
