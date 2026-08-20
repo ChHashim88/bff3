@@ -79,10 +79,10 @@ export default function WhyInvest() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  initial={{ opacity: 0, scale: 0.55, y: 35 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.7, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
                   className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${index !== 0 ? "md:pl-6" : ""
                     }`}
                 >
