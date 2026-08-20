@@ -115,7 +115,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="w-full bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium py-3.5 px-6 rounded-2xl transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
                   >
                     <span>Confirm & Join Waitlist</span>
                     <ArrowRight size={16} />

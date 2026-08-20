@@ -70,7 +70,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               </p>
               <button
                 onClick={onOpenWaitlist}
-                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-xl transition-all shadow-sm cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-2xl transition-all shadow-sm cursor-pointer shrink-0"
               >
                 <span>Join Founders Club</span>
                 <ArrowRight size={16} />
@@ -107,7 +107,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                   {whatBeenBuilt.map((item, i) => (
                     <div key={i} className="flex items-center gap-2 text-gray-800">
                       <CheckCircle2 size={16} className="text-[#CD0007] shrink-0" />
-                      <span className="type-small font-medium">{item}</span>
+                      <span className="type-body font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -157,9 +157,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 WHAT THIS ROUND ENABLES
               </p>
 
-              <h2 className="type-h2 text-[#111111]">
+              <h3 className="type-h3 text-[#111111]">
                 From Development to Market
-              </h2>
+              </h3>
 
               <p className="type-body font-medium text-gray-700">
                 Capital raised will help Big Film Fund:
@@ -217,7 +217,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               href="#contact"
               whileHover={{ scale: 1.04, x: 3 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-xl cursor-pointer shrink-0"
+              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-xl cursor-pointer shrink-0"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} />

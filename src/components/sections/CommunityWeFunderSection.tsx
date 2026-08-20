@@ -104,7 +104,7 @@ export default function CommunityWeFunderSection() {
                       type="submit"
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.96 }}
-                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
+                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-2xl transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
                     >
                       <span>Sign Up</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />

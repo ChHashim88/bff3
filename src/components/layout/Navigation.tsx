@@ -142,7 +142,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={onOpenWaitlist}
-            className="hidden sm:inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[12px] font-medium px-4 py-1.5 rounded-lg transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[12px] font-medium px-4 py-1.5 rounded-2xl transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
           >
             <User size={12} className="shrink-0" />
             <span className="whitespace-nowrap">Join Waitlist</span>
@@ -190,7 +190,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                   setIsMobileMenuOpen(false);
                   onOpenWaitlist();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white text-sm font-medium px-5 py-2.5 rounded-xl transition-all shadow-sm cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white text-sm font-medium px-5 py-2.5 rounded-2xl transition-all shadow-sm cursor-pointer"
               >
                 <User size={15} />
                 <span>Join Waitlist</span>

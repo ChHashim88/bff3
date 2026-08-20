@@ -185,7 +185,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               href="#the-opportunity"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="hidden sm:inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-xl transition-all duration-200 shadow-sm cursor-pointer group text-center"
+              className="hidden sm:inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-2xl transition-all duration-200 shadow-sm cursor-pointer group text-center"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -195,7 +195,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               onClick={onOpenWaitlist}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#CD0007] hover:bg-[#FDF2F2] border border-[#CD0007] type-cta font-medium px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer group text-center"
+              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#CD0007] hover:bg-[#FDF2F2] border border-[#CD0007] type-cta font-medium px-8 py-4 rounded-2xl transition-colors duration-200 cursor-pointer group text-center"
             >
               <span>Join Waitlist</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
