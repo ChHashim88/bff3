@@ -97,26 +97,12 @@ export default function WhyInvest() {
                       delay: item.floatDelay,
                     }}
                     whileHover={{ y: -10, scale: 1.05 }}
-                    className="flex flex-col items-center text-center w-full group/card"
+                    className="flex flex-col items-center text-center w-full group/card p-4 rounded-2xl hover:bg-white/60 transition-colors duration-300"
                   >
-                    {/* Logo Red Icon Badge with Smooth 360 Degree Hover Rotation */}
-                    <motion.div
-                      animate={{
-                        boxShadow: [
-                          "0 0 0 0px rgba(205,0,7,0.12)",
-                          "0 0 0 10px rgba(205,0,7,0)",
-                          "0 0 0 0px rgba(205,0,7,0.12)",
-                        ],
-                      }}
-                      whileHover={{ rotate: 360, scale: 1.22 }}
-                      transition={{
-                        rotate: { duration: 0.7, ease: [0.34, 1.56, 0.64, 1] },
-                        scale: { duration: 0.3 },
-                      }}
-                      className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
-                    >
+                    {/* Logo Red Icon Badge with Smooth 360 Degree Rotation on Card Hover */}
+                    <div className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] group-hover/card:rotate-[360deg] group-hover/card:scale-125 transition-all duration-700 ease-in-out">
                       <Icon size={26} strokeWidth={1.5} />
-                    </motion.div>
+                    </div>
 
                     {/* Logo Red Heading */}
                     <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform">
