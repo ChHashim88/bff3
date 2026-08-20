@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { TrendingUp, Lock, Globe, BarChart3, UserX, EyeOff } from "lucide-react";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
 
 export default function ProblemSolution() {
@@ -14,7 +15,7 @@ export default function ProblemSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs relative"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs relative"
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
@@ -23,9 +24,9 @@ export default function ProblemSolution() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
               <div className="space-y-3">
-                <p className="type-label font-extrabold uppercase text-[#CD0007]">
+                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                   THE PROBLEM
-                </p>
+                </h1>
 
                 {/* Main Headline */}
                 <h3 className="type-h3 md:type-h2 font-semibold text-[#111111] leading-tight">
@@ -66,6 +67,88 @@ export default function ProblemSolution() {
               />
             </div>
 
+          </div>
+        </motion.div>
+
+        {/* 2. THE 2 BOTTOM PROBLEM COMPARISON CARDS */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
+        >
+          {/* Card 1: While the industry has grown */}
+          <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center shrink-0 shadow-md">
+                <TrendingUp size={20} />
+              </div>
+              <h3 className="type-h3 font-bold text-[#CD0007]">
+                While the industry has grown:
+              </h3>
+            </div>
+
+            <div className="space-y-4 pt-1">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                  <Globe size={16} />
+                </div>
+                <p className="type-body text-gray-700 pt-1">
+                  Global demand for film and streaming content continues to expand
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                  <BarChart3 size={16} />
+                </div>
+                <p className="type-body text-gray-700 pt-1">
+                  Billions of dollars are generated across box office, licensing, and streaming
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Access has not kept up */}
+          <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center shrink-0 shadow-md">
+                <Lock size={20} />
+              </div>
+              <h3 className="type-h3 font-bold text-[#CD0007]">
+                Access has not kept up:
+              </h3>
+            </div>
+
+            <div className="space-y-4 pt-1">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                  <Lock size={16} />
+                </div>
+                <p className="type-body text-gray-700 pt-1">
+                  Film investing remains opaque and difficult to access
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                  <UserX size={16} />
+                </div>
+                <p className="type-body text-gray-700 pt-1">
+                  Opportunities are typically limited to insiders
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                  <EyeOff size={16} />
+                </div>
+                <p className="type-body text-gray-700 pt-1">
+                  Transparency and structure are often inconsistent and misaligned
+                </p>
+              </div>
+            </div>
           </div>
         </motion.div>
 
