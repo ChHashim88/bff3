@@ -157,19 +157,19 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                 WHAT THIS ROUND ENABLES
               </p>
 
-              <h3 className="type-h3 text-[#111111]">
+              <h2 className="type-h2 text-[#111111]">
                 From Development to Market
-              </h3>
+              </h2>
 
-              <p className="type-small text-gray-700">
+              <p className="type-body font-medium text-gray-700">
                 Capital raised will help Big Film Fund:
               </p>
 
-              <div className="space-y-2 pt-1">
+              <div className="space-y-2.5 pt-1">
                 {roundEnables.map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-[#CD0007] shrink-0 mt-1" />
-                    <span className="type-small text-gray-800">{item}</span>
+                    <CheckCircle2 size={18} className="text-[#CD0007] shrink-0 mt-1" />
+                    <span className="type-body text-gray-800 font-medium">{item}</span>
                   </div>
                 ))}
               </div>
