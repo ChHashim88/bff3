@@ -15,6 +15,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "#" },
     { name: "Why BFF", href: "#why-bff" },
     { name: "Problem", href: "#the-problem" },
     { name: "Platform", href: "#our-solution" },
@@ -23,7 +24,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     { name: "Investment", href: "#the-investment" },
     { name: "Founders Club", href: "#founders-club" },
     { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   // Dynamic Scroll & Section Detection
