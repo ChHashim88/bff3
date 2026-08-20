@@ -150,11 +150,11 @@
     letter-spacing: 0em !important;
   }
 
-  /* Label: Component/section labels (Mobile 12px, Desktop 21px, Weight 600, Line height Normal, Letter spacing +0.05em) */
+  /* Label: Component/section labels (Mobile 12px, Desktop 21px, Weight 800 Heavy, Line height Normal, Letter spacing +0.05em) */
   .type-label {
     font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12px !important;
-    font-weight: 600 !important;
+    font-weight: 800 !important;
     line-height: normal !important;
     letter-spacing: 0.05em !important;
   }

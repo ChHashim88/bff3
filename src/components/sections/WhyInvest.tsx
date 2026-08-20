@@ -62,9 +62,9 @@ export default function WhyInvest() {
           {/* Card Header */}
           <div className="text-center max-w-xl mx-auto mb-10 space-y-3 relative z-10">
             <div className="space-y-2">
-              <h1 className="type-label font-medium uppercase text-[#CD0007]">
+              <p className="type-label font-extrabold uppercase text-[#CD0007]">
                 WHY BIG FILM FUND
-              </h1>
+              </p>
 
             </div>
             <h3 className="type-h3 md:type-h2 text-[#111111] leading-tight">

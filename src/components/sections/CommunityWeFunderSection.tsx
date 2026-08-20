@@ -65,9 +65,9 @@ export default function CommunityWeFunderSection() {
 
             {/* Foreground Content */}
             <div className="relative z-10 space-y-3 max-w-xl">
-              <h1 className="type-label font-medium uppercase text-[#CD0007]">
+              <p className="type-label font-extrabold uppercase text-[#CD0007]">
                 JOIN THE BFF COMMUNITY
-              </h1>
+              </p>
               <h3 className="text-[28px] sm:text-[32px] font-semibold text-white leading-tight">
                 Join our community.
                 <br />

@@ -11,10 +11,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#FAF8F3] border-t border-[#EAE5DC] text-[#111111] pt-16 pb-12 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-12">
-        
+
         {/* Top Footer Stack: Logo, Tagline & Quick Links */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-[#EAE5DC]">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-4">
             <a href="#" className="inline-block">
@@ -37,9 +37,9 @@ export default function Footer() {
           {/* Quick Links Grid (2 Columns) */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="space-y-3">
-              <h1 className="type-label font-medium uppercase text-[#CD0007]">
+              <p className="type-label font-extrabold uppercase text-[#CD0007]">
                 NAVIGATION
-              </h1>
+              </p>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#" className="hover:text-[#CD0007] transition-colors">Home</a></li>
                 <li><a href="#why-bff" className="hover:text-[#CD0007] transition-colors">Why BFF</a></li>
@@ -50,9 +50,9 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="type-label font-medium uppercase text-[#CD0007]">
+              <p className="type-label font-extrabold uppercase text-[#CD0007]">
                 PLATFORM
-              </h1>
+              </p>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#the-opportunity" className="hover:text-[#CD0007] transition-colors">The Opportunity</a></li>
                 <li><a href="#how-it-works" className="hover:text-[#CD0007] transition-colors">How It Works</a></li>
@@ -63,9 +63,9 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3 col-span-2 sm:col-span-1">
-              <h1 className="type-label font-medium uppercase text-[#CD0007]">
+              <p className="type-label font-extrabold uppercase text-[#CD0007]">
                 CONNECT
-              </h1>
+              </p>
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#faq" className="hover:text-[#CD0007] transition-colors">FAQ</a></li>
                 <li><a href="#contact" className="hover:text-[#CD0007] transition-colors">Contact Us</a></li>

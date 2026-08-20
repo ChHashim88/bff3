@@ -63,9 +63,9 @@ export default function Opportunity() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6 h-full py-1">
 
               <div className="space-y-4 my-auto">
-                <h1 className="type-label font-medium uppercase text-[#CD0007]">
+                <p className="type-label font-extrabold uppercase text-[#CD0007]">
                   THE OPPORTUNITY
-                </h1>
+                </p>
 
                 {/* Headline */}
                 <h3 className="type-h3 md:type-h2">

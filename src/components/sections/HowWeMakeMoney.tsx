@@ -56,9 +56,9 @@ export default function HowWeMakeMoney() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
 
               <div className="space-y-3">
-                <h1 className="type-label font-medium uppercase text-[#CD0007]">
+                <p className="type-label font-extrabold uppercase text-[#CD0007]">
                   THE BUSINESS MODEL
-                </h1>
+                </p>
 
                 {/* H3 Headline */}
                 <h3 className="type-h3 md:type-h2 text-[#111111]">
@@ -102,7 +102,7 @@ export default function HowWeMakeMoney() {
                     >
                       <Play size={26} className="fill-white translate-x-0.5" />
                     </motion.div>
-                    <p className="type-label font-medium text-white/90 uppercase">
+                    <p className="type-label font-extrabold text-white/90 uppercase">
                       THE BUSINESS MODEL
                     </p>
                     <h3 className="type-h3 text-white max-w-md">

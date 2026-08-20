@@ -94,9 +94,9 @@ export default function FAQContactSection() {
         >
           <div className="flex items-center gap-2">
             <div className="h-px w-8 bg-[#CD0007]" />
-            <h1 className="type-label text-[11px] font-bold tracking-[0.18em] uppercase text-[#CD0007]">
+            <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
               INVESTOR SUPPORT
-            </h1>
+            </span>
           </div>
           <h3 className="type-h3 md:type-h2 font-bold text-[#111111] leading-[1.06] tracking-tight">
             Every Question,{" "}
@@ -235,9 +235,9 @@ export default function FAQContactSection() {
                 {/* Form header */}
                 <div className="space-y-2 pb-5 border-b border-[#EAE5DC]">
                   <div className="flex items-center justify-between">
-                    <h1 className="type-label text-[10px] font-black tracking-[0.2em] uppercase text-[#CD0007]">
+                    <span className="text-[10px] font-black tracking-[0.2em] uppercase text-[#CD0007]">
                       DIRECT INQUIRY
-                    </h1>
+                    </span>
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#CD0007]/25 bg-[#CD0007]/06">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#CD0007] animate-pulse" />
                       <span className="text-[9px] font-bold text-[#CD0007] uppercase tracking-wider">LIVE SUPPORT</span>

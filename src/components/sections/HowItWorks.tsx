@@ -72,9 +72,9 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto space-y-3"
         >
-          <h1 className="type-label font-medium uppercase text-[#CD0007]">
+          <p className="type-label font-extrabold uppercase text-[#CD0007]">
             BUILT TO SUCCEED
-          </h1>
+          </p>
 
           <h3 className="type-h3 md:type-h2 text-[#111111]">
             Five Foundations <span className="text-[#CD0007]">of the Platform</span>
@@ -156,7 +156,7 @@ export default function HowItWorks() {
 
                 {/* Content Overlay */}
                 <div className="relative z-10 p-6 h-full flex flex-col justify-between">
-                  
+
                   {/* Top Badge Row */}
                   <div className="flex items-center justify-between">
                     <span className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center font-bold text-xs shadow-md">

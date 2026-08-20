@@ -80,14 +80,14 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
         <div className="max-w-3xl lg:max-w-4xl space-y-6 text-center flex flex-col items-center justify-center mx-auto">
 
           {/* Top Kicker Label */}
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[12px] sm:text-[21px] font-semibold uppercase text-[#CD0007] tracking-wider text-center"
+            className="text-[12px] sm:text-[21px] font-extrabold uppercase text-[#CD0007] tracking-wider text-center"
           >
             A New Way to Invest in the Future of Film
-          </motion.h1>
+          </motion.p>
 
           {/* 3-Line SF Pro Display H1 Editorial Headline */}
           <motion.div
