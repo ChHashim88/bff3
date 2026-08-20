@@ -43,17 +43,17 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <p className="type-label font-extrabold uppercase text-[#CD0007]">
+                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                   FOUNDERS CLUB
-                </p>
+                </h1>
                 <div className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007]">
                   <Crown size={24} />
                 </div>
               </div>
 
-              <h3 className="type-h3 md:type-h2 text-[#111111]">
+              <h2 className="type-h2 text-[#111111]">
                 Don’t Just Invest in Film. <span className="text-[#CD0007]">Be Part of It.</span>
-              </h3>
+              </h2>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund brings investors closer to the journey—from development to release.
@@ -70,7 +70,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               </p>
               <button
                 onClick={onOpenWaitlist}
-                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-2xl transition-all shadow-sm cursor-pointer shrink-0"
+                className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3 rounded-full transition-all shadow-sm cursor-pointer shrink-0"
               >
                 <span>Join Founders Club</span>
                 <ArrowRight size={16} />
@@ -87,13 +87,13 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             className="lg:col-span-6 bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col justify-between space-y-6 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
           >
             <div className="space-y-3">
-              <p className="type-label font-extrabold uppercase text-[#CD0007]">
+              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                 PROGRESS TO DATE
-              </p>
+              </h1>
 
-              <h3 className="type-h3 md:type-h2 text-[#111111]">
+              <h2 className="type-h2 text-[#111111]">
                 The Foundation Is Being Built
-              </h3>
+              </h2>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 Big Film Fund is already in active development. The focus has been on building a repeatable and scalable system for sourcing, evaluating, and delivering film investment opportunities.
@@ -130,13 +130,13 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Left Stack: THE INVESTMENT */}
             <div className="lg:col-span-6 space-y-3">
-              <p className="type-label font-extrabold uppercase text-[#CD0007]">
+              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                 THE INVESTMENT
-              </p>
+              </h1>
 
-              <h3 className="type-h3 md:type-h2 text-[#111111]">
+              <h2 className="type-h2 text-[#111111]">
                 Invest in the Platform. <span className="text-[#CD0007]">Not Just One Film.</span>
-              </h3>
+              </h2>
 
               <p className="type-body text-gray-700 font-normal leading-relaxed">
                 This offering provides investors with the opportunity to purchase shares in Big Film Fund, Inc.—the company building the platform.
@@ -153,13 +153,13 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
 
             {/* Right Stack: WHAT THIS ROUND ENABLES */}
             <div className="lg:col-span-6 space-y-3 lg:pl-4">
-              <p className="type-label font-extrabold uppercase text-[#CD0007]">
+              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                 WHAT THIS ROUND ENABLES
-              </p>
+              </h1>
 
-              <h3 className="type-h3 text-[#111111]">
+              <h2 className="type-h2 text-[#111111]">
                 From Development to Market
-              </h3>
+              </h2>
 
               <p className="type-body font-medium text-gray-700">
                 Capital raised will help Big Film Fund:
@@ -190,13 +190,13 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-[#CD0007]/25 blur-3xl pointer-events-none z-0" />
 
           <div className="relative z-10 space-y-3 max-w-3xl">
-            <p className="type-label font-extrabold uppercase text-[#CD0007]">
+            <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
               WHY NOW?
-            </p>
+            </h1>
 
-            <h3 className="type-h3 md:type-h2 text-white">
+            <h2 className="type-h2 text-white">
               The Foundation Is Ready. <span className="text-[#CD0007]">The Next Step Is Launch.</span>
-            </h3>
+            </h2>
 
             <p className="type-body text-gray-300 font-normal leading-relaxed">
               The core model, relationships, and platform design are in place. Now, Big Film Fund is moving from development to live operation—launching the platform, activating its initial pipeline, and introducing its first investment opportunities.
@@ -217,7 +217,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               href="#contact"
               whileHover={{ scale: 1.04, x: 3 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-xl cursor-pointer shrink-0"
+              className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-xl cursor-pointer shrink-0"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} />

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
 import { ClipboardCheck, Search, Share2, Landmark, TrendingUp, Users, Camera, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
@@ -12,7 +13,7 @@ export default function HowItWorks() {
       icon: ClipboardCheck,
       title: "Quality Projects",
       description: "A consistent pipeline sourced through industry relationships.",
-      image: "/images/film1.jpg",
+      image: "/1.jpeg",
       alt: "Quality Projects",
     },
     {
@@ -20,7 +21,7 @@ export default function HowItWorks() {
       icon: Search,
       title: "Disciplined Selection",
       description: "Projects evaluated against clear financial and commercial standards.",
-      image: "/images/film2.jpg",
+      image: "/2.jpeg",
       alt: "Disciplined Selection",
     },
     {
@@ -28,7 +29,7 @@ export default function HowItWorks() {
       icon: Share2,
       title: "Distribution & Audience",
       description: "Strong distribution capability and audience reach.",
-      image: "/wfb.png",
+      image: "/3.jpeg",
       alt: "Distribution and Audience Reach World Map",
     },
     {
@@ -36,7 +37,7 @@ export default function HowItWorks() {
       icon: Landmark,
       title: "Financial Discipline",
       description: "Responsible capital and platform management.",
-      image: "/bfc.PNG",
+      image: "/4.jpeg",
       alt: "Financial Discipline Pillars",
     },
     {
@@ -44,7 +45,7 @@ export default function HowItWorks() {
       icon: TrendingUp,
       title: "Growing Investor Community",
       description: "A network that grows with every project.",
-      image: "/2ndd.png",
+      image: "/5.jpeg",
       alt: "Growing Investor Community",
     },
   ];
@@ -64,50 +65,93 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-12">
 
-        {/* ── 1. SECTION HEADER ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto space-y-3"
-        >
-          <p className="type-label font-extrabold uppercase text-[#CD0007]">
-            BUILT TO SUCCEED
-          </p>
+        {/* ── 1. SECTION HEADER & CALLOUT CARD + TOP-RIGHT IMAGE CARD COMPOSITION ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-          <h3 className="type-h3 md:type-h2 text-[#111111]">
-            Five Foundations <span className="text-[#CD0007]">of the Platform</span>
-          </h3>
+          {/* LEFT SIDE: Heading, Subtitle & Statement Callout Card (lg:col-span-6) */}
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
-          <p className="type-subtitle font-normal text-gray-700 max-w-xl mx-auto pt-1">
-            Success in film investing requires more than finding good projects.
-          </p>
-        </motion.div>
+            {/* Header Text Stack */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-3 text-left"
+            >
+              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                BUILT TO SUCCEED
+              </h1>
 
-        {/* ── 2. CENTERED STATEMENT CALLOUT BANNER ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6 shadow-xs"
-        >
-          {/* Target Icon Badge */}
-          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
-            <Target size={36} strokeWidth={1.4} />
+              <h2 className="type-h2 text-[#111111]">
+                Five Foundations <span className="text-[#CD0007]">of the Platform</span>
+              </h2>
+
+              <p className="type-subtitle font-normal text-gray-700 pt-1">
+                Success in film investing requires more than finding good projects.
+              </p>
+            </motion.div>
+
+            {/* Animated Red Lifeline Reading Divider */}
+            <div className="relative w-full h-[2.5px] bg-[#EAE5DC] overflow-hidden rounded-full my-1 shadow-2xs">
+              {/* Subtle Red Background Line Track */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#CD0007]/15 via-[#CD0007]/40 to-[#CD0007]/15" />
+
+              {/* Animated Glowing Red Pulse Laser Beam */}
+              <motion.div
+                animate={{ x: ["-100%", "250%"] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2.4,
+                  ease: "easeInOut",
+                }}
+                className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#CD0007] to-transparent shadow-[0_0_12px_#CD0007]"
+              />
+            </div>
+
+            {/* Statement Callout Card Under Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-xs"
+            >
+              {/* Target Icon Badge */}
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
+                <Target size={28} strokeWidth={1.5} />
+              </div>
+
+              {/* Text Content */}
+              <div className="space-y-1 text-center sm:text-left flex-1">
+                <p className="type-body text-gray-800">
+                  It requires deal flow, disciplined selection, distribution, financial discipline, and community.
+                </p>
+                <p className="type-small font-semibold text-[#111111]">
+                  Together, these capabilities create a foundation built to scale.
+                </p>
+              </div>
+            </motion.div>
+
           </div>
 
-          {/* Text Content */}
-          <div className="space-y-2 text-center sm:text-left flex-1">
-            <p className="type-body text-gray-800">
-              It requires deal flow, disciplined selection, distribution, financial discipline, and community.
-            </p>
-            <p className="type-subtitle font-medium text-[#111111]">
-              Together, these capabilities create a foundation built to scale.
-            </p>
-          </div>
-        </motion.div>
+          {/* RIGHT SIDE: Video Player Card (Matching Opportunity Video Player Size) (lg:col-span-6) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 flex items-stretch h-full"
+          >
+            <VideoPlayerWithLoader
+              primarySrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+              fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+              poster="/ggh.jpeg"
+              aspectRatioClass="aspect-[16/9] lg:aspect-auto"
+            />
+          </motion.div>
+
+        </div>
 
       </div>
 
@@ -158,10 +202,7 @@ export default function HowItWorks() {
                 <div className="relative z-10 p-6 h-full flex flex-col justify-between">
 
                   {/* Top Badge Row */}
-                  <div className="flex items-center justify-between">
-                    <span className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center font-bold text-xs shadow-md">
-                      0{step.num}
-                    </span>
+                  <div className="flex items-center justify-end">
                     <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center">
                       <Icon size={18} />
                     </div>

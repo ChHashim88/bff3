@@ -131,12 +131,12 @@ export default function Stats() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-4xl mx-auto space-y-3"
         >
-          <p className="type-label font-extrabold uppercase text-[#CD0007]">
+          <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
             THE MARKET
-          </p>
-          <h3 className="type-h3 md:type-h2 font-semibold text-[#111111]">
+          </h1>
+          <h2 className="type-h2 font-semibold text-[#111111]">
             At the Intersection of a Massive Opportunity
-          </h3>
+          </h2>
         </motion.div>
 
         {/* 4 Feature Columns in Rounded Container Card */}

@@ -65,14 +65,14 @@ export default function CommunityWeFunderSection() {
 
             {/* Foreground Content */}
             <div className="relative z-10 space-y-3 max-w-xl">
-              <p className="type-label font-extrabold uppercase text-[#CD0007]">
+              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                 JOIN THE BFF COMMUNITY
-              </p>
-              <h3 className="text-[28px] sm:text-[32px] font-semibold text-white leading-tight">
+              </h1>
+              <h2 className="type-h2 font-semibold text-white leading-tight">
                 Join our community.
                 <br />
                 Be part of the future of film.
-              </h3>
+              </h2>
               <p className="type-body text-gray-300">
                 Stay up to date with updates, insights, tools, and access stories.
               </p>
@@ -104,7 +104,7 @@ export default function CommunityWeFunderSection() {
                       type="submit"
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.96 }}
-                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-2xl transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
+                      className="bg-[#CD0007] hover:bg-[#A60005] text-white type-cta px-5 sm:px-6 py-2.5 rounded-full transition-all flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer group/btn"
                     >
                       <span>Sign Up</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />

@@ -69,20 +69,20 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             ) : (
               <div className="space-y-6">
                 <div>
-                  <span className="type-label font-extrabold uppercase text-[#CD0007] tracking-wider block mb-1">
+                  <span className="text-[11px] font-bold uppercase text-[#CD0007] tracking-wider block mb-1">
                     Join Big Film Fund
                   </span>
-                  <h3 className="text-2xl font-bold text-[#111111] tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#111111] tracking-tight">
                     Get priority allocation
                   </h3>
-                  <p className="type-body text-gray-700 text-sm mt-1.5 leading-relaxed">
+                  <p className="type-body text-gray-600 text-xs sm:text-sm mt-1 leading-relaxed">
                     Be the first to access curated film investments with transparent gross revenue sharing.
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   <div>
-                    <label className="block type-label font-medium uppercase text-[#111111] mb-1.5">
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-gray-700 mb-1">
                       Email Address *
                     </label>
                     <input
@@ -91,18 +91,18 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                       placeholder="name@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-sm text-[#111111] placeholder-gray-400 focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-[#FAF7F1] border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] placeholder-gray-400 focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block type-label font-medium uppercase text-[#111111] mb-1.5">
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-gray-700 mb-1">
                       Investor Profile
                     </label>
                     <select
                       value={investorType}
                       onChange={(e) => setInvestorType(e.target.value)}
-                      className="w-full px-4 py-3 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl type-body text-sm text-[#111111] focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all cursor-pointer"
+                      className="w-full px-3.5 py-2.5 bg-[#FAF7F1] border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all cursor-pointer"
                     >
                       <option value="Individual">Everyday Retail Investor</option>
                       <option value="Accredited">Accredited Investor</option>
@@ -115,10 +115,10 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium py-3.5 px-6 rounded-2xl transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="w-full bg-[#CD0007] hover:bg-[#A60005] text-white text-xs sm:text-sm font-medium py-3 px-5 rounded-full transition-all duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer mt-3"
                   >
                     <span>Confirm & Join Waitlist</span>
-                    <ArrowRight size={16} />
+                    <ArrowRight size={15} />
                   </motion.button>
                 </form>
               </div>

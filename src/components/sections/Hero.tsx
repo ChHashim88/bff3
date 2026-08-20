@@ -60,18 +60,16 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
     <section className="relative w-full min-h-[calc(85vh-80px)] flex flex-col justify-center items-center py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F1]">
 
-      {/* Hero Background Image backy.jpeg */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+      {/* Hero Background Image backy.jpeg (Hidden on mobile < 640px) */}
+      <div className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <Image
           src="/backy.jpeg"
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-left-top sm:object-top transition-all duration-300 scale-105 sm:scale-100"
+          className="object-cover object-top transition-all duration-300"
           sizes="100vw"
         />
-        {/* Creative Mobile Left-Focus Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F1]/20 via-transparent to-[#FAF7F1]/35 sm:hidden pointer-events-none" />
         {/* Smooth Bottom Gradient Fade */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/50 to-transparent" />
       </div>
@@ -185,7 +183,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               href="#the-opportunity"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="hidden sm:inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-2xl transition-all duration-200 shadow-sm cursor-pointer group text-center"
+              className="hidden sm:inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-4 rounded-full transition-all duration-200 shadow-sm cursor-pointer group text-center"
             >
               <span>Explore the Opportunity</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -195,7 +193,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               onClick={onOpenWaitlist}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#CD0007] hover:bg-[#FDF2F2] border border-[#CD0007] type-cta font-medium px-8 py-4 rounded-2xl transition-colors duration-200 cursor-pointer group text-center"
+              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#CD0007] hover:bg-[#FDF2F2] border border-[#CD0007] type-cta font-medium px-8 py-4 rounded-full transition-colors duration-200 cursor-pointer group text-center"
             >
               <span>Join Waitlist</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

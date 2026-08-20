@@ -19,8 +19,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     { name: "Why BFF", href: "#why-bff" },
     { name: "Problem", href: "#the-problem" },
     { name: "Platform", href: "#our-solution" },
-    { name: "How It Works", href: "#how-it-works" },
     { name: "Opportunity", href: "#the-opportunity" },
+    { name: "How It Works", href: "#how-it-works" },
     { name: "Investment", href: "#the-investment" },
     { name: "Founders Club", href: "#founders-club" },
     { name: "FAQ", href: "#faq" },
@@ -33,8 +33,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
       { id: "why-bff", name: "Why BFF" },
       { id: "the-problem", name: "Problem" },
       { id: "our-solution", name: "Platform" },
-      { id: "how-it-works", name: "How It Works" },
       { id: "the-opportunity", name: "Opportunity" },
+      { id: "how-it-works", name: "How It Works" },
       { id: "the-investment", name: "Investment" },
       { id: "founders-club", name: "Founders Club" },
       { id: "faq", name: "FAQ" },
@@ -142,7 +142,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onOpenWaitlist}
-            className="inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[11px] sm:text-[12px] font-medium px-3 sm:px-4 py-1.5 rounded-2xl transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
+            className="inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[11px] sm:text-[12px] font-medium px-3 sm:px-4 py-1.5 rounded-full transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
           >
             <User size={12} className="shrink-0" />
             <span className="whitespace-nowrap">Join Waitlist</span>
@@ -151,7 +151,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-2xl text-[#111111]/80 hover:text-[#111111] hover:bg-[#EAE5DC]/40 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden p-2 rounded-full text-[#111111]/80 hover:text-[#111111] hover:bg-[#EAE5DC]/40 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -162,8 +162,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
 
       {/* Mobile/Tablet Apple-style Dropdown Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#FAF7F1]/98 backdrop-blur-2xl border-b border-[#EAE5DC] px-6 py-5 shadow-xl z-50 max-h-[85vh] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="flex flex-col space-y-3">
+        <div className="absolute top-full left-0 right-0 lg:hidden bg-[#FAF7F1]/98 backdrop-blur-2xl border-b border-[#EAE5DC] px-6 pt-4 pb-8 shadow-2xl z-50 max-h-[calc(100vh-50px)] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = activeNav.toLowerCase() === link.name.toLowerCase();
               return (
@@ -174,7 +174,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                     setIsMobileMenuOpen(false);
                     handleNavClick(e, link);
                   }}
-                  className={`text-[15px] font-medium py-2 border-b border-[#EAE5DC]/40 transition-colors flex items-center justify-between ${isActive
+                  className={`text-[14px] sm:text-[15px] font-medium py-1.5 border-b border-[#EAE5DC]/40 transition-colors flex items-center justify-between ${isActive
                     ? "text-[#CD0007] font-semibold"
                     : "text-[#111111]/85 hover:text-[#CD0007]"
                     }`}
@@ -184,13 +184,13 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
                 </a>
               );
             })}
-            <div className="pt-3">
+            <div className="pt-3 pb-3">
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenWaitlist();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white text-sm font-medium px-5 py-2.5 rounded-2xl transition-all shadow-sm cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white text-sm font-medium px-5 py-3 rounded-full transition-all shadow-md cursor-pointer"
               >
                 <User size={15} />
                 <span>Join Waitlist</span>

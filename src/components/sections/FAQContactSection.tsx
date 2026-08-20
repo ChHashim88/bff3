@@ -94,18 +94,18 @@ export default function FAQContactSection() {
         >
           <div className="flex items-center gap-2">
             <div className="h-px w-8 bg-[#CD0007]" />
-            <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
+            <h1 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
               INVESTOR SUPPORT
-            </span>
+            </h1>
           </div>
-          <h3 className="type-h3 md:type-h2 font-bold text-[#111111] leading-[1.06] tracking-tight">
+          <h2 className="type-h2 font-bold text-[#111111] leading-[1.06] tracking-tight">
             Every Question,{" "}
             <span className="relative">
               <span className="relative z-10 text-[#CD0007]">Clearly Answered.</span>
               {/* Underline accent */}
               <span className="absolute bottom-0.5 left-0 right-0 h-[3px] bg-[#CD0007]/15 rounded-full" />
             </span>
-          </h3>
+          </h2>
           <p className="text-[13px] sm:text-[16px] text-gray-600 max-w-xl leading-relaxed">
             Transparency is our foundation. Read through common investor questions or reach our team directly.
           </p>
@@ -363,14 +363,14 @@ export default function FAQContactSection() {
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-2xl font-bold text-[15px] text-white cursor-pointer relative overflow-hidden group"
+                      className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full font-bold text-[15px] text-white cursor-pointer relative overflow-hidden group"
                       style={{
                         background: "linear-gradient(135deg, #CD0007 0%, #A60005 100%)",
                         boxShadow: "0 8px 28px rgba(205,0,7,0.28), 0 2px 6px rgba(0,0,0,0.08)",
                       }}
                     >
                       {/* Shimmer on hover */}
-                      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.06] transition-opacity duration-200 rounded-2xl" />
+                      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.06] transition-opacity duration-200 rounded-full" />
                       <Send size={15} className={`${isSubmitting ? "opacity-60" : ""} group-hover:translate-x-0.5 transition-transform`} />
                       <span>{isSubmitting ? "Sending..." : "Send Inquiry"}</span>
                     </motion.button>

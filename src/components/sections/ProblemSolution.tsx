@@ -29,10 +29,10 @@ export default function ProblemSolution() {
                 </h1>
 
                 {/* Main Headline */}
-                <h3 className="type-h3 md:type-h2 font-semibold text-[#111111] leading-tight">
+                <h2 className="type-h2 font-semibold text-[#111111] leading-tight">
                   Millions Watch Movies.<br />
                   <span className="text-[#CD0007]">Almost None Can Invest in Them.</span>
-                </h3>
+                </h2>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
@@ -47,9 +47,9 @@ export default function ProblemSolution() {
                     </p>
                   </div>
 
-                  <p className="type-body leading-relaxed">
+                  {/* <p className="type-body leading-relaxed">
                     At the same time, investing has evolved. Platforms have opened access to opportunities once reserved for institutions.
-                  </p>
+                  </p> */}
                 </div>
               </div>
 

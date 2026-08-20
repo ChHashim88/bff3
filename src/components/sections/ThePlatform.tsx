@@ -23,15 +23,15 @@ export default function ThePlatform() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
               <div className="space-y-3">
-                <p className="type-label font-extrabold uppercase text-[#CD0007]">
+                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
                   THE PLATFORM
-                </p>
+                </h1>
 
                 {/* Main Headline */}
-                <h3 className="type-h3 md:type-h2 font-semibold text-[#111111] leading-tight">
+                <h2 className="type-h2 font-semibold text-[#111111] leading-tight">
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
-                </h3>
+                </h2>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
