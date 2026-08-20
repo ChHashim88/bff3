@@ -138,11 +138,11 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           })}
         </nav>
 
-        {/* Right Action: Apple-style Compact CTA Pill */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Right Action: Join Waitlist button & Mobile Hamburger List button */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={onOpenWaitlist}
-            className="hidden sm:inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[12px] font-medium px-4 py-1.5 rounded-2xl transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
+            className="inline-flex items-center gap-1.5 bg-[#CD0007] hover:bg-[#A60005] text-white text-[11px] sm:text-[12px] font-medium px-3 sm:px-4 py-1.5 rounded-2xl transition-all duration-200 shadow-2xs active:scale-95 cursor-pointer shrink-0"
           >
             <User size={12} className="shrink-0" />
             <span className="whitespace-nowrap">Join Waitlist</span>
