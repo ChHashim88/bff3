@@ -69,7 +69,7 @@ export default function Footer() {
               <ul className="space-y-2 type-nav text-gray-700">
                 <li><a href="#faq" className="hover:text-[#CD0007] transition-colors">FAQ</a></li>
                 <li><a href="#contact" className="hover:text-[#CD0007] transition-colors">Contact Us</a></li>
-                <li><a href="https://wefunder.com" target="_blank" rel="noreferrer" className="hover:text-[#CD0007] transition-colors">WeFunder Campaign</a></li>
+
               </ul>
             </div>
           </div>
