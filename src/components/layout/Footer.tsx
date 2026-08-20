@@ -88,7 +88,7 @@ export default function Footer() {
             <a href="#" className="type-small text-gray-600 hover:text-[#CD0007] transition-colors">Terms of Service</a>
             <button
               onClick={scrollToTop}
-              className="w-9 h-9 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] hover:bg-[#CD0007] hover:text-white transition-all shadow-xs cursor-pointer"
+              className="w-9 h-9 rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] hover:bg-[#CD0007] hover:text-white transition-all shadow-xs cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp size={16} />

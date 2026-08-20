@@ -151,7 +151,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-1.5 rounded-md text-[#111111]/80 hover:text-[#111111] hover:bg-[#EAE5DC]/40 transition-colors focus:outline-none cursor-pointer"
+            className="lg:hidden p-2 rounded-2xl text-[#111111]/80 hover:text-[#111111] hover:bg-[#EAE5DC]/40 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
