@@ -238,13 +238,13 @@ export default function Stats() {
           {marqueeItems.map((item, idx) => (
             <div
               key={`logo-${item.id}-${idx}`}
-              className="w-[160px] sm:w-[200px] h-[76px] sm:h-[84px] px-4 py-2 rounded-2xl border border-[#EAE5DC] bg-[#FAF8F3] hover:border-[#CD0007] hover:bg-white transition-all duration-300 shrink-0 shadow-2xs group flex items-center justify-center cursor-pointer overflow-hidden relative"
+              className="w-[160px] sm:w-[200px] h-[80px] sm:h-[96px] rounded-2xl border border-[#EAE5DC] bg-[#FAF8F3] hover:border-[#CD0007] transition-all duration-300 shrink-0 shadow-2xs group flex items-center justify-center cursor-pointer overflow-hidden relative"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="(max-width: 640px) 160px, 200px"
               />
             </div>
