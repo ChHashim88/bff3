@@ -96,10 +96,10 @@ export default function WhyInvest() {
                       ease: "easeInOut",
                       delay: item.floatDelay,
                     }}
-                    whileHover={{ y: -10, scale: 1.03 }}
+                    whileHover={{ y: -10, scale: 1.05 }}
                     className="flex flex-col items-center text-center w-full group/card"
                   >
-                    {/* Logo Red Icon Badge with Continuous Ambient Pulse Ring & Hover Motion */}
+                    {/* Logo Red Icon Badge with Smooth 360 Degree Hover Rotation */}
                     <motion.div
                       animate={{
                         boxShadow: [
@@ -108,16 +108,14 @@ export default function WhyInvest() {
                           "0 0 0 0px rgba(205,0,7,0.12)",
                         ],
                       }}
+                      whileHover={{ rotate: 360, scale: 1.22 }}
                       transition={{
-                        repeat: Infinity,
-                        duration: 3,
-                        delay: index * 0.5,
-                        ease: "easeInOut",
+                        rotate: { duration: 0.7, ease: [0.34, 1.56, 0.64, 1] },
+                        scale: { duration: 0.3 },
                       }}
-                      whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
+                      className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
                     >
-                      <Icon size={24} strokeWidth={1.5} />
+                      <Icon size={26} strokeWidth={1.5} />
                     </motion.div>
 
                     {/* Logo Red Heading */}
