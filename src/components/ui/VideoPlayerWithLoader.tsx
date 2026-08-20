@@ -16,7 +16,7 @@ export default function VideoPlayerWithLoader({
   fallbackSrc,
   poster = "/ggh.jpeg",
   badgeText,
-  aspectRatioClass = "aspect-[16/9] lg:aspect-[4/3]",
+  aspectRatioClass = "aspect-[16/9] lg:aspect-[16/9.5]",
 }: VideoPlayerWithLoaderProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -53,7 +53,7 @@ export default function VideoPlayerWithLoader({
   };
 
   return (
-    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl ${aspectRatioClass} bg-[#111111] group w-full min-h-[300px] sm:min-h-[360px]`}>
+    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-[280px] sm:h-[360px] lg:h-[390px] ${aspectRatioClass}`}>
       
       {/* HTML5 Video Player */}
       <video

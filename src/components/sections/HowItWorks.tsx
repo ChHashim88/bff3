@@ -141,13 +141,12 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex items-stretch h-full"
+            className="lg:col-span-6 flex items-center justify-center"
           >
             <VideoPlayerWithLoader
               primarySrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
               fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
               poster="/ggh.jpeg"
-              aspectRatioClass="aspect-[16/9] lg:aspect-auto"
             />
           </motion.div>
 

@@ -64,13 +64,11 @@ export default function ProblemSolution() {
 
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
-              <div className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full">
-                <VideoPlayerWithLoader
-                  primarySrc="/bff_problem.mp4"
-                  fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AKfQfxRvbuMv3M5ojtwG-XU/bff_promo_1_introduction_alt_disco_song_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
-                  poster="/ggh.jpeg"
-                />
-              </div>
+              <VideoPlayerWithLoader
+                primarySrc="/bff_problem.mp4"
+                fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AKfQfxRvbuMv3M5ojtwG-XU/bff_promo_1_introduction_alt_disco_song_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+                poster="/ggh.jpeg"
+              />
             </div>
 
           </div>

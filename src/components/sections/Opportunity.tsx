@@ -94,12 +94,11 @@ export default function Opportunity() {
             </div>
 
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
-            <div className="lg:col-span-6 flex items-stretch h-full">
+            <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_opportunity.mp4"
                 fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_3_the_opportunity_260611_v2.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
                 poster="/ggh.jpeg"
-                aspectRatioClass="aspect-[16/9] lg:aspect-auto"
               />
             </div>
 

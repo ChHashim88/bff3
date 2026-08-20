@@ -78,11 +78,11 @@ export default function ProjectSelection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex items-stretch h-full"
+            className="lg:col-span-6 flex items-center justify-center"
           >
             <motion.div
               whileHover={{ scale: 1.01 }}
-              className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-auto bg-[#111111] group cursor-pointer w-full h-full min-h-[300px] sm:min-h-[360px] lg:min-h-[380px]"
+              className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full h-[280px] sm:h-[360px] lg:h-[390px]"
             >
               <Image
                 src="/ggh.jpeg"

@@ -80,7 +80,7 @@ export default function HowWeMakeMoney() {
               <div className="pt-2">
                 <motion.div
                   whileHover={{ scale: 1.01 }}
-                  className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] bg-[#111111] group cursor-pointer w-full min-h-[240px] sm:min-h-[280px]"
+                  className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full h-[280px] sm:h-[360px] lg:h-[390px]"
                 >
                   <Image
                     src="/ggh.jpeg"
@@ -110,7 +110,7 @@ export default function HowWeMakeMoney() {
               <MobileRadialCarousel items={revenueCards} badgePrefix="STREAM" scale={1.12} />
             </div>
 
-            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid (Desktop / Tablet >= 768px) */}
+            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid with Rhythmic Sequential Pulse Beats (Desktop / Tablet >= 768px) */}
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-full lg:col-span-6">
               {revenueCards.map((card, idx) => {
                 const Icon = card.icon;
@@ -120,25 +120,22 @@ export default function HowWeMakeMoney() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-                    className="bg-[#FAF7F1] border border-[#EAE5DC] rounded-2xl p-6 shadow-2xs group cursor-pointer hover:border-[#CD0007] hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full min-h-[180px]"
+                    className="bg-[#FAF7F1] border border-[#EAE5DC] rounded-2xl p-5 sm:p-6 shadow-2xs group cursor-pointer hover:border-[#CD0007] hover:shadow-md transition-all duration-300 flex flex-col items-center text-center justify-center space-y-3 h-full"
                   >
-                    {/* Top Row: Icon Badge */}
+                    {/* Beating Icon Container (Sequenced Beat Animation) */}
                     <motion.div
-                      animate={{ y: [0, -5, 0] }}
+                      animate={{ scale: [1, 1.12, 1], y: [0, -5, 0] }}
                       transition={{
-                        duration: card.floatDuration,
+                        duration: 2.2,
                         repeat: Infinity,
-                        repeatType: "reverse",
                         ease: "easeInOut",
-                        delay: card.floatDelay,
+                        delay: idx * 0.55,
                       }}
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs group-hover:bg-[#CD0007] group-hover:text-white group-hover:border-[#CD0007] transition-colors duration-300 mb-4"
+                      className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#FAF8F3] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs group-hover:bg-[#CD0007] group-hover:text-white group-hover:border-[#CD0007] transition-colors duration-300"
                     >
                       <Icon size={24} strokeWidth={1.5} />
                     </motion.div>
 
-                    {/* Text Stack */}
                     <div className="space-y-1.5">
                       <h3 className="type-h3 font-semibold text-[#CD0007]">
                         {card.title}

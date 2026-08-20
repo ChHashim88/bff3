@@ -45,7 +45,7 @@ export default function WhyInvest() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden group"
+          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden"
         >
           {/* Subtle Continuous Shimmer Light Sweep Effect */}
           <motion.div
@@ -72,7 +72,7 @@ export default function WhyInvest() {
             </h2>
           </div>
 
-          {/* 4 Feature Columns with Continuous Infinite Asynchronous Floating Motion */}
+          {/* 4 Feature Columns with Vertical Dividers (|) & Isolated Single Card 360 Flip */}
           <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#EAE5DC] gap-6 md:gap-0 pt-2 relative z-10">
             {features.map((item, index) => {
               const Icon = item.icon;
@@ -83,10 +83,10 @@ export default function WhyInvest() {
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.7, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
-                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 cursor-pointer ${index !== 0 ? "md:pl-6" : ""
+                  className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 ${index !== 0 ? "md:pl-6" : ""
                     }`}
                 >
-                  {/* Floating Container (Infinite Ambient Motion) */}
+                  {/* Floating Motion & Stationary Hit-box Wrapper */}
                   <motion.div
                     animate={{ y: [0, -6, 0] }}
                     transition={{
@@ -96,23 +96,25 @@ export default function WhyInvest() {
                       ease: "easeInOut",
                       delay: item.floatDelay,
                     }}
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    className="flex flex-col items-center text-center w-full group/card p-4 rounded-2xl hover:bg-white/60 transition-colors duration-300"
+                    className="w-full [perspective:1000px] group/item cursor-pointer"
                   >
-                    {/* Logo Red Icon Badge with Smooth 360 Degree Rotation on Card Hover */}
-                    <div className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] group-hover/card:rotate-[360deg] group-hover/card:scale-125 transition-all duration-700 ease-in-out">
-                      <Icon size={26} strokeWidth={1.5} />
+                    {/* Borderless 360 Card Flip Container */}
+                    <div className="flex flex-col items-center text-center w-full p-5 rounded-2xl bg-[#FAF7F1] hover:bg-white shadow-2xs hover:shadow-xl transition-all duration-700 ease-in-out [transform-style:preserve-3d] group-hover/item:[transform:rotateY(360deg)]">
+                      {/* Logo Red Icon Badge */}
+                      <div className="w-14 h-14 rounded-full bg-[#FAF8F3] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/item:bg-[#CD0007] group-hover/item:text-white group-hover/item:border-[#CD0007] transition-all duration-500">
+                        <Icon size={26} strokeWidth={1.5} />
+                      </div>
+
+                      {/* Logo Red Heading */}
+                      <h3 className="type-h3 text-[#CD0007] mb-2">
+                        {item.title}
+                      </h3>
+
+                      {/* Dark Body Text */}
+                      <p className="type-small text-gray-700 max-w-[220px]">
+                        {item.description}
+                      </p>
                     </div>
-
-                    {/* Logo Red Heading */}
-                    <h3 className="type-h3 text-[#CD0007] mb-2 group-hover/card:translate-y-[-2px] transition-transform">
-                      {item.title}
-                    </h3>
-
-                    {/* Dark Body Text */}
-                    <p className="type-small text-gray-700 max-w-[220px]">
-                      {item.description}
-                    </p>
                   </motion.div>
                 </motion.div>
               );
