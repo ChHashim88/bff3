@@ -21,8 +21,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     { name: "Platform", href: "#our-solution" },
     { name: "Opportunity", href: "#the-opportunity" },
     { name: "How It Works", href: "#how-it-works" },
-    { name: "Investment", href: "#the-investment" },
     { name: "Founders Club", href: "#founders-club" },
+    { name: "Investment", href: "#the-investment" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact Us", href: "#contact" },
   ];

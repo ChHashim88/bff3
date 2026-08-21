@@ -50,7 +50,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
             }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white shadow-2xs group-hover/card:shadow-[0_12px_30px_rgba(205,0,7,0.12)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white border border-[#EAE5DC] group-hover/card:border-[#CD0007]/35 shadow-xs group-hover/card:shadow-[0_8px_22px_rgba(205,0,7,0.14)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
             {/* Live Beating Icon Badge */}
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -72,7 +72,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
           </div>
 
           {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white shadow-xl flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#CD0007]/25 shadow-[0_8px_22px_rgba(205,0,7,0.14)] flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {/* Ambient Shimmer Sweep Animation */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
@@ -171,7 +171,7 @@ export default function HowWeMakeMoney() {
               <div className="pt-2">
                 <motion.div
                   whileHover={{ scale: 1.01 }}
-                  className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full sm:h-[360px] lg:h-[390px]"
+                  className="relative rounded-2xl border border-[#EAE5DC] group-hover:border-[#CD0007]/35 overflow-hidden shadow-lg group-hover:shadow-[0_8px_22px_rgba(205,0,7,0.14)] aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full sm:h-[360px] lg:h-[390px] transition-all duration-500"
                 >
                   <Image
                     src="/ggh.jpeg"

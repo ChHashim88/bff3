@@ -28,7 +28,7 @@ export default function ThePlatform() {
                 </h1>
 
                 {/* Main Headline */}
-                <h2 className="type-h2 font-semibold text-[#111111] leading-tight">
+                <h2 className="type-h2 text-[#111111] leading-tight">
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
                 </h2>

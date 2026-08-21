@@ -98,7 +98,7 @@ export default function FAQContactSection() {
               INVESTOR SUPPORT
             </h1>
           </div>
-          <h2 className="type-h2 font-bold text-[#111111] leading-[1.06] tracking-tight">
+          <h2 className="type-h2 text-[#111111] leading-[1.06] tracking-tight">
             Every Question,{" "}
             <span className="relative">
               <span className="relative z-10 text-[#CD0007]">Clearly Answered.</span>

@@ -200,7 +200,7 @@ export default function MobileRadialCarousel({
         })}
 
         {/* Center Active Content Display Card */}
-        <div className="w-[185px] xs:w-[205px] sm:w-[225px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-lg flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
+        <div className="w-[185px] xs:w-[205px] sm:w-[225px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-[0_6px_18px_rgba(205,0,7,0.12)] flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}

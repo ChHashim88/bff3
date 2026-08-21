@@ -29,7 +29,7 @@ export default function ProblemSolution() {
                 </h1>
 
                 {/* Main Headline */}
-                <h2 className="type-h2 font-semibold text-[#111111] leading-tight">
+                <h2 className="type-h2 text-[#111111] leading-tight">
                   Film investing has never been <span className="text-[#CD0007]">built for investors.</span>
                 </h2>
 
