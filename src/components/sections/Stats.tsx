@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { Globe, Video, TrendingUp, Users } from "lucide-react";
 import { motion, useInView, animate } from "framer-motion";
+import TypewriterText from "@/components/ui/TypewriterText";
 
 function AnimatedMetricValue({
   targetValue,
@@ -131,9 +132,13 @@ export default function Stats() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-4xl mx-auto space-y-3"
         >
-          <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+          <TypewriterText
+            as="h1"
+            containerClassName="block"
+            textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+          >
             THE MARKET
-          </h1>
+          </TypewriterText>
           <h2 className="type-h2 font-semibold text-[#111111]">
             At the Intersection of a Massive Opportunity
           </h2>

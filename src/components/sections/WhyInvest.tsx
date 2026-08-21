@@ -168,14 +168,9 @@ export default function WhyInvest() {
                 WHY BIG FILM FUND
               </Text3DRotate>
             </div>
-            <Text3DRotate
-              as="h2"
-              stagger={0.025}
-              containerClassName="block"
-              textClassName="type-h2 text-[#111111] leading-tight"
-            >
+            <h2 className="type-h2 text-[#111111] leading-tight">
               A Smarter Way to Invest in Film
-            </Text3DRotate>
+            </h2>
           </div>
 
           {/* 4 Feature Columns with Vertical Dividers (|) & 180° 3D Flip Cards */}

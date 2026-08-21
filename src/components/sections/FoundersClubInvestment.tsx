@@ -60,14 +60,9 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                   </div>
                 </div>
 
-                <TextElasticSlide
-                  as="h2"
-                  stagger={0.05}
-                  containerClassName="block"
-                  textClassName="type-h2 text-[#111111] leading-tight"
-                >
+                <h2 className="type-h2 text-[#111111] leading-tight">
                   Don’t Just Invest in Film. <span className="text-[#CD0007] block sm:inline">Be Part of It.</span>
-                </TextElasticSlide>
+                </h2>
 
                 <p className="type-body text-gray-700 font-normal leading-relaxed">
                   Big Film Fund brings investors closer to the journey—from development to release.

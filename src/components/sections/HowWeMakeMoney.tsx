@@ -157,14 +157,9 @@ export default function HowWeMakeMoney() {
                 </TextBlurReveal>
 
                 {/* H2 Headline */}
-                <TextBlurReveal
-                  as="h2"
-                  stagger={0.03}
-                  containerClassName="block"
-                  textClassName="type-h2 text-[#111111]"
-                >
+                <h2 className="type-h2 text-[#111111]">
                   Multiple Revenue <span className="text-[#CD0007]">Streams</span>
-                </TextBlurReveal>
+                </h2>
 
                 {/* Description */}
                 <div className="space-y-2 text-gray-700">

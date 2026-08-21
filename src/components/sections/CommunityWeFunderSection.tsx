@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import TypewriterText from "@/components/ui/TypewriterText";
 
 export default function CommunityWeFunderSection() {
   const [email, setEmail] = useState("");
@@ -65,9 +66,13 @@ export default function CommunityWeFunderSection() {
 
             {/* Foreground Content */}
             <div className="relative z-10 space-y-3 max-w-xl">
-              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+              <TypewriterText
+                as="h1"
+                containerClassName="block"
+                textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+              >
                 JOIN THE BFF COMMUNITY
-              </h1>
+              </TypewriterText>
               <h2 className="type-h2 font-semibold text-white leading-tight">
                 Join our community.
                 <br />

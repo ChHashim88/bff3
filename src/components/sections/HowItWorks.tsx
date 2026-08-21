@@ -88,14 +88,9 @@ export default function HowItWorks() {
                 BUILT TO SUCCEED
               </Text3DRotate>
 
-              <Text3DRotate
-                as="h2"
-                stagger={0.025}
-                containerClassName="block"
-                textClassName="type-h2 text-[#111111]"
-              >
+              <h2 className="type-h2 text-[#111111]">
                 Core Factors that Drive <span className="text-[#CD0007]">Long-Term Success</span>
-              </Text3DRotate>
+              </h2>
 
               <p className="type-subtitle font-normal text-gray-700 pt-1">
                 Success in film investing requires more than finding good projects.

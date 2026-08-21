@@ -4,6 +4,7 @@ import { Film, Cpu, TrendingUp, Sparkles, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
+import TypewriterText from "@/components/ui/TypewriterText";
 
 export default function Opportunity() {
   const cards = [
@@ -63,9 +64,13 @@ export default function Opportunity() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6 h-full py-1">
 
               <div className="space-y-4 my-auto">
-                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                <TypewriterText
+                  as="h1"
+                  containerClassName="block"
+                  textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+                >
                   THE OPPORTUNITY
-                </h1>
+                </TypewriterText>
 
                 {/* Headline */}
                 <h2 className="type-h2">

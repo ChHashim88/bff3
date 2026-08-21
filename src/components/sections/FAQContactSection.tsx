@@ -102,14 +102,9 @@ export default function FAQContactSection() {
               INVESTOR SUPPORT
             </TextBlurReveal>
           </div>
-          <TextBlurReveal
-            as="h2"
-            stagger={0.03}
-            containerClassName="block"
-            textClassName="type-h2 text-[#111111] leading-[1.06] tracking-tight"
-          >
+          <h2 className="type-h2 text-[#111111] leading-[1.06] tracking-tight">
             Every Question, <span className="text-[#CD0007]">Clearly Answered.</span>
-          </TextBlurReveal>
+          </h2>
           <p className="text-[13px] sm:text-[16px] text-gray-600 max-w-xl leading-relaxed">
             Transparency is our foundation. Read through common investor questions or reach our team directly.
           </p>

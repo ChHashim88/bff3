@@ -33,15 +33,10 @@ export default function ThePlatform() {
                 </TextBlurReveal>
 
                 {/* Main Headline */}
-                <TextBlurReveal
-                  as="h2"
-                  stagger={0.03}
-                  containerClassName="block"
-                  textClassName="type-h2 text-[#111111] leading-tight"
-                >
+                <h2 className="type-h2 text-[#111111] leading-tight">
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
-                </TextBlurReveal>
+                </h2>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">

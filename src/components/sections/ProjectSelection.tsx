@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Search, BarChart3, ShieldCheck, PlayCircle, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
+import TypewriterText from "@/components/ui/TypewriterText";
 
 export default function ProjectSelection() {
   const steps = [
@@ -19,17 +20,17 @@ export default function ProjectSelection() {
       num: "02",
       icon: BarChart3,
       title: "EVALUATE",
-      description: "Assess financial viability and commercial potential.",
+      description: "Perform strict due diligence.",
       floatDuration: 4.8,
-      floatDelay: 0.5,
+      floatDelay: 0.6,
     },
     {
       num: "03",
       icon: ShieldCheck,
-      title: "STRUCTURE",
-      description: "Develop the appropriate investment structure.",
-      floatDuration: 4.4,
-      floatDelay: 1.0,
+      title: "MANAGE",
+      description: "Execute with financial discipline.",
+      floatDuration: 4.5,
+      floatDelay: 1.2,
     },
     {
       num: "04",
@@ -42,10 +43,10 @@ export default function ProjectSelection() {
   ];
 
   return (
-    <section id="selection-execution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-14">
+    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-12">
 
-        {/* Section Header & Right Video Card Composition */}
+        {/* 1. TOP SECTION: 2-Column Composition (Identical Header Structure to The Platform) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
 
           {/* Left Side: Label, Heading & Description (~50% width / lg:col-span-6) */}
@@ -56,9 +57,13 @@ export default function ProjectSelection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-3 text-left flex flex-col justify-center my-auto"
           >
-            <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+            <TypewriterText
+              as="h1"
+              containerClassName="block"
+              textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+            >
               PROJECT SELECTION
-            </h1>
+            </TypewriterText>
 
             <h2 className="type-h2 text-[#111111]">
               How Projects Are <span className="text-[#CD0007]">Selected & Managed</span>
