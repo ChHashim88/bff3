@@ -9,6 +9,7 @@ interface VideoPlayerWithLoaderProps {
   poster?: string;
   badgeText?: string;
   aspectRatioClass?: string;
+  objectFitClass?: string;
 }
 
 export default function VideoPlayerWithLoader({
@@ -16,7 +17,8 @@ export default function VideoPlayerWithLoader({
   fallbackSrc,
   poster = "/ggh.jpeg",
   badgeText,
-  aspectRatioClass = "aspect-[16/9] lg:aspect-[16/9.5]",
+  aspectRatioClass = "aspect-[16/9]",
+  objectFitClass = "object-cover object-center",
 }: VideoPlayerWithLoaderProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -53,7 +55,7 @@ export default function VideoPlayerWithLoader({
   };
 
   return (
-    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-[280px] sm:h-[360px] lg:h-[390px] ${aspectRatioClass}`}>
+    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-auto min-h-[260px] sm:min-h-[320px] lg:min-h-[350px] ${aspectRatioClass}`}>
       
       {/* HTML5 Video Player */}
       <video
@@ -68,7 +70,7 @@ export default function VideoPlayerWithLoader({
         onWaiting={() => setIsLoading(true)}
         onCanPlay={() => setIsLoading(false)}
         onPlaying={() => setIsLoading(false)}
-        className="w-full h-full object-cover object-center"
+        className={`w-full h-full ${objectFitClass}`}
       >
         <source src={primarySrc} type="video/mp4" />
         {fallbackSrc && <source src={fallbackSrc} type="video/mp4" />}
