@@ -31,7 +31,7 @@ export default function VideoPlayerWithLoader({
     setIsLoading(true);
   }, [primarySrc]);
 
-  // IntersectionObserver: auto-pause offscreen videos so GPU/CPU is 100% smooth
+  // IntersectionObserver: Only play video when prominently visible on screen (>= 50% in viewport)
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -47,12 +47,12 @@ export default function VideoPlayerWithLoader({
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.5 }
     );
 
     observer.observe(video);
     return () => observer.disconnect();
-  }, []);
+  }, [currentSrc]);
 
   const handleVideoError = () => {
     if (currentSrc !== fallbackSrc && fallbackSrc) {
@@ -101,11 +101,10 @@ export default function VideoPlayerWithLoader({
       {/* HTML5 Video Player */}
       <video
         ref={videoRef}
-        autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         poster={poster}
         onLoadStart={() => setIsLoading(true)}
         onWaiting={() => setIsLoading(true)}
