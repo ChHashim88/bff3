@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus, Send, CheckCircle2, Film, Cpu, Users, ShieldCheck, DollarSign, Rocket, ArrowRight, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import TextBlurReveal from "@/components/ui/TextBlurReveal";
 
 const faqs = [
   {
@@ -38,7 +39,7 @@ const faqs = [
     tag: "Returns",
     question: "How do investors make money?",
     answer:
-      "Investors receive pro-rata payouts directly from gross revenues generated across theatrical, streaming, international licensing, and ancillary markets.",
+      "Investors participate directly in gross revenues generated from theatrical distribution, global streaming licensing, TV broadcasting rights, and ancillary merch sales.",
   },
   {
     icon: Rocket,
@@ -93,18 +94,22 @@ export default function FAQContactSection() {
           className="space-y-4 max-w-2xl"
         >
           <div className="flex items-center gap-2">
-
-            <h1 className="type-label font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
+            <TextBlurReveal
+              as="h1"
+              containerClassName="block"
+              textClassName="type-label font-extrabold tracking-[0.18em] uppercase text-[#CD0007]"
+            >
               INVESTOR SUPPORT
-            </h1>
+            </TextBlurReveal>
           </div>
-          <h2 className="type-h2 text-[#111111] leading-[1.06] tracking-tight">
-            Every Question,{" "}
-            <span className="relative">
-              <span className="relative z-10 text-[#CD0007]">Clearly Answered.</span>
-
-            </span>
-          </h2>
+          <TextBlurReveal
+            as="h2"
+            stagger={0.03}
+            containerClassName="block"
+            textClassName="type-h2 text-[#111111] leading-[1.06] tracking-tight"
+          >
+            Every Question, <span className="text-[#CD0007]">Clearly Answered.</span>
+          </TextBlurReveal>
           <p className="text-[13px] sm:text-[16px] text-gray-600 max-w-xl leading-relaxed">
             Transparency is our foundation. Read through common investor questions or reach our team directly.
           </p>
@@ -280,7 +285,7 @@ export default function FAQContactSection() {
                       ].map(({ label, key, placeholder, type, required }) => (
                         <div key={key}>
                           <label className="block text-[10px] font-bold tracking-[0.15em] uppercase text-[#111111] mb-1.5">
-                            {label}{required && " *"}
+                            {label}
                           </label>
                           <input
                             type={type}
@@ -333,7 +338,7 @@ export default function FAQContactSection() {
                     {/* Message */}
                     <div>
                       <label className="block text-[10px] font-bold tracking-[0.15em] uppercase text-[#111111] mb-1.5">
-                        Message *
+                        Message
                       </label>
                       <textarea
                         rows={4}

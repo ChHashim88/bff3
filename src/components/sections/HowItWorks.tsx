@@ -5,6 +5,7 @@ import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
 import { ClipboardCheck, Search, Share2, Landmark, TrendingUp, Users, Camera, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
+import Text3DRotate from "@/components/ui/Text3DRotate";
 
 export default function HowItWorks() {
   const steps = [
@@ -79,13 +80,22 @@ export default function HowItWorks() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-3 text-left"
             >
-              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+              <Text3DRotate
+                as="h1"
+                containerClassName="block"
+                textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+              >
                 BUILT TO SUCCEED
-              </h1>
+              </Text3DRotate>
 
-              <h2 className="type-h2 text-[#111111]">
+              <Text3DRotate
+                as="h2"
+                stagger={0.025}
+                containerClassName="block"
+                textClassName="type-h2 text-[#111111]"
+              >
                 Core Factors that Drive <span className="text-[#CD0007]">Long-Term Success</span>
-              </h2>
+              </Text3DRotate>
 
               <p className="type-subtitle font-normal text-gray-700 pt-1">
                 Success in film investing requires more than finding good projects.

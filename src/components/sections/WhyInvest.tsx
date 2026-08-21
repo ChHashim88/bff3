@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Film, Building2, Video, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import Text3DRotate from "@/components/ui/Text3DRotate";
 
 function FlipCard({ item, index }: { item: any; index: number }) {
   const Icon = item.icon;
@@ -14,9 +15,8 @@ function FlipCard({ item, index }: { item: any; index: number }) {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.7, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
-      className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 ${
-        index !== 0 ? "md:pl-6" : ""
-      }`}
+      className={`flex flex-col items-center text-center px-4 sm:px-6 pt-6 md:pt-0 pb-6 md:pb-0 ${index !== 0 ? "md:pl-6" : ""
+        }`}
     >
       {/* ── MOBILE VIEW CARD (Transparent Background with Icon, Title & Description) ── */}
       <div className="md:hidden flex flex-col items-center text-center w-full p-4 bg-transparent my-1">
@@ -51,12 +51,11 @@ function FlipCard({ item, index }: { item: any; index: number }) {
       >
         {/* 180° 3D Flip Card Inner Container */}
         <div
-          className={`relative w-full min-h-[220px] sm:min-h-[240px] rounded-2xl transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${
-            isFlipped ? "[transform:rotateY(180deg)]" : "group-hover/card:[transform:rotateY(180deg)]"
-          }`}
+          className={`relative w-full min-h-[220px] sm:min-h-[240px] rounded-2xl transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : "group-hover/card:[transform:rotateY(180deg)]"
+            }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white shadow-2xs group-hover/card:shadow-[0_12px_30px_rgba(205,0,7,0.12)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
             {/* Live Beating Icon Badge */}
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -78,7 +77,7 @@ function FlipCard({ item, index }: { item: any; index: number }) {
           </div>
 
           {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white shadow-xl flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {/* Ambient Shimmer Sweep Animation */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
@@ -161,13 +160,22 @@ export default function WhyInvest() {
           {/* Card Header */}
           <div className="text-center max-w-xl mx-auto mb-10 space-y-3 relative z-10">
             <div className="space-y-2">
-              <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+              <Text3DRotate
+                as="h1"
+                containerClassName="block"
+                textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+              >
                 WHY BIG FILM FUND
-              </h1>
+              </Text3DRotate>
             </div>
-            <h2 className="type-h2 text-[#111111] leading-tight">
+            <Text3DRotate
+              as="h2"
+              stagger={0.025}
+              containerClassName="block"
+              textClassName="type-h2 text-[#111111] leading-tight"
+            >
               A Smarter Way to Invest in Film
-            </h2>
+            </Text3DRotate>
           </div>
 
           {/* 4 Feature Columns with Vertical Dividers (|) & 180° 3D Flip Cards */}

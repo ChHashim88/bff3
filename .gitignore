@@ -44,6 +44,10 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 
+# raw videos
+public/extracted_raw/
+public/raw_videos.zip
+
 
 
 

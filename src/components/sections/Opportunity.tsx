@@ -96,7 +96,7 @@ export default function Opportunity() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_video_2_opportunity.mp4"
+                primarySrc="/bff_video_3_platform.mp4"
               />
             </div>
 

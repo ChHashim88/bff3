@@ -3,6 +3,7 @@
 import { Crown, CheckCircle2, ArrowRight, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
+import TextElasticSlide from "@/components/ui/TextElasticSlide";
 
 interface FoundersClubInvestmentProps {
   onOpenWaitlist: () => void;
@@ -47,17 +48,26 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6 h-full">
               <div className="space-y-4 text-left">
                 <div className="flex items-center justify-between">
-                  <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                  <TextElasticSlide
+                    as="h1"
+                    containerClassName="block"
+                    textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+                  >
                     FOUNDERS CLUB
-                  </h1>
+                  </TextElasticSlide>
                   <div className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs">
                     <Crown size={24} />
                   </div>
                 </div>
 
-                <h2 className="type-h2 text-[#111111] leading-tight">
+                <TextElasticSlide
+                  as="h2"
+                  stagger={0.05}
+                  containerClassName="block"
+                  textClassName="type-h2 text-[#111111] leading-tight"
+                >
                   Don’t Just Invest in Film. <span className="text-[#CD0007] block sm:inline">Be Part of It.</span>
-                </h2>
+                </TextElasticSlide>
 
                 <p className="type-body text-gray-700 font-normal leading-relaxed">
                   Big Film Fund brings investors closer to the journey—from development to release.

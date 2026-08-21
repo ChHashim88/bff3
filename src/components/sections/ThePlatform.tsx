@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
+import TextBlurReveal from "@/components/ui/TextBlurReveal";
 
 export default function ThePlatform() {
   return (
@@ -23,15 +24,24 @@ export default function ThePlatform() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
               <div className="space-y-3">
-                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                <TextBlurReveal
+                  as="h1"
+                  containerClassName="block"
+                  textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+                >
                   THE PLATFORM
-                </h1>
+                </TextBlurReveal>
 
                 {/* Main Headline */}
-                <h2 className="type-h2 text-[#111111] leading-tight">
+                <TextBlurReveal
+                  as="h2"
+                  stagger={0.03}
+                  containerClassName="block"
+                  textClassName="type-h2 text-[#111111] leading-tight"
+                >
                   A New Model for<br />
                   <span className="text-[#CD0007]">Film Investing.</span>
-                </h2>
+                </TextBlurReveal>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
@@ -60,7 +70,7 @@ export default function ThePlatform() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_video_3_platform.mp4"
+                primarySrc="/bff_video_2_opportunity.mp4"
               />
             </div>
 

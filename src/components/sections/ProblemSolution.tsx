@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Lock, Globe, BarChart3, UserX, EyeOff } from "lucide-react";
 import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
+import TextElasticSlide from "@/components/ui/TextElasticSlide";
 
 export default function ProblemSolution() {
   return (
@@ -24,14 +25,23 @@ export default function ProblemSolution() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6 py-1">
 
               <div className="space-y-4">
-                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                <TextElasticSlide
+                  as="h1"
+                  containerClassName="block"
+                  textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+                >
                   THE PROBLEM
-                </h1>
+                </TextElasticSlide>
 
                 {/* Main Headline */}
-                <h2 className="type-h2 text-[#111111] leading-tight">
+                <TextElasticSlide
+                  as="h2"
+                  stagger={0.06}
+                  containerClassName="block"
+                  textClassName="type-h2 text-[#111111] leading-tight"
+                >
                   Film investing has never been <span className="text-[#CD0007]">built for investors.</span>
-                </h2>
+                </TextElasticSlide>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">

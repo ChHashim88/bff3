@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Coins, Handshake, TrendingUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
+import TextBlurReveal from "@/components/ui/TextBlurReveal";
 
 function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
   const Icon = item.icon;
@@ -50,7 +51,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
             }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white border border-[#EAE5DC] group-hover/card:border-[#CD0007]/35 shadow-xs group-hover/card:shadow-[0_8px_22px_rgba(205,0,7,0.14)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
             {/* Live Beating Icon Badge */}
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -72,7 +73,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
           </div>
 
           {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#CD0007]/25 shadow-[0_8px_22px_rgba(205,0,7,0.14)] flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {/* Ambient Shimmer Sweep Animation */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
@@ -147,14 +148,23 @@ export default function HowWeMakeMoney() {
             <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
 
               <div className="space-y-3 text-left">
-                <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
+                <TextBlurReveal
+                  as="h1"
+                  containerClassName="block"
+                  textClassName="type-label font-extrabold uppercase text-[#CD0007]"
+                >
                   THE BUSINESS MODEL
-                </h1>
+                </TextBlurReveal>
 
                 {/* H2 Headline */}
-                <h2 className="type-h2 text-[#111111]">
+                <TextBlurReveal
+                  as="h2"
+                  stagger={0.03}
+                  containerClassName="block"
+                  textClassName="type-h2 text-[#111111]"
+                >
                   Multiple Revenue <span className="text-[#CD0007]">Streams</span>
-                </h2>
+                </TextBlurReveal>
 
                 {/* Description */}
                 <div className="space-y-2 text-gray-700">
