@@ -59,7 +59,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
       {/* ── 1. HERO BACKGROUND IMAGE (MOBILE VIEW SUBTLE RIGHT EDGE FADE) ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-[#FAF7F1] sm:bg-transparent">
         <Image
-          src="/backy.jpeg"
+          src="/backy.png"
           alt="Hero Background"
           fill
           priority
@@ -70,7 +70,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-l from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent sm:hidden" />
 
         {/* Hero Section Soft Bottom Fade Layer */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-28 lg:h-32 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/60 to-transparent pointer-events-none z-1" />
+        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-14 lg:h-16 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/25 to-transparent pointer-events-none z-1" />
       </div>
 
       {/* ── 2. HERO CONTENT (CENTERED ON MOBILE, LEFT-ALIGNED ON DESKTOP) ── */}

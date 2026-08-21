@@ -144,7 +144,8 @@ export default function HowItWorks() {
             className="lg:col-span-6 flex items-center justify-center"
           >
             <VideoPlayerWithLoader
-              primarySrc="/bff_platform.mp4"
+              primarySrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/ACgQM7ywKfShxxLvdVhG4sw?dl=0&e=3&preview=bff_promo_4_why_bff_will_win_260602_v1.mp4&rlkey=d1069gkyon7op9goc3htz7340&st=4n2g1pd0"
+              fallbackSrc="/bff_platform.mp4"
               poster="/ggh.jpeg"
             />
           </motion.div>
