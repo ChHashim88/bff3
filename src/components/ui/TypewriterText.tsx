@@ -39,7 +39,7 @@ export default function TypewriterText({
   children,
   containerClassName = "",
   textClassName = "",
-  speed = 20,
+  speed = 42,
   delay = 0,
   cursorColor = "#CD0007",
   hideCursorOnComplete = true,
