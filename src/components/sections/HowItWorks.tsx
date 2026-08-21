@@ -84,7 +84,7 @@ export default function HowItWorks() {
               </h1>
 
               <h2 className="type-h2 text-[#111111]">
-                Five Foundations <span className="text-[#CD0007]">of the Platform</span>
+                Core Factors that Drive <span className="text-[#CD0007]">Long-Term Success</span>
               </h2>
 
               <p className="type-subtitle font-normal text-gray-700 pt-1">

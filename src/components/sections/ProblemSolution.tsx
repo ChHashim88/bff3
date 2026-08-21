@@ -30,15 +30,15 @@ export default function ProblemSolution() {
 
                 {/* Main Headline */}
                 <h2 className="type-h2 font-semibold text-[#111111] leading-tight">
-                  Millions Watch Movies.<br />
-                  <span className="text-[#CD0007]">Almost None Can Invest in Them.</span>
+                  Film investing has never been <span className="text-[#CD0007]">built for investors.</span>
                 </h2>
 
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
                   <p className="type-body leading-relaxed">
-                    Film has always been a powerful global industry—but film investing has largely
-                    remained accessible only to studios, private investors, and industry insiders.
+                    For decades, film financing has been limited to studios, private investors, and a small
+                    group of industry insiders. Even when audiences help make a film successful, they
+                    rarely ever share in the financial upside.
                   </p>
 
                   <div className="bg-[#FAF7F1] border-l-4 border-[#CD0007] rounded-r-xl p-4 sm:p-5 shadow-2xs">
@@ -56,7 +56,7 @@ export default function ProblemSolution() {
               {/* Bottom Accent Callout */}
               <div className="pt-4 border-t border-[#EAE5DC]">
                 <p className="type-subtitle font-medium text-[#CD0007]">
-                  Film is one of the last major categories ready for this transition.
+                  Millions of people watch movies. Almost none of them can invest in them.
                 </p>
               </div>
 

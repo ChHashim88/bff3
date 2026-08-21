@@ -36,7 +36,8 @@ export default function ThePlatform() {
                 {/* Paragraph Content Stack */}
                 <div className="space-y-4 text-gray-700">
                   <p className="type-body leading-relaxed">
-                    Big Film Fund is designed to make film investing more accessible, structured, and repeatable.
+                    Big Film Fund is building a platform designed to bring structure, transparency, and
+                    access to film investing.
                   </p>
                   <p className="type-body font-medium text-[#111111] border-l-2 border-[#CD0007] pl-3">
                     Instead of depending on one-off deals, the platform is built around a growing pipeline of projects.

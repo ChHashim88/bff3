@@ -46,9 +46,8 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
       >
         {/* 180° 3D Flip Card Inner Container */}
         <div
-          className={`relative w-full h-full min-h-[190px] sm:min-h-[210px] rounded-2xl transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${
-            isFlipped ? "[transform:rotateY(180deg)]" : "group-hover/card:[transform:rotateY(180deg)]"
-          }`}
+          className={`relative w-full h-full min-h-[190px] sm:min-h-[210px] rounded-2xl transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${isFlipped ? "[transform:rotateY(180deg)]" : "group-hover/card:[transform:rotateY(180deg)]"
+            }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
           <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white shadow-2xs group-hover/card:shadow-[0_12px_30px_rgba(205,0,7,0.12)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
@@ -154,7 +153,7 @@ export default function HowWeMakeMoney() {
 
                 {/* H2 Headline */}
                 <h2 className="type-h2 text-[#111111]">
-                  Built Beyond a Single Movie
+                  Multiple Revenue <span className="text-[#CD0007]">Streams</span>
                 </h2>
 
                 {/* Description */}

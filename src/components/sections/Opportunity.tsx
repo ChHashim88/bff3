@@ -69,8 +69,8 @@ export default function Opportunity() {
 
                 {/* Headline */}
                 <h2 className="type-h2">
-                  <span className="text-[#111111] block">Where Entertainment</span>
-                  <span className="text-[#CD0007] block">Meets Investing.</span>
+                  <span className="text-[#111111] block">A Platform at the Intersection </span>
+                  <span className="text-[#CD0007] block">of Entertainment & Investing.</span>
                 </h2>
 
                 {/* Paragraphs */}

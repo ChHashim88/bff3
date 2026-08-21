@@ -61,15 +61,19 @@ export default function ProjectSelection() {
             </h1>
 
             <h2 className="type-h2 text-[#111111]">
-              We Don’t Chase Volume. <span className="text-[#CD0007]">We Chase Quality.</span>
+              How Projects Are <span className="text-[#CD0007]">Selected & Managed</span>
             </h2>
 
             <p className="type-body text-gray-700 max-w-xl leading-relaxed pt-1">
-              Every project goes through a structured evaluation process before being presented to investors.
+              Disciplined project selection and professional execution are central to how Big Film
+              Fund operates.
+
             </p>
 
             <p className="type-body text-gray-700 max-w-xl leading-relaxed">
-              The goal is simple: Present opportunities that meet clear standards for structure, execution, and commercial potential.
+              Every project is evaluated through a structured process before being oﬀered to
+              investors - with a focus on financial viability, production discipline, and realistic path
+              to distribution.
             </p>
           </motion.div>
 
