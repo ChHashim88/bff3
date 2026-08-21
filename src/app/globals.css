@@ -32,6 +32,15 @@
   }
 }
 
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursorBlink 0.75s ease-in-out infinite;
+}
+
 /* ── SF Pro Typography Specification Utility Classes ── */
 @layer utilities {
   .font-display {

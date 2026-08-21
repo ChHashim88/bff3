@@ -3,56 +3,13 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import TypewriterText from "@/components/ui/TypewriterText";
 
 interface HeroProps {
   onOpenWaitlist: () => void;
 }
 
-const LINE_1 = "FILM INVESTING.";
-const LINE_2 = "REIMAGINED";
-const LINE_3 = "FOR INVESTORS.";
-
-const FULL_DESCRIPTION =
-  "Big Film Fund is building a scalable technology platform connecting investors, filmmakers, and audiences with greater structure, transparency, and scale.";
-
-// Character Reveal Variants: subtle opacity & blur-to-clear transition
-const charVariants = {
-  hidden: { opacity: 0, filter: "blur(4px)" },
-  visible: {
-    opacity: 1,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.35,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
-// 1. Headline Container Variant (Sequential Character Stagger)
-const headingContainerVariants = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.024,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-// 2. Description Container Variant (Triggers after Headline completes)
-const descContainerVariants = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.012,
-      delayChildren: 1.15,
-    },
-  },
-};
-
-// 3. CTA Buttons Container Variant (Triggers after Description completes)
+// CTA Buttons Container Variant (Triggers after Description typewriter completes)
 const ctaContainerVariants = {
   hidden: { opacity: 0, y: 15 },
   visible: {
@@ -60,28 +17,11 @@ const ctaContainerVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      delay: 3.25,
+      delay: 3.2,
       ease: [0.16, 1, 0.3, 1] as const,
     },
   },
 };
-
-function renderLetterSpans(text: string, prefix: string, customClass: string = "") {
-  const words = text.split(" ");
-  return words.map((word, wIdx) => (
-    <span key={`${prefix}-w-${wIdx}`} className="inline-block whitespace-nowrap mr-[0.25em]">
-      {word.split("").map((char, cIdx) => (
-        <motion.span
-          key={`${prefix}-w-${wIdx}-c-${cIdx}`}
-          variants={charVariants}
-          className={`inline-block transform-gpu will-change-[opacity,filter] ${customClass}`}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </span>
-  ));
-}
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
@@ -110,42 +50,31 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 w-full z-10 relative my-auto">
         <div className="max-w-3xl mx-auto sm:mx-0 space-y-6 text-center sm:text-left flex flex-col items-center sm:items-start justify-center">
 
-          {/* Monumental 3-Line H1 Editorial Headline (Letter-by-Letter Reveal) */}
+          {/* Monumental 3-Line H1 Editorial Headline (Character Typewriter + Blinking Cursor) */}
           <div className="space-y-1 w-full text-center sm:text-left">
-            <motion.h1
-              variants={headingContainerVariants}
-              initial="hidden"
-              animate="visible"
-              className="type-h1 text-[#111111] text-center sm:text-left tracking-tight font-extrabold"
+            <TypewriterText
+              as="h1"
+              speed={28}
+              delay={0.1}
+              textClassName="type-h1 text-[#111111] text-center sm:text-left tracking-tight font-extrabold"
             >
-              {/* Line 1 */}
-              <span className="block text-center sm:text-left">
-                {renderLetterSpans(LINE_1, "l1")}
-              </span>
-
-              {/* Line 2 (Brand Red "REIMAGINED") */}
-              <span className="block text-[#CD0007] text-center sm:text-left">
-                {renderLetterSpans(LINE_2, "l2")}
-              </span>
-
-              {/* Line 3 */}
-              <span className="block text-center sm:text-left">
-                {renderLetterSpans(LINE_3, "l3")}
-              </span>
-            </motion.h1>
+              FILM INVESTING.<br />
+              <span className="text-[#CD0007]">REIMAGINED</span><br />
+              FOR INVESTORS.
+            </TypewriterText>
           </div>
 
-          {/* Subtitle Description Paragraph (Letter-by-Letter Reveal Sequence 2) */}
-          <motion.p
-            variants={descContainerVariants}
-            initial="hidden"
-            animate="visible"
-            className="type-body text-gray-700 max-w-xl text-[16px] sm:text-[17px] leading-relaxed text-center sm:text-left"
+          {/* Subtitle Description Paragraph (Character Typewriter + Blinking Cursor) */}
+          <TypewriterText
+            as="p"
+            speed={14}
+            delay={1.25}
+            textClassName="type-body text-gray-700 max-w-xl text-[16px] sm:text-[17px] leading-relaxed text-center sm:text-left"
           >
-            {renderLetterSpans(FULL_DESCRIPTION, "desc")}
-          </motion.p>
+            Big Film Fund is building a scalable technology platform connecting investors, filmmakers, and audiences with greater structure, transparency, and scale.
+          </TypewriterText>
 
-          {/* Dual CTA Buttons (Sequence 3: Fade & Slide In after text completion) */}
+          {/* Dual CTA Buttons (Fades in right after typewriter sequence completes) */}
           <motion.div
             variants={ctaContainerVariants}
             initial="hidden"
