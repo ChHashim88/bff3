@@ -93,8 +93,8 @@ export default function FAQContactSection() {
           className="space-y-4 max-w-2xl"
         >
           <div className="flex items-center gap-2">
-            <div className="h-px w-8 bg-[#CD0007]" />
-            <h1 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
+
+            <h1 className="type-label font-extrabold tracking-[0.18em] uppercase text-[#CD0007]">
               INVESTOR SUPPORT
             </h1>
           </div>
@@ -102,8 +102,7 @@ export default function FAQContactSection() {
             Every Question,{" "}
             <span className="relative">
               <span className="relative z-10 text-[#CD0007]">Clearly Answered.</span>
-              {/* Underline accent */}
-              <span className="absolute bottom-0.5 left-0 right-0 h-[3px] bg-[#CD0007]/15 rounded-full" />
+
             </span>
           </h2>
           <p className="text-[13px] sm:text-[16px] text-gray-600 max-w-xl leading-relaxed">

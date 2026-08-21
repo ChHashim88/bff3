@@ -54,23 +54,23 @@ const wordVariants = {
 
 export default function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative w-full min-h-[87vh] sm:min-h-[95vh] flex flex-col justify-start items-center pt-24 sm:pt-28 lg:pt-32 pb-12 overflow-hidden text-[#111111] select-none">
+    <section className="relative w-[100vw] min-h-[72svh] sm:min-h-[78svh] lg:min-h-[82svh] flex flex-col justify-start items-center pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 overflow-hidden text-[#111111] select-none mx-auto [margin:0_auto]">
 
       {/* ── 1. HERO BACKGROUND IMAGE (MOBILE VIEW SUBTLE RIGHT EDGE FADE) ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-[#FAF7F1] sm:bg-transparent">
         <Image
-          src="/backy.png"
+          src="/backy.jpeg"
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-[100%_top] sm:object-top w-full h-full opacity-85 sm:opacity-100 [mask-image:linear-gradient(to_left,#000_75%,transparent_98%)] sm:[mask-image:none] transition-all duration-300"
+          className="object-cover object-[63%_top] sm:object-cover sm:object-center w-full h-full opacity-85 sm:opacity-100 transition-all duration-300"
         />
 
         {/* Mobile Right Side Subtle Soft Edge Fade Layer */}
         <div className="absolute inset-0 bg-gradient-to-l from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent sm:hidden" />
 
         {/* Hero Section Soft Bottom Fade Layer */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 lg:h-40 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/60 to-transparent pointer-events-none z-1" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-28 lg:h-32 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/60 to-transparent pointer-events-none z-1" />
       </div>
 
       {/* ── 2. HERO CONTENT (CENTERED ON MOBILE, LEFT-ALIGNED ON DESKTOP) ── */}
