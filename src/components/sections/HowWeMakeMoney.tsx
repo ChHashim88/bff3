@@ -220,12 +220,7 @@ export default function HowWeMakeMoney() {
 
           </div>
 
-          {/* Bottom Statement */}
-          <div className="pt-6 border-t border-[#EAE5DC] text-center">
-            <p className="type-subtitle font-medium text-[#CD0007]">
-              The model is designed to grow with the portfolio—not a single film.
-            </p>
-          </div>
+
 
         </motion.div>
 
