@@ -31,23 +31,33 @@ export default function VideoPlayerWithLoader({
     setIsLoading(true);
   }, [primarySrc]);
 
-  // IntersectionObserver: Auto-play video smoothly when scrolled into view
+  // IntersectionObserver: Auto-play video seamlessly when visible on screen
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    const playVideo = () => {
+      video.play().then(() => {
+        setIsPlaying(true);
+        setIsLoading(false);
+      }).catch(() => {});
+    };
+
+    // Immediately attempt playback
+    playVideo();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            video.play().then(() => setIsPlaying(true)).catch(() => {});
+            playVideo();
           } else {
             video.pause();
             setIsPlaying(false);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "100px" }
     );
 
     observer.observe(video);
@@ -59,7 +69,7 @@ export default function VideoPlayerWithLoader({
       setCurrentSrc(fallbackSrc);
       if (videoRef.current) {
         videoRef.current.load();
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().catch(() => { });
       }
     } else {
       setIsLoading(false);
@@ -72,7 +82,7 @@ export default function VideoPlayerWithLoader({
         videoRef.current.pause();
         setIsPlaying(false);
       } else {
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().then(() => setIsLoading(false)).catch(() => { });
         setIsPlaying(true);
       }
     }
@@ -97,18 +107,18 @@ export default function VideoPlayerWithLoader({
 
   return (
     <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-auto sm:min-h-[320px] lg:min-h-[350px] ${aspectRatioClass}`}>
-      
+
       {/* HTML5 Video Player */}
       <video
         ref={videoRef}
+        autoPlay
         loop
         muted
         playsInline
-        preload="metadata"
-        onLoadStart={() => setIsLoading(true)}
-        onWaiting={() => setIsLoading(true)}
+        preload="auto"
         onCanPlay={() => setIsLoading(false)}
         onPlaying={() => setIsLoading(false)}
+        onTimeUpdate={() => setIsLoading(false)}
         onLoadedData={() => setIsLoading(false)}
         onError={handleVideoError}
         className={`w-full h-full ${objectFitClass}`}
@@ -124,7 +134,7 @@ export default function VideoPlayerWithLoader({
           <div className="relative flex items-center justify-center">
             {/* Outer Spinning Red Ring */}
             <div className="w-16 h-16 rounded-full border-[3px] border-t-[#CD0007] border-r-transparent border-b-[#CD0007]/30 border-l-transparent animate-spin" />
-            
+
             {/* Inner Glowing Red Core with BFF Text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-[14px] font-black tracking-widest text-[#CD0007] drop-shadow-[0_0_8px_rgba(205,0,7,0.8)] animate-pulse">

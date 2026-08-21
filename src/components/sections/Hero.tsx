@@ -13,7 +13,7 @@ const LINE_2_WORDS = ["REIMAGINED"];
 const LINE_3_WORDS = ["FOR", "INVESTORS."];
 
 const FULL_DESCRIPTION =
-  "Big Film Fund is building a technology platform that connects investors, filmmakers, and audiences—bringing greater structure, transparency, and access to film investing.";
+  "Big Film Fund is building a scalable technology platform connecting investors, filmmakers, and audiences with greater structure, transparency, and scale.";
 const DESC_WORDS = FULL_DESCRIPTION.split(" ");
 
 // Super Smooth Framer Motion Stagger Variants
@@ -162,7 +162,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             transition={{ duration: 0.7, delay: 0.55 }}
             className="type-body font-medium text-[#111111] text-[15px] sm:text-[17px] leading-relaxed max-w-lg text-center sm:text-left"
           >
-            Invest in the platform shaping the next generation of entertainment finance.
+
           </motion.p>
 
           {/* Dual CTA Buttons */}
