@@ -27,7 +27,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     { name: "Contact Us", href: "#contact" },
   ];
 
-  // Dynamic Scroll & Section Detection
+  // Dynamic Scroll & 90% Hero Section Threshold Detection
   useEffect(() => {
     const sectionIds = [
       { id: "why-bff", name: "Why BFF" },
@@ -46,7 +46,12 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+          // Calculate 90% height of Hero section
+          const heroEl = document.querySelector("section");
+          const heroHeight = heroEl ? heroEl.offsetHeight : window.innerHeight * 0.8;
+          const hero90Threshold = heroHeight * 0.9;
+
+          setIsScrolled(window.scrollY > hero90Threshold);
 
           if (window.scrollY < 120) {
             setActiveNav((prev) => (prev !== "Home" ? "Home" : prev));
@@ -90,7 +95,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
       ? "bg-[#FAF7F1]/85 backdrop-blur-xl border-b border-[#EAE5DC]/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
-      : "bg-[#FAF7F1]/95 backdrop-blur-md border-b border-[#EAE5DC]/50"
+      : "bg-[#FFFDFC] border-b border-[#EAE5DC]/60"
       }`}>
       {/* Apple-style Full Width Container */}
       <div className="max-w-[1440px] mx-auto h-16 lg:h-[72px] px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4 transition-all duration-300">
@@ -162,7 +167,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
 
       {/* Mobile/Tablet Apple-style Dropdown Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 lg:hidden bg-[#FAF7F1]/98 backdrop-blur-2xl border-b border-[#EAE5DC] px-6 pt-4 pb-8 shadow-2xl z-50 max-h-[calc(100vh-50px)] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute top-full left-0 right-0 lg:hidden bg-[#FFFDFC]/98 backdrop-blur-2xl border-b border-[#EAE5DC] px-6 pt-4 pb-8 shadow-2xl z-50 max-h-[calc(100vh-50px)] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = activeNav.toLowerCase() === link.name.toLowerCase();
