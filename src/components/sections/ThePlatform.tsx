@@ -60,7 +60,7 @@ export default function ThePlatform() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_platform.mp4"
+                primarySrc="/bff_video_3_platform.mp4"
                 poster="/ggh.jpeg"
               />
             </div>

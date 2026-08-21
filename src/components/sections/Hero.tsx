@@ -63,7 +63,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-[63%_top] sm:object-cover sm:object-center w-full h-full opacity-85 sm:opacity-100 transition-all duration-300"
+          className="object-cover object-[70%_top] sm:object-cover sm:object-center scale-125 sm:scale-100 w-full h-full opacity-40 sm:opacity-100 transition-all duration-300"
         />
 
         {/* Mobile Right Side Subtle Soft Edge Fade Layer */}

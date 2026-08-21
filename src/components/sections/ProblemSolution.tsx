@@ -65,8 +65,7 @@ export default function ProblemSolution() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_problem.mp4"
-                fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AKfQfxRvbuMv3M5ojtwG-XU/bff_promo_1_introduction_alt_disco_song_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+                primarySrc="/bff_video_1_problem.mp4"
                 poster="/ggh.jpeg"
                 aspectRatioClass="aspect-[16/9]"
                 objectFitClass="object-cover object-left"

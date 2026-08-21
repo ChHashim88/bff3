@@ -80,8 +80,7 @@ export default function ProjectSelection() {
           {/* Right Side: Video Card Player (Matching Opportunity Card Size ~50% width / lg:col-span-6) */}
           <div className="lg:col-span-6 flex items-center justify-center">
             <VideoPlayerWithLoader
-              primarySrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AN_daG0k4YT491jsB9Q1Wak/bff_promo_5_getting_the_job_done_260704_v6.mp4?rlkey=d1069gkyon7op9goc3htz7340&e=4&st=4n2g1pd0&dl=0"
-              fallbackSrc="/bff_platform.mp4"
+              primarySrc="/bff_video_5_job_done.mp4"
               poster="/ggh.jpeg"
               aspectRatioClass="aspect-[16/9]"
               objectFitClass="object-cover object-center"
