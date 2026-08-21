@@ -1,9 +1,101 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Coins, Handshake, TrendingUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
+
+function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
+  const Icon = item.icon;
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      className="flex flex-col items-center text-center h-full"
+    >
+      {/* ── MOBILE VIEW CARD (Displays Icon, Title & Description together) ── */}
+      <div className="md:hidden flex flex-col items-center text-center w-full p-4 bg-transparent my-1">
+        <div className="w-14 h-14 rounded-full bg-[#FAF8F3] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-3 shadow-2xs">
+          <Icon size={26} strokeWidth={1.5} />
+        </div>
+        <h3 className="type-h3 text-[#CD0007] font-bold tracking-tight mb-2">
+          {item.title}
+        </h3>
+        <p className="type-small text-gray-700 leading-relaxed max-w-[260px]">
+          {item.description}
+        </p>
+      </div>
+
+      {/* ── DESKTOP 3D FLIP CARD (Icon + Title on Front, Description on Back) ── */}
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{
+          duration: item.floatDuration,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: item.floatDelay,
+        }}
+        className="hidden md:block w-full h-full [perspective:1000px] group/card cursor-pointer"
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        {/* 180° 3D Flip Card Inner Container */}
+        <div
+          className={`relative w-full h-full min-h-[190px] sm:min-h-[210px] rounded-2xl transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${
+            isFlipped ? "[transform:rotateY(180deg)]" : "group-hover/card:[transform:rotateY(180deg)]"
+          }`}
+        >
+          {/* FRONT SIDE (Icon & Title ONLY) */}
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] group-hover/card:bg-white shadow-2xs group-hover/card:shadow-[0_12px_30px_rgba(205,0,7,0.12)] transition-all duration-500 flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+            {/* Live Beating Icon Badge */}
+            <motion.div
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{
+                duration: 2.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: item.floatDelay,
+              }}
+              className="w-14 h-14 rounded-full bg-[#FAF8F3] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:shadow-[0_0_15px_rgba(205,0,7,0.4)] transition-all duration-500"
+            >
+              <Icon size={26} strokeWidth={1.5} />
+            </motion.div>
+
+            {/* Title */}
+            <h3 className="type-h3 text-[#CD0007] font-bold tracking-tight">
+              {item.title}
+            </h3>
+          </div>
+
+          {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white shadow-xl flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+            {/* Ambient Shimmer Sweep Animation */}
+            <motion.div
+              animate={{ x: ["-100%", "200%"] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatDelay: 1,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-[#CD0007]/5 to-transparent skew-x-12 pointer-events-none"
+            />
+
+            {/* Detailed Description Text */}
+            <p className="type-small text-gray-700 leading-relaxed max-w-[200px]">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function HowWeMakeMoney() {
   const revenueCards = [
@@ -80,7 +172,7 @@ export default function HowWeMakeMoney() {
               <div className="pt-2">
                 <motion.div
                   whileHover={{ scale: 1.01 }}
-                  className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full h-[280px] sm:h-[360px] lg:h-[390px]"
+                  className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full sm:h-[360px] lg:h-[390px]"
                 >
                   <Image
                     src="/ggh.jpeg"
@@ -92,7 +184,7 @@ export default function HowWeMakeMoney() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
 
                   {/* Text Overlay */}
-                  <div className="relative z-10 h-full flex flex-col justify-end p-6 space-y-1">
+                  <div className="relative z-10 h-full flex flex-col justify-end p-6 space-y-1 text-left">
                     <span className="type-label font-extrabold text-[#CD0007] uppercase tracking-wider">
                       THE BUSINESS MODEL
                     </span>
@@ -110,43 +202,11 @@ export default function HowWeMakeMoney() {
               <MobileRadialCarousel items={revenueCards} badgePrefix="STREAM" scale={1.12} />
             </div>
 
-            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid with Rhythmic Sequential Pulse Beats (Desktop / Tablet >= 768px) */}
+            {/* RIGHT SIDE: 4 Revenue Cards in 2x2 Grid with 180° 3D Flip Cards (Desktop / Tablet >= 768px) */}
             <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-full lg:col-span-6">
-              {revenueCards.map((card, idx) => {
-                const Icon = card.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-[#FAF7F1] border border-[#EAE5DC] rounded-2xl p-5 sm:p-6 shadow-2xs group cursor-pointer hover:border-[#CD0007] hover:shadow-md transition-all duration-300 flex flex-col items-center text-center justify-center space-y-3 h-full"
-                  >
-                    {/* Beating Icon Container (Sequenced Beat Animation) */}
-                    <motion.div
-                      animate={{ scale: [1, 1.12, 1], y: [0, -5, 0] }}
-                      transition={{
-                        duration: 2.2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: idx * 0.55,
-                      }}
-                      className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#FAF8F3] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs group-hover:bg-[#CD0007] group-hover:text-white group-hover:border-[#CD0007] transition-colors duration-300"
-                    >
-                      <Icon size={24} strokeWidth={1.5} />
-                    </motion.div>
-
-                    <div className="space-y-1.5">
-                      <h3 className="type-h3 font-semibold text-[#CD0007]">
-                        {card.title}
-                      </h3>
-                      <p className="type-small text-gray-700 leading-relaxed">
-                        {card.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+              {revenueCards.map((card, idx) => (
+                <BusinessModelFlipCard key={idx} item={card} index={idx} />
+              ))}
             </div>
 
           </div>

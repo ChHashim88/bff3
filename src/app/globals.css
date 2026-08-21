@@ -194,6 +194,27 @@
   border: 1px solid #EAE5DC;
 }
 
+/* GPU-Accelerated Hardware Marquee Animation (Zero-lag 60fps/120fps) */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.animate-marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
 /* Selection Color */
 ::selection {
   background-color: #CD0007;

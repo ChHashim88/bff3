@@ -10,14 +10,6 @@ export default function HowItWorks() {
   const steps = [
     {
       num: 1,
-      icon: ClipboardCheck,
-      title: "Quality Projects",
-      description: "A consistent pipeline sourced through industry relationships.",
-      image: "/1.jpeg",
-      alt: "Quality Projects",
-    },
-    {
-      num: 2,
       icon: Search,
       title: "Disciplined Selection",
       description: "Projects evaluated against clear financial and commercial standards.",
@@ -25,7 +17,7 @@ export default function HowItWorks() {
       alt: "Disciplined Selection",
     },
     {
-      num: 3,
+      num: 2,
       icon: Share2,
       title: "Distribution & Audience",
       description: "Strong distribution capability and audience reach.",
@@ -33,20 +25,28 @@ export default function HowItWorks() {
       alt: "Distribution and Audience Reach World Map",
     },
     {
-      num: 4,
-      icon: Landmark,
-      title: "Financial Discipline",
-      description: "Responsible capital and platform management.",
-      image: "/4.jpeg",
-      alt: "Financial Discipline Pillars",
-    },
-    {
-      num: 5,
+      num: 3,
       icon: TrendingUp,
       title: "Growing Investor Community",
       description: "A network that grows with every project.",
       image: "/5.jpeg",
       alt: "Growing Investor Community",
+    },
+    {
+      num: 4,
+      icon: ClipboardCheck,
+      title: "Quality Projects",
+      description: "A consistent pipeline sourced through industry relationships.",
+      image: "/1.jpeg",
+      alt: "Quality Projects",
+    },
+    {
+      num: 5,
+      icon: Landmark,
+      title: "Financial Discipline",
+      description: "Responsible capital and platform management.",
+      image: "/4.jpeg",
+      alt: "Financial Discipline Pillars",
     },
   ];
 
@@ -59,7 +59,7 @@ export default function HowItWorks() {
   ];
 
   // Duplicate steps array for seamless infinite looping marquee on desktop
-  const marqueeSteps = [...steps, ...steps, ...steps];
+  const marqueeSteps = [...steps, ...steps];
 
   return (
     <section id="how-it-works" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
@@ -144,7 +144,7 @@ export default function HowItWorks() {
             className="lg:col-span-6 flex items-center justify-center"
           >
             <VideoPlayerWithLoader
-              primarySrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+              primarySrc="/bff_platform.mp4"
               fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/AFh6UsocgRbT7qBuWEtkWa8/bff_promo_4_why_bff_will_win_260602_v1.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
               poster="/ggh.jpeg"
             />
@@ -167,17 +167,8 @@ export default function HowItWorks() {
         {/* Right Edge Gradient Fade */}
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
 
-        {/* Infinite Moving Track (Left to Right) */}
-        <motion.div
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 35,
-            ease: "linear",
-          }}
-          className="flex items-center gap-6 w-max"
-        >
+        {/* GPU-Accelerated Smooth Continuous Moving Track */}
+        <div className="animate-marquee-smooth gap-6">
           {marqueeSteps.map((step, idx) => {
             const Icon = step.icon;
             return (
@@ -221,7 +212,7 @@ export default function HowItWorks() {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
       {/* ── 4. BOTTOM STATEMENT + 5-COLUMN SUMMARY (DESKTOP / TABLET ONLY >= 768px) ── */}

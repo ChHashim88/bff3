@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Search, BarChart3, ShieldCheck, PlayCircle, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import VideoPlayerWithLoader from "@/components/ui/VideoPlayerWithLoader";
 
 export default function ProjectSelection() {
   const steps = [
@@ -72,47 +73,16 @@ export default function ProjectSelection() {
             </p>
           </motion.div>
 
-          {/* Right Side: Video Card (Matching Opportunity Card Size ~50% width / lg:col-span-6) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex items-center justify-center"
-          >
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              className="relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl aspect-[16/9] lg:aspect-[16/9.5] bg-[#111111] group cursor-pointer w-full h-[280px] sm:h-[360px] lg:h-[390px]"
-            >
-              <Image
-                src="/ggh.jpeg"
-                alt="Project Selection & Evaluation Process Preview"
-                fill
-                className="object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
-
-              {/* Play Button & Overlay */}
-              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6 space-y-3">
-                <motion.div
-                  whileHover={{ scale: 1.15 }}
-                  whileTap={{ scale: 0.95 }}
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
-                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md border-2 border-white flex items-center justify-center text-white shadow-xl group-hover:bg-[#CD0007] group-hover:border-[#CD0007] transition-all duration-300"
-                >
-                  <Play size={26} className="fill-white translate-x-0.5" />
-                </motion.div>
-                <span className="type-label font-extrabold text-white/90 uppercase">
-                  PROJECT SELECTION
-                </span>
-                <p className="type-body font-semibold text-white max-w-sm text-center">
-                  DISCIPLINED EVALUATION PROCESS
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+          {/* Right Side: Video Card Player (Matching Opportunity Card Size ~50% width / lg:col-span-6) */}
+          <div className="lg:col-span-6 flex items-center justify-center">
+            <VideoPlayerWithLoader
+              primarySrc="/bff_platform.mp4"
+              fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/ACgQM7ywKfShxxLvdVhG4sw/bff_promo_5_getting_the_job_done_260704_v6.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+              poster="/ggh.jpeg"
+              aspectRatioClass="aspect-[16/9]"
+              objectFitClass="object-cover object-center"
+            />
+          </div>
 
         </div>
 

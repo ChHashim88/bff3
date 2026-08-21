@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 
 interface VideoPlayerWithLoaderProps {
@@ -24,6 +24,38 @@ export default function VideoPlayerWithLoader({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Safety fallback timer: ensure loader overlay disappears within 2.5s max even on slow streams
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, [primarySrc]);
+
+  // IntersectionObserver: auto-pause offscreen videos so GPU/CPU is 100% smooth
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().then(() => setIsPlaying(true)).catch(() => {});
+          } else {
+            video.pause();
+            setIsPlaying(false);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -55,7 +87,7 @@ export default function VideoPlayerWithLoader({
   };
 
   return (
-    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-auto min-h-[260px] sm:min-h-[320px] lg:min-h-[350px] ${aspectRatioClass}`}>
+    <div className={`relative rounded-2xl border border-[#EAE5DC] overflow-hidden shadow-xl bg-[#111111] group w-full h-auto sm:min-h-[320px] lg:min-h-[350px] ${aspectRatioClass}`}>
       
       {/* HTML5 Video Player */}
       <video
@@ -67,9 +99,11 @@ export default function VideoPlayerWithLoader({
         preload="metadata"
         poster={poster}
         onLoadStart={() => setIsLoading(true)}
-        onWaiting={() => setIsLoading(true)}
         onCanPlay={() => setIsLoading(false)}
         onPlaying={() => setIsLoading(false)}
+        onLoadedData={() => setIsLoading(false)}
+        onLoadedMetadata={() => setIsLoading(false)}
+        onError={() => setIsLoading(false)}
         className={`w-full h-full ${objectFitClass}`}
       >
         <source src={primarySrc} type="video/mp4" />

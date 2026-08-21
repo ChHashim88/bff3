@@ -63,11 +63,14 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-top w-full h-full opacity-85 sm:opacity-100 [mask-image:linear-gradient(to_right,#000_65%,transparent_98%)] sm:[mask-image:none] transition-all duration-300"
+          className="object-cover object-[100%_top] sm:object-top w-full h-full opacity-85 sm:opacity-100 [mask-image:linear-gradient(to_left,#000_75%,transparent_98%)] sm:[mask-image:none] transition-all duration-300"
         />
 
         {/* Mobile Right Side Subtle Soft Edge Fade Layer */}
         <div className="absolute inset-0 bg-gradient-to-l from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent sm:hidden" />
+
+        {/* Hero Section Soft Bottom Fade Layer */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 lg:h-40 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/60 to-transparent pointer-events-none z-1" />
       </div>
 
       {/* ── 2. HERO CONTENT (CENTERED ON MOBILE, LEFT-ALIGNED ON DESKTOP) ── */}
@@ -194,7 +197,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
-            {/* Primary CTA 2: Join Waitlist */}
+            {/* Primary CTA 2: Join Waitlist (Solid Red on Mobile, Original Transparent Outline on Desktop) */}
             <motion.button
               onClick={onOpenWaitlist}
               animate={{ scale: [1, 1.04, 1] }}
@@ -206,10 +209,10 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
               }}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-[#CD0007] hover:bg-[#FDF2F2] border border-[#CD0007] type-cta font-medium px-8 py-4 rounded-full transition-all duration-200 shadow-sm cursor-pointer group w-full sm:w-auto text-center"
+              className="inline-flex items-center justify-center gap-2 bg-[#CD0007] sm:bg-transparent text-white sm:text-[#CD0007] hover:bg-[#A60005] sm:hover:bg-[#FDF2F2] border border-[#CD0007] text-[14px] sm:text-[15px] font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-200 shadow-md sm:shadow-sm cursor-pointer group w-auto sm:w-auto text-center"
             >
               <span>Join Waitlist</span>
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </motion.div>
 

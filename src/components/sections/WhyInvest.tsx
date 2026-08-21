@@ -91,9 +91,6 @@ function FlipCard({ item, index }: { item: any; index: number }) {
               className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-[#CD0007]/5 to-transparent skew-x-12 pointer-events-none"
             />
 
-            {/* Top Glowing Pulse Indicator */}
-            <div className="w-8 h-1 rounded-full bg-[#CD0007] mb-3 shadow-[0_0_8px_#CD0007]" />
-
             {/* Detailed Description Text */}
             <p className="type-small text-gray-700 leading-relaxed max-w-[220px]">
               {item.description}

@@ -93,7 +93,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
       : "bg-[#FAF7F1]/95 backdrop-blur-md border-b border-[#EAE5DC]/50"
       }`}>
       {/* Apple-style Full Width Container */}
-      <div className="max-w-[1440px] mx-auto h-16 sm:h-16 px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
+      <div className="max-w-[1440px] mx-auto h-16 lg:h-[72px] px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4 transition-all duration-300">
 
         {/* Left Logo */}
         <a
@@ -108,9 +108,9 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           <Image
             src="/logo.png"
             alt="Big Film Fund Logo"
-            width={220}
-            height={90}
-            className="h-10 sm:h-10 w-auto object-contain group-hover:opacity-80 transition-opacity duration-200"
+            width={240}
+            height={100}
+            className="h-10 sm:h-10 lg:h-11 w-auto object-contain group-hover:opacity-80 transition-opacity duration-200"
             priority
           />
         </a>
@@ -131,7 +131,7 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
               >
                 <span>{link.name}</span>
                 {isActive && (
-                  <span className="absolute -bottom-[9px] left-0 right-0 h-[2px] bg-[#CD0007] rounded-full" />
+                  <span className="absolute -bottom-[14px] left-0 right-0 h-[2.5px] bg-[#CD0007] rounded-full shadow-[0_0_8px_rgba(205,0,7,0.5)]" />
                 )}
               </a>
             );
