@@ -42,7 +42,7 @@ export default function TypewriterText({
   speed = 20,
   delay = 0,
   cursorColor = "#CD0007",
-  hideCursorOnComplete = false,
+  hideCursorOnComplete = true,
   as: Component = "h2",
   onComplete,
 }: TypewriterTextProps) {
@@ -87,8 +87,10 @@ export default function TypewriterText({
         setTypedCount(current);
         if (current >= totalChars) {
           clearInterval(intervalId);
-          setIsCompleted(true);
-          if (onComplete) onComplete();
+          setTimeout(() => {
+            setIsCompleted(true);
+            if (onComplete) onComplete();
+          }, 400);
         }
       }, speed);
     }, delay * 1000);
