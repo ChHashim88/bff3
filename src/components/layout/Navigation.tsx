@@ -115,8 +115,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
           />
         </a>
 
-        {/* Desktop Navigation Links (Apple Style: Ultra-clean 12px SF Pro Text) */}
-        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-[12px] font-normal tracking-tight text-[#111111]/75">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 text-[14px] font-medium tracking-tight text-[#111111]/80">
           {navLinks.map((link) => {
             const isActive = activeNav.toLowerCase() === link.name.toLowerCase();
             return (
