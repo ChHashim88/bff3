@@ -61,7 +61,6 @@ export default function ThePlatform() {
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_video_3_platform.mp4"
-                poster="/ggh.jpeg"
               />
             </div>
 

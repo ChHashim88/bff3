@@ -66,7 +66,6 @@ export default function ProblemSolution() {
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_video_1_problem.mp4"
-                poster="/ggh.jpeg"
                 aspectRatioClass="aspect-[16/9]"
                 objectFitClass="object-cover object-left"
               />

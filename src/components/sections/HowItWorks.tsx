@@ -145,7 +145,6 @@ export default function HowItWorks() {
           >
             <VideoPlayerWithLoader
               primarySrc="/bff_video_4_why_win.mp4"
-              poster="/ggh.jpeg"
             />
           </motion.div>
 

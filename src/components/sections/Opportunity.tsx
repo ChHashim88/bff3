@@ -97,7 +97,6 @@ export default function Opportunity() {
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_video_2_opportunity.mp4"
-                poster="/ggh.jpeg"
               />
             </div>
 

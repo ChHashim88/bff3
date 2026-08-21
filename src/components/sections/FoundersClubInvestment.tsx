@@ -86,7 +86,6 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_video_6_founders_club.mp4"
-                poster="/ggh.jpeg"
                 aspectRatioClass="aspect-[16/9]"
                 objectFitClass="object-cover object-center"
               />

@@ -31,7 +31,7 @@ export default function VideoPlayerWithLoader({
     setIsLoading(true);
   }, [primarySrc]);
 
-  // IntersectionObserver: Only play video when prominently visible on screen (>= 50% in viewport)
+  // IntersectionObserver: Auto-play video smoothly when scrolled into view
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -47,7 +47,7 @@ export default function VideoPlayerWithLoader({
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     observer.observe(video);
@@ -105,7 +105,6 @@ export default function VideoPlayerWithLoader({
         muted
         playsInline
         preload="metadata"
-        poster={poster}
         onLoadStart={() => setIsLoading(true)}
         onWaiting={() => setIsLoading(true)}
         onCanPlay={() => setIsLoading(false)}
