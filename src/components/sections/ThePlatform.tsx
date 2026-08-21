@@ -59,8 +59,8 @@ export default function ThePlatform() {
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_platform.mp4"
-                fallbackSrc="https://www.dropbox.com/scl/fi/bff_promo_2_the_platform_260711_v2.mp4?rlkey=d1069gkyon7op9goc3htz7340&raw=1"
+                primarySrc="https://www.dropbox.com/scl/fi/f2s7m282e70x5248q9z3p/bff_promo_1_the_platform_260611_v2.mp4?rlkey=d1069gkyon7op9goc3htz7340&raw=1"
+                fallbackSrc="/bff_problem.mp4"
                 poster="/ggh.jpeg"
               />
             </div>

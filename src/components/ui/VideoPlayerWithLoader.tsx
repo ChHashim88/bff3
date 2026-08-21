@@ -24,14 +24,11 @@ export default function VideoPlayerWithLoader({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentSrc, setCurrentSrc] = useState(primarySrc);
 
   useEffect(() => {
-    // Safety fallback timer: ensure loader overlay disappears within 2.5s max even on slow streams
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-
-    return () => clearTimeout(timer);
+    setCurrentSrc(primarySrc);
+    setIsLoading(true);
   }, [primarySrc]);
 
   // IntersectionObserver: auto-pause offscreen videos so GPU/CPU is 100% smooth
@@ -50,12 +47,24 @@ export default function VideoPlayerWithLoader({
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
+
+  const handleVideoError = () => {
+    if (currentSrc !== fallbackSrc && fallbackSrc) {
+      setCurrentSrc(fallbackSrc);
+      if (videoRef.current) {
+        videoRef.current.load();
+        videoRef.current.play().catch(() => {});
+      }
+    } else {
+      setIsLoading(false);
+    }
+  };
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -96,18 +105,18 @@ export default function VideoPlayerWithLoader({
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         poster={poster}
         onLoadStart={() => setIsLoading(true)}
+        onWaiting={() => setIsLoading(true)}
         onCanPlay={() => setIsLoading(false)}
         onPlaying={() => setIsLoading(false)}
         onLoadedData={() => setIsLoading(false)}
-        onLoadedMetadata={() => setIsLoading(false)}
-        onError={() => setIsLoading(false)}
+        onError={handleVideoError}
         className={`w-full h-full ${objectFitClass}`}
       >
-        <source src={primarySrc} type="video/mp4" />
-        {fallbackSrc && <source src={fallbackSrc} type="video/mp4" />}
+        <source src={currentSrc} type="video/mp4" />
+        {fallbackSrc && currentSrc !== fallbackSrc && <source src={fallbackSrc} type="video/mp4" />}
         Your browser does not support the video tag.
       </video>
 

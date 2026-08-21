@@ -85,8 +85,8 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
             {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6 - Identical Height & Width as Opportunity Card) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
-                primarySrc="/bff_opportunity.mp4"
-                fallbackSrc="https://www.dropbox.com/scl/fo/fr0i9s0r31wvmmwctfvf3/ACgQM7ywKfShxxLvdVhG4sw/bff_promo_6_founders_club_260611_v2.mp4?dl=1&rlkey=d1069gkyon7op9goc3htz7340"
+                primarySrc="https://www.dropbox.com/scl/fi/f2s7m282e70x5248q9z3p/bff_promo_6_founders_club_260611_v2.mp4?rlkey=d1069gkyon7op9goc3htz7340&raw=1"
+                fallbackSrc="/bff_problem.mp4"
                 poster="/ggh.jpeg"
                 aspectRatioClass="aspect-[16/9]"
                 objectFitClass="object-cover object-center"
