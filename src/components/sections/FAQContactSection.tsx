@@ -73,7 +73,7 @@ export default function FAQContactSection() {
   };
 
   return (
-    <section id="faq" className="relative overflow-hidden bg-[#FAF7F1] py-8 sm:py-10 lg:py-12">
+    <section id="faq" className="relative overflow-hidden bg-white py-8 sm:py-10 lg:py-12">
 
       {/* ── BACKGROUND ACCENTS (THEME-NATIVE) ── */}
       {/* Warm parchment glow – bottom right */}
@@ -136,7 +136,7 @@ export default function FAQContactSection() {
                   onMouseLeave={() => setHoveredFaq(null)}
                   className="relative rounded-2xl border overflow-hidden transition-all duration-300"
                   style={{
-                    background: "#FAF7F1",
+                    background: "#FFFFFF",
                     borderColor: isOpen ? "rgba(205,0,7,0.35)" : isHovered ? "rgba(205,0,7,0.18)" : "#EAE5DC",
                     boxShadow: isOpen
                       ? "0 8px 32px rgba(205,0,7,0.06), 0 2px 8px rgba(0,0,0,0.03)"
@@ -153,7 +153,7 @@ export default function FAQContactSection() {
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-200"
                       style={{
-                        background: isOpen ? "#CD0007" : isHovered ? "rgba(205,0,7,0.08)" : "#FAF7F1",
+                        background: isOpen ? "#CD0007" : isHovered ? "rgba(205,0,7,0.08)" : "#FFFFFF",
                         border: isOpen ? "1px solid #CD0007" : "1px solid #EAE5DC",
                       }}
                     >
@@ -176,7 +176,7 @@ export default function FAQContactSection() {
                       className="w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-200"
                       style={{
                         borderColor: isOpen ? "#CD0007" : "#EAE5DC",
-                        background: isOpen ? "rgba(205,0,7,0.06)" : "#FAF7F1",
+                        background: isOpen ? "rgba(205,0,7,0.06)" : "#FFFFFF",
                       }}
                     >
                       <Plus size={15} className={isOpen ? "text-[#CD0007]" : "text-gray-400 group-hover:text-[#CD0007]"} />
@@ -225,7 +225,7 @@ export default function FAQContactSection() {
             {/* Outer glow border ring */}
             <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#CD0007]/30 via-[#EAE5DC] to-[#C4A55A]/20 opacity-70" />
 
-            <div className="relative rounded-3xl bg-[#FAF7F1] overflow-hidden border border-[#EAE5DC]">
+            <div className="relative rounded-3xl bg-white overflow-hidden border border-[#EAE5DC]">
 
 
 
@@ -289,7 +289,7 @@ export default function FAQContactSection() {
                             value={formData[key as keyof typeof formData]}
                             onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
                             className="w-full px-4 py-3 rounded-xl text-[13px] font-medium text-[#111111] placeholder-gray-400 focus:outline-none transition-all"
-                            style={{ background: "#FAF7F1", border: "1px solid #EAE5DC" }}
+                            style={{ background: "#FFFFFF", border: "1px solid #EAE5DC" }}
                             onFocus={(e) => {
                               e.target.style.borderColor = "#CD0007";
                               e.target.style.boxShadow = "0 0 0 3px rgba(205,0,7,0.10)";
@@ -298,7 +298,7 @@ export default function FAQContactSection() {
                             onBlur={(e) => {
                               e.target.style.borderColor = "#EAE5DC";
                               e.target.style.boxShadow = "none";
-                              e.target.style.background = "#FAF7F1";
+                              e.target.style.background = "#FFFFFF";
                             }}
                           />
                         </div>
@@ -316,7 +316,7 @@ export default function FAQContactSection() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl text-[13px] font-medium text-[#111111] placeholder-gray-400 focus:outline-none transition-all"
-                        style={{ background: "#FAF7F1", border: "1px solid #EAE5DC" }}
+                        style={{ background: "#FFFFFF", border: "1px solid #EAE5DC" }}
                         onFocus={(e) => {
                           e.target.style.borderColor = "#CD0007";
                           e.target.style.boxShadow = "0 0 0 3px rgba(205,0,7,0.10)";
@@ -325,7 +325,7 @@ export default function FAQContactSection() {
                         onBlur={(e) => {
                           e.target.style.borderColor = "#EAE5DC";
                           e.target.style.boxShadow = "none";
-                          e.target.style.background = "#FAF7F1";
+                          e.target.style.background = "#FFFFFF";
                         }}
                       />
                     </div>
@@ -342,7 +342,7 @@ export default function FAQContactSection() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl text-[13px] font-medium text-[#111111] placeholder-gray-400 focus:outline-none transition-all resize-none"
-                        style={{ background: "#FAF7F1", border: "1px solid #EAE5DC" }}
+                        style={{ background: "#FFFFFF", border: "1px solid #EAE5DC" }}
                         onFocus={(e) => {
                           e.target.style.borderColor = "#CD0007";
                           e.target.style.boxShadow = "0 0 0 3px rgba(205,0,7,0.10)";
@@ -351,7 +351,7 @@ export default function FAQContactSection() {
                         onBlur={(e) => {
                           e.target.style.borderColor = "#EAE5DC";
                           e.target.style.boxShadow = "none";
-                          e.target.style.background = "#FAF7F1";
+                          e.target.style.background = "#FFFFFF";
                         }}
                       />
                     </div>

@@ -21,7 +21,7 @@ function FlipCard({ item, index }: { item: any; index: number }) {
       {/* ── MOBILE VIEW CARD (Transparent Background with Icon, Title & Description) ── */}
       <div className="md:hidden flex flex-col items-center text-center w-full p-4 bg-transparent my-1">
         {/* Logo Red Icon Badge */}
-        <div className="w-14 h-14 rounded-full bg-[#FAF8F3] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-3 shadow-2xs">
+        <div className="w-14 h-14 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-3 shadow-2xs">
           <Icon size={26} strokeWidth={1.5} />
         </div>
 
@@ -55,7 +55,7 @@ function FlipCard({ item, index }: { item: any; index: number }) {
             }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
             {/* Live Beating Icon Badge */}
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -65,7 +65,7 @@ function FlipCard({ item, index }: { item: any; index: number }) {
                 ease: "easeInOut",
                 delay: item.floatDelay,
               }}
-              className="w-14 h-14 rounded-full bg-[#FAF8F3] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:shadow-[0_0_15px_rgba(205,0,7,0.4)] transition-all duration-500"
+              className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:shadow-[0_0_15px_rgba(205,0,7,0.4)] transition-all duration-500"
             >
               <Icon size={26} strokeWidth={1.5} />
             </motion.div>
@@ -77,7 +77,7 @@ function FlipCard({ item, index }: { item: any; index: number }) {
           </div>
 
           {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {/* Ambient Shimmer Sweep Animation */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
@@ -134,7 +134,7 @@ export default function WhyInvest() {
   ];
 
   return (
-    <section id="why-bff" className="py-10 sm:py-14 bg-[#FAF7F1] overflow-hidden">
+    <section id="why-bff" className="py-10 sm:py-14 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
         {/* Single Large Rounded Feature Container with Ambient Light Sweep */}
@@ -143,7 +143,7 @@ export default function WhyInvest() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden"
+          className="bg-white border border-[#EAE5DC] rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.03)] relative overflow-hidden"
         >
           {/* Subtle Continuous Shimmer Light Sweep Effect */}
           <motion.div

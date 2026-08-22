@@ -63,7 +63,7 @@ export default function HowItWorks() {
   const marqueeSteps = [...steps, ...steps];
 
   return (
-    <section id="how-it-works" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section id="how-it-works" className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-12">
 
         {/* ── 1. SECTION HEADER & CALLOUT CARD + TOP-RIGHT IMAGE CARD COMPOSITION ── */}
@@ -120,10 +120,10 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-xs"
+              className="bg-white border border-[#EAE5DC] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 shadow-xs"
             >
               {/* Target Icon Badge */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shrink-0 shadow-2xs">
                 <Target size={28} strokeWidth={1.5} />
               </div>
 
@@ -165,10 +165,10 @@ export default function HowItWorks() {
       {/* ── 3B. FULL-WIDTH CONTINUOUS SCROLLING MARQUEE (DESKTOP / TABLET ONLY >= 768px) ── */}
       <div className="hidden md:block w-full overflow-hidden relative mt-8 py-4">
         {/* Left Edge Gradient Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
 
         {/* Right Edge Gradient Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
         {/* GPU-Accelerated Smooth Continuous Moving Track */}
         <div className="animate-marquee-smooth gap-6">
@@ -177,7 +177,7 @@ export default function HowItWorks() {
             return (
               <div
                 key={`${step.num}-${idx}`}
-                className="w-[280px] sm:w-[340px] lg:w-[380px] h-[340px] sm:h-[380px] rounded-2xl border border-[#EAE5DC] bg-[#FAF8F3] relative overflow-hidden shrink-0 shadow-md group hover:border-[#CD0007] transition-all duration-300 flex flex-col justify-between"
+                className="w-[280px] sm:w-[340px] lg:w-[380px] h-[340px] sm:h-[380px] rounded-2xl border border-[#EAE5DC] bg-white relative overflow-hidden shrink-0 shadow-md group hover:border-[#CD0007] transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Background Image Preview */}
                 <Image
@@ -224,7 +224,7 @@ export default function HowItWorks() {
           Together, these capabilities create a foundation built to scale.
         </p>
 
-        <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl shadow-xs overflow-hidden p-6 sm:p-10">
+        <div className="bg-white border border-[#EAE5DC] rounded-2xl shadow-xs overflow-hidden p-6 sm:p-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 lg:divide-x divide-[#EAE5DC] gap-6 lg:gap-0">
             {summaryItems.map((item, idx) => {
               const Icon = item.icon;
@@ -266,7 +266,7 @@ export default function HowItWorks() {
                         ease: "easeInOut",
                       }}
                       whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-14 h-14 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
+                      className="w-14 h-14 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
                     >
                       <Icon size={24} strokeWidth={1.4} />
                     </motion.div>

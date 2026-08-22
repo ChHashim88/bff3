@@ -142,7 +142,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
       className="relative w-[100vw] min-h-[72svh] sm:min-h-[78svh] lg:min-h-[82svh] flex flex-col justify-start items-center pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 overflow-hidden text-[#111111] select-none mx-auto [margin:0_auto]"
     >
       {/* ── 1. HERO BACKGROUND IMAGE ── */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-[#FAF7F1] sm:bg-transparent">
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-white sm:bg-transparent">
         <Image
           src="/backy.jpeg"
           alt="Hero Background"
@@ -154,10 +154,10 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
         />
 
         {/* Mobile Right Side Soft Edge Fade Layer */}
-        <div className="absolute inset-0 bg-gradient-to-l from-[#FAF7F1] via-[#FAF7F1]/30 to-transparent sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-l from-white via-white/30 to-transparent sm:hidden" />
 
         {/* Hero Section Soft Bottom Fade Layer */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-14 lg:h-16 bg-gradient-to-t from-[#FAF7F1] via-[#FAF7F1]/25 to-transparent pointer-events-none z-1" />
+        <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-14 lg:h-16 bg-gradient-to-t from-white via-white/25 to-transparent pointer-events-none z-1" />
       </div>
 
       {/* ── 2. HERO CONTENT ── */}

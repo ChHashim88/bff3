@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#FAF8F3] border-t border-[#EAE5DC] text-[#111111] pt-16 pb-12 overflow-hidden">
+    <footer className="bg-white border-t border-[#EAE5DC] text-[#111111] pt-16 pb-12 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-12">
 
         {/* Top Footer Stack: Logo, Tagline & Quick Links */}

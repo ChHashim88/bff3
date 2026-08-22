@@ -29,7 +29,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
   ];
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden space-y-12 sm:space-y-16">
+    <section className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden space-y-12 sm:space-y-16">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-12 sm:space-y-16">
 
         {/* ── 1. FOUNDERS CLUB CREATIVE VIDEO SECTION CARD (Matching Opportunity Card Dimensions) ── */}
@@ -39,7 +39,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs space-y-8 relative overflow-hidden"
+          className="bg-white border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs space-y-8 relative overflow-hidden"
         >
           {/* 2-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -55,7 +55,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                   >
                     FOUNDERS CLUB
                   </TextElasticSlide>
-                  <div className="w-12 h-12 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs">
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] shadow-2xs">
                     <Crown size={24} />
                   </div>
                 </div>
@@ -68,55 +68,38 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
                   Big Film Fund brings investors closer to the journey—from development to release.
                 </p>
 
-                <p className="type-body text-[#111111] font-medium leading-relaxed pt-1">
-                  Early supporters can join the Big Film Fund Founders Club and receive special privileges and offers.
+                <p className="type-body text-gray-700 font-normal leading-relaxed">
+                  Founders Club members gain exclusive access, behind-the-scenes insights, private events, and structured investor perks aligned with our growing platform.
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#EAE5DC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <p className="type-subtitle font-semibold text-[#CD0007]">
-                  Invest early. Get closer to the experience.
-                </p>
+              <div className="pt-2">
                 <button
                   onClick={onOpenWaitlist}
-                  className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-6 py-3.5 rounded-full transition-all shadow-md cursor-pointer shrink-0 group active:scale-95"
+                  className="inline-flex items-center gap-2 bg-[#CD0007] hover:bg-[#A60005] text-white type-cta font-medium px-8 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer group"
                 >
                   <span>Join Founders Club</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
-            {/* RIGHT SIDE: Cinematic Video Player (~50% width / lg:col-span-6 - Identical Height & Width as Opportunity Card) */}
+            {/* RIGHT SIDE: Video Player Card (~50% width / lg:col-span-6) */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <VideoPlayerWithLoader
                 primarySrc="/bff_video_6_founders_club.mp4"
-                aspectRatioClass="aspect-[16/9]"
-                objectFitClass="object-cover object-center"
               />
             </div>
 
           </div>
-        </motion.div>
 
-        {/* ── 2. PROGRESS TO DATE (Full Width Block) ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs space-y-6 relative overflow-hidden group hover:border-[#CD0007]/50 transition-all"
-        >
-          <div className="space-y-4">
-            <h1 className="type-label font-extrabold uppercase text-[#CD0007]">
-              PROGRESS TO DATE
-            </h1>
+          {/* Bottom Row: What's Been Built Grid */}
+          <div className="pt-8 border-t border-[#EAE5DC] space-y-4">
+            <h3 className="type-h3 text-[#111111] font-semibold">
+              The Foundation Is Built. <span className="text-[#CD0007]">Now We Scale.</span>
+            </h3>
 
-            <h2 className="type-h2 text-[#111111]">
-              The Foundation Is Being Built
-            </h2>
-
-            <p className="type-body text-gray-700 font-normal leading-relaxed max-w-3xl">
+            <p className="type-body text-gray-700 leading-relaxed max-w-3xl">
               Big Film Fund is already in active development. The focus has been on building a repeatable and scalable system for sourcing, evaluating, and delivering film investment opportunities.
             </p>
 
@@ -126,7 +109,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {whatBeenBuilt.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-gray-800 bg-[#FAF7F1] border border-[#EAE5DC] rounded-xl p-3 shadow-2xs">
+                  <div key={i} className="flex items-center gap-2 text-gray-800 bg-white border border-[#EAE5DC] rounded-xl p-3 shadow-2xs">
                     <CheckCircle2 size={16} className="text-[#CD0007] shrink-0" />
                     <span className="type-body font-medium text-[14px]">{item}</span>
                   </div>
@@ -143,7 +126,7 @@ export default function FoundersClubInvestment({ onOpenWaitlist }: FoundersClubI
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs space-y-8"
+          className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs space-y-8"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 

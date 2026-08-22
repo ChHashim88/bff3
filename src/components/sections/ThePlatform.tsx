@@ -6,7 +6,7 @@ import TextBlurReveal from "@/components/ui/TextBlurReveal";
 
 export default function ThePlatform() {
   return (
-    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
 
         {/* 1. MAIN HEADLINE & MEDIA COMPOSITION */}
@@ -15,7 +15,7 @@ export default function ThePlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs relative"
+          className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs relative"
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">

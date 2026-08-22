@@ -121,7 +121,7 @@ export default function Stats() {
   const marqueeItems = [...logoImages, ...logoImages, ...logoImages, ...logoImages];
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-12">
 
         {/* Section Headline */}
@@ -150,7 +150,7 @@ export default function Stats() {
           initial={{ opacity: 0, y: 25 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs"
+          className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#EAE5DC] gap-6 lg:gap-0">
             {stats.map((item, idx) => {
@@ -192,7 +192,7 @@ export default function Stats() {
                         ease: "easeInOut",
                       }}
                       whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-16 h-16 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-5 shadow-2xs shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
+                      className="w-16 h-16 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-5 shadow-2xs shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
                     >
                       <Icon size={28} strokeWidth={1.4} />
                     </motion.div>
@@ -227,8 +227,8 @@ export default function Stats() {
       {/* ── CONTINUOUS SCROLLING COMPANY LOGO MARQUEE (LEFT TO RIGHT) UNDER STAT CARDS ── */}
       <div className="w-full overflow-hidden relative mt-8 py-2">
         {/* Left & Right Vignette Gradient Fades */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#FAF7F1] to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
         <motion.div
           animate={{ x: ["-50%", "0%"] }}
@@ -243,7 +243,7 @@ export default function Stats() {
           {marqueeItems.map((item, idx) => (
             <div
               key={`logo-${item.id}-${idx}`}
-              className="w-[160px] sm:w-[200px] h-[80px] sm:h-[96px] rounded-2xl border border-[#EAE5DC] bg-[#FAF8F3] hover:border-[#CD0007] transition-all duration-300 shrink-0 shadow-2xs group flex items-center justify-center cursor-pointer overflow-hidden relative"
+              className="w-[160px] sm:w-[200px] h-[80px] sm:h-[96px] rounded-2xl border border-[#EAE5DC] bg-white hover:border-[#CD0007] transition-all duration-300 shrink-0 shadow-2xs group flex items-center justify-center cursor-pointer overflow-hidden relative"
             >
               <Image
                 src={item.src}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Coins, Handshake, TrendingUp, Globe } from "lucide-react";
+import { Coins, Handshake, Layers, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import MobileRadialCarousel from "@/components/ui/MobileRadialCarousel";
 import TextBlurReveal from "@/components/ui/TextBlurReveal";
@@ -51,7 +51,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
             }`}
         >
           {/* FRONT SIDE (Icon & Title ONLY) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#EAE5DC] shadow-xs group-hover/card:border-[#CD0007]/40 transition-colors flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden]">
             {/* Live Beating Icon Badge */}
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
@@ -61,7 +61,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
                 ease: "easeInOut",
                 delay: item.floatDelay,
               }}
-              className="w-14 h-14 rounded-full bg-[#FAF8F3] flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:shadow-[0_0_15px_rgba(205,0,7,0.4)] transition-all duration-500"
+              className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#CD0007] mb-4 shadow-2xs group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:shadow-[0_0_15px_rgba(205,0,7,0.4)] transition-all duration-500"
             >
               <Icon size={26} strokeWidth={1.5} />
             </motion.div>
@@ -73,7 +73,7 @@ function BusinessModelFlipCard({ item, index }: { item: any; index: number }) {
           </div>
 
           {/* BACK SIDE (Detailed Description - Pre-rotated 180deg) */}
-          <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#FAF7F1] border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-[#EAE5DC] group-hover/card:border-[#CD0007]/40 shadow-md transition-colors flex flex-col items-center justify-center p-6 text-center overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden]">
             {/* Ambient Shimmer Sweep Animation */}
             <motion.div
               animate={{ x: ["-100%", "200%"] }}
@@ -108,15 +108,15 @@ export default function HowWeMakeMoney() {
     },
     {
       icon: Handshake,
-      title: "Project Participation",
-      description: "Participation across financing and production.",
+      title: "Gross Revenue Share",
+      description: "Direct alignment with the success of individual films.",
       floatDuration: 4.8,
       floatDelay: 0.6,
     },
     {
-      icon: TrendingUp,
-      title: "Performance-Based Upside",
-      description: "Potential revenue tied to project performance.",
+      icon: Layers,
+      title: "Production Services",
+      description: "Fees and services aligned with active project execution.",
       floatDuration: 4.5,
       floatDelay: 1.2,
     },
@@ -130,7 +130,7 @@ export default function HowWeMakeMoney() {
   ];
 
   return (
-    <section className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
         {/* Single Large Rounded Card Container */}
@@ -139,7 +139,7 @@ export default function HowWeMakeMoney() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs space-y-8 relative"
+          className="bg-white border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs space-y-8 relative"
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">

@@ -46,7 +46,7 @@ export default function Opportunity() {
   ];
 
   return (
-    <section id="the-opportunity" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section id="the-opportunity" className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
 
         {/* Single Large Rounded Card Container */}
@@ -55,7 +55,7 @@ export default function Opportunity() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-4 sm:p-10 shadow-xs space-y-8 sm:space-y-10"
+          className="bg-white border border-[#EAE5DC] rounded-2xl p-4 sm:p-10 shadow-xs space-y-8 sm:space-y-10"
         >
           {/* Top Row: 2-Column Composition (Structured Exactly Like The Platform) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch">
@@ -154,7 +154,7 @@ export default function Opportunity() {
                         ease: "easeInOut",
                       }}
                       whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-[64px] h-[64px] rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] my-2 shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
+                      className="w-[64px] h-[64px] rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] my-2 shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300"
                     >
                       <Icon size={30} strokeWidth={1.4} />
                     </motion.div>

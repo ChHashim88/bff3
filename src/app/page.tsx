@@ -24,7 +24,7 @@ export default function Home() {
   const handleCloseWaitlist = () => setIsWaitlistOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F1] text-[#111111] flex flex-col font-sans selection:bg-[#CD0007] selection:text-white">
+    <div className="min-h-screen bg-white text-[#111111] flex flex-col font-sans selection:bg-[#CD0007] selection:text-white">
       {/* Floating Header Navigation */}
       <Navigation onOpenWaitlist={handleOpenWaitlist} activeSection="Home" />
 

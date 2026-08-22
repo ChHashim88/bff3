@@ -43,7 +43,7 @@ export default function ProjectSelection() {
   ];
 
   return (
-    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section id="our-solution" className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-10 sm:space-y-12">
 
         {/* 1. TOP SECTION: 2-Column Composition (Identical Header Structure to The Platform) */}
@@ -78,28 +78,32 @@ export default function ProjectSelection() {
             <p className="type-body text-gray-700 max-w-xl leading-relaxed">
               Every project is evaluated through a structured process before being oﬀered to
               investors - with a focus on financial viability, production discipline, and realistic path
-              to distribution.
+              to market.
             </p>
           </motion.div>
 
-          {/* Right Side: Video Card Player (Matching Opportunity Card Size ~50% width / lg:col-span-6) */}
-          <div className="lg:col-span-6 flex items-center justify-center">
+          {/* Right Side: Cinematic Video Player (~50% width / lg:col-span-6) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 flex items-center justify-center my-auto"
+          >
             <VideoPlayerWithLoader
               primarySrc="/bff_video_5_job_done.mp4"
-              aspectRatioClass="aspect-[16/9]"
-              objectFitClass="object-cover object-center"
             />
-          </div>
+          </motion.div>
 
         </div>
 
-        {/* 4-Step Selection Framework Container Card */}
+        {/* 2. BOTTOM SECTION: 4 Selection Criteria Columns in Rounded Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
+          className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-10 shadow-xs"
         >
           <div className="text-center max-w-xl mx-auto mb-8">
             <p className="type-label font-extrabold uppercase text-[#CD0007]">
@@ -147,7 +151,7 @@ export default function ProjectSelection() {
                         ease: "easeInOut",
                       }}
                       whileHover={{ scale: 1.18, rotate: 12 }}
-                      className="w-16 h-16 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-5 shadow-2xs shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300 relative"
+                      className="w-16 h-16 rounded-full bg-white border border-[#EAE5DC] flex items-center justify-center text-[#CD0007] mb-5 shadow-2xs shrink-0 group-hover/card:bg-[#CD0007] group-hover/card:text-white group-hover/card:border-[#CD0007] transition-colors duration-300 relative"
                     >
                       <Icon size={28} strokeWidth={1.4} />
                     </motion.div>

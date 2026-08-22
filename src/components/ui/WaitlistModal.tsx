@@ -41,12 +41,12 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="bg-[#FAF8F3] max-w-md w-full rounded-2xl border border-[#EAE5DC] shadow-2xl p-6 sm:p-8 relative overflow-hidden"
+            className="bg-white max-w-md w-full rounded-2xl border border-[#EAE5DC] shadow-2xl p-6 sm:p-8 relative overflow-hidden"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#111111]/60 hover:text-[#CD0007] hover:border-[#CD0007] flex items-center justify-center transition-all cursor-pointer z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#111111]/60 hover:text-[#CD0007] hover:border-[#CD0007] flex items-center justify-center transition-all cursor-pointer z-10"
               aria-label="Close dialog"
             >
               <X size={16} />
@@ -91,7 +91,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                       placeholder="name@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-[#FAF7F1] border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] placeholder-gray-400 focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] placeholder-gray-400 focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all"
                     />
                   </div>
 
@@ -102,7 +102,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     <select
                       value={investorType}
                       onChange={(e) => setInvestorType(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-[#FAF7F1] border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all cursor-pointer"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#EAE5DC] rounded-lg text-xs sm:text-sm text-[#111111] focus:outline-none focus:border-[#CD0007] focus:ring-2 focus:ring-[#CD0007]/15 transition-all cursor-pointer"
                     >
                       <option value="Individual">Everyday Retail Investor</option>
                       <option value="Accredited">Accredited Investor</option>

@@ -191,7 +191,7 @@ export default function MobileRadialCarousel({
               className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-500 z-20 cursor-pointer ${
                 isActive
                   ? "w-12 h-12 xs:w-13 xs:h-13 bg-[#CD0007] text-white shadow-[0_0_20px_rgba(205,0,7,0.45)] scale-110 border-2 border-white"
-                  : "w-9.5 h-9.5 xs:w-10 xs:h-10 bg-[#FAF7F1] text-gray-600 border border-[#EAE5DC] hover:border-[#CD0007]/50 hover:text-[#CD0007]"
+                  : "w-9.5 h-9.5 xs:w-10 xs:h-10 bg-white text-gray-600 border border-[#EAE5DC] hover:border-[#CD0007]/50 hover:text-[#CD0007]"
               }`}
             >
               <NodeIcon size={isActive ? 20 : 16} strokeWidth={isActive ? 2 : 1.5} />
@@ -200,7 +200,7 @@ export default function MobileRadialCarousel({
         })}
 
         {/* Center Active Content Display Card */}
-        <div className="w-[185px] xs:w-[205px] sm:w-[225px] aspect-square rounded-full bg-[#FAF8F3] border border-[#EAE5DC] shadow-[0_6px_18px_rgba(205,0,7,0.12)] flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
+        <div className="w-[185px] xs:w-[205px] sm:w-[225px] aspect-square rounded-full bg-white border border-[#EAE5DC] shadow-[0_6px_18px_rgba(205,0,7,0.12)] flex flex-col items-center justify-center p-4 text-center z-10 overflow-hidden relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}

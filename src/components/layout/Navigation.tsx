@@ -94,8 +94,8 @@ export default function Navigation({ onOpenWaitlist, activeSection = "Home" }: N
 
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
-      ? "bg-[#FAF7F1]/85 backdrop-blur-xl border-b border-[#EAE5DC]/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
-      : "bg-[#FFFDFC] border-b border-[#EAE5DC]/60"
+      ? "bg-white/85 backdrop-blur-xl border-b border-[#EAE5DC]/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+      : "bg-white border-b border-[#EAE5DC]/60"
       }`}>
       {/* Apple-style Full Width Container */}
       <div className="max-w-[1440px] mx-auto h-16 lg:h-[72px] px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4 transition-all duration-300">

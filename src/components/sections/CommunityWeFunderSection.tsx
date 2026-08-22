@@ -22,7 +22,7 @@ export default function CommunityWeFunderSection() {
   };
 
   return (
-    <section className="w-full bg-[#FAF7F1] py-8 sm:py-10 lg:py-12 overflow-hidden">
+    <section className="w-full bg-white py-8 sm:py-10 lg:py-12 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 

@@ -7,7 +7,7 @@ import TextElasticSlide from "@/components/ui/TextElasticSlide";
 
 export default function ProblemSolution() {
   return (
-    <section id="the-problem" className="py-8 sm:py-10 lg:py-12 bg-[#FAF7F1] overflow-hidden">
+    <section id="the-problem" className="py-8 sm:py-10 lg:py-12 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 space-y-8 sm:space-y-10">
 
         {/* 1. MAIN HEADLINE & MEDIA COMPOSITION */}
@@ -16,7 +16,7 @@ export default function ProblemSolution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs relative"
+          className="bg-white border border-[#EAE5DC] rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xs relative"
         >
           {/* Two-Column Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -46,8 +46,8 @@ export default function ProblemSolution() {
                     rarely ever share in the financial upside.
                   </p>
 
-                  <div className="bg-[#FAF7F1] border-l-4 border-[#CD0007] rounded-r-xl p-4 sm:p-5 shadow-2xs">
-                    <p className="type-body font-medium text-[#111111] leading-relaxed">
+                  <div className="bg-white border-l-4 border-l-[#CD0007] border-y border-r border-[#EAE5DC] rounded-r-xl p-4 sm:p-5 shadow-2xs">
+                    <p className="type-body font-semibold text-[#111111] leading-relaxed">
                       Audiences create value. Investors rarely share in it.
                     </p>
                   </div>
@@ -88,7 +88,7 @@ export default function ProblemSolution() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
         >
           {/* Card 1: While the industry has grown */}
-          <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
+          <div className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center shrink-0 shadow-md">
                 <TrendingUp size={20} />
@@ -100,7 +100,7 @@ export default function ProblemSolution() {
 
             <div className="space-y-4 pt-1">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
                   <Globe size={16} />
                 </div>
                 <p className="type-body text-gray-700 pt-1">
@@ -109,7 +109,7 @@ export default function ProblemSolution() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
                   <BarChart3 size={16} />
                 </div>
                 <p className="type-body text-gray-700 pt-1">
@@ -120,7 +120,7 @@ export default function ProblemSolution() {
           </div>
 
           {/* Card 2: Access has not kept up */}
-          <div className="bg-[#FAF8F3] border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
+          <div className="bg-white border border-[#EAE5DC] rounded-2xl p-6 sm:p-8 shadow-xs relative overflow-hidden group hover:border-[#CD0007]/50 transition-all space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#CD0007] text-white flex items-center justify-center shrink-0 shadow-md">
                 <Lock size={20} />
@@ -132,7 +132,7 @@ export default function ProblemSolution() {
 
             <div className="space-y-4 pt-1">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
                   <Lock size={16} />
                 </div>
                 <p className="type-body text-gray-700 pt-1">
@@ -141,7 +141,7 @@ export default function ProblemSolution() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
                   <UserX size={16} />
                 </div>
                 <p className="type-body text-gray-700 pt-1">
@@ -150,7 +150,7 @@ export default function ProblemSolution() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#FAF7F1] border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-white border border-[#EAE5DC] text-[#CD0007] flex items-center justify-center shrink-0 mt-0.5">
                   <EyeOff size={16} />
                 </div>
                 <p className="type-body text-gray-700 pt-1">
