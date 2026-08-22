@@ -235,7 +235,7 @@ export default function FAQContactSection() {
                 <div className="space-y-2 pb-5 border-b border-[#EAE5DC]">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-black tracking-[0.2em] uppercase text-[#CD0007]">
-                      DIRECT INQUIRY
+                      Contact Us
                     </span>
                     <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#CD0007]/25 bg-[#CD0007]/06">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#CD0007] animate-pulse" />

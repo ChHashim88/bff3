@@ -144,7 +144,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
       {/* ── 1. HERO BACKGROUND IMAGE ── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-white sm:bg-transparent">
         <Image
-          src="/backy.jpeg"
+          src="/backy.png"
           alt="Hero Background"
           fill
           priority
@@ -201,11 +201,11 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             )}
           </div>
 
-          {/* Dual CTA Buttons (Smoothly fades in once description typing completes) */}
+          {/* Dual CTA Buttons (Smooth entrance animation on page load) */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={isComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 pt-2 w-full sm:w-auto"
           >
             {/* Primary CTA 1: Explore the Opportunity */}
