@@ -74,7 +74,7 @@ export function HeroSection() {
   );
 
   return (
-    <section className="relative w-full min-h-screen lg:min-h-[100vh] pt-24 pb-12 lg:pt-28 lg:pb-16 px-6 md:px-12 xl:px-24 flex flex-col justify-center items-center overflow-hidden bg-white dark:bg-background">
+    <section className="relative w-full min-h-screen lg:min-h-[100vh] pt-24 pb-10 lg:pt-20 xl:pt-24 lg:pb-12 px-6 md:px-12 xl:px-24 flex flex-col justify-center items-center overflow-hidden bg-white dark:bg-background">
       {/* Hero Background Image - Mobile Light Mode (< lg) */}
       <img
         src="/mobhero.jpeg"
@@ -102,7 +102,7 @@ export function HeroSection() {
         alt="Hero Background Desktop Light"
         loading="eager"
         decoding="sync"
-        className="hidden lg:block dark:hidden absolute inset-0 w-full h-full object-cover object-right pointer-events-none z-0 opacity-90 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+        className="hidden lg:block dark:hidden absolute inset-0 w-full h-full object-cover object-[85%_center] xl:object-right pointer-events-none z-0 opacity-90 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
       />
 
       {/* Hero Background Image - Desktop Dark Mode (>= lg) */}
@@ -111,17 +111,17 @@ export function HeroSection() {
         alt="Hero Background Desktop Dark"
         loading="eager"
         decoding="sync"
-        className="hidden dark:lg:block absolute inset-0 w-full h-full object-cover object-right pointer-events-none z-0 opacity-85 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+        className="hidden dark:lg:block absolute inset-0 w-full h-full object-cover object-[85%_center] xl:object-right pointer-events-none z-0 opacity-85 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
       />
 
-      {/* Desktop Readability Backdrop Gradient Overlay (Prevents Hero Copy/Image Overlap on Desktop) */}
-      <div className="hidden lg:block absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-white via-white/90 to-transparent dark:from-background dark:via-background/90 pointer-events-none z-[1]" />
+      {/* Desktop Readability Backdrop Gradient Overlay (Prevents Hero Copy/Image Overlap on Laptop & Desktop Screens) */}
+      <div className="hidden lg:block absolute inset-y-0 left-0 w-[75%] xl:w-[65%] 2xl:w-[58%] bg-gradient-to-r from-white via-white/95 via-65% to-transparent dark:from-background dark:via-background/95 dark:via-65% dark:to-transparent pointer-events-none z-[1]" />
 
       {/* Subtle Bottom Gradient Fade */}
-      <div className="absolute inset-x-0 bottom-0 h-16 lg:h-28 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-background dark:via-background/80 pointer-events-none z-[2]" />
+      <div className="absolute inset-x-0 bottom-0 h-16 lg:h-24 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-background dark:via-background/80 pointer-events-none z-[2]" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1350px] items-center gap-8 lg:gap-12 lg:grid-cols-2">
-        <div className="z-10 flex flex-col items-start justify-center space-y-5 sm:space-y-6 text-left max-w-2xl mx-auto lg:mx-0 opacity-100">
+        <div className="z-10 flex flex-col items-start justify-center space-y-4 lg:space-y-3.5 xl:space-y-5 text-left max-w-2xl lg:max-w-[560px] xl:max-w-2xl mx-auto lg:mx-0 opacity-100">
 
           {/* Main Heading with Zero Layout Shift & Smooth Self-Reserving Typewriter Animation */}
           <div className="relative max-w-[340px] sm:max-w-[420px] lg:max-w-none mx-auto lg:mx-0 text-left">
@@ -149,16 +149,16 @@ export function HeroSection() {
             </h1>
           </div>
 
-          <div className="flex flex-col items-start space-y-4 text-left">
+          <div className="flex flex-col items-start space-y-3 lg:space-y-2.5 xl:space-y-4 text-left">
             {/* Subtitle text */}
-            <p className="text-[clamp(1rem,4.2vw,1.125rem)] lg:text-subtitle text-foreground/90 leading-[1.5] lg:leading-[1.25] font-normal max-w-[340px] sm:max-w-md lg:max-w-none text-left">
+            <p className="text-[clamp(1rem,4.2vw,1.125rem)] lg:text-subtitle text-foreground/90 leading-[1.45] lg:leading-[1.25] font-normal max-w-[340px] sm:max-w-md lg:max-w-none text-left">
               Big Film Fund is creating a new way to finance movies – powered by
               a technology platform that connects investors, filmmakers, and
               audiences.
             </p>
 
             {/* Body copy - Fully Visible without "See More" collapse */}
-            <div className="space-y-3.5 text-body-text text-muted-foreground text-left">
+            <div className="space-y-2.5 lg:space-y-2 xl:space-y-3.5 text-body-text text-muted-foreground text-left">
               <p>
                 For everyday investors, that opens the door once largely
                 reserved for Hollywood studios and industry insiders, to an
@@ -179,7 +179,7 @@ export function HeroSection() {
           </div>
 
           {/* Regular Red Copy Treatment for "No more opaque Hollywood economics" */}
-          <div className="text-left space-y-1 pt-1">
+          <div className="text-left space-y-0.5 pt-0.5 lg:pt-0">
             <p className="text-base sm:text-lg font-bold text-destructive">
               No more opaque Hollywood economics.
             </p>
@@ -190,10 +190,10 @@ export function HeroSection() {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-wrap justify-start items-center gap-4 pt-2 lg:pt-1 w-full">
+          <div className="flex flex-wrap justify-start items-center gap-4 pt-1 lg:pt-0.5 w-full">
             <button
               onClick={() => openWaitlistModal("waitlist")}
-              className="relative group overflow-hidden cursor-pointer rounded-full bg-[#C00000] px-8 py-4 text-base font-bold text-white shadow-xl border border-red-400/30 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-[#990000] hover:shadow-2xl active:scale-95 flex items-center justify-center gap-2.5"
+              className="relative group overflow-hidden cursor-pointer rounded-full bg-[#C00000] px-7 py-3.5 lg:px-8 lg:py-3.5 xl:py-4 text-base font-bold text-white shadow-xl border border-red-400/30 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-[#990000] hover:shadow-2xl active:scale-95 flex items-center justify-center gap-2.5"
             >
               <span className="relative z-10 tracking-wide uppercase text-sm font-black">
                 Join Waitlist
